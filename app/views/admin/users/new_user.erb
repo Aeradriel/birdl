@@ -1,0 +1,42 @@
+<h2><%= t(:new_user) %></h2>
+
+<%= form_for @user, :url => {action: 'create'}, :html => {:method => 'post'} do |f| %>
+<table class="table_paneladmin">
+		<tr>
+			<td><%= f.label :email %></td>
+		   	<td><%= f.email_field :email, autofocus: true %><br/></td>
+	 	</tr>
+    	<tr>
+		    <td><%= f.label :first_name %></td>
+		    <td><%= f.text_field :first_name %><br/></td>
+	    </tr>
+    	<tr>
+		    <td><%= f.label :last_name %></td>
+		    <td><%= f.text_field :last_name %><br/></td>
+		</tr>
+    	<tr>    
+		    <td><%= f.label :birthdate %></td>
+		    <td><%= f.date_select :birthdate, :start_year => Time.now.year - 100, :end_year => (Time.now.year - 18), :include_blank => true %><br/></td>
+	    </tr>
+    	<tr>
+		    <td><%= f.label :gender %></td>
+		    <td><%= f.select :gender, {:Homme => 1, :Femme => 0} %><br/></td>
+	    </tr>
+    	<tr>
+		    <td><%= f.label :country_id %></td>
+		    <td><% c = Country.all.collect { |c| [c.name, c.id] } %>
+		    <% c.insert(0, [t(:unknown), nil]) %>
+		    <%= f.select :country_id, c %><br/></td>
+	    </tr>
+    	<tr>
+		    <td><%= f.label :admin %></td>
+		   	<td><%= f.check_box :admin %><br/></td>
+	    </tr>
+    	<tr>
+		    <td><%= f.label :password %></td>
+		    <td><%= f.password_field :password %><br/></td>
+		</tr>
+</table>
+<a class="btn btn-warning btn-mini icon-white icon-remove edit_button" href="/admin/users"><%= t(:cancel) %></a>
+<%= f.submit t(:create), :id => 'new_submit', :class => 'btn btn-success btn-mini icon-white icon-remove edit_button' %>
+<% end %>

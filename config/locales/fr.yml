@@ -1,0 +1,326 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+fr:
+  error: "Erreur"
+  sign_in: "Connexion"
+  sign_in_with: "Se connecter avec"
+  sign_up: "S'inscrire"
+  account_infos: "Informations du compte"
+  disconnect: "Se déconnecter"
+  email: "Email"
+  password: "Mot de passe"
+  forgotten_password: "Mot de passe oublié ?"
+  confirmation_instructions: "Vous n'avez pas reçu les instructions de confirmation ?"
+  unlock_instructions: "Vous n'avez pas reçu les instructions de déblocage ?"
+  sign_up_form: "Formulaire d'inscription"
+  my_account: "Mon compte"
+  admin: "Administration"
+  home: "Accueil"
+  country: "Pays"
+  user: "Utilisateur"
+  unit_test: "Tests unitaires"
+  execution_report: "Rapport d'execution"
+  coverage: "Couverture"
+  denotes_required_filed: "* Champ obligatoire"
+  unknown: "Non renseigné"
+  male: "Homme"
+  female: "Femme"
+  leave_blank_for_unchanged: "(laissez blanc si vous ne souhaitez pas le modifier)"
+  need_current_password_for_changes: "(nous avons besoin de votre mot de passe actuel pour confirmer les changements)"
+  update: "Mettre à jour"
+  cancel_account: "Supprimer mon compte"
+  account_deletion_warning: "Êtes-vous certain de vouloir supprimer votre compte ?"
+  account_setup: "Création de compte"
+  currently_waiting_confirmation_for: "En attente de la confirmation de l'email : %{email}"
+  cancel: "Annuler"
+
+  join_us: "Rejoignez-nous !"
+  first_step: "La première étape"
+  perso_details: "Détails personnels"
+  personal_details: "Vos détails personnels"
+  trust_us: "Faites-nous confiance, nous ne les partagerons pas !"
+  country_residence: "Votre pays de résidence"
+  where_you_from: "Dites-nous d'où vous venez !"
+  empty_country: "Non renseigné"
+
+  char: "caractère"
+  chars: "caractères"
+
+  previous: "Précédent"
+  next: "Suivant"
+
+  new: "Nouveau"
+  language: "Langue"
+  flag: "Drapeau"
+  total_user: "Nombre total d'utilisateurs"
+  actions: "Actions"
+  edit: "Éditer"
+  edition_of: "Édition de"
+  delete: "Supprimer"
+  country_deletion_warning: "Êtes-vous sûr de vouloir supprimer ce pays ?"
+
+  admins: "Administrateurs"
+  normal_users: "Utilisateurs normaux"
+  name: "Nom"
+  birthdate: "Date de naissance"
+  gender: "Sexe"
+  user_deletion_warning: "Êtes vous sûr de vouloir supprimer cet utilisateur ?"
+
+  users_by_language: "Répartition des utilisateurs par langue"
+  users_by_gender: "Répartition des utilisateurs par sexe"
+
+  create: "Créer"
+  new_country: "Nouveau pays"
+  new_user: "Nouvel utilisateur"
+  not_logged_error_title: "Droits insuffisants"
+  not_logged_error: "Vous n'avez pas les droits necessaires pour afficher cette page"
+
+  received_messages:  "Messages reçus"
+  sent_messages: "Messages envoyés"
+  from: "De : "
+
+  activerecord:
+      models:
+        user: "Utilisateur"
+        country: "Pays"
+      attributes:
+        user:
+          first_name: "Prénom"
+          last_name: "Nom de famille"
+          birthdate: "Date de naissance"
+          gender: "Sexe"
+          admin: "Administrateur"
+          country_id: "Pays"
+          password: "Mot de passe"
+          password_confirmation: "Vérification du mot de passe"
+          current_password: "Mot de passe actuel"
+          forgotten_password: "Mot de passe oublié ?"
+        country:
+          name: "Nom"
+          language: "Langue"
+          flag_path: "Drapeau"
+
+  date:
+    abbr_day_names:
+      - dim
+      - lun
+      - mar
+      - mer
+      - jeu
+      - ven
+      - sam
+    abbr_month_names:
+      - ~
+      - jan.
+      - fév.
+      - mar.
+      - avr.
+      - mai
+      - juin
+      - juil.
+      - août
+      - sept.
+      - oct.
+      - nov.
+      - déc.
+    day_names:
+      - dimanche
+      - lundi
+      - mardi
+      - mercredi
+      - jeudi
+      - vendredi
+      - samedi
+    formats:
+      default: "%d/%m/%Y"
+      short: "%e %b"
+      long: "%e %B %Y"
+    month_names:
+      - ~
+      - janvier
+      - février
+      - mars
+      - avril
+      - mai
+      - juin
+      - juillet
+      - août
+      - septembre
+      - octobre
+      - novembre
+      - décembre
+    order:
+      - :day
+      - :month
+      - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one:   "environ une heure"
+        other: "environ %{count} heures"
+      about_x_months:
+        one:   "environ un mois"
+        other: "environ %{count} mois"
+      about_x_years:
+        one:   "environ un an"
+        other: "environ %{count} ans"
+      almost_x_years:
+        one:   "presqu'un an"
+        other: "presque %{count} ans"
+      half_a_minute: "une demi-minute"
+      less_than_x_minutes:
+        zero:  "zéro minute"
+        one:   "moins d'une minute"
+        other: "moins de %{count} minutes"
+      less_than_x_seconds:
+        zero:  "zéro seconde"
+        one:   "moins d'une seconde"
+        other: "moins de %{count} secondes"
+      over_x_years:
+        one:   "plus d'un an"
+        other: "plus de %{count} ans"
+      x_days:
+        one:   "1 jour"
+        other: "%{count} jours"
+      x_minutes:
+        one:   "1 minute"
+        other: "%{count} minutes"
+      x_months:
+        one:   "1 mois"
+        other: "%{count} mois"
+      x_seconds:
+        one:   "1 seconde"
+        other: "%{count} secondes"
+    prompts:
+      day:    "Jour"
+      hour:   "Heure"
+      minute: "Minute"
+      month:  "Mois"
+      second: "Seconde"
+      year:   "Année"
+  errors:
+    format: "%{attribute} %{message}"
+    messages: &errors_messages
+      accepted: "doit être accepté(e)"
+      blank: "doit être rempli(e)"
+      present: "doit être vide"
+      confirmation: "ne concorde pas avec la confirmation"
+      empty: "doit être rempli(e)"
+      equal_to: "doit être égal à %{count}"
+      even: "doit être pair"
+      exclusion: "n'est pas disponible"
+      greater_than: "doit être supérieur à %{count}"
+      greater_than_or_equal_to: "doit être supérieur ou égal à %{count}"
+      inclusion: "n'est pas inclus(e) dans la liste"
+      invalid: "n'est pas valide"
+      less_than: "doit être inférieur à %{count}"
+      less_than_or_equal_to: "doit être inférieur ou égal à %{count}"
+      not_a_number: "n'est pas un nombre"
+      not_an_integer: "doit être un nombre entier"
+      odd: "doit être impair"
+      record_invalid: "La validation a échoué : %{errors}"
+      restrict_dependent_destroy:
+        one: "Suppression impossible: un autre enregistrement est lié"
+        many: "Suppression impossible: d'autres enregistrements sont liés"
+      taken: "n'est pas disponible"
+      too_long:
+        one: "est trop long (pas plus d'un caractère)"
+        other: "est trop long (pas plus de %{count} caractères)"
+      too_short:
+        one: "est trop court (au moins un caractère)"
+        other: "est trop court (au moins %{count} caractères)"
+      wrong_length:
+        one: "ne fait pas la bonne longueur (doit comporter un seul caractère)"
+        other: "ne fait pas la bonne longueur (doit comporter %{count} caractères)"
+      other_than: "doit être différent de %{count}"
+    template: &errors_template
+      body: "Veuillez vérifier les champs suivants : "
+      header:
+        one:   "Impossible d'enregistrer ce(tte) %{model} : 1 erreur"
+        other: "Impossible d'enregistrer ce(tte) %{model} : %{count} erreurs"
+  helpers:
+    select:
+      prompt: "Veuillez sélectionner"
+    submit:
+      create: "Créer un(e) %{model}"
+      submit: "Enregistrer ce(tte) %{model}"
+      update: "Modifier ce(tte) %{model}"
+  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "€"
+    format:
+      delimiter: " "
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: "milliard"
+          million: "million"
+          quadrillion: "million de milliards"
+          thousand: "millier"
+          trillion: "billion"
+          unit: ""
+      format:
+        delimiter: ""
+        precision: 2
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one:   "octet"
+            other: "octets"
+          gb: "Go"
+          kb: "ko"
+          mb: "Mo"
+          tb: "To"
+    percentage:
+      format:
+        delimiter: ""
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ""
+  support:
+    array:
+      last_word_connector: " et "
+      two_words_connector: " et "
+      words_connector: ", "
+  time:
+    am: 'am'
+    formats:
+      default: "%d %B %Y %Hh %Mmin %Ss"
+      long: "%A %d %B %Y %Hh%M"
+      short: "%d %b %Hh%M"
+    pm: 'pm'

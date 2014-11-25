@@ -1,0 +1,49 @@
+<div id="messages_module">
+  <div role="tabpanel">
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#received" aria-controls="received" role="tab" data-toggle="tab"><%= t(:received_messages) %></a></li>
+        <li role="presentation"><a href="#sent" aria-controls="sent" role="tab" data-toggle="tab"><%= t(:sent_messages) %></a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="received">
+          <div class="panel panel-default">
+              <ul class="list-group">
+                <% @received_messages.each do |message| %>
+                    <li class="list-group-item message">
+                        <div class="message_infos">
+                          <div class="message_date"><%= message.sent_at %></div>
+                          <div class="message_sender"><%= "#{t(:from)} #{message.sender.first_name} #{message.sender.last_name}" %></div>
+                        </div>
+                        <div class="message_content">
+                          <div class="message_object"><%= message.object %></div>
+                          <div class="message_body"><%= message.content %></div>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </li>
+                <% end %>
+              </ul>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="sent">
+          <div class="panel panel-default">
+            <ul class="list-group">
+              <% @sent_messages.each do |message| %>
+                  <li class="list-group-item message">
+                    <div class="message_infos">
+                      <div class="message_date"><%= message.sent_at %></div>
+                      <div class="message_sender"><%= "#{t(:from)} #{message.sender.first_name} #{message.sender.last_name}" %></div>
+                    </div>
+                    <div class="message_content">
+                      <div class="message_object"><%= message.object %></div>
+                      <div class="message_body"><%= message.content %></div>
+                    </div>
+                    <div style="clear: both;"></div>
+                  </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+  </div>
+  </div>
+</div>

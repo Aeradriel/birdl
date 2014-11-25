@@ -1,0 +1,74 @@
+<h1 id="admin_title">Utilisateurs</h1>
+<%= link_to t(:new), '/admin/users/new',
+            :class => 'btn btn-success btn-mini icon-white icon-remove admin_new_button' %>
+<br/>
+
+<h2><%= t(:admins) %></h2>
+<div id="admin_adminlist">
+  <table class="table table">
+    <tr class="active">
+      <th><%= t(:name) %></th>
+      <th><%= t(:email) %></th>
+      <th><%= t(:birthdate) %></th>
+      <th><%= t(:gender) %></th>
+      <th><%= t(:country) %></th>
+      <th><%= t(:actions) %></th>
+    </tr>
+    <% @admins.each do |user| %>
+        <% if user.admin? %>
+            <tr>
+              <td class="user_name"><%= "#{user.first_name} #{user.last_name}" %></td>
+              <td class="user_email"><%= "#{user.email}" %></td>
+              <td class="user_birthdate"><%= "#{user.birthdate}" %></td>
+              <td class="user_gender"><%= user.gender == 1 ? t(:male) : t(:female) %></td>
+              <td class="user_country"><%= user.country == nil ? t(:unknown) : user.country.name %></td>
+              <td class="user_actions">
+                <%= link_to t(:edit), "/admin/users/#{user.id}/edit",
+                            :class => 'btn btn-warning btn-mini icon-white icon-remove admin_edit_button' %>
+                <%= link_to t(:delete), "/admin/users/#{user.id}/delete", :method => :delete,
+                            :class => 'btn btn-danger btn-mini icon-white icon-remove admin_delete_button',
+                            :data => { :confirm => t(:user_deletion_warning) } %>
+              </td>
+            </tr>
+        <% end %>
+    <% end %>
+  </table>
+  <div class="text-center">
+    <%= paginate @admins, :theme => 'twitter-bootstrap-3', param_name: :admins_page %>
+  </div>
+</div>
+
+<h2><%= t(:normal_users) %></h2>
+<div id="admin_userlist">
+  <table class="table table">
+    <tr class="active">
+      <th><%= t(:name) %></th>
+      <th><%= t(:email) %></th>
+      <th><%= t(:birthdate) %></th>
+      <th><%= t(:gender) %></th>
+      <th><%= t(:country) %></th>
+      <th><%= t(:actions) %></th>
+    </tr>
+    <% @users.all.each do |user| %>
+        <% if !user.admin? %>
+            <tr class="user_entry">
+              <td class="user_name"><%= "#{user.first_name} #{user.last_name}" %></td>
+              <td class="user_email"><%= "#{user.email}" %></td>
+              <td class="user_birthdate"><%= "#{user.birthdate}" %></td>
+              <td class="user_gender"><%= user.gender == 1 ? t(:male) : t(:female) %></td>
+              <td class="user_country"><%= user.country == nil ? t(:unknown) : user.country.name %></td>
+              <td class="user_actions">
+                <%= link_to t(:edit), "/admin/users/#{user.id}/edit",
+                            :class => 'btn btn-warning btn-mini icon-white icon-remove admin_edit_button' %>
+                <%= link_to t(:delete), "/admin/users/#{user.id}/delete", :method => :delete,
+                            :class => 'btn btn-danger btn-mini icon-white icon-remove admin_delete_button',
+                            :data => { :confirm => t(:user_deletion_warning) } %>
+              </td>
+            </tr>
+        <% end %>
+    <% end %>
+  </table>
+  <div class="text-center">
+    <%= paginate @users, theme: 'twitter-bootstrap-3', param_name: :users_page %>
+  </div>
+</div>

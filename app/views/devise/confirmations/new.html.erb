@@ -1,0 +1,19 @@
+<div align="center"><h2>Resend confirmation instructions</h2></div>
+
+<div class="table_paneladmin" align="center">
+    <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+        <%= devise_error_messages! %>
+        <table>
+            <tr>
+                <td><%= f.label :email %></td><br />
+                <td><%= f.email_field :email, autofocus: true %></td>
+            </tr>
+        </table>
+
+    <div style="margin-left: -50px"><%= f.submit "Resend confirmation instructions",
+                                                 :class => 'btn btn-success btn-mini icon-white icon-remove edit_button'%>
+      </div>
+<% end %>
+</div>
+
+<br><div align="center"><%= render "devise/shared/links" %></div>

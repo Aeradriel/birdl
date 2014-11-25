@@ -1,0 +1,38 @@
+<h1 id="admin_title">Pays</h1>
+<%= link_to t(:new), '/admin/countries/new',
+            :class => 'btn btn-success btn-mini icon-white icon-remove admin_new_button' %>
+<br/>
+
+<div id="admin_country_list">
+  <table class="table table">
+    <tr class="active">
+      <th><%= t(:country) %></th>
+      <th><%= t(:language) %></th>
+      <th><%= t(:flag) %></th>
+      <th><%= t(:total_user) %></th>
+      <th><%= t(:actions) %></th>
+    </tr>
+    <% @countries.each do |country| %>
+        <% if country.flag_path %>
+            <% country.flag_path.slice!('public/') %>
+        <% end %>
+        <tr>
+          <td class="country_name"><span><%= country.name %></span></td>
+          <td class="country_language"><%= country.language %></td>
+          <td class="country_flag_path"><%= image_tag "/#{country.flag_path}" %> <%= country.flag_path %></td>
+          <td class="country_user_count"><%= country.users.count %></td>
+          <td class="country_action">
+            <%= link_to t(:edit), "/admin/countries/#{country.id}/edit",
+                        :class => 'btn btn-warning btn-mini icon-white icon-remove admin_edit_button' %>
+            <%= link_to t(:delete), "/admin/countries/#{country.id}/delete", :method => :delete,
+                        :class => 'btn btn-danger btn-mini icon-white icon-remove admin_delete_button',
+                        :data => { :confirm => t(:country_deletion_warning) } %>
+          </td>
+        </tr>
+    <% end %>
+  </table>
+
+  <div class="text-center">
+    <%= paginate @countries, :theme => 'twitter-bootstrap-3' %>
+  </div>
+</div>

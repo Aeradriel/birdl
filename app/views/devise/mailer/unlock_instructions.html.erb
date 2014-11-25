@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela+Round">
+
+<body id="mail_body">
+
+    <h2 style="background-color: #2ab4f8;
+        -webkit-border-radius: 20px 20px 0 0;
+        -moz-border-radius: 20px 20px 0 0;
+        border-radius: 20px 20px 0 0;
+        color: #fff;
+        font-size: 28px;
+        padding: 20px 26px;
+        margin: 0;">Compte bloqué</h2>
+    <p style = "background-color: #fff;
+            -webkit-border-radius: 0 0 20px 20px;
+            -moz-border-radius: 0 0 20px 20px;
+            border-radius: 0 0 20px 20px;
+            border-style: solid;
+            border-color: #2ab4f8;
+            padding: 20px 26px;
+            color: #777;
+            margin-bottom: 14px;
+            font-size: 18px;">Hello <%= @resource.email %>!<br><br>
+
+    Your account has been locked due to an excessive number of unsuccessful sign in attempts.<br><br>
+
+    Click the link below to unlock your account:<br><br>
+
+    <%= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token) %></p>
+
+</body>

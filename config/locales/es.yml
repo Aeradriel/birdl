@@ -1,0 +1,357 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+es:
+  error: "Error"
+  sign_in: "Conexión"
+  sign_in_with: "Conecte con"
+  sign_up: "Inscribirse"
+  account_infos: "Información de la cuenta"
+  disconnect: "Desconectarse"
+  email: "Correo electrónico"
+  password: "Contraseña"
+  orgotten_password: "¿Olvidaste tu contraseña?"
+
+
+  confirmation_instructions: "Vous n'avez pas reçu les instructions de confirmation ?"
+  unlock_instructions: "Vous n'avez pas reçu les instructions de déblocage ?"
+
+
+  sign_up_form: "Formulario de inscripción"
+  my_account: "Mi cuenta"
+  admin: "Administración"
+  home: "Recepción"
+  country: "País"
+  user: "Usuario"
+  unit_test: "Pruebas unitarias"
+  execution_report: "Informe de ejecución"
+  coverage: "Cubierta"
+  denotes_required_filed: "* Campo obligatorio"
+  unknown: "Desconocido"
+  male: "Hombre"
+  female: "mujer"
+
+
+  leave_blank_for_unchanged: "(laissez blanc si vous ne souhaitez pas le modifier)"
+  need_current_password_for_changes: "(nous avons besoin de votre mot de passe actuel pour confirmer les changements)"
+
+
+  update: "Actualización"
+  cancel_account: "Suprimir cuenta"
+
+
+  account_deletion_warning: "Êtes-vous certain de vouloir supprimer votre compte ?"
+
+
+  account_setup: "Crear una cuenta"
+  currently_waiting_confirmation_for: "En espera de la confirmación por correo electrónico : %{email}"
+  cancel: "Anular"
+
+  join_us: "Únete a nosotros !"
+  first_step: "La primera etapa"
+  perso_details: "Datos personales"
+  personal_details: "Sus datos personales"
+  trust_us: "Faites-nous confiance, nous ne les partagerons pas !"
+  country_residence: "Su país de residencia"
+  where_you_from: "Dónde vive?"
+  empty_country: "Desconocido"
+
+  char: "carácter"
+  chars: "Caracteres"
+
+  previous: "Precedente"
+  next: "Siguiente"
+
+  new: "Nuevo"
+  language: "Lengua"
+  flag: "Bandera"
+  total_user: "Total de usuarios"
+  actions: "Acción"
+  edit: "Editar"
+  edition_of: "Edición"
+  delete: "Suprimir"
+
+
+  country_deletion_warning: "Êtes-vous sûr de vouloir supprimer ce pays ?"
+
+
+  admins: "Administradores"
+  normal_users: "Usuario"
+  name: "Nombre"
+  birthdate: "Cumpleaños"
+  gender: "Sexo"
+
+
+  user_deletion_warning: "Êtes vous sûr de vouloir supprimer cet utilisateur ?"
+
+
+  users_by_language: "Distribución de usuarios por lengua"
+  users_by_gender: "Distribución de usuarios por sexo"
+
+  create: "Crear"
+  new_country: "Nuevo país"
+  new_user: "Nuevo usuario"
+  not_logged_error_title: "Derechos insuficientes"
+
+
+  not_logged_error: "Vous n'avez pas les droits necessaires pour afficher cette page"
+
+
+  activerecord:
+      models:
+        user: "Usuario"
+        country: "País"
+      attributes:
+        user:
+          first_name: "Nombre"
+          last_name: "Apellido"
+          birthdate: "Cumpleaños"
+          gender: "Sexo"
+          admin: "Administrador"
+          country_id: "País"
+          password: "Contraseña"
+          password_confirmation: "Comprobación de contraseña"
+          current_password: "Contraseña actual"
+          forgotten_password: "¿Olvidaste tu contraseña?"
+        country:
+          name: "Nombre"
+          language: "Lengua"
+          flag_path: "Bandera"
+
+  date:
+    abbr_day_names:
+      - dom
+      - lun
+      - mar
+      - Mié
+      - jue
+      - vie
+      - Sáb
+    abbr_month_names:
+      - ~
+      - ene.
+      - feb.
+      - mar.
+      - abr.
+      - mayo
+      - junio
+      - julio.
+      - ago
+      - sept.
+      - oct.
+      - nov.
+      - dic.
+    day_names:
+      - domingo
+      - lunes
+      - martes
+      - miércoles
+      - jueves
+      - viernes
+      - Sábado
+    formats:
+      default: "%d/%m/%Y"
+      short: "%e %b"
+      long: "%e %B %Y"
+    month_names:
+      - ~
+      - enero
+      - febrero
+      - marzo
+      - abril
+      - mayo
+      - junio
+      - julio
+      - agosto
+      - septiembre
+      - octubre
+      - noviembre
+      - diciembre
+    order:
+      - :day
+      - :month
+      - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one:   "durante una hora"
+        other: "durante %{count} horas"
+      about_x_months:
+        one:   "durante un mes"
+        other: "durante %{count} meses"
+      about_x_years:
+        one:   "durante año"
+        other: "durante %{count} años"
+      almost_x_years:
+        one:   "casi un año"
+        other: « casi %{count} años"
+      half_a_minute: "demi minuto"
+      less_than_x_minutes:
+        zero:  « cero minuto"
+        one:   "menos de un minuto"
+        other: « menos de %{count} minutos"
+      less_than_x_seconds:
+        zero:  "cero segundo"
+        one:   "menos de un segundo"
+        other: "menos de %{count} segundos"
+      over_x_years:
+        one:   "más de un año"
+        other: "más de %{count} ans"
+      x_days:
+        one:   "un día"
+        other: "%{count} días"
+      x_minutes:
+        one:   "un minuto"
+        other: "%{count} minutos"
+      x_months:
+        one:   "un mes"
+        other: "%{count} meses"
+      x_seconds:
+        one:   "un segundo"
+        other: "%{count} segundos"
+    prompts:
+      day:    "Día"
+      hour:   "Hora"
+      minute: "Minuto"
+      month:  "Mes"
+      second: "Segundo"
+      year:   "Año"
+  errors:
+    format: "%{attribute} %{message}"
+    messages: &errors_messages
+      accepted: "doit être accepté(e)"
+      blank: "doit être rempli(e)"
+      present: "doit être vide"
+      confirmation: "no coincide con la confirmación"
+      empty: "doit être rempli(e)"
+      equal_to: "doit être égal à %{count}"
+      even: "doit être pair"
+      exclusion: "no disponible"
+      greater_than: "doit être supérieur à %{count}"
+      greater_than_or_equal_to: "doit être supérieur ou égal à %{count}"
+
+
+      inclusion: "no es incluido en la lista"
+      invalid: "no es válido"
+
+
+      less_than: "doit être inférieur à %{count}"
+      less_than_or_equal_to: "doit être inférieur ou égal à %{count}"
+
+
+      not_a_number: "no es un número"
+
+
+      not_an_integer: "doit être un nombre entier"
+      odd: "doit être impair"
+
+
+      record_invalid: "Error de validación : %{errors}"
+      restrict_dependent_destroy:
+        one: "No se puede eliminar : Otro récord está vincula"
+        many: "No se puede eliminar : otros registros están vinculados"
+      taken: "no disponible"
+      too_long:
+        one: "es demasiado largo (no más de un carácter)"
+        other: "es demasiado largo (no más de %{count} caracteres)"
+      too_short:
+        one: "es demasiado corto ( al menos un carácter )"
+        other: "es demasiado corto ( al menos %{count} caracteres)"
+      wrong_length:
+        one: "No es la longitud correcta (debe haber un solo carácter )"
+        other: "No es la longitud correcta (debe haber %{count} caracteres)"
+
+
+      other_than: "doit être différent de %{count}"
+
+
+    template: &errors_template
+      body: "Por favor, revise los siguientes campos : "
+      header:
+        one:   "No se puede guardar este %{model} : 1 error"
+        other: "No se puede guardar este %{model} : %{count} errores"
+  helpers:
+    select:
+      prompt: "Por favor seleccione"
+    submit:
+      create: "Crear %{model}"
+      submit: "Guardar %{model}"
+      update: "modificar %{model}"
+  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "€"
+    format:
+      delimiter: " "
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: "millardo"
+          million: "millón"
+          quadrillion: "millón de millardo"
+          thousand: "mil"
+          trillion: "trillón"
+          unit: ""
+      format:
+        delimiter: ""
+        precision: 2
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one:   "octeto"
+            other: "octetos"
+          gb: "Go"
+          kb: "ko"
+          mb: "Mo"
+          tb: "To"
+    percentage:
+      format:
+        delimiter: ""
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ""
+  support:
+    array:
+      last_word_connector: " y "
+      two_words_connector: " y "
+      words_connector: ", "
+  time:
+    am: 'am'
+    formats:
+      default: "%d %B %Y %Hh %Mmin %Ss"
+      long: "%A %d %B %Y %Hh%M"
+      short: "%d %b %Hh%M"
+    pm: 'pm'

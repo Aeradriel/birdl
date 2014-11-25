@@ -1,0 +1,19 @@
+#messages_module {
+    margin-right: 25px;
+}
+
+.message {
+    height:100px
+}
+
+.message_infos {
+    float: left;
+    width: 25%;
+    overflow: auto;
+}
+
+.message_content {
+    float: right;
+    width: 75%;
+    overflow: auto;
+}

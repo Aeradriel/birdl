@@ -1,0 +1,55 @@
+#!/usr/bin/env ruby
+# -*- coding: utf-8 -*-
+#
+# An example hook script to verify what is about to be committed.
+# Called by "git commit" with no arguments.  The hook should
+# exit with non-zero status after issuing an appropriate message if
+# it wants to stop the commit.
+#
+# To enable this hook, rename this file to "pre-commit".
+
+def check_dat(val, nice, noway)
+  unless val
+    system("echo '\n\033[31m----- Tests Failed -----\033[0m\n'")
+    system("echo \"#{noway.sample}\" | lolcat")
+    puts ''
+    exit(1)
+  end
+  system("echo '\n\033[32m----- Tests OK -----\033[0m\n'")
+  system("echo \"Et Jésus déclara: #{nice.sample}\" | lolcat")
+  puts ''
+  exit(0)
+end
+
+nice = ['Alleeeeeeeeeeeeeez', 'T\'impose négro', 'Bien joué ma gueule',
+        'GG MEC T\'AS APPRIS A CODER PROPREMENT ! T\'ES CONTENT ? OH OUI !',
+        'Toute ma vie j\'ai su que ce jour arriverait', 'Alors, heureux ?',
+        'Tu es l\'heureux gagnant de ... rien, félicitations !', 'Owi',
+        'Popopopo bite bite',
+        'Enfin un commit qui passe sans problème !',
+        '8=D (Smiley qui sourit hein)', 'Bird\'L, c\'est bien',
+        'Maintenant que tu sais à peu près coder, ' \
+            'tu peux essayer de faire un truc cool ?',
+        'Jésus serait fier de toi',
+        'La bitch a arrêté de sucer et a commencer à coder !']
+
+noway = ['Nope !', 'Il s\'agirait de savoir coder',
+         'Ta mère a été prévenue, elle arrive tout de suite',
+         'POLICE ! POLIIIIIIICE !',
+         'Du bist nur ein kleiner Scheißer', 'Mes boules sur ton nez',
+         'YOLOLOLOLOLOLO, tu me prends pour un con ?',
+         'Tu feras gaffe, je crois que tu ne sais pas coder',
+         'Les pieds sont fait pour marcher, pas pour coder',
+         'SÉRIEUX ! SÉRIEUX QUOI ! MAIS PUTAIN STOP FEED !', 'Tu fais chier',
+         'JAKDhbfskdjfnsdkfgobwuisfdbvzIHBDFjshdbfskdjf', 'T\'es mort',
+         'La prochaine fois que tu fail, je nique Serkan',
+         'La prochaine fois que tu fail, je nique Joffrey',
+         'La prochaine fois que tu fail, je nique Christophe',
+         'La prochaine fois que tu fail, je nique Alexis',
+         'La prochaine fois que tu fail, je nique POM',
+         'TU VOIS PAS QUE CA MARCHE PAS ?']
+
+rspec = system('rspec --tag ~js')
+rubo = system('rubocop')
+
+check_dat((rspec && rubo), nice, noway)

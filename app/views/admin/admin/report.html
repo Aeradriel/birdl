@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <title>RSpec results</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Expires" content="-1" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <style type="text/css">
+  body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    font-size: 80%;
+  }
+  </style>
+  <script type="text/javascript">
+    // <![CDATA[
+
+function addClass(element_id, classname) {
+  document.getElementById(element_id).className += (" " + classname);
+}
+
+function removeClass(element_id, classname) {
+  var elem = document.getElementById(element_id);
+  var classlist = elem.className.replace(classname,'');
+  elem.className = classlist;
+}
+
+function moveProgressBar(percentDone) {
+  document.getElementById("rspec-header").style.width = percentDone +"%";
+}
+
+function makeRed(element_id) {
+  removeClass(element_id, 'passed');
+  removeClass(element_id, 'not_implemented');
+  addClass(element_id,'failed');
+}
+
+function makeYellow(element_id) {
+  var elem = document.getElementById(element_id);
+  if (elem.className.indexOf("failed") == -1) {  // class doesn't includes failed
+    if (elem.className.indexOf("not_implemented") == -1) { // class doesn't include not_implemented
+      removeClass(element_id, 'passed');
+      addClass(element_id,'not_implemented');
+    }
+  }
+}
+
+function apply_filters() {
+  var passed_filter = document.getElementById('passed_checkbox').checked;
+  var failed_filter = document.getElementById('failed_checkbox').checked;
+  var pending_filter = document.getElementById('pending_checkbox').checked;
+
+  assign_display_style("example passed", passed_filter);
+  assign_display_style("example failed", failed_filter);
+  assign_display_style("example not_implemented", pending_filter);
+
+  assign_display_style_for_group("example_group passed", passed_filter);
+  assign_display_style_for_group("example_group not_implemented", pending_filter, pending_filter || passed_filter);
+  assign_display_style_for_group("example_group failed", failed_filter, failed_filter || pending_filter || passed_filter);
+}
+
+function get_display_style(display_flag) {
+  var style_mode = 'none';
+  if (display_flag == true) {
+    style_mode = 'block';
+  }
+  return style_mode;
+}
+
+function assign_display_style(classname, display_flag) {
+  var style_mode = get_display_style(display_flag);
+  var elems = document.getElementsByClassName(classname)
+  for (var i=0; i<elems.length;i++) {
+    elems[i].style.display = style_mode;
+  }
+}
+
+function assign_display_style_for_group(classname, display_flag, subgroup_flag) {
+  var display_style_mode = get_display_style(display_flag);
+  var subgroup_style_mode = get_display_style(subgroup_flag);
+  var elems = document.getElementsByClassName(classname)
+  for (var i=0; i<elems.length;i++) {
+    var style_mode = display_style_mode;
+    if ((display_flag != subgroup_flag) && (elems[i].getElementsByTagName('dt')[0].innerHTML.indexOf(", ") != -1)) {
+      elems[i].style.display = subgroup_style_mode;
+    } else {
+      elems[i].style.display = display_style_mode;
+    }
+  }
+}
+
+    // ]]>
+  </script>
+  <style type="text/css">
+#rspec-header {
+  background: #65C400; color: #fff; height: 4em;
+}
+
+.rspec-report h1 {
+  margin: 0px 10px 0px 10px;
+  padding: 10px;
+  font-family: "Lucida Grande", Helvetica, sans-serif;
+  font-size: 1.8em;
+  position: absolute;
+}
+
+#label {
+  float:left;
+}
+
+#display-filters {
+  float:left;
+  padding: 28px 0 0 40%;
+  font-family: "Lucida Grande", Helvetica, sans-serif;
+}
+
+#summary {
+  float:right;
+  padding: 5px 10px;
+  font-family: "Lucida Grande", Helvetica, sans-serif;
+  text-align: right;
+}
+
+#summary p {
+  margin: 0 0 0 2px;
+}
+
+#summary #totals {
+  font-size: 1.2em;
+}
+
+.example_group {
+  margin: 0 10px 5px;
+  background: #fff;
+}
+
+dl {
+  margin: 0; padding: 0 0 5px;
+  font: normal 11px "Lucida Grande", Helvetica, sans-serif;
+}
+
+dt {
+  padding: 3px;
+  background: #65C400;
+  color: #fff;
+  font-weight: bold;
+}
+
+dd {
+  margin: 5px 0 5px 5px;
+  padding: 3px 3px 3px 18px;
+}
+
+dd .duration {
+  padding-left: 5px;
+  text-align: right;
+  right: 0px;
+  float:right;
+}
+
+dd.example.passed {
+  border-left: 5px solid #65C400;
+  border-bottom: 1px solid #65C400;
+  background: #DBFFB4; color: #3D7700;
+}
+
+dd.example.not_implemented {
+  border-left: 5px solid #FAF834;
+  border-bottom: 1px solid #FAF834;
+  background: #FCFB98; color: #131313;
+}
+
+dd.example.pending_fixed {
+  border-left: 5px solid #0000C2;
+  border-bottom: 1px solid #0000C2;
+  color: #0000C2; background: #D3FBFF;
+}
+
+dd.example.failed {
+  border-left: 5px solid #C20000;
+  border-bottom: 1px solid #C20000;
+  color: #C20000; background: #FFFBD3;
+}
+
+
+dt.not_implemented {
+  color: #000000; background: #FAF834;
+}
+
+dt.pending_fixed {
+  color: #FFFFFF; background: #C40D0D;
+}
+
+dt.failed {
+  color: #FFFFFF; background: #C40D0D;
+}
+
+
+#rspec-header.not_implemented {
+  color: #000000; background: #FAF834;
+}
+
+#rspec-header.pending_fixed {
+  color: #FFFFFF; background: #C40D0D;
+}
+
+#rspec-header.failed {
+  color: #FFFFFF; background: #C40D0D;
+}
+
+
+.backtrace {
+  color: #000;
+  font-size: 12px;
+}
+
+a {
+  color: #BE5C00;
+}
+
+/* Ruby code, style similar to vibrant ink */
+.ruby {
+  font-size: 12px;
+  font-family: monospace;
+  color: white;
+  background-color: black;
+  padding: 0.1em 0 0.2em 0;
+}
+
+.ruby .keyword { color: #FF6600; }
+.ruby .constant { color: #339999; }
+.ruby .attribute { color: white; }
+.ruby .global { color: white; }
+.ruby .module { color: white; }
+.ruby .class { color: white; }
+.ruby .string { color: #66FF00; }
+.ruby .ident { color: white; }
+.ruby .method { color: #FFCC00; }
+.ruby .number { color: white; }
+.ruby .char { color: white; }
+.ruby .comment { color: #9933CC; }
+.ruby .symbol { color: white; }
+.ruby .regex { color: #44B4CC; }
+.ruby .punct { color: white; }
+.ruby .escape { color: white; }
+.ruby .interp { color: white; }
+.ruby .expr { color: white; }
+
+.ruby .offending { background-color: gray; }
+.ruby .linenum {
+  width: 75px;
+  padding: 0.1em 1em 0.2em 0;
+  color: #000000;
+  background-color: #FFFBD3;
+}
+
+  </style>
+</head>
+<body>
+<div class="rspec-report">
+
+<div id="rspec-header">
+  <div id="label">
+    <h1>RSpec Code Examples</h1>
+  </div>
+
+  <div id="display-filters">
+    <input id="passed_checkbox"  name="passed_checkbox"  type="checkbox" checked="checked" onchange="apply_filters()" value="1" /> <label for="passed_checkbox">Passed</label>
+    <input id="failed_checkbox"  name="failed_checkbox"  type="checkbox" checked="checked" onchange="apply_filters()" value="2" /> <label for="failed_checkbox">Failed</label>
+    <input id="pending_checkbox" name="pending_checkbox" type="checkbox" checked="checked" onchange="apply_filters()" value="3" /> <label for="pending_checkbox">Pending</label>
+  </div>
+
+  <div id="summary">
+    <p id="totals">&#160;</p>
+    <p id="duration">&#160;</p>
+  </div>
+</div>
+
+
+<div class="results">
+<div id="div_group_1" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_1" class="passed">The account creation page</dt>
+    <script type="text/javascript">moveProgressBar('0.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">should pass with a valid user</span><span class='duration'>0.46460s</span></dd>
+    <script type="text/javascript">moveProgressBar('1.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">shouldn&#39;t accept a user without email</span><span class='duration'>0.09150s</span></dd>
+    <script type="text/javascript">moveProgressBar('1.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">shouldn&#39;t accept a user without first name</span><span class='duration'>0.09734s</span></dd>
+    <script type="text/javascript">moveProgressBar('2.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">shouldn&#39;t accept a user without last name</span><span class='duration'>0.08528s</span></dd>
+    <script type="text/javascript">moveProgressBar('2.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">shouldn&#39;t accept a user without birthdate</span><span class='duration'>0.09104s</span></dd>
+    <script type="text/javascript">moveProgressBar('3.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">shouldn&#39;t accept a user with wrong password confirmation</span><span class='duration'>0.09211s</span></dd>
+  </dl>
+</div>
+<div id="div_group_2" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_2" class="passed">The account deletion button</dt>
+    <script type="text/javascript">moveProgressBar('3.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">should display an alert to confirm the deletion</span><span class='duration'>8.44778s</span></dd>
+    <script type="text/javascript">moveProgressBar('4.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">should not delete account when cancelling deletion</span><span class='duration'>0.82651s</span></dd>
+    <script type="text/javascript">moveProgressBar('4.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">should delete account when confirming deletion</span><span class='duration'>0.98035s</span></dd>
+    <script type="text/javascript">makeYellow('rspec-header');</script>
+    <script type="text/javascript">makeYellow('div_group_2');</script>
+    <script type="text/javascript">makeYellow('example_group_2');</script>
+    <script type="text/javascript">moveProgressBar('5.5');</script>
+    <dd class="example not_implemented"><span class="not_implemented_spec_name">should delete/change events of the user after deletion (PENDING: Waiting for event implementation)</span></dd>
+    <script type="text/javascript">makeYellow('rspec-header');</script>
+    <script type="text/javascript">makeYellow('div_group_2');</script>
+    <script type="text/javascript">makeYellow('example_group_2');</script>
+    <script type="text/javascript">moveProgressBar('6.0');</script>
+    <dd class="example not_implemented"><span class="not_implemented_spec_name">should remove user from event he takes part after deletion (PENDING: Waiting for event implementation)</span></dd>
+    <script type="text/javascript">makeYellow('rspec-header');</script>
+    <script type="text/javascript">makeYellow('div_group_2');</script>
+    <script type="text/javascript">makeYellow('example_group_2');</script>
+    <script type="text/javascript">moveProgressBar('6.6');</script>
+    <dd class="example not_implemented"><span class="not_implemented_spec_name">should delete relations with the user after deletion (PENDING: Waiting for relations implementation)</span></dd>
+    <script type="text/javascript">makeYellow('rspec-header');</script>
+    <script type="text/javascript">makeYellow('div_group_2');</script>
+    <script type="text/javascript">makeYellow('example_group_2');</script>
+    <script type="text/javascript">moveProgressBar('7.1');</script>
+    <dd class="example not_implemented"><span class="not_implemented_spec_name">should delete calendars of the user after deletion (PENDING: Waiting for calendars implementation)</span></dd>
+    <script type="text/javascript">makeYellow('rspec-header');</script>
+    <script type="text/javascript">makeYellow('div_group_2');</script>
+    <script type="text/javascript">makeYellow('example_group_2');</script>
+    <script type="text/javascript">moveProgressBar('7.7');</script>
+    <dd class="example not_implemented"><span class="not_implemented_spec_name">should delete ratings of the user after deletion (PENDING: Waiting for ratings implementation)</span></dd>
+    <script type="text/javascript">makeYellow('rspec-header');</script>
+    <script type="text/javascript">makeYellow('div_group_2');</script>
+    <script type="text/javascript">makeYellow('example_group_2');</script>
+    <script type="text/javascript">moveProgressBar('8.2');</script>
+    <dd class="example not_implemented"><span class="not_implemented_spec_name">should delete badges of the user after deletion (PENDING: Waiting for badges implementation)</span></dd>
+    <script type="text/javascript">makeYellow('rspec-header');</script>
+    <script type="text/javascript">makeYellow('div_group_2');</script>
+    <script type="text/javascript">makeYellow('example_group_2');</script>
+    <script type="text/javascript">moveProgressBar('8.8');</script>
+    <dd class="example not_implemented"><span class="not_implemented_spec_name">should delete badges progression of the user after deletion (PENDING: Waiting for calendars implementation)</span></dd>
+  </dl>
+</div>
+<div id="div_group_3" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_3" class="passed">The account edition page</dt>
+    <script type="text/javascript">moveProgressBar('9.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">should raise an error when password is not provided</span><span class='duration'>0.09126s</span></dd>
+    <script type="text/javascript">moveProgressBar('9.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">should indicate the wrong field</span><span class='duration'>0.09600s</span></dd>
+    <script type="text/javascript">moveProgressBar('10.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">should change unconfirmed address when filling the email form</span><span class='duration'>0.10070s</span></dd>
+    <script type="text/javascript">moveProgressBar('11.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">shouldn&#39;t change email address before it&#39;s confirmed when filling the email form</span><span class='duration'>0.09874s</span></dd>
+    <script type="text/javascript">moveProgressBar('11.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">should change email address after confirmed the new address, filled in the form</span><span class='duration'>0.11761s</span></dd>
+    <script type="text/javascript">moveProgressBar('12.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">should change first name when editing in form</span><span class='duration'>0.10725s</span></dd>
+    <script type="text/javascript">moveProgressBar('12.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">should change last name when editing in form</span><span class='duration'>0.09175s</span></dd>
+    <script type="text/javascript">moveProgressBar('13.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">should change gender when editing in form</span><span class='duration'>0.08878s</span></dd>
+    <script type="text/javascript">moveProgressBar('13.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">should change country when editing in form</span><span class='duration'>0.15996s</span></dd>
+    <script type="text/javascript">moveProgressBar('14.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">should change password when editing correctly it and its confirmation in form</span><span class='duration'>0.10392s</span></dd>
+    <script type="text/javascript">moveProgressBar('14.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">shouldn&#39;t change password when failing confirmation in form</span><span class='duration'>0.09851s</span></dd>
+  </dl>
+</div>
+<div id="div_group_4" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_4" class="passed">The admin country edition page</dt>
+    <script type="text/javascript">moveProgressBar('15.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">should change name when filling the name</span><span class='duration'>0.12279s</span></dd>
+    <script type="text/javascript">moveProgressBar('16.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">should change language when filling the name</span><span class='duration'>0.09839s</span></dd>
+    <script type="text/javascript">makeYellow('rspec-header');</script>
+    <script type="text/javascript">makeYellow('div_group_4');</script>
+    <script type="text/javascript">makeYellow('example_group_4');</script>
+    <script type="text/javascript">moveProgressBar('16.5');</script>
+    <dd class="example not_implemented"><span class="not_implemented_spec_name">should change flag path when upload a correct image (PENDING: Waiting for test implementation)</span></dd>
+  </dl>
+</div>
+<div id="div_group_5" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_5" class="passed">The admin account edition page</dt>
+    <script type="text/javascript">moveProgressBar('17.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">should change address when filling the email form</span><span class='duration'>0.12656s</span></dd>
+    <script type="text/javascript">moveProgressBar('17.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">should change first name when editing in form</span><span class='duration'>0.11423s</span></dd>
+    <script type="text/javascript">moveProgressBar('18.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">should change last name when editing in form</span><span class='duration'>0.11238s</span></dd>
+    <script type="text/javascript">moveProgressBar('18.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">should change gender when editing in form</span><span class='duration'>0.11728s</span></dd>
+    <script type="text/javascript">moveProgressBar('19.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">should change country when editing in form</span><span class='duration'>0.15948s</span></dd>
+    <script type="text/javascript">moveProgressBar('19.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">should change password when editing correctly it and its confirmation in form</span><span class='duration'>0.19937s</span></dd>
+  </dl>
+</div>
+<div id="div_group_6" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_6" class="passed">The connexion page</dt>
+    <script type="text/javascript">moveProgressBar('20.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">should raise an error for bad ids</span><span class='duration'>0.21231s</span></dd>
+    <script type="text/javascript">moveProgressBar('20.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">should raise an error for bad password</span><span class='duration'>0.09037s</span></dd>
+    <script type="text/javascript">moveProgressBar('21.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">should not allow login with unconfirmed address</span><span class='duration'>0.11873s</span></dd>
+    <script type="text/javascript">moveProgressBar('22.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">should allow login with good ids</span><span class='duration'>0.10691s</span></dd>
+  </dl>
+</div>
+<div id="div_group_7" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_7" class="passed">EventsController</dt>
+  </dl>
+</div>
+<div id="div_group_8" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_8" class="passed">GET index</dt>
+    <script type="text/javascript">moveProgressBar('22.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">assigns all events as @events</span><span class='duration'>0.10723s</span></dd>
+  </dl>
+</div>
+<div id="div_group_9" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_9" class="passed">GET show</dt>
+    <script type="text/javascript">moveProgressBar('23.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">assigns the requested event as @event</span><span class='duration'>0.08216s</span></dd>
+  </dl>
+</div>
+<div id="div_group_10" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_10" class="passed">GET new</dt>
+    <script type="text/javascript">moveProgressBar('23.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">assigns a new event as @event</span><span class='duration'>0.05173s</span></dd>
+  </dl>
+</div>
+<div id="div_group_11" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_11" class="passed">GET edit</dt>
+    <script type="text/javascript">moveProgressBar('24.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">assigns the requested event as @event</span><span class='duration'>0.07350s</span></dd>
+  </dl>
+</div>
+<div id="div_group_12" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_12" class="passed">POST create</dt>
+  </dl>
+</div>
+<div id="div_group_13" class="example_group passed">
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_13" class="passed">with valid params</dt>
+    <script type="text/javascript">moveProgressBar('24.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">creates a new Event</span><span class='duration'>0.11437s</span></dd>
+    <script type="text/javascript">moveProgressBar('25.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">assigns a newly created event as @event</span><span class='duration'>0.13711s</span></dd>
+    <script type="text/javascript">moveProgressBar('25.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">redirects to the created event</span><span class='duration'>0.05466s</span></dd>
+  </dl>
+</div>
+<div id="div_group_14" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_14" class="passed">PUT update</dt>
+  </dl>
+</div>
+<div id="div_group_15" class="example_group passed">
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_15" class="passed">with valid params</dt>
+    <script type="text/javascript">makeYellow('rspec-header');</script>
+    <script type="text/javascript">makeYellow('div_group_15');</script>
+    <script type="text/javascript">makeYellow('example_group_15');</script>
+    <script type="text/javascript">moveProgressBar('26.5');</script>
+    <dd class="example not_implemented"><span class="not_implemented_spec_name">updates the requested event (PENDING: Add a hash of attributes valid for your model)</span></dd>
+    <script type="text/javascript">moveProgressBar('27.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">assigns the requested event as @event</span><span class='duration'>0.06667s</span></dd>
+    <script type="text/javascript">moveProgressBar('27.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">redirects to the event</span><span class='duration'>0.08001s</span></dd>
+  </dl>
+</div>
+<div id="div_group_16" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_16" class="passed">DELETE destroy</dt>
+    <script type="text/javascript">moveProgressBar('28.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">destroys the requested event</span><span class='duration'>0.04116s</span></dd>
+    <script type="text/javascript">moveProgressBar('28.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">redirects to the events list</span><span class='duration'>0.03613s</span></dd>
+  </dl>
+</div>
+<div id="div_group_17" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_17" class="passed">A Country</dt>
+    <script type="text/javascript">moveProgressBar('29.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">should have the correct name</span><span class='duration'>0.01800s</span></dd>
+    <script type="text/javascript">moveProgressBar('29.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">should have the correct language</span><span class='duration'>0.01767s</span></dd>
+    <script type="text/javascript">moveProgressBar('30.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">should have the correct flag path</span><span class='duration'>0.01804s</span></dd>
+    <script type="text/javascript">moveProgressBar('30.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">should not have an empty language</span><span class='duration'>0.01966s</span></dd>
+    <script type="text/javascript">moveProgressBar('31.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">should not be valid without language</span><span class='duration'>0.01766s</span></dd>
+    <script type="text/javascript">moveProgressBar('32.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">should not have an empty name</span><span class='duration'>0.02470s</span></dd>
+    <script type="text/javascript">moveProgressBar('32.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">should not be valid without name</span><span class='duration'>0.02675s</span></dd>
+    <script type="text/javascript">moveProgressBar('33.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">when deleted should reset its users country</span><span class='duration'>0.09904s</span></dd>
+    <script type="text/javascript">moveProgressBar('33.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">should not be valid when available without i18n key</span><span class='duration'>0.02368s</span></dd>
+    <script type="text/javascript">moveProgressBar('34.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">should be valid when available with a i18n key</span><span class='duration'>0.02445s</span></dd>
+  </dl>
+</div>
+<div id="div_group_18" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_18" class="passed">A User</dt>
+    <script type="text/javascript">moveProgressBar('34.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">should have a first name</span><span class='duration'>0.03916s</span></dd>
+    <script type="text/javascript">moveProgressBar('35.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">should have a non-blank first name</span><span class='duration'>0.04757s</span></dd>
+    <script type="text/javascript">moveProgressBar('35.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">should have a last name</span><span class='duration'>0.04453s</span></dd>
+    <script type="text/javascript">moveProgressBar('36.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">should have a non-blank last name</span><span class='duration'>0.06882s</span></dd>
+    <script type="text/javascript">moveProgressBar('37.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">should have a gender</span><span class='duration'>0.05370s</span></dd>
+    <script type="text/javascript">moveProgressBar('37.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">should have a valid gender</span><span class='duration'>0.17830s</span></dd>
+    <script type="text/javascript">moveProgressBar('38.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">should have an email</span><span class='duration'>0.05540s</span></dd>
+    <script type="text/javascript">moveProgressBar('38.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">should not be admin</span><span class='duration'>0.03920s</span></dd>
+    <script type="text/javascript">moveProgressBar('39.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">should have a country</span><span class='duration'>0.04075s</span></dd>
+    <script type="text/javascript">moveProgressBar('39.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">without anything should not be valid</span><span class='duration'>0.05128s</span></dd>
+    <script type="text/javascript">moveProgressBar('40.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">without a first_name should not be valid</span><span class='duration'>0.06266s</span></dd>
+    <script type="text/javascript">moveProgressBar('40.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">without a last_name should not be valid</span><span class='duration'>0.04416s</span></dd>
+    <script type="text/javascript">moveProgressBar('41.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">without birthdate should not be valid</span><span class='duration'>0.04254s</span></dd>
+    <script type="text/javascript">moveProgressBar('41.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">should have more than 18 years old</span><span class='duration'>0.04515s</span></dd>
+    <script type="text/javascript">moveProgressBar('42.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">without gender should not be valid</span><span class='duration'>0.04455s</span></dd>
+  </dl>
+</div>
+<div id="div_group_19" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_19" class="passed">EventsController</dt>
+  </dl>
+</div>
+<div id="div_group_20" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_20" class="passed">routing</dt>
+    <script type="text/javascript">moveProgressBar('43.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">routes to #index</span><span class='duration'>0.01908s</span></dd>
+    <script type="text/javascript">moveProgressBar('43.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">routes to #new</span><span class='duration'>0.01965s</span></dd>
+    <script type="text/javascript">moveProgressBar('44.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">routes to #show</span><span class='duration'>0.01949s</span></dd>
+    <script type="text/javascript">moveProgressBar('44.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">routes to #edit</span><span class='duration'>0.01826s</span></dd>
+    <script type="text/javascript">moveProgressBar('45.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">routes to #create</span><span class='duration'>0.01776s</span></dd>
+    <script type="text/javascript">moveProgressBar('45.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">routes to #update</span><span class='duration'>0.01841s</span></dd>
+    <script type="text/javascript">moveProgressBar('46.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">routes to #destroy</span><span class='duration'>0.02292s</span></dd>
+  </dl>
+</div>
+<div id="div_group_21" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_21" class="passed">The account edition page</dt>
+    <script type="text/javascript">moveProgressBar('46.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain an creation form</span><span class='duration'>0.04246s</span></dd>
+    <script type="text/javascript">moveProgressBar('47.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain an email field</span><span class='duration'>0.04160s</span></dd>
+    <script type="text/javascript">moveProgressBar('48.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain a first name field</span><span class='duration'>0.03848s</span></dd>
+    <script type="text/javascript">moveProgressBar('48.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain a last name field</span><span class='duration'>0.04181s</span></dd>
+    <script type="text/javascript">moveProgressBar('49.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain birth date field</span><span class='duration'>0.03910s</span></dd>
+    <script type="text/javascript">moveProgressBar('49.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain birth date field that cannot accept under 18 years old</span><span class='duration'>0.14329s</span></dd>
+    <script type="text/javascript">moveProgressBar('50.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain gender field</span><span class='duration'>0.03927s</span></dd>
+    <script type="text/javascript">moveProgressBar('50.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain country field</span><span class='duration'>0.03959s</span></dd>
+    <script type="text/javascript">moveProgressBar('51.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain right countries</span><span class='duration'>0.06342s</span></dd>
+    <script type="text/javascript">moveProgressBar('51.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain password field</span><span class='duration'>0.03624s</span></dd>
+    <script type="text/javascript">moveProgressBar('52.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain password confirmation field</span><span class='duration'>0.04302s</span></dd>
+    <script type="text/javascript">moveProgressBar('53.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain submit button</span><span class='duration'>0.04287s</span></dd>
+    <script type="text/javascript">moveProgressBar('53.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain a email confirmation link</span><span class='duration'>0.04383s</span></dd>
+  </dl>
+</div>
+<div id="div_group_22" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_22" class="passed">The account edition page</dt>
+    <script type="text/javascript">moveProgressBar('54.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain edition form</span><span class='duration'>0.08777s</span></dd>
+    <script type="text/javascript">moveProgressBar('54.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain email field</span><span class='duration'>0.09878s</span></dd>
+    <script type="text/javascript">moveProgressBar('55.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain first name field</span><span class='duration'>0.09071s</span></dd>
+    <script type="text/javascript">moveProgressBar('55.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain last name field</span><span class='duration'>0.08405s</span></dd>
+    <script type="text/javascript">moveProgressBar('56.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain birth date field</span><span class='duration'>0.15045s</span></dd>
+    <script type="text/javascript">moveProgressBar('56.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain birth date field that cannot accept under 18 years old</span><span class='duration'>0.32385s</span></dd>
+    <script type="text/javascript">moveProgressBar('57.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain gender field</span><span class='duration'>0.08008s</span></dd>
+    <script type="text/javascript">moveProgressBar('58.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain country field</span><span class='duration'>0.08272s</span></dd>
+    <script type="text/javascript">moveProgressBar('58.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain password field</span><span class='duration'>0.07987s</span></dd>
+    <script type="text/javascript">moveProgressBar('59.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain password confirmation field</span><span class='duration'>0.08013s</span></dd>
+    <script type="text/javascript">moveProgressBar('59.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain current password field</span><span class='duration'>0.08676s</span></dd>
+    <script type="text/javascript">moveProgressBar('60.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain submit button</span><span class='duration'>0.07995s</span></dd>
+    <script type="text/javascript">moveProgressBar('60.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain delete button</span><span class='duration'>0.09765s</span></dd>
+  </dl>
+</div>
+<div id="div_group_23" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_23" class="passed">The admin menu</dt>
+  </dl>
+</div>
+<div id="div_group_24" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_24" class="passed">on dashboard</dt>
+    <script type="text/javascript">moveProgressBar('61.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain dashboard</span><span class='duration'>0.07905s</span></dd>
+    <script type="text/javascript">moveProgressBar('61.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain countries</span><span class='duration'>0.07957s</span></dd>
+    <script type="text/javascript">moveProgressBar('62.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contrain users</span><span class='duration'>0.08822s</span></dd>
+  </dl>
+</div>
+<div id="div_group_25" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_25" class="passed">on country edit</dt>
+    <script type="text/javascript">moveProgressBar('62.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain dashboard</span><span class='duration'>0.08279s</span></dd>
+    <script type="text/javascript">moveProgressBar('63.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain countries</span><span class='duration'>0.08420s</span></dd>
+    <script type="text/javascript">moveProgressBar('64.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contrain users</span><span class='duration'>0.08255s</span></dd>
+  </dl>
+</div>
+<div id="div_group_26" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_26" class="passed">on user edit</dt>
+    <script type="text/javascript">moveProgressBar('64.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain dashboard</span><span class='duration'>0.08045s</span></dd>
+    <script type="text/javascript">moveProgressBar('65.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain countries</span><span class='duration'>0.08551s</span></dd>
+    <script type="text/javascript">moveProgressBar('65.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contrain users</span><span class='duration'>0.08110s</span></dd>
+  </dl>
+</div>
+<div id="div_group_27" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_27" class="passed">The admin user edition page</dt>
+  </dl>
+</div>
+<div id="div_group_28" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_28" class="passed">before choosing a user</dt>
+    <script type="text/javascript">moveProgressBar('66.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain the admin userlist</span><span class='duration'>0.10080s</span></dd>
+    <script type="text/javascript">moveProgressBar('66.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain the normal userlist</span><span class='duration'>0.09983s</span></dd>
+    <script type="text/javascript">makeYellow('rspec-header');</script>
+    <script type="text/javascript">makeYellow('div_group_28');</script>
+    <script type="text/javascript">makeYellow('example_group_28');</script>
+    <script type="text/javascript">moveProgressBar('67.4');</script>
+    <dd class="example not_implemented"><span class="not_implemented_spec_name">should contain pager when lots of entries (PENDING: Waiting for pager creation)</span></dd>
+    <script type="text/javascript">moveProgressBar('67.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain new user button</span><span class='duration'>0.09497s</span></dd>
+    <script type="text/javascript">moveProgressBar('68.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain edition button on each row for normal users</span><span class='duration'>0.09386s</span></dd>
+    <script type="text/javascript">moveProgressBar('69.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain delete button on each row for normal users</span><span class='duration'>0.09549s</span></dd>
+    <script type="text/javascript">moveProgressBar('69.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain name that match with the user name</span><span class='duration'>0.10646s</span></dd>
+    <script type="text/javascript">moveProgressBar('70.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain email that match with the user email</span><span class='duration'>0.10402s</span></dd>
+    <script type="text/javascript">moveProgressBar('70.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain birthdate that match with the user bitrhdate</span><span class='duration'>0.11711s</span></dd>
+    <script type="text/javascript">moveProgressBar('71.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain gender that match with the user gender</span><span class='duration'>0.13136s</span></dd>
+    <script type="text/javascript">moveProgressBar('71.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain language that match with user language</span><span class='duration'>0.11176s</span></dd>
+  </dl>
+</div>
+<div id="div_group_29" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_29" class="passed">when creating a user</dt>
+    <script type="text/javascript">moveProgressBar('72.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain edition form</span><span class='duration'>0.12065s</span></dd>
+    <script type="text/javascript">moveProgressBar('72.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain email field</span><span class='duration'>0.12409s</span></dd>
+    <script type="text/javascript">moveProgressBar('73.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain first name field</span><span class='duration'>0.11948s</span></dd>
+    <script type="text/javascript">moveProgressBar('74.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain last name field</span><span class='duration'>0.11385s</span></dd>
+    <script type="text/javascript">moveProgressBar('74.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain birth date field</span><span class='duration'>0.11816s</span></dd>
+    <script type="text/javascript">moveProgressBar('75.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain birth date field that cannot accept under 18 years old</span><span class='duration'>0.21463s</span></dd>
+    <script type="text/javascript">moveProgressBar('75.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain gender field</span><span class='duration'>0.11477s</span></dd>
+    <script type="text/javascript">moveProgressBar('76.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain country field</span><span class='duration'>0.11290s</span></dd>
+    <script type="text/javascript">moveProgressBar('76.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain password field</span><span class='duration'>0.11323s</span></dd>
+    <script type="text/javascript">moveProgressBar('77.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain admin field</span><span class='duration'>0.12089s</span></dd>
+    <script type="text/javascript">moveProgressBar('77.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain submit button</span><span class='duration'>0.11356s</span></dd>
+  </dl>
+</div>
+<div id="div_group_30" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_30" class="passed">when editing a user</dt>
+    <script type="text/javascript">moveProgressBar('78.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain edition form</span><span class='duration'>0.11356s</span></dd>
+    <script type="text/javascript">moveProgressBar('79.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain email field</span><span class='duration'>0.11801s</span></dd>
+    <script type="text/javascript">moveProgressBar('79.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain first name field</span><span class='duration'>0.12140s</span></dd>
+    <script type="text/javascript">moveProgressBar('80.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain last name field</span><span class='duration'>0.12015s</span></dd>
+    <script type="text/javascript">moveProgressBar('80.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain birth date field</span><span class='duration'>0.12836s</span></dd>
+    <script type="text/javascript">moveProgressBar('81.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain gender field</span><span class='duration'>0.13214s</span></dd>
+    <script type="text/javascript">moveProgressBar('81.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain country field</span><span class='duration'>0.14481s</span></dd>
+    <script type="text/javascript">moveProgressBar('82.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain password field</span><span class='duration'>0.13592s</span></dd>
+    <script type="text/javascript">moveProgressBar('82.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain admin field</span><span class='duration'>0.10989s</span></dd>
+    <script type="text/javascript">moveProgressBar('83.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain submit button</span><span class='duration'>0.11634s</span></dd>
+  </dl>
+</div>
+<div id="div_group_31" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_31" class="passed">The connexion page</dt>
+    <script type="text/javascript">moveProgressBar('83.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">should have a correct login form</span><span class='duration'>0.03337s</span></dd>
+    <script type="text/javascript">makeYellow('rspec-header');</script>
+    <script type="text/javascript">makeYellow('div_group_31');</script>
+    <script type="text/javascript">makeYellow('example_group_31');</script>
+    <script type="text/javascript">moveProgressBar('84.5');</script>
+    <dd class="example not_implemented"><span class="not_implemented_spec_name">should have a google sign in link (PENDING: Waiting for google authentication)</span></dd>
+    <script type="text/javascript">makeYellow('rspec-header');</script>
+    <script type="text/javascript">makeYellow('div_group_31');</script>
+    <script type="text/javascript">makeYellow('example_group_31');</script>
+    <script type="text/javascript">moveProgressBar('85.0');</script>
+    <dd class="example not_implemented"><span class="not_implemented_spec_name">should have a facebook sign in link (PENDING: Waiting for facebook authentication)</span></dd>
+    <script type="text/javascript">moveProgressBar('85.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">should have a sign up link</span><span class='duration'>0.03302s</span></dd>
+    <script type="text/javascript">moveProgressBar('86.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">should have a lost password link</span><span class='duration'>0.03485s</span></dd>
+    <script type="text/javascript">moveProgressBar('86.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">should have a link to send confirmation email again</span><span class='duration'>0.03231s</span></dd>
+  </dl>
+</div>
+<div id="div_group_32" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_32" class="passed">The admin country edition page</dt>
+  </dl>
+</div>
+<div id="div_group_33" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_33" class="passed">before choosing a country</dt>
+    <script type="text/javascript">moveProgressBar('87.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain the countries list</span><span class='duration'>0.08921s</span></dd>
+    <script type="text/javascript">makeYellow('rspec-header');</script>
+    <script type="text/javascript">makeYellow('div_group_33');</script>
+    <script type="text/javascript">makeYellow('example_group_33');</script>
+    <script type="text/javascript">moveProgressBar('87.8');</script>
+    <dd class="example not_implemented"><span class="not_implemented_spec_name">should contain pager when lots of entries (PENDING: Waiting for pager creation)</span></dd>
+    <script type="text/javascript">moveProgressBar('88.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain new country button</span><span class='duration'>0.08976s</span></dd>
+    <script type="text/javascript">moveProgressBar('88.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain edition button on each row</span><span class='duration'>0.08633s</span></dd>
+    <script type="text/javascript">moveProgressBar('89.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain name that match with the country name</span><span class='duration'>0.10698s</span></dd>
+    <script type="text/javascript">moveProgressBar('90.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain language that match with the country language</span><span class='duration'>0.10422s</span></dd>
+    <script type="text/javascript">moveProgressBar('90.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain flag path that match with the country&#39;s flag path</span><span class='duration'>0.09183s</span></dd>
+    <script type="text/javascript">moveProgressBar('91.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain user count that match with the country user count</span><span class='duration'>0.10144s</span></dd>
+  </dl>
+</div>
+<div id="div_group_34" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_34" class="passed">when creating a country</dt>
+    <script type="text/javascript">moveProgressBar('91.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain edition form</span><span class='duration'>0.10406s</span></dd>
+    <script type="text/javascript">moveProgressBar('92.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain name field</span><span class='duration'>0.09809s</span></dd>
+    <script type="text/javascript">moveProgressBar('92.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain language field</span><span class='duration'>0.10059s</span></dd>
+    <script type="text/javascript">moveProgressBar('93.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain flag path field</span><span class='duration'>0.10863s</span></dd>
+    <script type="text/javascript">moveProgressBar('93.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain submit button</span><span class='duration'>0.10185s</span></dd>
+  </dl>
+</div>
+<div id="div_group_35" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_35" class="passed">when editing a country</dt>
+    <script type="text/javascript">moveProgressBar('94.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain edition form</span><span class='duration'>0.10584s</span></dd>
+    <script type="text/javascript">moveProgressBar('95.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain name field</span><span class='duration'>0.11015s</span></dd>
+    <script type="text/javascript">moveProgressBar('95.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain language field</span><span class='duration'>0.10217s</span></dd>
+    <script type="text/javascript">moveProgressBar('96.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain flag path field</span><span class='duration'>0.10157s</span></dd>
+    <script type="text/javascript">moveProgressBar('96.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">should contain submit button</span><span class='duration'>0.10704s</span></dd>
+  </dl>
+</div>
+<div id="div_group_36" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_36" class="passed">The menu</dt>
+  </dl>
+</div>
+<div id="div_group_37" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_37" class="passed">if not logged</dt>
+    <script type="text/javascript">moveProgressBar('97.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">should display a sign up link</span><span class='duration'>0.03344s</span></dd>
+    <script type="text/javascript">moveProgressBar('97.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">should display a sign in link</span><span class='duration'>0.03400s</span></dd>
+  </dl>
+</div>
+<div id="div_group_38" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_38" class="passed">if logged</dt>
+    <script type="text/javascript">moveProgressBar('98.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">should display a profile link</span><span class='duration'>0.06992s</span></dd>
+    <script type="text/javascript">moveProgressBar('98.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">should display a logout link</span><span class='duration'>0.07267s</span></dd>
+  </dl>
+</div>
+<div id="div_group_39" class="example_group passed">
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_39" class="passed">for simple user</dt>
+    <script type="text/javascript">moveProgressBar('99.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">should not display an admin link</span><span class='duration'>0.07364s</span></dd>
+  </dl>
+</div>
+<div id="div_group_40" class="example_group passed">
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_40" class="passed">for admin</dt>
+    <script type="text/javascript">moveProgressBar('100.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">should display an admin link</span><span class='duration'>0.08463s</span></dd>
+  </dl>
+</div>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>25.71187 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "181 examples, 0 failures, 13 pending";</script>
+</div>
+</div>
+</body>
+</html>

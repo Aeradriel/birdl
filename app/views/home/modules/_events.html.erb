@@ -1,0 +1,22 @@
+<div class="events block">
+    <div class="events_calendar block clear">
+        <h2 class="titular"><span class="icon entypo-location"></span><strong>Paris</strong>/FRANCE</h2>
+        <div class="next-days">
+            <a href="#">
+                <p class="next-days-date"><span class="day">SAT</span> <span class="scnd-font-color">29/06</span></p>
+                <p class="next-days-temperature">25º<span class="icon icon-cloudy scnd-font-color"></span></p>
+            </a>
+        </div><br />
+
+        <img class="img-thumbnail" src="/images/modules/module_events.jpg">
+
+        <div class="events_information events_text">
+            <span class="events_text_color">Organizer : Joffrey RIELA</span><br />
+            <span class="events_text_color">Space available : <%= @event.max_slots - @event.users.count %></span>
+        </div><br>
+        <div class="events_contacts events_text">
+            <span class="events_text_color">Friends in the event : 4</span><br />
+            <span class="events_text_color">Invite your friends : ...</span><br />
+        </div><br>
+    </div>
+</div>

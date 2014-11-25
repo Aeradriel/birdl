@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+
+message_file = ARGV[0] || '.git/COMMIT_EDITMSG'
+message = File.read(message_file)
+error = false
+
+exit(0) if (message =~ /Merge/) == 0
+
+tags = {}
+tags['F'] = 'Fix'
+tags['A'] = 'Add'
+tags['C'] = 'Change'
+tags['G'] = 'Garbage'
+tags['B'] = 'Basic'
+tags['R'] = 'Rubocop'
+tags['H'] = 'Hard'
+
+if (message =~ /\[[AFGHCBR].{0,2}/) != 0 || message.index(']').nil?
+  system('echo "Et les tags c\'est pour les enfants ?" | lolcat')
+  tags.each do | tag, conf |
+    system("echo [#{tag}] #{conf} | lolcat")
+  end
+  error = true
+end
+
+system("echo '\n\033[31m----- Tests Failed -----\033[0m'") && exit(1) if error
+exit(0)

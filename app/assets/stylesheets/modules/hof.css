@@ -1,0 +1,96 @@
+#hof_module {
+    background-color:#394264;
+    width: 95%;
+    border-radius:5px;
+    margin-bottom: 25px;
+}
+
+#hof_module_title {
+    background-color:#cc324b;
+    padding:10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight:500;
+    color:#333333;
+    font-size:30px;
+    text-align:center;
+    margin-bottom:0px;
+}
+
+#hof_module_content {
+
+    width:100%;
+}
+
+#hof_module_selectors_wrapper {
+
+    background-color:#cc324b;
+    height:30px;
+    -webkit-box-shadow: 0 4px 4px -2px #21263C;
+    -moz-box-shadow: 0 4px 4px -2px #21263C;
+    box-shadow: 0 4px 4px -2px #21263C;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color:#333333;
+
+}
+
+.hof_module_selector {
+    float:left;
+    background-color:#cc324b;
+    height:30px;
+    width: 33.33%;
+    border-left:1px solid  #ae324b;
+    text-align:center;
+    border-top:1px solid #ae324b;
+    cursor:pointer;
+
+}
+
+.hof_module_selector:hover {
+    background-color:#ae324b;
+}
+
+.hof_module_selector p {
+    margin-top:6px;
+}
+
+#hof_module_tab_wrapper {
+    margin-top:10px;
+
+}
+
+#hof_module_tab {
+
+    width:100%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color:white;
+
+}
+
+.hof_module_row {
+    border-top:1px solid #21263C;
+}
+
+.hof_module_rank {
+    padding:5px;
+    width:10%;
+    border-right:1px solid #21263C;
+}
+
+.hof_module_name {
+    width:60%;
+    padding:5px;
+    border-right:1px solid #21263C;
+}
+.hof_module_stars {
+    width:30%;
+    padding:5px;
+}
+
+.star_hof {
+    width:20px;
+    height:auto;
+    margin-left:10px;
+}

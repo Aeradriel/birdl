@@ -1,0 +1,55 @@
+<body class ="newUser_body">
+
+    <!-- multistep form -->
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {:class => 'newUser_form'}) do |f| %>
+      <%= devise_error_messages! %>
+
+      <!-- progressbar -->
+      <ul id="newUser_progressbar">
+        <li class="active"><%= t(:account_setup) %></li>
+        <li><%= t(:perso_details) %></li>
+        <li><%= t(:country) %></li>
+      </ul>
+
+      <!-- fieldsets -->
+      <fieldset class="newUser_fieldset">
+        <h2 class="newUser_title"><%= t(:join_us) %></h2>
+        <h3 class="newUser_subtitle"><%= t(:first_step) %></h3>
+        <p><%= f.email_field :email, :placeholder => t(:email), :class => 'newUser_input', autofocus: true %></p>
+        <p><%= f.password_field :password, :placeholder => t(:password), :class => 'newUser_input', autocomplete: "off" %> <% if @validatable %><i>(<%= @minimum_password_length %> <%= t(:chars) %> minimum)</i><% end %></p>
+        <p><%= f.password_field :password_confirmation, :placeholder => t(:'activerecord.attributes.user.password_confirmation'), :class => 'newUser_input', autocomplete: "off" %></p>
+        <input type="button" name="next" class="newUser_next newUser_action-button" value="<%= t(:next) %>" />
+      </fieldset>
+      <fieldset class="newUser_fieldset">
+        <h2 class="newUser_title"><%= t(:personal_details) %></h2>
+        <h3 class="newUser_subtitle"><%= t(:trust_us) %></h3>
+        <p><%= f.text_field :first_name, :placeholder => t(:'activerecord.attributes.user.first_name'), :class => 'newUser_input' %></p>
+        <p><%= f.text_field :last_name, :placeholder => t(:'activerecord.attributes.user.last_name'), :class => 'newUser_input' %></p>
+        <p><%= f.label :birthdate %></p>
+        <p><%= f.date_select :birthdate, :start_year => Time.now.year - 100, :end_year => (Time.now.year - 18), :include_blank => true %></p>
+        <p><%= f.label :gender %></p>
+        <p><%= f.select :gender, {t(:male) => 1, t(:female) => 0} %></p>
+        <input type="button" name="previous" class="newUser_previous newUser_action-button" value="<%= t(:previous) %>" />
+        <input type="button" name="next" class="newUser_next newUser_action-button" value="<%= t(:next) %>" />
+      </fieldset>
+      <fieldset class="newUser_fieldset">
+        <h2 class="newUser_title"><%= t(:country_residence) %></h2>
+        <h3 class="newUser_subtitle"><%= t(:where_you_from) %></h3>
+        <div><%= f.label :country_id %><br />
+        <%= image_tag '', :id => 'signup_flag' %>
+        <% c = Country.all.collect { |c| [c.name, c.id] } %>
+        <% c.insert(0, [t(:unknown), nil]) %>
+        <%= f.select :country_id, c %></div>
+        <input type="button" name="previous" class="newUser_previous newUser_action-button" value="<%= t(:previous) %>" />
+        <%= f.submit t(:sign_up), :id => 'new_submit' %>
+      </fieldset>
+    <% end %>
+
+    <br><div class="user_form" ><%= render 'devise/shared/links' %></div>
+
+</body>
+<% @emails = [] %>
+<% User.all.each do |user| %>
+    <% @emails << user.email %>
+<% end %>
+<%= javascript_include_tag 'application.js', 'jquery-1.9.1.min.js', 'jquery-easing.min.js' %>

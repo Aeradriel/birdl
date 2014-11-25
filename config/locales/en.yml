@@ -1,0 +1,121 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  error: "Error"
+  sign_in: "Sign in"
+  sign_in_with: "Sign in with"
+  sign_up: "Sign up"
+  account_infos: "Account informations"
+  disconnect: "Disconnect"
+  email: "Email"
+  password: "Password"
+  forgotten_password: "Forgotten password?"
+  confirmation_instructions: "Didn't receive confirmation instruction?"
+  unlock_instructions: "Didn't receive unlock instruction?"
+  sign_up_form: "Sign up form"
+  my_account: "My account"
+  admin: "Administration"
+  home: "Home"
+  country: "Country"
+  user: "User"
+  unit_test: "Unit tests"
+  execution_report: "Execution report"
+  coverage: "Coverage"
+  denotes_required_filed: "* Required field"
+  unknown: "Unknown"
+  male: "Male"
+  female: "Female"
+  leave_blank_for_unchanged: "(leave blank if you don't want to change it)"
+  need_current_password_for_changes: "(we need your actual password to confirm changes)"
+  update: "Update"
+  cancel_account: "Delete my account"
+  account_deletion_warning: "Are you sure you want to delete your account?"
+  account_setup: "Account setup"
+  currently_waiting_confirmation_for: "Currently waiting for email confirmation: %{email}"
+  cancel: "Cancel"
+
+  join_us: "Sign up and join us !"
+  first_step: "This is the first step"
+  perso_details: "Personal details"
+  personal_details: "Your personal details"
+  trust_us: "Trust us, we will never share them !"
+  country_residence: "Your country of residence"
+  where_you_from: "Tell us where you're from !"
+  empty_country: "Choose from the list"
+
+  char: "character"
+  chars: "characters"
+
+  previous: "Previous"
+  next: "Next"
+
+  new: "New"
+  language: "Language"
+  flag: "Flag"
+  total_user: "Total users"
+  actions: "Actions"
+  edit: "Edit"
+  edition_of: "Edition of"
+  delete: "Delete"
+  country_deletion_warning: "Are you sure you want to delete this country?"
+
+  admins: "Administrators"
+  normal_users: "Regular users"
+  name: "Name"
+  birthdate: "Birth date"
+  gender: "Gender"
+  user_deletion_warning: "Are you sure you want to delete this user ?"
+
+  users_by_language: "Users by language"
+  users_by_gender: "Users by gender"
+
+  create: "Create"
+  new_country: "New country"
+  new_user: "New user"
+  not_logged_error_title: "Insufficient permission"
+  not_logged_error: "You do not have the permission to display this page"
+
+  received_messages: "Received messages"
+  sent_messages: "Sent messages"
+  from: "From: "
+
+  activerecord:
+      models:
+        user: "User"
+        country: "Country"
+      attributes:
+        user:
+          first_name: "First name"
+          last_name: "Last name"
+          birthdate: "Birth date"
+          gender: "Gender"
+          admin: "Administrator"
+          country_id: "Country"
+          password: "Password"
+          password_confirmation: "Password confirmation"
+          current_password: "Current password"
+          current_password: "Mot de passe actuel"
+          forgotten_password: "Forgot your password ?"
+        country:
+          name: "Name"
+          language: "Language"
+          flag_path: "Flag"

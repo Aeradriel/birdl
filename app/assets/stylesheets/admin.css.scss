@@ -1,0 +1,102 @@
+// Place all the styles related to the admin controller here.
+// They will automatically be included in coverage.css.scss.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#admin_container {
+  margin-left: 10px;
+}
+
+#admin_menu {
+  width: 12% !important;
+}
+
+#admin_title {
+  display: inline !important;
+}
+
+#admin_country_list tr td {
+  vertical-align: middle;
+}
+
+.country_flag_path img {
+  height: 25%;
+}
+
+.admin_new_button {
+  margin-bottom: 10px !important;
+  margin-left: 10px !important;
+}
+
+.table_paneladmin
+{
+	border-collapse: separate;
+	
+}
+
+.table_paneladmin tr
+{
+	length: 60%;
+	height: 50px;
+	padding:10px;
+	
+}
+
+.table_paneladmin td
+{
+	padding: 10px;
+	border-top:1px solid #e9e9e9;
+}
+
+.edit_button
+{
+	margin-left:50px;
+	margin-top:10px;
+}
+
+.file_button
+{
+	width:200px;
+	background-color:#C0C0FF !important;
+}
+
+.transparent
+{
+	position: absolute;
+	opacity:0;
+	float:top;
+}
+
+.userEdit_panel
+{
+	margin-left: 12% !important;
+	display:inline-block;
+	float:left;
+}
+
+.userDelete_panel
+{
+	float:left;
+	display:inline-block;
+	margin-left: 20px;
+	background-color:#F5F5F5;
+	padding:20px;
+	padding-top:0px;
+	border:1px solid #E1E1E1;
+	border-radius:5px;
+	margin-top:50px;
+}
+
+.delete_account_button
+{
+	
+}
+
+#user_birthdate_1i
+{
+	margin-top:5px;
+}
+
+.help_button
+{
+	cursor:pointer;
+}

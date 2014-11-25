@@ -1,0 +1,159 @@
+/***************** FONTS *******************/
+
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:400,700);
+@import url(http://weloveiconfonts.com/api/?family=entypo|fontawesome|zocial);
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:url('http://jlalovi-cv.herokuapp.com/font/icomoon.eot');
+  src:url('http://jlalovi-cv.herokuapp.com/font/icomoon.eot?#iefix') format('embedded-opentype'),
+  url('http://jlalovi-cv.herokuapp.com/font/icomoon.ttf') format('truetype'),
+  url('http://jlalovi-cv.herokuapp.com/font/icomoon.woff') format('woff'),
+  url('http://jlalovi-cv.herokuapp.com/font/icomoon.svg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-cloudy:before {
+  content: "\e60f";
+}
+.icon-sun:before {
+  content: "\e610";
+}
+.icon-cloudy2:before {
+  content: "\e611";
+}
+
+/************************************/
+
+icon {
+  font-size: 25px;
+}
+
+.events_body {
+  max-height: 100%;
+}
+
+.events_text_color {
+  text-align: center;
+  color: white;
+}
+
+.events {
+  height: 350px;
+  width: 550px;
+  margin-left: 20px;
+}
+  .events p {
+    display: inline-block;
+    padding-left: 30px;
+    margin: 5px 0 20px;
+  }
+
+  .events img {
+    max-width: 30%;
+    height: auto;
+    position: relative;
+    float: right;
+    margin-right: 25px;
+    display: block;
+    vertical-align: middle;
+  }
+
+h2 {
+  color: #fff;
+}
+  .scnd-font-color {
+    color: #9099b7;
+  }
+
+.block {
+  background: #394264;
+  border-radius: 5px;
+}
+
+.events_information {
+
+}
+
+.events_contacts {
+
+}
+
+.events_text {
+  margin-left: 20px;
+}
+
+.titular {
+  display: block;
+  line-height: 60px;
+  margin: 0;
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.clear {
+  clear: both;
+}
+
+.events_calendar {
+  max-height: 100%;
+}
+  .events_calendar .titular {
+    background: #cc324b;
+  }
+
+  .events_calendar .titular .icon {
+    padding-right: 15px;
+    font-size: 26px;
+  }
+
+  .events_calendar .next-days{
+    margin-top: 10px;
+  }
+  .events_calendar .next-days p {
+    margin: 0;
+    display: inline-block;
+    font-size: 16px;
+  }
+  .events_calendar .next-days a {
+    display: block;
+    line-height: 58px;
+    border-bottom: 1px solid #1f253d;
+    -webkit-transition: background .3s;
+    transition: background .3s;
+  }
+  .events_calendar .next-days a:hover {
+    background: #50597b;
+  }
+  .events_calendar .next-days a:hover .day {
+    color: #e64c65;
+  }
+  .events_calendar .next-days-date {
+    padding-left: 20px;
+  }
+  .events_calendar .next-days-temperature {
+    float: right;
+    padding-right: 20px;
+  }
+  .events_calendar .next-days-temperature .icon {
+    padding-left: 10px;
+  }

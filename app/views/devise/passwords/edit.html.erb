@@ -1,0 +1,25 @@
+<div class="table_paneladmin" align="center">
+<h2>Change your password</h2>
+
+
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name),
+                                           html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+  <%= f.hidden_field :reset_password_token %>
+
+    <table>
+      <tr>
+      <td><%= f.label :password %><br />
+  <%= f.password_field :password, autofocus: true, autocomplete: "off" %></td>
+
+  <td><%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %></td>
+      </tr>
+    </table>
+
+ <div style="margin-left: 43%; position:absolute;"><%= f.submit "Change my password",
+                   :class => 'btn btn-success btn-mini icon-white icon-remove edit_button' %></div>
+      </div>
+<% end %>
+
+<br><br><br><div align="center"><%= render "devise/shared/links" %></div>

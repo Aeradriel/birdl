@@ -1,0 +1,287 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* Alerts */
+
+.alert {
+  margin: 0 25px 20px 25px;
+}
+
+/* CSS used here will be applied after bootstrap.css */
+.caret-container {
+  float: right;
+}
+
+.nav-container {
+  background-color: #f5f5f5;
+}
+
+.nav-sub-container {
+  background-color: #f8f8f8;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+ul.nav-stacked ul.nav-stacked > li > a {
+  padding-left: 30px;
+}
+
+/* ---------- Mail CSS (not used) ------------*/
+
+.mail_body {
+  border: 2px;
+  background-color: #C0C0C0;
+  color: #000;
+  font-family: "Varela Round", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+.mail_message {
+  margin: 50px auto;
+  width: 800px;
+}
+
+.mail_message h2 {
+  background-color: #2ab4f8;
+  -webkit-border-radius: 20px 20px 0 0;
+  -moz-border-radius: 20px 20px 0 0;
+  border-radius: 20px 20px 0 0;
+  color: #fff;
+  font-size: 28px;
+  padding: 20px 26px;
+  margin: 0;
+}
+
+.mail_message p {
+  background-color: #fff;
+  -webkit-border-radius: 0 0 20px 20px;
+  -moz-border-radius: 0 0 20px 20px;
+  border-radius: 0 0 20px 20px;
+  padding: 20px 26px;
+  color: #777;
+  margin-bottom: 14px;
+  font-size: 15px;
+}
+
+/* ---------- Language selector CSS ------------*/
+
+.selector_ {
+  max-width: 100%;
+}
+
+.selector_container {
+  width: 100%;
+  position: relative;
+}
+
+.selector_main {
+  width: 60%;
+  margin: 0 auto;
+  position: relative;
+}
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+::selection {
+  background: transparent;
+}
+
+::-moz-selection {
+  background: transparent;
+}
+
+.wrapper-demo {
+  margin: 7px 10px 0 -60px;
+  *zoom: 1;
+  font-weight: 400;
+}
+
+.wrapper-demo:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.wrapper-dropdown-3 {
+  /* Size and position */
+  position: relative;
+  width: 130px;
+  margin: 0 auto;
+  padding: 10px;
+
+  /* Styles */
+  background: #fff;
+  border-radius: 7px;
+  border: 1px solid rgba(0,0,0,0.15);
+  box-shadow: 0 1px 1px rgba(50,50,50,0.1);
+  cursor: pointer;
+  outline: none;
+
+  /* Font settings */
+  font-weight: bold;
+  color: #8AA8BD;
+}
+
+.wrapper-dropdown-3:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  margin-top: -3px;
+  border-width: 6px 6px 0 6px;
+  border-style: solid;
+  border-color: #8aa8bd transparent;
+}
+
+.wrapper-dropdown-3 .dropdown {
+  /* Size & position */
+  position: absolute;
+  top: 140%;
+  left: 0;
+  right: 0;
+
+  /* Styles */
+  background: white;
+  border-radius: inherit;
+  border: 1px solid rgba(0,0,0,0.17);
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  font-weight: normal;
+  -webkit-transition: all 0.5s ease-in;
+  -moz-transition: all 0.5s ease-in;
+  -ms-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+  list-style: none;
+
+  /* Hiding */
+  opacity: 0;
+  pointer-events: none;
+}
+
+.wrapper-dropdown-3 .dropdown:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: 100%;
+  right: 15px;
+  border-width: 0 6px 6px 6px;
+  border-style: solid;
+  border-color: #fff transparent;
+}
+
+.wrapper-dropdown-3 .dropdown:before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: 100%;
+  right: 13px;
+  border-width: 0 8px 8px 8px;
+  border-style: solid;
+  border-color: rgba(0,0,0,0.1) transparent;
+}
+
+.wrapper-dropdown-3 .dropdown li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #8aa8bd;
+  border-bottom: 1px solid #e6e8ea;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,1);
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.wrapper-dropdown-3 .dropdown li i {
+  float: right;
+  color: inherit;
+}
+
+.wrapper-dropdown-3 .dropdown li:first-of-type a {
+  border-radius: 7px 7px 0 0;
+}
+
+.wrapper-dropdown-3 .dropdown li:last-of-type a {
+  border: none;
+  border-radius: 0 0 7px 7px;
+}
+
+/* Hover state */
+
+.wrapper-dropdown-3 .dropdown li:hover a {
+  background: #f3f8f8;
+}
+
+/* Active state */
+
+.wrapper-dropdown-3.active .dropdown {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* No CSS3 support */
+
+.no-opacity       .wrapper-dropdown-3 .dropdown,
+.no-pointerevents .wrapper-dropdown-3 .dropdown {
+  display: none;
+  opacity: 1; /* If opacity support but no pointer-events support */
+  pointer-events: auto; /* If pointer-events support but no pointer-events support */
+}
+
+.no-opacity       .wrapper-dropdown-3.active .dropdown,
+.no-pointerevents .wrapper-dropdown-3.active .dropdown {
+  display: block;
+}
+
+.wrapper-dropdown-3:focus .dropdown {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* - Flags - */
+
+.selector_icon {
+
+}
+
+.selector_icon img {
+  float: left;
+  width: 20%;
+  height: 20%;
+}
+
+.selector_text {
+  width: 80%;
+  float: right;
+}

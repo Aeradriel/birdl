@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 20141121180135) do
     t.string   "first_name"
     t.string   "last_name"
     t.date     "birthdate"
-    t.integer  "gender",                 default: 1
+    t.integer  "gender"
     t.boolean  "admin",                  default: false
     t.integer  "country_id"
     t.string   "locale"

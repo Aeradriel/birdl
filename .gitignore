@@ -1,7 +1,7 @@
 *.rbc
+.idea/
 Gemfile.lock
 capybara-*.html
-.rspec
 /log
 /tmp
 /db/*.sqlite3

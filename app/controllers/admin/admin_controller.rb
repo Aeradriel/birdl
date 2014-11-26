@@ -4,7 +4,6 @@ module Admin
     include AdminHelper
 
     before_action :check_auth
-    layout 'admin_menu'
 
     def check_auth
       return unless !user_signed_in? || !current_user.admin

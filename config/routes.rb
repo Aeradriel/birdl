@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   end
   namespace :admin do
     get '/' => 'admin#index'
+    get '/unit_tests/report' => 'admin#ut_report'
+    get 'unit_tests/coverage' => 'admin#ut_coverage'
     resource :users do
       get '/' => 'users#users'
       get '/new' => 'users#new'
@@ -26,8 +28,6 @@ Rails.application.routes.draw do
       get '/:country_id/edit' => 'countries#edit'
       post '/:country_id/edit' => 'countries#update'
       delete '/:country_id/delete' => 'countries#delete'
-      get '/unit_tests/report' => 'admin/admin#ut_report'
-      get 'unit_tests/coverage' => 'admin#ut_coverage'
     end
   end
 

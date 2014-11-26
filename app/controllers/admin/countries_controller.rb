@@ -2,7 +2,6 @@ module Admin
   # Controller for country admin panel
   class CountriesController < ApplicationController
     before_action :check_auth, :actual_country
-    layout 'admin_menu'
 
     def check_auth
       return unless !user_signed_in? || !current_user.admin

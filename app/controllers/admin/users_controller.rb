@@ -6,7 +6,7 @@ module Admin
     before_action :check_auth, :actual_user
 
     def check_auth
-      return unless !user_signed_in? || !current_user.admin
+      return if user_signed_in? && current_user.admin
       flash[:alert] = t('devise.failure.unauthenticated')
       redirect_to new_user_session_path
     end

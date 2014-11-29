@@ -32,7 +32,6 @@ group :development do
   gem 'spring'
   gem 'lolcat'
   gem 'rubocop'
-
 end
 
 group :production do

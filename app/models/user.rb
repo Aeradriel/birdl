@@ -17,6 +17,9 @@ class User < ActiveRecord::Base
   has_many :badges, through: :achievements
   has_many :events, through: :participations
 
+  scope :admins, -> { where(admin: true) }
+  scope :normals, -> { where(admin: false) }
+
   validates :first_name, presence: true, allow_nil: false, allow_blank: false
   validates :last_name, presence: true, allow_nil: false, allow_blank: false
   validates :birthdate, presence: true, allow_nil: false, allow_blank: false
@@ -24,5 +27,9 @@ class User < ActiveRecord::Base
 
   def gender_is_correct
     errors.add(:gender, 'is invalid') if gender != 1 && gender != 0
+  end
+
+  def name
+    "#{first_name} #{last_name}"
   end
 end

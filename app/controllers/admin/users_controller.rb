@@ -12,8 +12,8 @@ module Admin
     end
 
     def users
-      @users = User.where(admin: false).page(params[:users_page])
-      @admins = User.where(admin: true).page(params[:admins_page])
+      @users = User.normals.page(params[:users_page])
+      @admins = User.admins.page(params[:admins_page])
     end
 
     def new
@@ -22,13 +22,12 @@ module Admin
     end
 
     def create
-      name = "#{params[:user][:first_name]} #{params[:user][:last_name]}"
       user = User.create(user_params)
 
       if user_is_valid(user)
-        flash[:notice] = "L'utilisateur #{name} a bien été creé"
+        flash[:notice] = "L'utilisateur #{@user.name} a bien été creé"
       else
-        flash[:alert] = "L'utilisateur #{name} n'a pas pu être créé"
+        flash[:alert] = "L'utilisateur n'a pas pu être créé"
       end
       redirect_to action: :users
     end
@@ -38,7 +37,7 @@ module Admin
     end
 
     def update
-      name = "#{@user.first_name} #{@user.last_name}"
+      name = @user.name
 
       if @user.update(user_params) && @user.confirm!
         flash[:notice] = "L'utilisateur #{name} a bien été mis à jour"
@@ -49,7 +48,7 @@ module Admin
     end
 
     def delete
-      name = "#{@user.first_name} #{@user.last_name}"
+      name = @user.name
 
       if @user.destroy
         flash[:notice] = "L'utilisateur #{name} a bien été supprimé"

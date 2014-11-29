@@ -7,6 +7,11 @@ class Event < ActiveRecord::Base
   has_many :participations
   has_many :users, through: :participations
 
+  validates :name, presence: true, allow_blank: false, allow_nil: false
+  validates :min_slots, presence: true, allow_nil: false
+  validates :max_slots, presence: true, allow_nil: false
+  validates :date, presence: true, allow_nil: false
+
   def self.type
     %w(FaceToFace OnlineChat TourismTour)
   end

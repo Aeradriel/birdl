@@ -53,6 +53,7 @@ RSpec.configure do |config|
 
   config.before(:each) do
     DatabaseCleaner.start
+    FactoryGirl.lint
   end
 
   config.after(:each) do

@@ -16,12 +16,7 @@ describe 'The account deletion button' do
   before :each do
     @country = Country.create!(name: 'France', language: 'Français',
                                flag_path: 'public/flags/french.jpg')
-    @user = User.create!(first_name: 'Thibaut', last_name: 'Roche',
-                         birthdate: Date.new(1994, 02, 11), gender: 1,
-                         email: 'thibaut.roche.perso@gmail.com',
-                         password: 'liodzojdzol',
-                         password_confirmation: 'liodzojdzol',
-                         country: Country.first, confirmed_at: Date.current)
+    @user = FactoryGirl.create(:user)
 
     sign_in @user
     visit '/users/edit'

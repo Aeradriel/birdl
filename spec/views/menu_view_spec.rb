@@ -26,14 +26,7 @@ describe 'The menu' do
     end
 
     before :each do
-      Country.create(name: 'France', language: 'Français',
-                     flag_path: 'public/flags/french.jpg')
-      @user = User.create!(first_name: 'Thibaut', last_name: 'Roche',
-                           birthdate: Date.new(1994, 02, 11),
-                           gender: 1, email: 'thibaut.roche.perso@gmail.com',
-                           password: 'liodzojdzol',
-                           password_confirmation: 'liodzojdzol',
-                           country: Country.first, confirmed_at: Date.current)
+      @user = FactoryGirl.create(:user)
 
       visit '/login'
       sign_in @user

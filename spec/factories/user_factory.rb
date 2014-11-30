@@ -5,6 +5,7 @@ FactoryGirl.define do
     sequence(:email) { |n| "thibaut.roche.perso#{n}@gmail.com" }
     password 'password'
     password_confirmation 'password'
+    confirmed_at 2.weeks.ago
     birthdate 20.years.ago
     gender 1
   end
@@ -15,6 +16,7 @@ FactoryGirl.define do
     sequence(:email) { |n| "thibaut.roche#{n}@epitech.eu" }
     password 'password'
     password_confirmation 'password'
+    confirmed_at 2.weeks.ago
     birthdate 20.years.ago
     gender 1
     admin true

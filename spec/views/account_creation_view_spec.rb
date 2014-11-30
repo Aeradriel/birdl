@@ -46,14 +46,10 @@ describe 'The account creation page' do
   end
 
   it 'should contain right countries' do
-    Country.create!(name: 'France', language: 'Français',
-                    flag_path: '/public/flag.png')
-    Country.create!(name: 'England', language: 'English (GB)',
-                    flag_path: '/public/flag.png')
-    Country.create!(name: 'USA', language: 'English (US)',
-                    flag_path: '/public/flag.png')
-    Country.create!(name: 'Canada', language: 'Nawak',
-                    flag_path: '/public/flag.png')
+    FactoryGirl.create(:france)
+    FactoryGirl.create(:england)
+    FactoryGirl.create(:usa)
+    FactoryGirl.create(:canada)
 
     visit '/users/sign_up'
     Country.all.each do |country|

@@ -11,22 +11,11 @@ describe 'The admin country edition page' do
   end
 
   before :each do
-    @country = Country.create!(name: 'France', language: 'Français',
-                               flag_path: 'public/flags/french.jpg')
-    @user = User.create!(first_name: 'Thibaut', last_name: 'Roche',
-                         birthdate: Date.new(1994, 02, 11),
-                         gender: 1, email: 'thibaut.roche.perso@gmail.com',
-                         password: 'liodzojdzol',
-                         password_confirmation: 'liodzojdzol', admin: true,
-                         country: Country.first, confirmed_at: Date.current)
-
-    Country.create!(name: 'England', language: 'English (GB)',
-                    flag_path: 'public/flags/french.jpg')
-    Country.create!(name: 'Spain', language: 'Spanish',
-                    flag_path: 'public/flags/french.jpg')
-    Country.create!(name: 'USA', language: 'English (US)',
-                    flag_path: 'public/flags/french.jpg')
-
+    @country = FactoryGirl.create(:france)
+    @user = FactoryGirl.create(:admin)
+    FactoryGirl.create(:england)
+    FactoryGirl.create(:usa)
+    FactoryGirl.create(:canada)
     @countries = Country.all.order(:name)
 
     sign_in @user

@@ -39,10 +39,11 @@ describe 'The account deletion button' do
   end
 
   it 'should delete account when confirming deletion', js: true do
-    click_on 'delete_submit'
-    page.driver.browser.switch_to.alert.accept
-    visit '/'
-    expect(User.count).to eq 0
+    expect do
+      click_on 'delete_submit'
+      page.driver.browser.switch_to.alert.accept
+      visit '/'
+    end.to change(User, :count).by(-1)
   end
 
   it 'should delete/change events of the user after deletion' do

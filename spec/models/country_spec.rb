@@ -47,24 +47,9 @@ describe 'A Country' do
   end
 
   it 'when deleted should reset its users country' do
-    User.create!(id: 1, first_name: 'Thibaut', last_name: 'Roche',
-                 birthdate: Date.new(1994, 02, 11),
-                 gender: 1, email: 'thibaut.roche.perso@gmail.com',
-                 password: 'liodzojdzol',
-                 password_confirmation: 'liodzojdzol',
-                 country: Country.first)
-    User.create!(id: 2, first_name: 'Thibaut', last_name: 'Roche',
-                 birthdate: Date.new(1994, 02, 11),
-                 gender: 1, email: 'thibaut.roche.perso2@gmail.com',
-                 password: 'liodzojdzol',
-                 password_confirmation: 'liodzojdzol',
-                 country: Country.first)
-    User.create!(id: 3, first_name: 'Thibaut', last_name: 'Roche',
-                 birthdate: Date.new(1994, 02, 11),
-                 gender: 1, email: 'thibaut.roche.perso3@gmail.com',
-                 password: 'liodzojdzol',
-                 password_confirmation: 'liodzojdzol',
-                 country: Country.first)
+    3.times do
+      FactoryGirl.create(:user, country: @country)
+    end
 
     @country.destroy
     expect(User.find(1).country).to eq nil

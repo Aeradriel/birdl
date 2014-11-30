@@ -149,20 +149,28 @@ describe 'The admin user edition page' do
     end
 
     it 'should contain language that match with user language' do
-      users = User.where(admin: false).all
-      admins = User.where(admin: true).all
+      u = User.where(admin: false).all
+      a = User.where(admin: true).all
       i = 0
 
       all('#admin_userlist tr').each do |tr|
         next if tr.has_css?('th')
-        expect(tr.find('.user_country')).to have_content(users[i].country.name)
+        if u[i].country
+          expect(tr.find('.user_country')).to have_content(u[i].country.name)
+        else
+          expect(tr.find('.user_country')).to have_content(I18n.t(:unknown))
+        end
         i += 1
       end
 
       i = 0
       all('#admin_adminlist tr').each do |tr|
         next if tr.has_css?('th')
-        expect(tr.find('.user_country')).to have_content(admins[i].country.name)
+        if a[i].country
+          expect(tr.find('.user_country')).to have_content(a[i].country.name)
+        else
+          expect(tr.find('.user_country')).to have_content(I18n.t(:unknown))
+        end
         i += 1
       end
     end

@@ -23,13 +23,26 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true, allow_nil: false, allow_blank: false
   validates :last_name, presence: true, allow_nil: false, allow_blank: false
   validates :birthdate, presence: true, allow_nil: false, allow_blank: false
-  validate :gender_is_correct
+  validate :validate_gender
+  validate :validate_birthdate
 
-  def gender_is_correct
-    errors.add(:gender, 'is invalid') if gender != 1 && gender != 0
+  def gender_valid?
+    false unless gender == 1 || gender == 0
+    true
   end
 
   def name
     "#{first_name} #{last_name}"
+  end
+
+  protected
+
+  def validate_gender
+    errors.add(:gender, 'is invalid') if gender != 1 && gender != 0
+  end
+
+  def validate_birthdate
+    valid = birthdate.nil? || birthdate > 18.years.ago ? false : true
+    errors.add(:birthdate, 'is invalid') unless valid
   end
 end

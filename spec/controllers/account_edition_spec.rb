@@ -11,14 +11,7 @@ describe 'The account edition page' do
   end
 
   before :each do
-    @country = Country.create!(name: 'France', language: 'Français',
-                               flag_path: 'public/flags/french.jpg')
-    @user = User.create!(first_name: 'Thibaut', last_name: 'Roche',
-                         birthdate: Date.new(1994, 02, 11),
-                         gender: 1, email: 'thibaut.roche.perso@gmail.com',
-                         password: 'liodzojdzol',
-                         password_confirmation: 'liodzojdzol',
-                         country: Country.first, confirmed_at: Date.current)
+    @user = FactoryGirl.create(:user)
 
     sign_in @user
     visit '/users/edit'
@@ -31,7 +24,7 @@ describe 'The account edition page' do
 
   it 'should indicate the wrong field' do
     fill_in 'user_email', with: 'bonjour@lol.com'
-    fill_in 'user_current_password', with: ',dkoezdjozejdoz'
+    fill_in 'user_current_password', with: 'iudjeiuzdhuize'
     click_button 'edit_submit'
     expect(page).to have_css('.field_with_errors')
   end
@@ -80,12 +73,9 @@ describe 'The account edition page' do
   end
 
   it 'should change country when editing in form' do
-    @country2 = Country.create!(name: 'USA', language: 'English (US)',
-                                flag_path: 'public/flags/french.jpg')
-    @country3 = Country.create!(name: 'England', language: 'English (GB)',
-                                flag_path: 'public/flags/french.jpg')
-    @country4 = Country.create!(name: 'Spain', language: 'Spanish',
-                                flag_path: 'public/flags/french.jpg')
+    FactoryGirl.create(:england)
+    FactoryGirl.create(:france)
+    FactoryGirl.create(:canada)
 
     visit '/users/edit'
     select 'England', from: 'user_country_id'

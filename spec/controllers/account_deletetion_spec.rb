@@ -14,8 +14,6 @@ describe 'The account deletion button' do
   end
 
   before :each do
-    @country = Country.create!(name: 'France', language: 'Français',
-                               flag_path: 'public/flags/french.jpg')
     @user = FactoryGirl.create(:user)
 
     sign_in @user

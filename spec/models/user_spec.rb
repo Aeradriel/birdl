@@ -3,8 +3,7 @@ require 'rails_helper'
 
 describe 'A User' do
   before :each do
-    Country.create(name: 'France', language: 'Français',
-                   flag_path: 'public/flags/french.jpg')
+    @country = FactoryGirl.build(:france)
     @valid_user = FactoryGirl.create(:user)
   end
 
@@ -48,6 +47,11 @@ describe 'A User' do
 
   it 'should not have a country by default' do
     expect(@valid_user.country).to eq nil
+    expect(@valid_user.valid?).to eq true
+  end
+
+  it 'should be valid when country is set' do
+    @valid_user.country = @country
     expect(@valid_user.valid?).to eq true
   end
 

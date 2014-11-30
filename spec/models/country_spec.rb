@@ -3,46 +3,26 @@ require 'rails_helper'
 
 describe 'A Country' do
   before :each do
-    @country = Country.create!(name: 'France', language: 'Français',
-                               flag_path: 'public/flags/french.jpg',
-                               available: false, i18n_key: nil)
-  end
-
-  it 'should have the correct name' do
-    expect(@country.valid?).to eq true
-    expect(@country.name).to eq 'France'
-  end
-
-  it 'should have the correct language' do
-    expect(@country.valid?).to eq true
-    expect(@country.language).to eq 'Français'
-  end
-
-  it 'should have the correct flag path' do
-    expect(@country.valid?).to eq true
-    expect(@country.flag_path).to eq 'public/flags/french.jpg'
+    @country = FactoryGirl.create(:france)
   end
 
   it 'should not have an empty language' do
-    bad_country = Country.new(name: 'France', language: '',
-                              flag_path: 'public/flags/french.jpg')
+    bad_country = FactoryGirl.build(:france, language: '')
     expect(bad_country.valid?).to eq false
   end
 
   it 'should not be valid without language' do
-    bad_country = Country.new(name: 'France',
-                              flag_path: 'public/flags/french.jpg')
+    bad_country = FactoryGirl.build(:france, language: nil)
     expect(bad_country.valid?).to eq false
   end
 
   it 'should not have an empty name' do
-    bad_country = Country.new(name: '', language: 'Français',
-                              flag_path: 'public/flags/french.jpg')
+    bad_country = FactoryGirl.build(:france, name: '')
     expect(bad_country.valid?).to eq false
   end
 
   it 'should not be valid without name' do
-    bad_country = Country.new(flag_path: 'public/flags/french.jpg')
+    bad_country = FactoryGirl.build(:france, name: nil)
     expect(bad_country.valid?).to eq false
   end
 

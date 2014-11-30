@@ -11,14 +11,7 @@ describe 'The admin account edition page' do
   end
 
   before :each do
-    @country = Country.create!(name: 'France', language: 'Français',
-                               flag_path: 'public/flags/french.jpg')
-    @user = User.create!(first_name: 'Thibaut', last_name: 'Roche',
-                         birthdate: Date.new(1994, 02, 11),
-                         gender: 1, email: 'thibaut.roche.perso@gmail.com',
-                         password: 'liodzojdzol',
-                         password_confirmation: 'liodzojdzol', admin: true,
-                         country: Country.first, confirmed_at: Date.current)
+    @user = FactoryGirl.create(:admin)
 
     sign_in @user
     visit "/admin/users/#{@user.id}/edit"
@@ -49,12 +42,9 @@ describe 'The admin account edition page' do
   end
 
   it 'should change country when editing in form' do
-    @country2 = Country.create!(name: 'USA', language: 'English (US)',
-                                flag_path: 'public/flags/french.jpg')
-    @country3 = Country.create!(name: 'England', language: 'English (GB)',
-                                flag_path: 'public/flags/french.jpg')
-    @country4 = Country.create!(name: 'Spain', language: 'Spanish',
-                                flag_path: 'public/flags/french.jpg')
+    FactoryGirl.create(:england)
+    FactoryGirl.create(:france)
+    FactoryGirl.create(:canada)
 
     visit "/admin/users/#{@user.id}/edit"
     select 'England', from: 'user_country_id'

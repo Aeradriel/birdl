@@ -30,32 +30,29 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class="selector_ navbar-right">
-        <div class="selector_container">
-          <section class="selector_main">
-            <div class="wrapper-demo">
-              <div class="wrapper-dropdown-3" tabindex="1">
-                    <span>
-                      <div class="selector_icon"><img src="/images/flags/<%= flag(I18n.locale) %>"/></div>
-                      <div class="selector_text"><%= I18n.locale %></div>
-                      <div style="clear: both;"></div>
-                    </span>
-                <ul class="dropdown">
-                  <% Country.where(available: true).each do |country| %>
-                      <li>
-                        <div class="selector_icon"><img src="/images/flags/<%= country.name %>.ico"/></div>
-                        <div class="selector_text"><%= link_to country.i18n_key, "/change_locale/#{country.i18n_key}" %></a></div>
-                        <div style="clear: both;"></div>
-                      </li>
-                  <% end %>
-                </ul>
-              </div>
-            </div>
-          </section>
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+            <div class="selector_icon"><img src="/images/flags/<%= flag(I18n.locale) %>"/></div>
+            <div class="selector_text"><%= I18n.locale %></div>
+            <div class="caret"></div>
+            <div style="clear: both;"></div>
+          </button>
+
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <% Country.where(available: true).each do |country| %>
+                <li role="presentation">
+                  <div class="selector_icon"><img src="/images/flags/<%= country.name %>.ico"/></div>
+                  <div class="selector_text"><%= link_to country.i18n_key, "/change_locale/#{country.i18n_key}", role: 'menu-item', tabindex: -1 %></a></div>
+                  <div style="clear: both;"></div>
+                </li>
+            <% end %>
+          </ul>
         </div>
       </li>
     </ul>
   </div>
 </nav>
+
 <% if flash[:alert] %>
     <div class="alert alert-danger alert-dismissible" role="alert">
       <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>

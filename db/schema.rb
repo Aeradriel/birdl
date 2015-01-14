@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20141121180135) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "achievements", force: true do |t|
     t.integer  "user_id"
     t.integer  "badge_id"
@@ -64,8 +61,8 @@ ActiveRecord::Schema.define(version: 20141121180135) do
     t.datetime "updated_at"
   end
 
-  add_index "messages", ["receiver_id"], name: "index_messages_on_receiver_id", using: :btree
-  add_index "messages", ["sender_id"], name: "index_messages_on_sender_id", using: :btree
+  add_index "messages", ["receiver_id"], name: "index_messages_on_receiver_id"
+  add_index "messages", ["sender_id"], name: "index_messages_on_sender_id"
 
   create_table "participations", force: true do |t|
     t.integer "user_id"
@@ -81,8 +78,8 @@ ActiveRecord::Schema.define(version: 20141121180135) do
     t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
@@ -92,14 +89,14 @@ ActiveRecord::Schema.define(version: 20141121180135) do
     t.string   "first_name"
     t.string   "last_name"
     t.date     "birthdate"
-    t.integer  "gender"
+    t.integer  "gender",                 default: 1
     t.boolean  "admin",                  default: false
     t.integer  "country_id"
     t.string   "locale"
   end
 
-  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

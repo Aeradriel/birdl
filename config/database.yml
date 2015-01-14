@@ -21,11 +21,22 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
 
+sec: &sec
+  adapter: sqlite3
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+
 development:
   <<: *default
   database: Birdl_development
   username: birdl
   password: e0d46d62e618083ee645833739c2267d
+
+development_sec:
+  <<: *sec
+  database: Birdl_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -87,3 +98,7 @@ production:
   database: Birdl_production
   username: birdl
   password: <%= ENV['BIRDL_DATABASE_PASSWORD'] %>
+
+production_sec:
+  <<: *sec
+  database: Birdl_production

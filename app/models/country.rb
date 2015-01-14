@@ -2,9 +2,8 @@
 class Country < ActiveRecord::Base
   before_destroy :remove_from_users
 
-  validates :language, presence: true, allow_nil: false, allow_blank: false
-  validates :name, presence: true, allow_nil: false, allow_blank: false
-  validates :flag_path, presence: true, allow_nil: false, allow_blank: false
+  validates :language, presence: true
+  validates :name, presence: true
   validate :check_i18n_key
 
   has_many :users

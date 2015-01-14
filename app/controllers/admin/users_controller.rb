@@ -22,10 +22,10 @@ module Admin
     end
 
     def create
-      user = User.create(user_params)
+      user = User.new(user_params)
 
-      if user_is_valid(user)
-        flash[:notice] = "L'utilisateur #{@user.name} a bien été creé"
+      if user.save
+        flash[:notice] = "L'utilisateur #{user.name} a bien été creé"
       else
         flash[:alert] = "L'utilisateur n'a pas pu être créé"
       end
@@ -37,12 +37,10 @@ module Admin
     end
 
     def update
-      name = @user.name
-
       if @user.update(user_params) && @user.confirm!
-        flash[:notice] = "L'utilisateur #{name} a bien été mis à jour"
+        flash[:notice] = "L'utilisateur #{@user.name} a bien été mis à jour"
       else
-        flash[:alert] = "L'utilisateur #{name} n'a pas pu être mis à jour"
+        flash[:alert] = "L'utilisateur #{@user.name} n'a pas pu être mis à jour"
       end
       redirect_to action: :users
     end

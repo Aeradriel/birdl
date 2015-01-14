@@ -30,14 +30,15 @@ include Devise::TestHelpers
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
+SimpleCov.start do
+  add_group 'Models', '/app/models/'
+  add_group 'Controllers', '/app/controllers/'
+  add_group 'Views', '/app/views/'
+  add_group 'Helpers', '/app/helpers/'
+  add_group 'Unit Tests', '/spec/'
+end
+
 RSpec.configure do |config|
-  SimpleCov.start do
-    add_group 'Models', '/app/models/'
-    add_group 'Controllers', '/app/controllers/'
-    add_group 'Views', '/app/views/'
-    add_group 'Helpers', '/app/helpers/'
-    add_group 'Unit Tests', '/spec/'
-  end
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"

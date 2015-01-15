@@ -14,6 +14,7 @@ describe 'The admin user edition page' do
     @country = FactoryGirl.create(:france)
     @user = FactoryGirl.create(:admin)
     FactoryGirl.create(:admin, country: @country)
+    FactoryGirl.create(:user, country: @country)
     FactoryGirl.create(:user)
 
     sign_in @user

@@ -1,16 +1,21 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  resources :events
-
   devise_for :users, skip: [:sessions]
   as :user do
     get '/login' => 'devise/sessions#new', as: :new_user_session
     post '/login' => 'devise/sessions#create', as: :user_session
     delete '/logout' => 'devise/sessions#destroy', as: :destroy_user_session
   end
+
+  resource :events do
+    get '/' => 'events#search', as: :events_path
+    post '/' => 'events#search_events', as: :events_search_path
+  end
+
   namespace :admin do
     get '/' => 'admin#index'
+
     resource :users do
       get '/' => 'users#users'
       get '/new' => 'users#new'
@@ -19,6 +24,7 @@ Rails.application.routes.draw do
       post '/:user_id/edit' => 'users#update'
       delete '/:user_id/delete' => 'users#delete'
     end
+
     resource :countries do
       get '/' => 'countries#countries'
       get '/new' => 'countries#new'

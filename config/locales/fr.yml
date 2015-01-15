@@ -98,6 +98,21 @@ fr:
   sent_messages: "Messages envoyés"
   from: "De : "
 
+  events: "Événements"
+  event: "Événement"
+  search_event: "Rechercher un événement"
+  past_events: "Événement passés"
+  future_events: "Événements futurs"
+  event_type: "Type d'événement"
+  face_to_face: "Face à Face"
+  tourism_tour: "Sortie touristique"
+  online_chat: "Chat en ligne"
+  remaining_slots: "Places restantes"
+  yes: "Oui"
+  no: "Non"
+  whatever: "Peu importe"
+  search: "Rechercher"
+
   activerecord:
       models:
         user: "Utilisateur"

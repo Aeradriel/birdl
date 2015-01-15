@@ -11,8 +11,6 @@ Rails.application.routes.draw do
   end
   namespace :admin do
     get '/' => 'admin#index'
-    get '/unit_tests/report' => 'admin#ut_report'
-    get '/unit_tests/coverage' => 'admin#ut_coverage'
     resource :users do
       get '/' => 'users#users'
       get '/new' => 'users#new'

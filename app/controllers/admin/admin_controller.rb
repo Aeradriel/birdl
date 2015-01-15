@@ -15,13 +15,5 @@ module Admin
       @group_languages = languages_datas
       @group_genders = genders_datas
     end
-
-    def ut_report
-      render :report
-    end
-
-    def ut_coverage
-      render '/coverage/index'
-    end
   end
 end

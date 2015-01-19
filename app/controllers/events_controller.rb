@@ -5,11 +5,12 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def search
-    @event_types = [
-        [t(:face_to_face), 'facetoface'],
-        [t(:online_chat), 'onlinechat', ],
-        [t(:tourism_tour), 'tourismtour']
-    ]
+    @event_types =
+        [
+          [t(:face_to_face), 'facetoface'],
+          [t(:online_chat), 'onlinechat'],
+          [t(:tourism_tour), 'tourismtour']
+        ]
   end
 
   def search_events

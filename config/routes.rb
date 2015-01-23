@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   resource :events do
+    get '/onlinechat' => 'online_chat#index'
     get '/' => 'events#search', as: :events_path
     post '/' => 'events#search_events', as: :events_search_path
   end

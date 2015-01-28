@@ -1,13 +1,7 @@
 module Admin
   # Controller for country admin panel
-  class CountriesController < ApplicationController
-    before_action :check_auth, :actual_country
-
-    def check_auth
-      return if user_signed_in? && current_user.admin
-      flash[:alert] = t('devise.failure.unauthenticated')
-      redirect_to new_user_session_path
-    end
+  class CountriesController < AdminController
+    before_action :actual_country
 
     def countries
       @countries = Country.order(:name).page(params[:page])

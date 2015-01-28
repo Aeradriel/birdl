@@ -8,7 +8,7 @@ module Admin
     def check_auth
       return if user_signed_in? && current_user.admin
       flash[:alert] = t('devise.failure.unauthenticated')
-      redirect_to new_user_session_path
+      redirect_to root_path
     end
 
     def index

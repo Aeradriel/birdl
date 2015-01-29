@@ -1,37 +1,18 @@
 .body_gen {
   display:block;
-  weight: 1200px;
-  margin-left: 100px;
-  margin-top: 80px;
 }
 
 .chat_body {
+  margin-left: 300px;
   border: 2px;
   font-family: "Varela Round", Arial, Helvetica, sans-serif;
   width: 695px;
+  height: 660px;
   background-color: #fff;
   border-radius: 0 0 0px 10px;
   border-style: solid;
   border-color: #2ab4f8;
   padding: 3px;
-  color: #777;
-  margin-top: 5px;
-  padding-bottom: 8px;
-  font-size: 18px;
-  display:inline-block;
-  float:left;
-}
-
-.usrlist_body {
-  border: 2px;
-  font-family: "Varela Round", Arial, Helvetica, sans-serif;
-  width: 255px;
-  background-color: #fff;
-  border-radius: 0 10px 10px 0px;
-  border-style: solid;
-  border-color: #2ab4f8;
-  padding: 3px;
-  margin-left: 4px;
   color: #777;
   margin-top: 3px;
   font-size: 18px;
@@ -39,7 +20,60 @@
   float:left;
 }
 
+.chat_output {
+  height: 500px;
+  border: 2px;
+  border-style: solid;
+}
+
+.smiley {
+  display:inline-block;
+  float:left;
+  margin-left: 100px;
+  margin-top: 10px;
+}
+
+.configuration {
+  display:inline-block;
+  float:left;
+  margin-left: 250px;
+  margin-top: 10px;
+}
+
+.chat_input {
+  display:inline-block;
+  float:left;
+  margin-top: 32px;
+  height: 60px;
+}
+
+.usrlist_body {
+  border: 2px;
+  font-family: "Varela Round", Arial, Helvetica, sans-serif;
+  width: 255px;
+  height: 663px;
+  background-color: #fff;
+  border-radius: 0 10px 10px 0px;
+  border-style: solid;
+  border-color: #2ab4f8;
+  padding: 3px;
+  margin-left: 4px;
+  color: #777;
+  margin-top: 1px;
+  font-size: 18px;
+  display:inline-block;
+  float:left;
+}
+
+.usrlist_output {
+  height: 654px;
+  border: 2px;
+  border-style: solid;
+  border-radius: 0 10px 10px 0px;
+}
+
 .chat_title {
+  margin-left: 300px;
   background-color: #2ab4f8;
   text-align: center;
   border-radius: 10px 10px 0 0;
@@ -53,24 +87,21 @@
   background-color: #2ab4e1;
 }
 
-.users_title {
-  background-color: #2ab4f8;
-  text-align: center;
-  border-radius: 10px 10px 0 0;
-  color: #fff;
-  font-size: 15px;
-  padding: 3px;
-  vertical-align: 10px;
-}
-
 #send_button {
   width:130px;
-  height:76px;
-  vertical-align: 28px;
+  height:74px;
+  margin-left: 4px;
+  margin-top: 32px;
   background: #2ab4f8;
   font-weight: bold;
   color: white;
   border: 0 none;
   border-radius: 1px;
   cursor: pointer;
+  display:inline-block;
+  float:left;
+}
+
+#send_button {
+  resize: none;
 }

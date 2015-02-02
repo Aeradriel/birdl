@@ -44,10 +44,10 @@ describe 'Admin user deletion button' do
 
   context 'with existing user' do
     it 'should display an error' do
-      @controller = Admin::CountriesController
+      @controller = Admin::UsersController
       @admin = FactoryGirl.create(:admin)
 
-      pending 'Undefined ??'
+      pending('BUG')
       sign_in @admin
       delete :delete, user_id: -1
     end

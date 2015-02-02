@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :country, class: Country do
     sequence(:name) { |n| "France #{n}" }
     sequence(:language) { |n| "Français #{n}" }
-    sequence(:flag_path) { |n| '' }
+    flag_path ''
   end
 
   factory :france, class: Country do

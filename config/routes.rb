@@ -8,10 +8,10 @@ Rails.application.routes.draw do
     delete '/logout' => 'devise/sessions#destroy', as: :destroy_user_session
   end
 
-  resource :events do
+  namespace :events do
     get '/onlinechat' => 'online_chat#index'
-    get '/' => 'events#search', as: :events_path
-    post '/' => 'events#search_events', as: :events_search_path
+    get '/' => 'events#search'
+    post '/' => 'events#search_events', as: :search
   end
 
   namespace :admin do

@@ -1,0 +1,20 @@
+<h2><%= t(:new_country) %></h2>
+
+<%= form_for @country, :url => {action: 'create'}, :html => {:method => 'post', :multipart => true} do |f| %>
+<table class="table_paneladmin">
+	<tr>
+	    <td><%= f.label :name %></td>
+	    <td><%= f.text_field :name %><br/></td>
+	 </tr>
+	 <tr>
+	 	<td><%= f.label :language %></td>
+	    <td><%= f.text_field :language %><br/></td>
+	 </tr>
+	 <tr>
+	 	<td><%= f.label :flag_path %></td>
+	    <td><%= f.file_field :flag_path %><br/></td>
+	</tr>
+</table>
+<a class="btn btn-warning btn-mini icon-white icon-remove edit_button" href="/admin/countries"><%= t(:cancel) %></a>
+<%= f.submit t(:create), :id => 'new_submit', :class => 'btn btn-success btn-mini icon-white icon-remove edit_button'%>
+<% end %>

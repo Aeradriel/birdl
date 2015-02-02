@@ -8,11 +8,6 @@ module Events
     end
 
     def create
-
     end
-
-    private
-
-
   end
 end

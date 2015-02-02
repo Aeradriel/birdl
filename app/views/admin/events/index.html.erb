@@ -1,0 +1,35 @@
+<h1 id="admin_title"><%= t(:events) %></h1>
+<%= link_to t(:new), '/admin/events/new',
+            :class => 'btn btn-success btn-mini icon-white icon-remove admin_new_button' %>
+<br/>
+
+<div id="admin_events_list">
+  <table class="table table">
+    <tr class="active">
+      <th><%= t(:name) %></th>
+      <th><%= t(:type) %></th>
+      <th><%= t(:slots) %></th>
+      <th><%= t(:total_user) %></th>
+      <th><%= t(:actions) %></th>
+    </tr>
+    <% @events.each do |event| %>
+        <tr>
+          <td class="event_name"><span><%= event.name %></span></td>
+          <td class="event_type"><span><%= event.type %></span></td>
+          <td class="event_slots"><span><%= "#{event.users.count}/#{event.max_slots}" %></span></td>
+          <td class="event_user_count"><%= event.users.count %></td>
+          <td class="event_action">
+            <%= link_to t(:edit), "/admin/events/#{event.id}/edit",
+                        :class => 'btn btn-warning btn-mini icon-white icon-remove admin_edit_button' %>
+            <%= link_to t(:delete), "/admin/countries/#{event.id}", :method => :delete,
+                        :class => 'btn btn-danger btn-mini icon-white icon-remove admin_delete_button',
+                        :data => { :confirm => t(:event_deletion_warning) } %>
+          </td>
+        </tr>
+    <% end %>
+  </table>
+
+  <div class="text-center">
+    <%= paginate @events, :theme => 'twitter-bootstrap-3' %>
+  </div>
+</div>

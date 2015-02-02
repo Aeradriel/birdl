@@ -113,6 +113,11 @@ fr:
   whatever: "Peu importe"
   search: "Rechercher"
 
+  type: "Type"
+  slots: "Places"
+  slot: "Place"
+  event_deletion_warning: "Êtes vous sûr de vouloir supprimer cet événement ?"
+
   activerecord:
       models:
         user: "Utilisateur"

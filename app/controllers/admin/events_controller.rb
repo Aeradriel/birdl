@@ -51,7 +51,7 @@ module Admin
 
     def event_params
       params.require(:event).permit(:name, :min_slots, :max_slots,
-      :date, :end)
+                                    :date, :end)
     end
 
     def actual_event

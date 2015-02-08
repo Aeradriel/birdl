@@ -3,6 +3,7 @@
 
 <%= form_for :chat_online do |f| %>
 
+
     <body class="body_gen">
     <span class="chat_title">Chat général</span><br>
 
@@ -10,7 +11,7 @@
       <div class="chat_output"></div>
       <div class="smiley"><h5>Smiley</h5></div>
       <div class="configuration"><h5>Configuration</h5></div>
-      <div class="chat_input"><%= f.text_area :input, :size=>"45", placeholder: "Envoyer un message", :maxlength=>"254"%></div>
+      <div class="chat_input"><TEXTAREA NAME="input" COLS=42 ROWS="2" ></TEXTAREA></div>
       <input type="button" value="Envoyer" id="send_button">
     </div>
 

@@ -6,7 +6,7 @@
     <%= radio_button_tag :past_events, false, checked: true %>
     <%= label_tag :past_events_false, t(:future_events) %>
     <%= select_tag :event_type, options_for_select(@event_types) %>
-    <%= label_tag :past_events_false, t(:event_type) %>
+    <%= label_tag :event_type, t(:event_type) %>
     <%= number_field_tag :remaining_slots %>
     <%= label_tag :remaining_slots, t(:remaining_slots) %>
     <%= radio_button_tag :friends_in, 'yes' %>

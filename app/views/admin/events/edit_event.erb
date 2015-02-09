@@ -1,20 +1,32 @@
-<h2><%= "#{t(:edition_of)} #{@country.language}" %></h2>
+<h2><%= "#{t(:edition_of)} #{@event.name}" %></h2>
 
-<%= form_for @country, :url => {action: 'update'}, :html => {:method => 'post', :multipart => true} do |f| %>
-<table class="table_paneladmin">
-	<tr>
-		<td><%= f.label :name %></td>
-	    <td><%= f.text_field :name %><br/></td>
-	</tr>
-    <tr>
-		<td><%= f.label :language %></td>
-	    <td><%= f.text_field :language %><br/></td>
-	</tr>
-    <tr>
-	   	<td><%= f.label :flag_path %></td>
-		<td><%= f.file_field :flag_path %><br/></td>
-	</tr>
-</table>
-<a class="btn btn-warning btn-mini icon-white icon-remove edit_button" href="/admin/countries"><%= t(:cancel) %></a>
-<%= f.submit t(:update), :id => 'edit_submit' , :class => 'btn btn-success btn-mini icon-white icon-remove edit_button'%>
+<%= form_for @event, :url => {action: 'update'}, :html => {:method => 'patch'} do |f| %>
+    <table class="table_paneladmin">
+      <tr>
+        <td><%= f.label :name %></td>
+        <td><%= f.text_field :name %><br/></td>
+      </tr>
+      <tr>
+        <td><%= f.label :type, t(:event_type) %></td>
+        <td><%= f.select :type, options_for_select(@event_types) %><br/></td>
+      </tr>
+      <tr>
+        <td><%= f.label :min_slots, t(:min_slots) %></td>
+        <td><%= f.number_field :min_slots %><br/></td>
+      </tr>
+      <tr>
+        <td><%= f.label :max_slots, t(:max_slots) %></td>
+        <td><%= f.number_field :max_slots %><br/></td>
+      </tr>
+      <tr>
+        <td><%= f.label :date, t(:date_begin) %></td>
+        <td><%= f.date_field :date %><br/></td>
+      </tr>
+      <tr>
+        <td><%= f.label :end, t(:date_end) %></td>
+        <td><%= f.date_field :end %><br/></td>
+      </tr>
+    </table>
+    <a class="btn btn-warning btn-mini icon-white icon-remove edit_button" href="/admin/countries"><%= t(:cancel) %></a>
+    <%= f.submit t(:edit), :id => 'edit_submit', :class => 'btn btn-success btn-mini icon-white icon-remove edit_button'%>
 <% end %>

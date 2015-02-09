@@ -8,7 +8,7 @@
     <tr class="active">
       <th><%= t(:name) %></th>
       <th><%= t(:type) %></th>
-      <th><%= t(:slots) %></th>
+      <th><%= t(:filled_slots) %></th>
       <th><%= t(:total_user) %></th>
       <th><%= t(:actions) %></th>
     </tr>
@@ -21,7 +21,7 @@
           <td class="event_action">
             <%= link_to t(:edit), "/admin/events/#{event.id}/edit",
                         :class => 'btn btn-warning btn-mini icon-white icon-remove admin_edit_button' %>
-            <%= link_to t(:delete), "/admin/countries/#{event.id}", :method => :delete,
+            <%= link_to t(:delete), "/admin/events/#{event.id}", :method => :delete,
                         :class => 'btn btn-danger btn-mini icon-white icon-remove admin_delete_button',
                         :data => { :confirm => t(:event_deletion_warning) } %>
           </td>

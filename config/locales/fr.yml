@@ -114,8 +114,14 @@ fr:
   search: "Rechercher"
 
   type: "Type"
+  new_event: "Nouvel Événement"
   slots: "Places"
   slot: "Place"
+  filled_slots: "Places occupées"
+  min_slots: "Nombre de places minimum"
+  max_slots: "Nombre de places maximum"
+  date_begin: "Date de début"
+  date_end: "Date de fin"
   event_deletion_warning: "Êtes vous sûr de vouloir supprimer cet événement ?"
 
   activerecord:

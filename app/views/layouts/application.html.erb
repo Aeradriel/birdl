@@ -43,13 +43,10 @@
       </ul>
     
       <ul class="nav navbar-nav navbar-right">
-        <li class="selector_ navbar-right">
+
           <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+            <button class="selector_button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
               <div class="selector_icon"><img src="/images/flags/<%= flag(I18n.locale) %>"/></div>
-              <div class="selector_text"><%= I18n.locale %></div>
-              <div class="caret"></div>
-              <div style="clear: both;"></div>
             </button>
 
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
@@ -62,7 +59,7 @@
               <% end %>
             </ul>
           </div>
-        </li>
+
       </ul>
     </div>
   </div>

@@ -269,19 +269,49 @@ ul.nav-stacked ul.nav-stacked > li > a {
   pointer-events: auto;
 }
 
-/* - Flags - */
+
+
+/* - Language Selector CSS - */
 
 .selector_icon {
 
 }
 
 .selector_icon img {
-  float: left;
-  width: 20%;
-  height: 20%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
 }
 
 .selector_text {
-  width: 80%;
+  width: 15%;
   float: right;
+}
+
+.selector_button {
+  background-color: rgba(248,248,248,0.4);
+  color: rgba(119,119,119, 0.4);
+  background-position: center;
+  border: solid 1px rgba(248,248,248,0.4);
+  max-width: 100%;
+  height: 40px;
+  width: 50px;
+  padding: 5px;
+  display: inline;
+  line-height: 12px;
+  font-size: 15px;
+  text-align: right;
+  margin-top: 5px;
+ }
+
+.selector_button:hover {
+  background-color: rgba(248,248,248,0.4);
+  background-position: center;
+  height: 40px;
+  border: solid 3px rgba(248,248,248,0.4);
+}
+
+.selector_dropmenu {
+  background-color: rgba(248,248,248,0.4);
 }

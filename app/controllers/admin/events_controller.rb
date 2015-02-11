@@ -11,9 +11,9 @@ module Admin
       @event = Event.new
       @event_types =
           [
-              [t(:face_to_face), 'FaceToFace'],
-              [t(:online_chat), 'OnlineChat'],
-              [t(:tourism_tour), 'TourismTour']
+            [t(:face_to_face), 'FaceToFace'],
+            [t(:online_chat), 'OnlineChat'],
+            [t(:tourism_tour), 'TourismTour']
           ]
       render :new_event
     end
@@ -24,7 +24,7 @@ module Admin
       if e.save
         flash[:notice] = "L'événement #{e.name} a bien été creé"
       else
-        flash[:alert] = "L'événement #{e.name} n'a pas pu être créé : #{e.errors.inspect}"
+        flash[:alert] = "L'événement #{e.name} n'a pas pu être créé"
       end
       redirect_to action: :index
     end
@@ -32,9 +32,9 @@ module Admin
     def edit
       @event_types =
           [
-              [t(:face_to_face), 'FaceToFace'],
-              [t(:online_chat), 'OnlineChat'],
-              [t(:tourism_tour), 'TourismTour']
+            [t(:face_to_face), 'FaceToFace'],
+            [t(:online_chat), 'OnlineChat'],
+            [t(:tourism_tour), 'TourismTour']
           ]
       render :edit_event
     end
@@ -62,19 +62,16 @@ module Admin
     private
 
     def event_params
+      sym = :event
       if actual_event.class == FaceToFace
-        params.require(:face_to_face).permit(:name, :type,:min_slots,
-                                             :max_slots, :date, :end)
+        sym = :face_to_face
       elsif actual_event.class == OnlineChat
-        params.require(:online_chat).permit(:name, :type,:min_slots,
-                                            :max_slots, :date, :end)
+        sym = :online_chat
       elsif actual_event.class == TourismTour
-        params.require(:tourism_tour).permit(:name, :type,:min_slots,
-                                             :max_slots, :date, :end)
-      else
-        params.require(:event).permit(:name, :type,:min_slots,
-                                      :max_slots, :date, :end)
+        sym = :tourism_tour
       end
+      params.require(sym).permit(:name, :type, :min_slots,
+                                 :max_slots, :date, :end)
     end
 
     def actual_event

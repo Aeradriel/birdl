@@ -279,14 +279,12 @@ ul.nav-stacked ul.nav-stacked > li > a {
 
 .selector_icon img {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 75%;
+  float: left;
+  width: 50%;
 }
 
 .selector_text {
-  width: 15%;
-  float: right;
+  margin-top: 10px;
 }
 
 .selector_button {
@@ -296,12 +294,11 @@ ul.nav-stacked ul.nav-stacked > li > a {
   border: solid 1px rgba(248,248,248,0.4);
   max-width: 100%;
   height: 40px;
-  width: 50px;
+  width: 70px;
   padding: 5px;
   display: inline;
   line-height: 12px;
   font-size: 15px;
-  text-align: right;
   margin-top: 5px;
  }
 

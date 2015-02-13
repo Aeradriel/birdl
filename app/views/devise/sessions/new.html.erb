@@ -3,17 +3,15 @@
 <body id="LoginBody">
 
     <div id="login">
-        <h2><span class="fontawesome-lock"></span><%= t(:sign_in) %></h2>
+        <h2><%= image_tag('logo_birdl.png', :class =>'logo') %><%= image_tag('text_logo.png', :class => 'text_logo') %></h2>
 
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
           <fieldset>
 
-              <p><%= f.label :email %></p>
               <p><span class="input"><%= f.email_field :email, :id => 'user_email', :class => 'user_email',
                                                        :placeholder => t(:email), autofocus: true %></span></p>
 
-              <p><%= f.label :password %></p>
               <p><span class="input"><%= f.password_field :password, :id => 'user_password', :class => 'user_password',
                                                           :placeholder => t(:password) %></span></p>
 

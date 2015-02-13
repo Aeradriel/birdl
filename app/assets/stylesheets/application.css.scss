@@ -287,6 +287,22 @@ ul.nav-stacked ul.nav-stacked > li > a {
   margin-top: 10px;
 }
 
+.selector_nicon {
+
+}
+
+.selector_nicon img {
+  display: block;
+  float: left;
+  width: 20%;
+}
+
+.selector_ntext {
+  margin-top: 10px;
+  text-align: center;
+}
+
+
 .selector_button {
   background-color: rgba(248,248,248,0.4);
   color: rgba(119,119,119, 0.4);

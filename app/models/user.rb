@@ -3,7 +3,8 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable,
+         :omniauthable, omniauth_providers: [:facebook]
 
   belongs_to :country
   has_many :received_messages, -> { where sent: true },
@@ -44,5 +45,16 @@ class User < ActiveRecord::Base
   def validate_birthdate
     valid = birthdate.nil? || birthdate > 18.years.ago ? false : true
     errors.add(:birthdate, 'is invalid') unless valid
+  end
+
+  def self.from_omniauth(auth)
+    where(email: auth.info.email).first_or_create do |user|
+      user.email = auth.info.email + 'lol'
+      user.password = Devise.friendly_token[0, 20]
+      user.first_name = auth.info.name
+      user.last_name = 'lol'
+      user.birthdate = 20.years.ago
+      user.gender = 1
+    end
   end
 end

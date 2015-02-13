@@ -1,3 +1,9 @@
+Style/AlignHash:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 20
+
 AllCops:
   Exclude:
     - 'db/**/*'

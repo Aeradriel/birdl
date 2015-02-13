@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141121180135) do
+ActiveRecord::Schema.define(version: 20150211193456) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "achievements", force: true do |t|
     t.integer  "user_id"
@@ -61,8 +64,8 @@ ActiveRecord::Schema.define(version: 20141121180135) do
     t.datetime "updated_at"
   end
 
-  add_index "messages", ["receiver_id"], name: "index_messages_on_receiver_id"
-  add_index "messages", ["sender_id"], name: "index_messages_on_sender_id"
+  add_index "messages", ["receiver_id"], name: "index_messages_on_receiver_id", using: :btree
+  add_index "messages", ["sender_id"], name: "index_messages_on_sender_id", using: :btree
 
   create_table "participations", force: true do |t|
     t.integer "user_id"
@@ -89,14 +92,16 @@ ActiveRecord::Schema.define(version: 20141121180135) do
     t.string   "first_name"
     t.string   "last_name"
     t.date     "birthdate"
-    t.integer  "gender",                 default: 1
+    t.integer  "gender"
     t.boolean  "admin",                  default: false
     t.integer  "country_id"
     t.string   "locale"
+    t.string   "provider"
+    t.string   "uid"
   end
 
-  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

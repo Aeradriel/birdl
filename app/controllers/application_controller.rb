@@ -30,7 +30,8 @@ class ApplicationController < ActionController::Base
   end
 
   def check_auth
-    authorized = %w(application sessions registrations confirmations passwords)
+    authorized = %w(application sessions registrations confirmations
+                    passwords omniauth_callbacks)
     return unless !user_signed_in? && !authorized.include?(controller_name)
     flash[:alert] = t('devise.failure.unauthenticated')
     redirect_to new_user_session_path

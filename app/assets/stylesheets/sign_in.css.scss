@@ -73,21 +73,16 @@
   margin-bottom: 0;
 }
 
-#login fieldset input {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-
 #login fieldset input[type="email"], #login fieldset input[type="password"] {
   background-color: #eee;
   color: #777;
   padding: 4px 10px;
   width: 328px;
+  height: 43px;
 }
 
 #login fieldset input[type="submit"] {
-  background-color: #27ae60;
+  background-color: #6FCCC9;
   color: #fff;
   display: block;
   margin: 0 auto;
@@ -96,7 +91,7 @@
 }
 
 #login fieldset input[type="submit"]:hover {
-  background-color: #28ad63;
+  background-color: #59BDBA;
 }
 
 .link_login{
@@ -107,8 +102,9 @@
 /* --- CSS for buttons --- */
 
 .login_button {
-  background-color: rgba(0,217,76,1);
+  background-color: #6FCCC9;
   background-position: center;
+  border: solid 1px #6FCCC9;
   max-width: 100%;
   height: 40px;
   padding: 10px;
@@ -120,14 +116,17 @@
   font-weight: initial;
   float: right;
 }
+
 .login_button:hover {
-  background-color: rgba(0, 209, 53, 0.9) !important;
+  background-color: #59BDBA !important;
   background-position: center;
   height: 40px;
+  border: solid 1px #59BDBA;
 }
 
 .pwd_button {
-  background-color: rgba(255,140,0,1);
+  background-color: #EE6163;
+  border: solid 1px #EE6163;
   max-width: 100%;
   height: 40px;
   padding: 10px;
@@ -141,7 +140,8 @@
 }
 
 .pwd_button:hover{
-  background-color: rgba(255, 209, 53, 0.9);
+  background-color: #EE5255;
   background-position: center;
   height: 40px;
+  border: solid 1px #EE5255;
 }

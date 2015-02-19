@@ -20,4 +20,8 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :facebook, '635859829894214',
                   'fb5c781e5ed229976be0269dc72b8761'
+  config.omniauth :google_oauth2,
+                  '672573300786-ejlc7anqtteekmh15a9veg8uc590jcu1.' \
+                  'apps.googleusercontent.com',
+                  '3zhOoiZDdh5m856ZetGpxI9j'
 end

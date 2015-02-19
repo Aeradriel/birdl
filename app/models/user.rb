@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable,
-         :omniauthable, omniauth_providers: [:facebook]
+         :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   belongs_to :country
   has_many :received_messages, -> { where sent: true },
@@ -36,6 +36,13 @@ class User < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
 
+  def fill(email, password, first_name, last_name)
+    self.email = email
+    self.password = password
+    self.first_name = first_name
+    self.last_name = last_name
+  end
+
   protected
 
   def validate_gender
@@ -48,13 +55,13 @@ class User < ActiveRecord::Base
   end
 
   def self.from_omniauth(auth)
-    where(email: auth.info.email).first_or_create do |user|
-      user.email = auth.info.email + 'lol'
-      user.password = Devise.friendly_token[0, 20]
-      user.first_name = auth.info.name
-      user.last_name = 'lol'
+    data = auth.info
+    where(email: data.email).first_or_create do |user|
+      user.fill(data.email, Devise.friendly_token[0, 20],
+                data.first_name, data.last_name)
+      # !TODO: Birthdate to check
       user.birthdate = 20.years.ago
-      user.gender = 1
+      user.gender = auth.info.gender == 'male' ? 1 : 0
     end
   end
 end

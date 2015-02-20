@@ -12,7 +12,7 @@ class HomeController < ApplicationController
   private
 
   def modules_to_display
-    scores = { achievements: 3, messages: 5, event: 4}
+    scores = { achievements: 3, messages: 5, event: 4 }
     scores[:messages] = 10 if @current_user.received_messages.unread.count > 0
     scores[:event] = 9 if @current_user.events.soon.count > 0
     scores[:achievements] = 6 if @current_user.achievements.recent.count > 0

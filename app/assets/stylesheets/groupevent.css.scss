@@ -4,7 +4,7 @@
 
 .gEvent header
 {
-  margin: 5% 25% 0%;
+  margin: 5% 15% 0%;
   margin-top: 0px;
   padding: 25px;
   background: #e7e7e7;
@@ -24,8 +24,8 @@
 #eDescription
 {
   float: left;
-  width: 35%;
-  margin-left: 25%;
+  width: 40%;
+  margin-left: 15%;
   background-color: skyblue;
   padding-bottom: 300em;
   margin-bottom: -300em;
@@ -59,8 +59,8 @@
   width: 15%;
   margin-right: -1px;
   background-color: lightcyan;
-  padding-bottom: 300em;
-  margin-bottom: -300em;
+  padding-bottom: 100em;
+  margin-bottom: -100em;
   padding-top: 0px;
 }
 
@@ -88,4 +88,26 @@
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
+}
+
+.uList
+{
+  float: left;
+  width: 15%;
+  margin-right: -1px;
+  background-color: lightsteelblue;
+  padding-bottom: 300em;
+  margin-bottom: -300em;
+  padding-top: 0px;
+}
+
+.uList ul
+{
+  padding: 30px;
+  list-style-type: none;
+  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: auto;
+  margin-left: 15px;
+  height: 200px;
 }

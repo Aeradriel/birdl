@@ -43,37 +43,28 @@
     </div>
   </div>
   <div id="uEvents">
-    <div style="text-align: center; padding: 15px;"><h3>Events that you're participating</h3></div>
+    <div style="text-align: center; padding: 15px; overflow: auto"><h3>Events that you're participating</h3></div>
     <ul>
       <li><a href="#">Event 1</a></li>  <!-- Automatiser la liste des events auxquels le user est inscrit. -->
-      <li>Event 2</li>
-      <li>Event 3</li>
-      <li>Event 4</li>
-      <li>Event 1</li>
-      <li>Event 2</li>
-      <li>Event 3</li>
-      <li>Event 4</li>
-      <li>Event 1</li>
-      <li>Event 2</li>
-      <li>Event 3</li>
-      <li>Event 4</li>
-      <li>Event 1</li>
-      <li>Event 2</li>
-      <li>Event 3</li>
-      <li>Event 4</li>
-      <li>Event 4</li>
-      <li>Event 2</li>
-      <li>Event 3</li>
-      <li>Event 4</li>
-      <li>Event 1</li>
-      <li>Event 2</li>
-      <li>Event 3</li>
-      <li>Event 4</li>
-      <li>Event 4</li>
-      <li>Event 2</li>
-      <li>Event 3</li>
+      <li><a href="#">Event 2</a></li>
+      <li><a href="#">Event 3</a></li>
+      <li><a href="#">Event 4</a></li>
+      <li><a href="#">Event 1</a></li>
+      <li><a href="#">Event 2</a></li>
+      <li><a href="#">Event 3</a></li>
+      <li><a href="#">Event 4</a></li>
+      <li><a href="#">Event 1</a></li>
+      <li><a href="#">Event 2</a></li>
+      <li><a href="#">Event 3</a></li>
+      <li><a href="#">Event 4</a></li>
     </ul>
   </div>
+    <div class="uList">
+      <h3 style="text-align: center; padding: 15px; overflow: auto">Participants</h3>
+      <ul>
+        <li><%= current_user.name %></li> <!-- A automatiser pour aller chercher les users inscrits à l'event -->
+      </ul>
+    </div>
 </div>
 </div>
 </body>

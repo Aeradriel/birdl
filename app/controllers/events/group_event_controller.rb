@@ -1,6 +1,6 @@
 module Events
-  # Controller for GroupEvent
-  class FaceToFaceController < ApplicationController
+  # Controller for online chat
+  class GroupEventController < ApplicationController
     def index
     end
 

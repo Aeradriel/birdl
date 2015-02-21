@@ -26,8 +26,8 @@
   width: 35%;
   margin-left: 25%;
   background-color: skyblue;
-  padding-bottom: 450em;
-  margin-bottom: -450em;
+  padding-bottom: 300em;
+  margin-bottom: -300em;
 }
 
 #eDescription ul
@@ -42,8 +42,8 @@
   width: 15%;
   margin-right: -1px;
   background-color: lightcyan;
-  padding-bottom: 450em;
-  margin-bottom: -450em;
+  padding-bottom: 300em;
+  margin-bottom: -300em;
 }
 
 #uEvents ul
@@ -66,4 +66,8 @@
 {
   max-width: 100%;
   height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
 }

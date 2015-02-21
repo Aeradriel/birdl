@@ -4,12 +4,12 @@
 <body>
 <div class="gEvent">
   <header>
-    <h1>Your registered events, <%= current_user.name %> !</h1>
+    <h1>Your registered events, <%= current_user.name %> !</h1> <!-- Rendre les titres multilingue -->
   </header>
   <div class="gEventDesc">
   <div id="eDescription">
     <h3 style="padding-left: 15px">Chirac faut prendre un jouet</h3>
-    <div><%= image_tag('groupevents/engine/rheenok.jpg', :class => "imgEvent") %></div>
+    <div><%= image_tag('groupevents/engine/rheenok.jpg', :class => "imgEvent") %></div> <!-- Ici ajouter la bannière, si possible set une taille limite de 300x200 ! -->
     <div id="eDescriptionDetails">
       <ul>
         <li><h4>Organisateur</h4>
@@ -31,9 +31,9 @@
     </div>
   </div>
   <div id="uEvents">
-    <div style="text-align: center"><h3>Events that your participating</h3></div>
+    <div style="text-align: center; padding: 15px;"><h3>Events that you're participating</h3></div>
     <ul>
-      <li><a href="#">Event 1</a></li>
+      <li><a href="#">Event 1</a></li>  <!-- Automatiser la liste des events auxquels le user est inscrit. -->
       <li>Event 2</li>
       <li>Event 3</li>
       <li>Event 4</li>
@@ -60,20 +60,6 @@
       <li>Event 4</li>
       <li>Event 2</li>
       <li>Event 3</li>
-      <li>Event 4</li>
-      <li>Event 1</li>
-      <li>Event 2</li>
-      <li>Event 3</li>
-      <li>Event 4</li>
-      <li>Event 4</li>
-      <li>Event 2</li>
-      <li>Event 3</li>
-      <li>Event 4</li>
-      <li>Event 1</li>
-      <li>Event 2</li>
-      <li>Event 3</li>
-      <li>Event 4</li>
-      <li>Event 4</li>
     </ul>
   </div>
 </div>

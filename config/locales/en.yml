@@ -36,6 +36,7 @@ en:
   admin: "Administration"
   home: "Home"
   country: "Country"
+  countries: "Countries"
   user: "User"
   unit_test: "Unit tests"
   execution_report: "Execution report"
@@ -78,6 +79,7 @@ en:
   delete: "Delete"
   country_deletion_warning: "Are you sure you want to delete this country?"
 
+  users: "Users"
   admins: "Administrators"
   normal_users: "Regular users"
   name: "Name"
@@ -134,3 +136,4 @@ en:
           name: "Name"
           language: "Language"
           flag_path: "Flag"
+

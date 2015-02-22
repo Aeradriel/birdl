@@ -36,6 +36,7 @@ fr:
   admin: "Administration"
   home: "Accueil"
   country: "Pays"
+  countries: "Pays"
   user: "Utilisateur"
   unit_test: "Tests unitaires"
   execution_report: "Rapport d'execution"
@@ -78,6 +79,7 @@ fr:
   delete: "Supprimer"
   country_deletion_warning: "Êtes-vous sûr de vouloir supprimer ce pays ?"
 
+  users: "Utilisateurs"
   admins: "Administrateurs"
   normal_users: "Utilisateurs normaux"
   name: "Nom"

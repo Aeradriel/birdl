@@ -50,7 +50,7 @@
               <div class="selector_text"><%= I18n.locale %></div>
             </button>
 
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <ul style="width: 50px !important;"  class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
               <% Country.where(available: true).each do |country| %>
                   <li role="presentation">
                     <div class="selector_nicon"><img src="/images/flags/<%= country.name %>.ico"/></div>

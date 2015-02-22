@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_locale
   before_action :check_auth
+  before_action :check_age
   before_action :devise_permitted_parameters, if: :devise_controller?
 
   def change_locale
@@ -35,6 +36,13 @@ class ApplicationController < ActionController::Base
     return unless !user_signed_in? && !authorized.include?(controller_name)
     flash[:alert] = t('devise.failure.unauthenticated')
     redirect_to new_user_session_path
+  end
+
+  def check_age
+    return unless current_user && current_user.birthdate.nil? &&
+                  controller_name != 'information_checker'
+    flash[:notice] = t(:birthdate_need_validation)
+    redirect_to :birthdate_validation_path
   end
 
   def after_sign_out_path_for(_)

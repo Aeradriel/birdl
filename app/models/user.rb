@@ -21,9 +21,8 @@ class User < ActiveRecord::Base
   scope :admins, -> { where(admin: true) }
   scope :normals, -> { where(admin: false) }
 
-  validates :first_name, presence: true, allow_nil: false, allow_blank: false
-  validates :last_name, presence: true, allow_nil: false, allow_blank: false
-  validates :birthdate, presence: true, allow_nil: false, allow_blank: false
+  validates :first_name, presence: true
+  validates :last_name, presence: true
   validate :validate_gender
   validate :validate_birthdate
 
@@ -59,8 +58,7 @@ class User < ActiveRecord::Base
     where(email: data.email).first_or_create do |user|
       user.fill(data.email, Devise.friendly_token[0, 20],
                 data.first_name, data.last_name)
-      # !TODO: Birthdate to check
-      user.birthdate = 20.years.ago
+      user.birthdate = nil
       user.gender = auth.info.gender == 'male' ? 1 : 0
     end
   end

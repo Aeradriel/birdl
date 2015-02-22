@@ -1,0 +1,9 @@
+<h1><%= t(:birthdate_check) %></h1>
+
+<%= form_tag '/check_birthdate' do %>
+    <%= label_tag :birthdate, t(:birthdate) %>
+    <%= date_field_tag :birthdate, start_year: Time.now.year - 100,
+                       end_year: (Time.now.year - 18),
+                       include_blank: true %>
+    <%= submit_tag t(:validate) %>
+<% end %>

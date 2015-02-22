@@ -124,6 +124,13 @@ fr:
   date_end: "Date de fin"
   event_deletion_warning: "Êtes vous sûr de vouloir supprimer cet événement ?"
 
+  birthdate_check: "Vérification de l'âge"
+  validate: "Valider"
+  to_young: "L'utilisation de la plateforme requiert un âge de 18 ans minimum."
+  birthdate_validation_success: "Votre date de naissance a été validée avec succès"
+  birthdate_validation_fail: "Une erreur est survenue pendant la validation de votre date de naissance"
+  birthdate_need_validation: "Votre date de naissance doit être validée avant de pouvoir continuer"
+
   activerecord:
       models:
         user: "Utilisateur"

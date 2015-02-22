@@ -19,10 +19,11 @@ Rails.application.routes.draw do
   end
 
   namespace :events do
-    get '/groupevents/' => 'group_event#show'
-    get '/onlinechat/' => 'online_chat#index'
     get '/' => 'events#search'
     post '/' => 'events#search_events', as: :search
+    get '/groupevents' => 'group_event#index', as: :group_events
+    get '/groupevents/:event_id' => 'group_event#show'
+    get '/onlinechat/' => 'online_chat#index', as: :online_chat
   end
 
   namespace :admin do

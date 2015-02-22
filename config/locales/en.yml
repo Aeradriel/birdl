@@ -130,7 +130,6 @@ en:
           password: "Password"
           password_confirmation: "Password confirmation"
           current_password: "Current password"
-          current_password: "Mot de passe actuel"
           forgotten_password: "Forgot your password ?"
         country:
           name: "Name"
@@ -139,152 +138,152 @@ en:
 
   date:
       abbr_day_names:
-        - dim
-        - lun
-        - mar
-        - mer
-        - jeu
-        - ven
-        - sam
+        - sun
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+        - sat
       abbr_month_names:
         - ~
         - jan.
-        - fév.
+        - feb.
         - mar.
-        - avr.
-        - mai
-        - juin
-        - juil.
-        - août
+        - apr.
+        - may
+        - jun
+        - jul.
+        - aug
         - sept.
         - oct.
         - nov.
-        - déc.
+        - dec.
       day_names:
-        - dimanche
-        - lundi
-        - mardi
-        - mercredi
-        - jeudi
-        - vendredi
-        - samedi
+        - sunday
+        - monday
+        - tuesday
+        - wednesday
+        - thurday
+        - friday
+        - saturday
       formats:
         default: "%d/%m/%Y"
         short: "%e %b"
         long: "%e %B %Y"
       month_names:
         - ~
-        - janvier
-        - février
+        - january
+        - february
         - mars
-        - avril
-        - mai
-        - juin
-        - juillet
-        - août
-        - septembre
-        - octobre
-        - novembre
-        - décembre
+        - april
+        - may
+        - june
+        - july
+        - august
+        - september
+        - october
+        - november
+        - december
       order:
         - :day
         - :month
         - :year
-  
+
   datetime:
       distance_in_words:
         about_x_hours:
-          one:   "environ une heure"
-          other: "environ %{count} heures"
+          one:   "about an hour"
+          other: "about %{count} hours"
         about_x_months:
-          one:   "environ un mois"
-          other: "environ %{count} mois"
+          one:   "about a month"
+          other: "about %{count} months"
         about_x_years:
-          one:   "environ un an"
-          other: "environ %{count} ans"
+          one:   "about a year"
+          other: "about %{count} years"
         almost_x_years:
-          one:   "presqu'un an"
-          other: "presque %{count} ans"
-        half_a_minute: "une demi-minute"
+          one:   "almost a year"
+          other: "almost %{count} years"
+        half_a_minute: "half a minute"
         less_than_x_minutes:
-          zero:  "zéro minute"
-          one:   "moins d'une minute"
-          other: "moins de %{count} minutes"
+          zero:  "zero minute"
+          one:   "less than a minute"
+          other: "less than %{count} minutes"
         less_than_x_seconds:
-          zero:  "zéro seconde"
-          one:   "moins d'une seconde"
-          other: "moins de %{count} secondes"
+          zero:  "zero seconde"
+          one:   "less than one seconde"
+          other: "less than %{count} secondes"
         over_x_years:
-          one:   "plus d'un an"
-          other: "plus de %{count} ans"
+          one:   "more than a year"
+          other: "more than %{count} years"
         x_days:
-          one:   "1 jour"
-          other: "%{count} jours"
+          one:   "one day"
+          other: "%{count} days"
         x_minutes:
-          one:   "1 minute"
+          one:   "one minute"
           other: "%{count} minutes"
         x_months:
-          one:   "1 mois"
-          other: "%{count} mois"
+          one:   "one month"
+          other: "%{count} months"
         x_seconds:
-          one:   "1 seconde"
+          one:   "one second"
           other: "%{count} secondes"
       prompts:
-        day:    "Jour"
-        hour:   "Heure"
+        day:    "Day"
+        hour:   "Hours"
         minute: "Minute"
-        month:  "Mois"
-        second: "Seconde"
-        year:   "Année"
+        month:  "Month"
+        second: "Second"
+        year:   "Year"
 
   errors:
       format: "%{attribute} %{message}"
       messages: &errors_messages
-        accepted: "doit être accepté(e)"
-        blank: "doit être rempli(e)"
-        present: "doit être vide"
-        confirmation: "ne concorde pas avec la confirmation"
-        empty: "doit être rempli(e)"
-        equal_to: "doit être égal à %{count}"
-        even: "doit être pair"
-        exclusion: "n'est pas disponible"
-        greater_than: "doit être supérieur à %{count}"
-        greater_than_or_equal_to: "doit être supérieur ou égal à %{count}"
-        inclusion: "n'est pas inclus(e) dans la liste"
-        invalid: "n'est pas valide"
-        less_than: "doit être inférieur à %{count}"
-        less_than_or_equal_to: "doit être inférieur ou égal à %{count}"
-        not_a_number: "n'est pas un nombre"
-        not_an_integer: "doit être un nombre entier"
-        odd: "doit être impair"
-        record_invalid: "La validation a échoué : %{errors}"
+        accepted: "must be accepted"
+        blank: "must be filled"
+        present: "must be empty"
+        confirmation: "doesn't match with the confirmation"
+        empty: "must be filled"
+        equal_to: "must be equal to %{count}"
+        even: "must be even"
+        exclusion: "is not available"
+        greater_than: "must be greater than %{count}"
+        greater_than_or_equal_to: "must be greater or equal to %{count}"
+        inclusion: "is not included in the list"
+        invalid: "is not valid"
+        less_than: "must be less than %{count}"
+        less_than_or_equal_to: "must be less than or equal to %{count}"
+        not_a_number: "is not a number"
+        not_an_integer: "is not an integerr"
+        odd: "must be odd"
+        record_invalid: "the record id invalid : %{errors}"
         restrict_dependent_destroy:
-          one: "Suppression impossible: un autre enregistrement est lié"
-          many: "Suppression impossible: d'autres enregistrements sont liés"
-        taken: "n'est pas disponible"
+          one: "Can't delete: an another record is bind"
+          many: "Can't delete: others records are bind"
+        taken: "is not available"
         too_long:
-          one: "est trop long (pas plus d'un caractère)"
-          other: "est trop long (pas plus de %{count} caractères)"
+          one: "is too long (more than one character)"
+          other: "is too long (more than%{count} characters)"
         too_short:
-          one: "est trop court (au moins un caractère)"
-          other: "est trop court (au moins %{count} caractères)"
+          one: "is too short (at least one character)"
+          other: "is too short (at least %{count} characters)"
         wrong_length:
-          one: "ne fait pas la bonne longueur (doit comporter un seul caractère)"
-          other: "ne fait pas la bonne longueur (doit comporter %{count} caractères)"
-        other_than: "doit être différent de %{count}"
+          one: "is the wrong length (must have one character)"
+          other: "is the wrong length (must have %{count} characters)"
+        other_than: "must be other than %{count}"
       template: &errors_template
-        body: "Veuillez vérifier les champs suivants : "
+        body: "Verify the following fields : "
         header:
-          one:   "Impossible d'enregistrer ce(tte) %{model} : 1 erreur"
-          other: "Impossible d'enregistrer ce(tte) %{model} : %{count} erreurs"
+          one:   "Not possible to save this %{model} : 1 error"
+          other: "Not possible to save this %{model} : %{count} errors"
 
   helpers:
       select:
-        prompt: "Veuillez sélectionner"
+        prompt: "Must select"
       submit:
-        create: "Créer un(e) %{model}"
-        submit: "Enregistrer ce(tte) %{model}"
-        update: "Modifier ce(tte) %{model}"
+        create: "Create one %{model}"
+        submit: "Submit this %{model}"
+        update: "Update this %{model}"
 
   number:
       currency:
@@ -306,11 +305,11 @@ en:
         decimal_units:
           format: "%n %u"
           units:
-            billion: "milliard"
+            billion: "billion"
             million: "million"
-            quadrillion: "million de milliards"
-            thousand: "millier"
-            trillion: "billion"
+            quadrillion: "quadrillion"
+            thousand: "thousand"
+            trillion: "trillion"
             unit: ""
         format:
           delimiter: ""
@@ -321,12 +320,12 @@ en:
           format: "%n %u"
           units:
             byte:
-              one:   "octet"
-              other: "octets"
-            gb: "Go"
-            kb: "ko"
-            mb: "Mo"
-            tb: "To"
+              one:   "byte"
+              other: "bytes"
+            gb: "Gb"
+            kb: "kb"
+            mb: "Mb"
+            tb: "Tb"
       percentage:
         format:
           delimiter: ""
@@ -337,8 +336,8 @@ en:
 
   support:
       array:
-        last_word_connector: " et "
-        two_words_connector: " et "
+        last_word_connector: " and "
+        two_words_connector: " and "
         words_connector: ", "
 
   time:

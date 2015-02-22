@@ -200,6 +200,7 @@ fr:
       - :day
       - :month
       - :year
+
   datetime:
     distance_in_words:
       about_x_hours:
@@ -245,6 +246,7 @@ fr:
       month:  "Mois"
       second: "Seconde"
       year:   "Année"
+
   errors:
     format: "%{attribute} %{message}"
     messages: &errors_messages
@@ -285,6 +287,7 @@ fr:
       header:
         one:   "Impossible d'enregistrer ce(tte) %{model} : 1 erreur"
         other: "Impossible d'enregistrer ce(tte) %{model} : %{count} erreurs"
+
   helpers:
     select:
       prompt: "Veuillez sélectionner"
@@ -292,6 +295,7 @@ fr:
       create: "Créer un(e) %{model}"
       submit: "Enregistrer ce(tte) %{model}"
       update: "Modifier ce(tte) %{model}"
+
   number:
     currency:
       format:
@@ -340,11 +344,13 @@ fr:
     precision:
       format:
         delimiter: ""
+
   support:
     array:
       last_word_connector: " et "
       two_words_connector: " et "
       words_connector: ", "
+
   time:
     am: 'am'
     formats:

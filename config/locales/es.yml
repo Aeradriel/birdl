@@ -190,6 +190,7 @@ es:
       - :day
       - :month
       - :year
+
   datetime:
     distance_in_words:
       about_x_hours:
@@ -235,6 +236,7 @@ es:
       month:  "Mes"
       second: "Segundo"
       year:   "Año"
+
   errors:
     format: "%{attribute} %{message}"
     messages: &errors_messages
@@ -281,6 +283,7 @@ es:
       header:
         one:   "No se puede guardar este %{model} : 1 error"
         other: "No se puede guardar este %{model} : %{count} errores"
+
   helpers:
     select:
       prompt: "Por favor seleccione"
@@ -288,6 +291,7 @@ es:
       create: "Crear %{model}"
       submit: "Guardar %{model}"
       update: "Modificar %{model}"
+
   number:
     currency:
       format:
@@ -336,11 +340,13 @@ es:
     precision:
       format:
         delimiter: ""
+
   support:
     array:
       last_word_connector: " y "
       two_words_connector: " y "
       words_connector: ", "
+
   time:
     am: 'am'
     formats:

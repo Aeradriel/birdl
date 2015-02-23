@@ -301,6 +301,10 @@ ul.nav-stacked ul.nav-stacked > li > a {
   text-align: center;
 }
 
+.selector_nicon:hover
+{
+}
+
 .selector_ntext {
   display: inline-block;
   margin-top: 5px;
@@ -308,6 +312,18 @@ ul.nav-stacked ul.nav-stacked > li > a {
   text-align: center;
 }
 
+.selector_ntext:hover {
+  text-decoration:none !important;
+}
+
+.selector_line{
+  display: block;
+}
+
+.selector_line:hover{
+  background-color: rgba(119,119,119, 0.4);
+  cursor: pointer;
+}
 
 .selector_button {
   background-color: rgba(248,248,248,0.4);

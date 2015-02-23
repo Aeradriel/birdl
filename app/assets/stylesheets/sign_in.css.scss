@@ -24,10 +24,11 @@
 }
 
 #LoginBody {
-  background-color:white;
-  background-image: image_url('signin_background.jpg');
-  background-repeat:no-repeat;
-  background-position:center center;
+  background: white image_url('signin_background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   font-family: "Varela Round", Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.5em;

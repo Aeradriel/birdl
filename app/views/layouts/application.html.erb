@@ -52,10 +52,12 @@
 
             <ul style="width: 50px !important;"  class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
               <% Country.where(available: true).each do |country| %>
-                  <li role="presentation">
-                    <div class="selector_nicon"><img src="/images/flags/<%= country.name %>.ico"/></div>
-                    <div class="selector_ntext"><%= link_to country.i18n_key, "/change_locale/#{country.i18n_key}", role: 'menu-item', tabindex: -1 %></a></div>
-                    <div style="clear: both;"></div>
+                  <li role="presentation" onclick="location.href = '/change_locale/<%= country.i18n_key %>'">
+                    <div class="selector_line">
+                      <div class="selector_nicon"><img src="/images/flags/<%= country.name %>.ico"/></div>
+                      <div class="selector_ntext"><%= country.i18n_key %></div>
+                      <div style="clear: both;"></div>
+                    </div>
                   </li>
               <% end %>
             </ul>

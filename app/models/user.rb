@@ -15,6 +15,10 @@ class User < ActiveRecord::Base
            foreign_key: :sender_id, class_name: 'Message'
   has_many :achievements
   has_many :participations
+  has_many :ratings, foreign_key: :user_id,
+           class_name: 'UserRating'
+  has_many :given_ratings, foreign_key: :giver_id,
+           class_name: 'UserRating'
   has_many :badges, through: :achievements
   has_many :events, through: :participations
 
@@ -33,6 +37,14 @@ class User < ActiveRecord::Base
 
   def name
     "#{first_name} #{last_name}"
+  end
+
+  def rating
+    sum = 0
+    self.ratings.each do |r|
+      sum += r.value
+    end
+    sum / self.ratings.count
   end
 
   def fill(email, password, first_name, last_name)

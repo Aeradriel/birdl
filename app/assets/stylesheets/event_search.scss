@@ -17,7 +17,7 @@ background-color: #F2EFEA;
   margin-top: -20px;
 }
 
-.field {
+.eventSearch_field {
   display:flex;
   position:realtive;
   margin:5em auto;
@@ -27,27 +27,31 @@ background-color: #F2EFEA;
   1px 1px 0 rgb(22, 160, 133)
 }
 
-.field>input[type=text],
-.field>button {
+.eventSearch_field>input[type=text],
+.eventSearch_field>button {
   display:block;
   font:1.2em 'Montserrat Alternates';
 }
 
-.field>input[type=text] {
+.eventSearch_field>input[type=text] {
   flex:1;
   padding:0.6em;
   border:0.2em solid rgb(26, 188, 156);
 }
 
-.field>button {
+.eventSearch_field>button {
   padding:0.6em 0.8em;
   background-color:rgb(26, 188, 156);
   color:white;
   border:none;
 }
 
-.eventSearch_table {
-  margin-left: 35px;
+/**********************
+*  Radio buttons CSS  *
+**********************/
+
+.eventSearch_table_radio {
+  margin: auto;
   width: 45%;
 }
 
@@ -70,6 +74,7 @@ input#past_events_true:empty, input#past_events_false:empty {
 /* style label */
 input#past_events_true:empty ~ .eventSearch_label,
 input#past_events_false:empty ~ .eventSearch_label {
+  font-family: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
   position: relative;
   float: left;
   line-height: 2.5em;
@@ -126,4 +131,132 @@ input#past_events_false:checked ~ .eventSearch_label {
 input#past_events_true:focus ~ .eventSearch_label:before,
 input#past_events_false:focus ~ .eventSearch_label:before {
   box-shadow: 0 0 0 3px #999;
+}
+
+/************************
+*  Event: Type & Place  *
+*************************/
+
+.eventSearch_eType, .eventSearch_eSlot {
+  font-family: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.eventSearch_table_event {
+  margin: auto;
+  width: 55%;
+}
+
+select#event_type
+
+select#event_type {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  text-align: left;
+  background: #fff;
+  z-index: 100;
+  width: 100%;
+  max-width: 500px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+select#event_type:focus {
+  outline: none; /* For better accessibility add a style for this in your skin */
+}
+
+select#event_type select {
+  display: none;
+}
+
+select#event_type span {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding: 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Placeholder and selected option */
+select#event_type > span {
+  padding-right: 3em;
+}
+
+select#event_type > span::after {
+  speak: none;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+select#event_type > span::after {
+  content: '\25BE';
+  right: 1em;
+}
+
+select#event_type span::after {
+  content: '\2713';
+  margin-left: 1em;
+}
+
+select#event_type > span::after {
+  -webkit-transform: translateY(-50%) rotate(180deg);
+  transform: translateY(-50%) rotate(180deg);
+}
+
+select#event_type {
+  background-color: #FFFFFF;
+  font-family: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #5b8583;
+}
+
+@media screen and (max-width: 30em) {
+  div.cs-skin-elastic { font-size: 1em; }
+}
+
+select#event_type > span {
+  background-color: #fff;
+  z-index: 100;
+}
+
+select#event_type > span::after {
+  font-family: 'icomoon';
+  content: '\e005';
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+@-webkit-keyframes expand {
+  0% { -webkit-transform: scale3d(1,0,1); }
+  25% { -webkit-transform: scale3d(1,1.2,1); }
+  50% { -webkit-transform: scale3d(1,0.85,1); }
+  75% { -webkit-transform: scale3d(1,1.05,1) }
+  100% { -webkit-transform: scale3d(1,1,1); }
+}
+
+@keyframes expand {
+  0% { -webkit-transform: scale3d(1,0,1); transform: scale3d(1,0,1); }
+  25% { -webkit-transform: scale3d(1,1.2,1); transform: scale3d(1,1.2,1); }
+  50% { -webkit-transform: scale3d(1,0.85,1); transform: scale3d(1,0.85,1); }
+  75% { -webkit-transform: scale3d(1,1.05,1); transform: scale3d(1,1.05,1); }
+  100% { -webkit-transform: scale3d(1,1,1); transform: scale3d(1,1,1); }
+}
+
+.eventSearch_table_submit {
+  margin: auto;
 }

@@ -119,7 +119,7 @@
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
-  border: 5px solid #ffffff;
+  border: 3px solid #ffffff;
   border-radius: 5px;
   opacity: 0.6;
   -webkit-transition: all 1s ease; /* Safari and Chrome */
@@ -165,3 +165,103 @@
   height: 200px;
   font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
 }
+
+.pEvent{
+  margin: 0% 30% 0%;
+  margin-top: 0px;
+  padding: 25px;
+  background-color:#373B44;
+  text-align: center;
+  width: 40%;
+  font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
+  font-weight:500;
+  float: left;
+  color: #ffffff;
+}
+
+.tEvent
+{
+}
+
+.tEvent header
+{
+  margin: 0% 30% 0%;
+  margin-top: 0px;
+  padding: 25px;
+  background-color:#ECB88B;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-align: center;
+  font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
+  font-weight:500;
+  font-size:30px;
+}
+
+.pEvent:hover{
+}
+
+.ratingEvent{
+  margin: 0;
+}
+
+.ratingEventstar {
+  background: url('groupevents/engine/star.png') 0 0;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  margin: auto;
+}
+
+.imgEventModal {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  opacity: 0.6;
+  -webkit-transition: all 1s ease; /* Safari and Chrome */
+  -moz-transition: all 1s ease; /* Firefox */
+  -ms-transition: all 1s ease; /* IE 9 */
+  -o-transition: all 1s ease; /* Opera */
+  transition: all 1s ease;
+}
+
+.imgEventModal:hover{
+  -webkit-transform:scale(1.05); /* Safari and Chrome */
+  -moz-transform:scale(1.05); /* Firefox */
+  -ms-transform:scale(1.05); /* IE 9 */
+  -o-transform:scale(1.05); /* Opera */
+  transform:scale(1.05);
+  opacity: 1;
+}
+
+#pEventlist {
+  margin: 0% 25% 0% !important;
+  padding: 25px;
+  background-color:#373B44;
+  max-width: 100%;
+  width: 100%;
+  color: #ffffff;
+  font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  text-align: left;
+  border-top: 1px solid #ffffff;
+}
+
+#modalEvent{
+  font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
+  color: #000000;
+  text-align: center;
+  padding: 15px;
+}
+
+#modalEvent div {
+  font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
+  color: #000000;
+  font-size: 30px;
+  padding: 15px;
+}
+
+
+

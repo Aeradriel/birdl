@@ -52,6 +52,7 @@ fr:
   account_setup: "Création de compte"
   currently_waiting_confirmation_for: "En attente de la confirmation de l'email : %{email}"
   cancel: "Annuler"
+  lang: "Langue"
 
   join_us: "Rejoignez-nous !"
   first_step: "La première étape"
@@ -100,7 +101,10 @@ fr:
 
   events: "Événements"
   event: "Événement"
+  event_title: "Titre de l'événement"
   search_event: "Rechercher un événement"
+  search: "Rechercher"
+  create_event: "Créer un événement"
   past_events: "Événement passés"
   future_events: "Événements futurs"
   event_type: "Type d'événement"
@@ -112,6 +116,7 @@ fr:
   no: "Non"
   whatever: "Peu importe"
   search: "Rechercher"
+  place: "Lieu"
 
   type: "Type"
   new_event: "Nouvel Événement"
@@ -122,7 +127,12 @@ fr:
   max_slots: "Nombre de places maximum"
   date_begin: "Date de début"
   date_end: "Date de fin"
+  date_t: "Date"
   event_deletion_warning: "Êtes vous sûr de vouloir supprimer cet événement ?"
+  subscribe: "S'inscrire"
+  sort_by: "Trier par"
+  invite: "Inviter"
+  invite_user: "Inviter un utilisateur"
 
   activerecord:
       models:

@@ -25,18 +25,24 @@
                 <%= select_tag :event_type, options_for_select(@event_types) %></td>
             <td><%= label_tag :remaining_slots, t(:remaining_slots), :class => 'eventSearch_eSlot' %>
                 <%= number_field_tag :remaining_slots %></td>
-            <td><%= radio_button_tag :friends_in, 'yes' %>
-            <%= label_tag :friends_in_yes, t(:yes) %>
-            <%= radio_button_tag :friends_in, 'no' %>
-            <%= label_tag :friends_in_no, t(:no) %>
-            <%= radio_button_tag :friends_in, 'whatever', checked: true %>
-            <%= label_tag :friends_in_whatever, t(:whatever) %></td>
+            <td>
+              <table eventSearch_table_friends>
+                <tr>
+                    <td><%= label_tag :friends_in_yes, t(:yes), :class => 'eventSearch_eFriends' %>
+                    <%= radio_button_tag :friends_in, 'yes' %></td>
+                  <td><%= label_tag :friends_in_no, t(:no), :class => 'eventSearch_eFriends' %>
+                    <%= radio_button_tag :friends_in, 'no' %></td>
+                  <td> <%= label_tag :friends_in_whatever, t(:whatever), :class => 'eventSearch_eFriends' %>
+                    <%= radio_button_tag :friends_in, 'whatever', checked: true %></td>
+                </tr>
+              </table>
+            </td>
           </tr>
         </table><br /><br /><br />
         <table class="eventSearch_table_submit">
           <tr>
             <td>
-            <%= submit_tag t(:search) %>
+            <%= submit_tag t(:search), :id => 'eventSearch_submit', :class => 'eventSearch_button' %>
             </td>
           </tr>
         </table>

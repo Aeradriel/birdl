@@ -147,7 +147,7 @@ input#past_events_false:focus ~ .eventSearch_label:before {
 
 .eventSearch_table_event {
   margin: auto;
-  width: 55%;
+  width: 60%;
 }
 
 select#event_type
@@ -257,6 +257,58 @@ select#event_type > span::after {
   100% { -webkit-transform: scale3d(1,1,1); transform: scale3d(1,1,1); }
 }
 
+/************************
+*  Event: Friends or ?  *
+*************************/
+
+.event_search_table_friends {
+  margin: auto;
+}
+
+.eventSearch_eFriends {
+  font-family: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
+}
+
+/************************
+*     Submit button     *
+*************************/
+
 .eventSearch_table_submit {
   margin: auto;
+}
+
+.eventSearch_button {
+  background-color: #1ABC9C;
+  background-position: center;
+  border: solid 1px #1ABC9C;
+  max-width: 100%;
+  height: 40px;
+  padding: 10px;
+  display: inline;
+  font-size: 15px;
+  line-height: 0px;
+  text-align: center;
+  color: rgba(250,255,253,1);
+  font-weight: initial;
+  float: right;
+}
+
+.eventSearch_button:hover {
+  background-color: #4DCB6D;
+  background-position: center;
+  height: 40px;
+  border: solid 1px #4DCB6D;
+}
+
+.eventSearch_submit {
+  background-color: #1ABC9C;
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+  padding: 4px 0;
+  width: 100px;
+}
+
+.eventSearch_submit:hover {
+  background-color: #4DCB6D;
 }

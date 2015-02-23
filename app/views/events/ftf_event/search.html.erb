@@ -1,0 +1,119 @@
+<div class="col-md-8 left-column search-event-block search-event-container">
+    <div class="col-md-12 search-event">
+        <h4 class="search-event-title search-event-title-one"><%= t(:search_event) %></h4>
+            <div class="col-md-12 search-params">
+                <div class="col-md-12 search-param-line">
+                    <div class="col-md-4 search-param">
+                        <button class="btn btn-search-param" type="button" id="menu1" data-toggle="dropdown"><%= t(:lang) %>
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                        <!-- ci dessous afficher les langues disponibles en suivant les exemples-->
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">FR</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">EN</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">ES</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 text-align-button search-param">
+                        <div class="col-md-4">
+                            <%= t(:place) %>
+                        </div>
+                        <input class="search-event-input col-md-8"></input>
+                    </div>
+                    <div class="col-md-4 text-align-button">
+                         <div class="col-md-4">
+                            <%= t(:date_t) %>
+                         </div>
+                        <input class="search-event-input col-md-8" type="text" id="datepicker"></input>
+                    </div>
+                </div>
+                <div class="col-md-12 search-param-line-last">
+                    <div class="col-md-4 search-param">
+                        <button class="btn btn-search-param" type="button" id="menu1" data-toggle="dropdown"><%= t(:remaining_slots) %>
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                          <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><%= t(:yes) %></a></li>
+                          <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><%= t(:no) %></a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 search-param">
+                        <button class="btn btn-search-param" type="button" id="menu1" data-toggle="dropdown">Amis inscrits
+                        <span class="caret"></span></button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                          <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><%= t(:yes) %></a></li>
+                          <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><%= t(:no) %></a></li>
+                        </ul>
+                    </div>
+                    <a class="search-event-button col-md-3 event-page-button">
+                        <%= t(:search) %>
+                    </a>
+                </div>
+            </div>
+    </div>
+    <div class="col-md-12 display-events">
+        <div class="col-md-12 sort-params">
+            <div class="col-md-3 sort-param-title text-align-button">
+                <%= t(:sort_by) %>
+            </div>
+            <div class="col-md-3 sort-param">
+                <button class="btn btn-sort-param" type="button" id="menu1" data-toggle="dropdown">Date
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><%= t(:date_t) %> (<%= t(:asc) %>)</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><%= t(:date_t) %> (<%= t(:desc) %>)</a></li>
+                </ul>
+            </div>
+        </div>
+    
+    
+        
+
+        <!-- Les events seront affiches dans un div de la maniere définie ci dessous -->
+        <div class="col-md-12 event-container">
+            <div class="event-image-container col-md-2">
+                <!-- La background image du div ci dessous correspond à l'image de l'évenement-->
+                <div class="event-image col-md-12" background-image="http://3.bp.blogspot.com/-UuPRy9bowtg/TVNJOVN25tI/AAAAAAAAADA/cIB3IUy1YFw/s1600/ad5aa85d-180a-4557-9071-5e9421437be4%255B1%255D.jpg"></div>
+            </div>
+            <div class="event-infos-container col-md-10">
+                <h4 class="event-title"><%= t(:event_title) %></h4>
+                <div class="col-md-12"><%= t(:date_t) %> and <%= t(:place) %></div>
+                <div class="col-md-4"><%= t(:user) %></div>
+                <div class="col-md-4"><%= t(:lang) %></div>
+                <div class="col-md-4"><%= t(:subscribe) %></div>
+            </div>
+        </div>
+
+
+
+        <div class="col-md-12 event-container">
+            <div class="event-image-container col-md-2">
+                <!-- La background image du div ci dessous correspond à l'image de l'évenement-->
+                <div class="event-image col-md-12" background-image="url(http://assets3.parliament.uk/iv/main-large//ImageVault/Images/id_7382/scope_0/ImageVaultHandler.aspx.jpg)"></div>
+            </div>
+            <div class="event-infos-container col-md-10">
+                <h4 class="event-title"><%= t(:event_title) %></h4>
+                <div class="col-md-12"><%= t(:date_t) %> and <%= t(:place) %></div>
+                <div class="col-md-4"><%= t(:user) %></div>
+                <div class="col-md-4"><%= t(:lang) %></div>
+                <div class="col-md-4"><%= t(:subscribe) %></div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+<div class="col-md-4 create-event">
+    <a class="create-event-title event-page-button"><h4><%= t(:create_event) %></h4></a>
+</div>
+<div class="col-md-4 right-column">
+    <div class="invite-user search-event col-md-12">
+        <h4 class="search-event-title"><%= t(:invite_user) %></h4>
+    </div>
+    <div class="search-user col-md-12">
+        <input class="search-user-input col-md-8"></input>
+        <a class="invite-user-button col-md-3 event-page-button">
+            <%= t(:invite) %>
+        </a>
+    </div>
+</div>

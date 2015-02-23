@@ -103,7 +103,7 @@ fr:
   event: "Événement"
   search_event: "Rechercher un événement"
   quick_search_event: "Recherche rapide"
-  past_events: "Événement passés"
+  past_events: "Événements passés"
   future_events: "Événements futurs"
   event_type: "Type d'événement"
   face_to_face: "Face à Face"

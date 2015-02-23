@@ -3,7 +3,7 @@
 **********************/
 
 /* custom font */
-@import url(http://fonts.googleapis.com/css?family=Montserrat);
+@import url(http://fonts.googleapis.com/css?family=Montserrat+Alternates);
 
 /* basic reset */
 * {margin: 0; padding: 0;}
@@ -19,9 +19,14 @@
 //}
 
 .newUser_body {
-  background-color: #C0C0C0;
-  color: #000;
-  font-family: montserrat, arial, verdana;
+  background: white image_url('signin_background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
 }
 /* form styles */
 .newUser_form {
@@ -56,7 +61,7 @@
   margin-bottom: 15px;
   width: 100%;
   box-sizing: border-box;
-  font-family: montserrat;
+  font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
   color: #2C3E50;
   font-size: 13px;
 }

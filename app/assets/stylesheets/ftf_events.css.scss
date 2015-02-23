@@ -1,0 +1,266 @@
+// Place all the styles related to the Events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.search-event-block
+{
+	border-radius: 5px;
+  	-webkit-border-radius: 5px;
+ 	-moz-border-radius: 5px;
+  	-ms-border-radius: 5px;
+  	-o-border-radius: 5px;
+}
+
+.search-event
+{
+	background-color: #cc324b;
+	#padding: 10px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-top-left-radius: 5px;
+	-moz-border-top-right-radius: 5px;
+	color: #333333;
+	#margin-bottom: 0px;
+	text-align: center;
+	padding-bottom:0px;
+}
+
+.search-event-input
+{
+	background-color:#cc324b;
+	border: 1px solid #ae324b;
+}
+
+.search-event-title
+{
+	margin-top:10px !important;
+	margin-bottom:0px;
+	padding-bottom:5px;
+	text-align:left;
+}
+
+.search-event-title-one
+{
+	border-bottom: 1px solid #ae324b;
+}
+
+.search-event-param
+{
+	border-left: 1px solid #ae324b;
+	text-align: center;
+	border-top: 1px solid #ae324b;
+}
+
+.search-param
+{
+	border-right: 1px solid #ae324b;
+}
+
+.search-param-line
+{
+	border-bottom: 1px solid #ae324b;
+	padding-top:8px;
+	padding-bottom:8px;
+}
+
+.search-param-line-last
+{
+	padding-top:8px;
+	padding-bottom:8px;
+}
+
+.sort-param-title
+{
+	border-right: 1px solid #343C5B;
+	height: 30px;
+}
+
+.sort-params
+{
+	border-bottom: 1px solid #343C5B;
+	height:100%;
+	padding-bottom:10px;
+	margin-bottom:10px;
+}
+
+.sort-param
+{
+	border-right: 1px solid #343C5B;
+	height: 30px;
+}
+
+.btn-sort-param
+{
+	width:100%;
+	background-color:transparent;
+}
+
+.btn-sort-param:hover, .btn-sort-param:focus
+{
+	background-color: #343C5B;
+	outline:0 !important;
+}
+
+.btn-search-param
+{
+	width:100%;
+	background-color:transparent;
+}
+
+.btn-search-param:hover, .btn-search-param:focus
+{
+	background-color: #ae324b;
+	outline:0 !important;
+}
+
+.search-event-param-left
+{
+	text-align: center;
+	border-top: 1px solid #ae324b;
+}
+
+.search-event-param-button
+{
+	width:100%;
+	height:100%;
+}
+
+.display-events
+{
+	background-color: #394264;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-bottom-left-radius: 5px;
+	-moz-border-bottom-right-radius: 5px;
+	webkit-box-shadow: 0 4px 4px -2px #21263C inset;
+	-moz-box-shadow: 0 4px 4px -2px #21263C inset;
+	box-shadow: 0 4px 4px -2px #21263C inset;
+	padding-top:10px;
+}
+
+.search-button-container
+{
+	border-top: 1px solid #ae324b;
+}
+
+.event-container
+{
+	background-color: #cc324b;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	color: #333333;
+	webkit-box-shadow: 0 4px 4px -2px #21263C;
+	-moz-box-shadow: 0 4px 4px -2px #21263C;
+	box-shadow: 0 4px 4px -2px #21263C;
+	padding-bottom:10px;
+	padding-top:10px;
+	margin-bottom:10px;
+}
+
+.event-image-container
+{
+	padding:6px !important;
+	padding-bottom:18px !important;
+	background-color:white;
+	webkit-box-shadow: 0 4px 4px -2px #21263C;
+	-moz-box-shadow: 0 4px 4px -2px #21263C;
+	box-shadow: 0 4px 4px -2px #21263C;
+}
+
+.event-image
+{
+	width:100%;
+	position:relative;
+	height:0;
+	padding-bottom:90%;
+	background-size: cover;
+	background-image: url(http://assets3.parliament.uk/iv/main-large//ImageVault/Images/id_7382/scope_0/ImageVaultHandler.aspx.jpg);
+}
+
+
+.event-title
+{
+	width:100%;
+	border-bottom: 1px solid #ae324b;
+}
+
+.create-event-title
+{
+	background-color: #cc324b;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	color: #333333;
+	text-align:center;
+	margin-top:0;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.search-user
+{
+	background-color:#394264;
+	padding:10px;
+	webkit-box-shadow: 0 4px 4px -2px #21263C inset;
+	-moz-box-shadow: 0 4px 4px -2px #21263C inset;
+	box-shadow: 0 4px 4px -2px #21263C inset;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-bottom-left-radius: 5px;
+	-moz-border-bottom-right-radius: 5px;
+}
+
+.search-user-input
+{
+	background-color:#394264;
+	border: 1px solid #343C5B;
+	height:30px;
+}
+
+.invite-user-button
+{
+	background-color: #cc324b;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	color: #333333;
+	webkit-box-shadow: 0 4px 4px -2px #21263C;
+	-moz-box-shadow: 0 4px 4px -2px #21263C;
+	box-shadow: 0 4px 4px -2px #21263C;
+	padding:5px;
+	text-align:center;
+	margin-left:10px;
+	height:30px;
+}
+
+.event-page-button :hover
+{
+	backgound-color:#ae324b;
+}
+
+.search-event-button
+{
+	background-color: #394264;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	color: #333333;
+	padding:5px;
+	text-align:center;
+	margin-left:10px;
+	height:30px;
+}
+
+.text-align-button
+{
+	padding-top:6px;
+	text-align:center;
+	height:32px;
+}

@@ -12,17 +12,18 @@
     <%= form_tag action: :search_events do %>
         <table class="eventSearch_table">
             <tr>
-                <td><%= radio_button_tag :past_events, true, :class => 'eventSearch_input' %>
-                <%= label_tag :past_events_true, t(:past_events), :class => 'eventSearch_label' %></td>
-                <td><%= radio_button_tag :past_events, false, checked: true, :class => 'eventSearch_input' %>
-                <%= label_tag :past_events_false, t(:future_events), :class => 'eventSearch_label' %></td>
+                <td><div class="eventSearch_div"><%= radio_button_tag :past_events, false, checked: true %>
+                <%= label_tag :past_events_false, t(:future_events), :class => 'eventSearch_label' %></div></td>
+                <td><div class="eventSearch_div"><%= radio_button_tag :past_events, true %>
+                <%= label_tag :past_events_true, t(:past_events), :class => 'eventSearch_label' %></div></td>
             </tr>
         </table><br /><br />
 
-        <%= select_tag :event_type, options_for_select(@event_types) %>
-        <%= label_tag :past_events_false, t(:event_type) %><br />
-        <%= number_field_tag :remaining_slots %>
+        <%= label_tag :past_events_false, t(:event_type) %>
+        <%= select_tag :event_type, options_for_select(@event_types) %><br />
         <%= label_tag :remaining_slots, t(:remaining_slots) %>
+        <%= number_field_tag :remaining_slots %>
+
         <%= radio_button_tag :friends_in, 'yes' %>
         <%= label_tag :friends_in_yes, t(:yes) %>
         <%= radio_button_tag :friends_in, 'no' %>

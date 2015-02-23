@@ -41,10 +41,10 @@ class User < ActiveRecord::Base
 
   def rating
     sum = 0
-    self.ratings.each do |r|
+    ratings.each do |r|
       sum += r.value
     end
-    sum / self.ratings.count
+    sum / ratings.count
   end
 
   def fill(email, password, first_name, last_name)

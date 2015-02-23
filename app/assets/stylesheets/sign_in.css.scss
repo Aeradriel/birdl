@@ -4,6 +4,7 @@
 
 //@import url(http://weloveiconfonts.com/api/?family=fontawesome);
 //@import url(http://meyerweb.com/eric/tools/css/reset/reset.css);
+@import url(http://fonts.googleapis.com/css?family=Montserrat+Alternates);
 
 [class*="fontawesome-"]:before {
   font-family: 'FontAwesome', sans-serif;
@@ -29,7 +30,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  font-family: "Varela Round", Arial, Helvetica, sans-serif;
+  font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.5em;
 }
@@ -76,6 +77,7 @@
 
 #login fieldset input[type="email"], #login fieldset input[type="password"] {
   background-color: #eee;
+  font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
   color: #777;
   padding: 4px 10px;
   width: 328px;
@@ -113,6 +115,7 @@
   font-size: 15px;
   line-height: 0px;
   text-align: center;
+  font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
   color: rgba(250,255,253,1);
   font-weight: initial;
   float: right;

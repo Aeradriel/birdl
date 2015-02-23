@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 fr:
+  find: "Go!"
   error: "Erreur"
   sign_in: "Connexion"
   sign_in_with: "Se connecter avec"
@@ -101,7 +102,8 @@ fr:
   events: "Événements"
   event: "Événement"
   search_event: "Rechercher un événement"
-  past_events: "Événement passés"
+  quick_search_event: "Recherche rapide"
+  past_events: "Événements passés"
   future_events: "Événements futurs"
   event_type: "Type d'événement"
   face_to_face: "Face à Face"

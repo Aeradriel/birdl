@@ -1,18 +1,20 @@
-<div id="left_module" class="module">
-  <% if @modules_to_display.include?(:achievements) %>
-      <%= render 'home/modules/achievements' %>
-  <% end %>
-</div>
-<div id="main_module" class="module">
-  <% if @modules_to_display.include?(:events) %>
-      <%= render 'home/modules/events' %>
-  <% end %>
-</div>
-<div id="right_top_module" class="module">
-  <% if @modules_to_display.include?(:messages) %>
-      <%= render 'home/modules/messages' %>
-  <% end %>
-</div>
-<div id="right_bot_module" class="module">
-  <%= render 'home/modules/hof' %>
-</div>
+<body class="homepage_body">
+    <div id="left_module" class="module">
+      <% if @modules_to_display.include?(:achievements) %>
+          <%= render 'home/modules/achievements' %>
+      <% end %>
+    </div>
+    <div id="main_module" class="module">
+      <% if @modules_to_display.include?(:events) %>
+          <%= render 'home/modules/events' %>
+      <% end %>
+    </div>
+    <div id="right_top_module" class="module">
+      <% if @modules_to_display.include?(:messages) %>
+          <%= render 'home/modules/messages' %>
+      <% end %>
+    </div>
+    <div id="right_bot_module" class="module">
+      <%= render 'home/modules/hof' %>
+    </div>
+</body>

@@ -34,6 +34,7 @@ background-color: #F2EFEA;
 }
 
 .eventSearch_field>input[type=text] {
+  outline: none;
   flex:1;
   padding:0.6em;
   border:0.2em solid rgb(26, 188, 156);

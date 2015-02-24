@@ -80,7 +80,8 @@
   text-align: center;
   color: rgba(250,255,253,1);
   font-weight: initial;
-  float: right;
+  margin-right: 37px;
+  margin-top: 10px;
 }
 
 .userEdit_button:hover {
@@ -102,6 +103,31 @@
 .userEdit_submit:hover {
   background-color: #4DCB6D;
 }
+
+.userEdit_del_button {
+  background-color: #EE6163;
+  border: solid 1px #EE6163;
+  max-width: 100%;
+  height: 40px;
+  padding: 10px;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 13px;
+  text-align: center;
+  color: rgba(250,255,253,1);
+  font-weight: initial;
+  margin-left: 20%;
+  margin_top: 10px;
+}
+
+.userEdit_del_button:hover {
+  background-color: #EE5255;
+  background-position: center;
+  height: 40px;
+  border: solid 1px #EE5255;
+}
+
+/******************************************/
 
 .form_hint, .required_notification {
   font-size: 11px;

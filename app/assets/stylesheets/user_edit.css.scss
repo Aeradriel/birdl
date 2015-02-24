@@ -4,11 +4,21 @@
 
 /* ---------- GENERAL ---------- */
 
-#userEdit_body {
-  background-color: #C0C0C0;
-  color: #000;
-  font-size: 16px;
-  line-height: 1.5em;
+.userEdit_body {
+  background-color: #F2EFEA;
+}
+
+.userEdit_title {
+  background-color: #EE6163;
+  border: solid 1px #59BDBA;
+
+  text-align: center;
+  text-shadow: -1px 1px #417cb8;
+  color: #E6F2EF;
+  font-family: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
+
+  padding: 20px;
+  margin-top: -20px;
 }
 
 

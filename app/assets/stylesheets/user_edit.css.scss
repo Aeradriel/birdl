@@ -5,6 +5,8 @@
 /* ---------- GENERAL ---------- */
 
 .userEdit_body {
+  margin: 0;
+  padding: 0;
   background-color: #F2EFEA;
 }
 
@@ -21,6 +23,39 @@
   margin-top: -20px;
 }
 
+.userEdit_div_perso {
+  display:inline-block;
+  background-color:#F5F5F5;
+  padding:20px;
+  border:1px solid #EE6163;
+  border-radius:5px;
+}
+
+.userEdit_div_pwd {
+  display:inline-block;
+  background-color:#F5F5F5;
+  padding:20px;
+  border:1px solid #EE6163;
+  border-radius:5px;
+}
+
+.userEdit_table_perso {
+  width: 130%;
+  margin: auto;
+}
+
+.userEdit_tr_top {
+
+}
+
+.userEdit_delete {
+  display:inline-block;
+  background-color:#F5F5F5;
+  padding:20px;
+  padding-top:0px;
+  border:1px solid #EE6163;
+  border-radius:5px;
+}
 
 .form_hint, .required_notification {
   font-size: 11px;

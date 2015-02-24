@@ -1,7 +1,6 @@
 <body class="userEdit_body">
 
   <h1 class="userEdit_title"><%= t(:my_account) %></h1>
-		<div class="userEdit_panel">
         	<!-- <span id="required_notification"><%= t(:denotes_required_filed) %></span> -->
 		
       	 	<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, :id => 'edit_user'}) do |f| %>
@@ -57,11 +56,15 @@
                         <h2 class="userEdit_div_title"><%= t(:cancel_account) %></h2>
                         <p><%= button_to t(:cancel_account), registration_path(resource_name),
                                          data: { confirm: t(:account_deletion_warning) }, method: :delete, :id => 'delete_submit' , :class => 'btn btn-danger btn-mini icon-white icon-remove delete_account_button'%></p>
+                      </div><br /><br />
+                    </td>
+                    <td>
+                      <div class="userEdit_update">
+                        <h2 class="userEdit_div_title"><%= t(:update) %></h2>
+                        <p class="userEdit_submit_pos"><%= f.submit t(:update), :id => 'userEdit_submit', :class => 'userEdit_button' %></p>
                       </div>
                     </td>
                 </tr>
             </table>
-        <p><%= f.submit t(:update), :id => 'edit_submit' , :class => 'btn btn-success btn-mini icon-white icon-remove edit_button' %></p>
         <% end %>
-        </div>
 </body>

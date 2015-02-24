@@ -23,32 +23,24 @@
   margin-top: -20px;
 }
 
-.userEdit_div_perso {
-  display:inline-block;
-  background-color:#F5F5F5;
-  padding:20px;
-  border:1px solid #EE6163;
-  border-radius:5px;
-}
-
-.userEdit_div_pwd {
-  display:inline-block;
-  background-color:#F5F5F5;
-  padding:20px;
-  border:1px solid #EE6163;
-  border-radius:5px;
-}
-
 .userEdit_table_perso {
   width: 130%;
   margin: auto;
 }
 
 .userEdit_div_perso, .userEdit_div_pwd {
+  font-family: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
   margin-left: 7px;
+  display:inline-block;
+  background-color:#F5F5F5;
+  padding:20px;
+  padding-top: 0px;
+  border:1px solid #EE6163;
+  border-radius:5px;
 }
 
 .userEdit_delete {
+  font-family: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
   display:inline-block;
   background-color:#F5F5F5;
   padding:20px;

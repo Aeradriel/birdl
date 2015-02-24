@@ -10,6 +10,7 @@
 	          	<tr>
     	          	<td>
                       <div class="userEdit_div_perso">
+                        <h2 class="userEdit_div_title"><%= t(:personal_infos) %></h2>
                         <%= f.label :email, :class => 'userForm_label' %>
                         <span class="userEdit_input"><%= f.email_field :email, autofocus: true %></span><br /><br />
 
@@ -38,6 +39,7 @@
 
               		<td>
                       <div class="userEdit_div_pwd">
+                        <h2 class="userEdit_div_title"><%= t(:security_infos) %></h2>
                         <%= f.label :password, :class => 'userForm_label'  %> <i class="info" title="<%= t(:leave_blank_for_unchanged) %>"><span class="help_button">?</span></i>
                         <span class="userEdit_input"><%= f.password_field :password, autocomplete: "off" %></span><br /><br />
 
@@ -52,7 +54,7 @@
                 <tr>
                     <td><br /><br />
                       <div class="userEdit_delete">
-                        <h2><%= t(:cancel_account) %></h2>
+                        <h2 class="userEdit_div_title"><%= t(:cancel_account) %></h2>
                         <p><%= button_to t(:cancel_account), registration_path(resource_name),
                                          data: { confirm: t(:account_deletion_warning) }, method: :delete, :id => 'delete_submit' , :class => 'btn btn-danger btn-mini icon-white icon-remove delete_account_button'%></p>
                       </div>

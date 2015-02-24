@@ -49,6 +49,7 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/events/facestofaces' => 'events/face_to_face#index'
   get '/users/:user_id/rate' => 'users/users#rate', as: :user_rating
   get '/check_birthdate' => 'information_checker#validate_birthdate',
       as: :birthdate_validation_path

@@ -45,6 +45,8 @@ en:
   unknown: "Unknown"
   male: "Male"
   female: "Female"
+  personal_infos: "Personal informations"
+  security_infos: "Security informations"
   leave_blank_for_unchanged: "(leave blank if you don't want to change it)"
   need_current_password_for_changes: "(we need your actual password to confirm changes)"
   update: "Update"

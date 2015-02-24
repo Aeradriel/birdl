@@ -45,6 +45,8 @@ fr:
   unknown: "Non renseigné"
   male: "Homme"
   female: "Femme"
+  personal_infos: "Informations personnelles"
+  security_infos: "Informations de sécurité"
   leave_blank_for_unchanged: "(laissez blanc si vous ne souhaitez pas le modifier)"
   need_current_password_for_changes: "(nous avons besoin de votre mot de passe actuel pour confirmer les changements)"
   update: "Mettre à jour"

@@ -104,7 +104,7 @@
   background-color: #4DCB6D;
 }
 
-.userEdit_del_button {
+.userEdit_del_button, .userEdit_del_button:visited, .userEdit_del_button:hover {
   background-color: #EE6163;
   border: solid 1px #EE6163;
   max-width: 100%;
@@ -118,6 +118,7 @@
   font-weight: initial;
   margin-left: 20%;
   margin_top: 10px;
+  text-decoration: none;
 }
 
 .userEdit_del_button:hover {

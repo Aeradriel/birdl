@@ -2,7 +2,7 @@
 
   <h1 class="userEdit_title"><%= t(:my_account) %></h1>
         	<!-- <span id="required_notification"><%= t(:denotes_required_filed) %></span> -->
-		
+
       	 	<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, :id => 'edit_user'}) do |f| %>
   	      	<%= devise_error_messages! %>
 			<table class="userEdit_table_perso">
@@ -54,7 +54,7 @@
                     <td><br /><br />
                       <div class="userEdit_delete">
                         <h2 class="userEdit_div_title"><%= t(:cancel_account) %></h2>
-                        <p><%= button_to t(:cancel_account), registration_path(resource_name),
+                        <p><%= link_to t(:cancel_account), registration_path(resource_name),
                                          data: { confirm: t(:account_deletion_warning) }, method: :delete, :class => 'userEdit_del_button' %></p>
                       </div><br /><br />
                     </td>

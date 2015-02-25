@@ -1,7 +1,7 @@
 <body>
 <div class="tEvent">
-  <header><h1>List of your past events</h1></header>
-  <div class="pEvent"><h3>Events</h3><br>
+  <header><h1><%= t(:list_past_events) %></h1></header>
+  <div class="pEvent"><h3><%= t(:event) %></h3><br>
     <table>
       <tr>
         <td id="pEventlist">Macaroni Party !</td>
@@ -26,13 +26,13 @@
       <div id="modalEvent" class="row">
         <%= image_tag('groupevents/engine/macar.jpg', :class => "imgEventModal") %>
         <ul style="list-style-type: none">
-          <li>Note pour l'organisateur</li>
+          <li><%= t(:rating_organizer) %></li>
           <ul style="list-style-type: none" class="ratingEvent">
             <% (1..5).each do |i| %>
                 <li class="ratingEventstar"  data-stars="<%= i %>" data-user-id="<%= 1 %>" id=<%="#{1}_#{i}"%>></li>
             <% end %>
           </ul><br>
-          <li>Note globale</li>
+          <li><%= t(:overall_rating) %></li>
           <ul style="list-style-type: none" class="ratingEvent">
             <li>
               <% (1..5).each do |i| %>

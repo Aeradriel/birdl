@@ -4,7 +4,7 @@
 <%= form_for :chat_online do |f| %>
 
     <body class="body_gen">
-    <span class="chat_title">Chat général</span><br>
+    <span class="chat_title"><%= t(:general_chat) %></span><br>
 
     <div class="chat_body">
       <%= f.text_area :output, :size => "96x25"%><br>

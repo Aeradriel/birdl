@@ -4,7 +4,7 @@
 <body>
 <div class="gEvent">
   <header>
-    <h1>Your registered events, <%= current_user.name %> !</h1> <!-- Rendre les titres multilingue -->
+    <h1><%= t(:registered_event) %>, <%= current_user.name %> !</h1> <!-- Rendre les titres multilingue -->
   </header>
   <div class="gEventDesc">
   <div id="eDescription">
@@ -12,17 +12,17 @@
     <div><%= image_tag('groupevents/engine/rheenok.jpg', :class => "imgEvent") %></div> <!-- Ici ajouter la bannière, si possible set une taille limite de 300x200 ! -->
     <div id="eDescriptionDetails">
       <ul>
-        <li><h4>Organisateur</h4>
+        <li><h4><%= t(:organizer) %></h4>
           <ul>
             <li>Roi Heenok</li>
           </ul>
         </li>
-        <li><h4>Adresse de l'event</h4>
+        <li><h4><%= t(:event_adress) %></h4>
           <ul>
             <li>251 Rue René-Lévesque, Montréal Québec</li>
           </ul>
         </li>
-        <li><h4>Description de l'event</h4>
+        <li><h4><%= t(:description_event) %></h4>
           <ul>
             <li>Partager la francophonie t'entends ? Partager la francophonie t'entends ?
               Partager la francophonie t'entends ? Partager la francophonie t'entends ?
@@ -43,7 +43,7 @@
     </div>
   </div>
   <div id="uEvents">
-    <div style="text-align: center; padding: 15px; overflow: auto"><h3>Events that you're participating</h3></div>
+    <div style="text-align: center; padding: 15px; overflow: auto"><h3><%= t(:participating_event) %></h3></div>
     <ul>
       <li>Event 1</li>  <!-- Automatiser la liste des events auxquels le user est inscrit. -->
       <li>Event 2</li>
@@ -60,7 +60,7 @@
     </ul>
   </div>
     <div class="uList">
-      <h3 style="text-align: center; padding: 15px; overflow: auto">Participants</h3>
+      <h3 style="text-align: center; padding: 15px; overflow: auto"><%= t(:participants) %></h3>
       <ul>
         <li><%= current_user.name %></li> <!-- A automatiser pour aller chercher les users inscrits à l'event -->
       </ul>

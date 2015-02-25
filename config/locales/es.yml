@@ -70,6 +70,8 @@ es:
   first_step: "La primera etapa"
   perso_details: "Datos personales"
   personal_details: "Sus datos personales"
+  personal_infos: "Sus datos personales"
+  security_infos: "Información de seguridad"
   trust_us: "Faites-nous confiance, nous ne les partagerons pas !"
   country_residence: "Su país de residencia"
   where_you_from: "Dónde vive?"

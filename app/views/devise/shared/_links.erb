@@ -1,14 +1,15 @@
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-  <%= link_to t(:confirmation_instructions), new_confirmation_path(resource_name),
-              :id => 'email_confirmation_link' %><br />
+    <%= link_to t(:confirmation_instructions), new_confirmation_path(resource_name),
+                :class => 'login_links' %><br />
 <% end -%>
 
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
-  <%= link_to t(:unlock_instructions), new_unlock_path(resource_name) %><br />
+    <%= link_to t(:unlock_instructions), new_unlock_path(resource_name) %><br />
 <% end -%>
 
 <%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "#{t(:sign_in_with)} #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
-  <% end -%>
+    <%- resource_class.omniauth_providers.each do |provider| %>
+        <%= link_to "#{t(:sign_in_with)} #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider),
+                    :class => 'login_links' %><br />
+    <% end -%>
 <% end -%>

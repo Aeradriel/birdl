@@ -37,6 +37,7 @@ en:
   admin: "Administration"
   home: "Home"
   country: "Country"
+  countries: "Countries"
   user: "User"
   unit_test: "Unit tests"
   execution_report: "Execution report"
@@ -81,6 +82,7 @@ en:
   delete: "Delete"
   country_deletion_warning: "Are you sure you want to delete this country?"
 
+  users: "Users"
   admins: "Administrators"
   normal_users: "Regular users"
   name: "Name"
@@ -132,9 +134,220 @@ en:
           password: "Password"
           password_confirmation: "Password confirmation"
           current_password: "Current password"
-          current_password: "Mot de passe actuel"
           forgotten_password: "Forgot your password ?"
         country:
           name: "Name"
           language: "Language"
           flag_path: "Flag"
+
+  date:
+      abbr_day_names:
+        - sun
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+        - sat
+      abbr_month_names:
+        - ~
+        - jan.
+        - feb.
+        - mar.
+        - apr.
+        - may
+        - jun
+        - jul.
+        - aug
+        - sept.
+        - oct.
+        - nov.
+        - dec.
+      day_names:
+        - sunday
+        - monday
+        - tuesday
+        - wednesday
+        - thurday
+        - friday
+        - saturday
+      formats:
+        default: "%d/%m/%Y"
+        short: "%e %b"
+        long: "%e %B %Y"
+      month_names:
+        - ~
+        - january
+        - february
+        - mars
+        - april
+        - may
+        - june
+        - july
+        - august
+        - september
+        - october
+        - november
+        - december
+      order:
+        - :day
+        - :month
+        - :year
+
+  datetime:
+      distance_in_words:
+        about_x_hours:
+          one:   "about an hour"
+          other: "about %{count} hours"
+        about_x_months:
+          one:   "about a month"
+          other: "about %{count} months"
+        about_x_years:
+          one:   "about a year"
+          other: "about %{count} years"
+        almost_x_years:
+          one:   "almost a year"
+          other: "almost %{count} years"
+        half_a_minute: "half a minute"
+        less_than_x_minutes:
+          zero:  "zero minute"
+          one:   "less than a minute"
+          other: "less than %{count} minutes"
+        less_than_x_seconds:
+          zero:  "zero seconde"
+          one:   "less than one seconde"
+          other: "less than %{count} secondes"
+        over_x_years:
+          one:   "more than a year"
+          other: "more than %{count} years"
+        x_days:
+          one:   "one day"
+          other: "%{count} days"
+        x_minutes:
+          one:   "one minute"
+          other: "%{count} minutes"
+        x_months:
+          one:   "one month"
+          other: "%{count} months"
+        x_seconds:
+          one:   "one second"
+          other: "%{count} secondes"
+      prompts:
+        day:    "Day"
+        hour:   "Hours"
+        minute: "Minute"
+        month:  "Month"
+        second: "Second"
+        year:   "Year"
+
+  errors:
+      format: "%{attribute} %{message}"
+      messages: &errors_messages
+        accepted: "must be accepted"
+        blank: "must be filled"
+        present: "must be empty"
+        confirmation: "doesn't match with the confirmation"
+        empty: "must be filled"
+        equal_to: "must be equal to %{count}"
+        even: "must be even"
+        exclusion: "is not available"
+        greater_than: "must be greater than %{count}"
+        greater_than_or_equal_to: "must be greater or equal to %{count}"
+        inclusion: "is not included in the list"
+        invalid: "is not valid"
+        less_than: "must be less than %{count}"
+        less_than_or_equal_to: "must be less than or equal to %{count}"
+        not_a_number: "is not a number"
+        not_an_integer: "is not an integerr"
+        odd: "must be odd"
+        record_invalid: "the record id invalid : %{errors}"
+        restrict_dependent_destroy:
+          one: "Can't delete: an another record is bind"
+          many: "Can't delete: others records are bind"
+        taken: "is not available"
+        too_long:
+          one: "is too long (more than one character)"
+          other: "is too long (more than%{count} characters)"
+        too_short:
+          one: "is too short (at least one character)"
+          other: "is too short (at least %{count} characters)"
+        wrong_length:
+          one: "is the wrong length (must have one character)"
+          other: "is the wrong length (must have %{count} characters)"
+        other_than: "must be other than %{count}"
+      template: &errors_template
+        body: "Verify the following fields : "
+        header:
+          one:   "Not possible to save this %{model} : 1 error"
+          other: "Not possible to save this %{model} : %{count} errors"
+
+  helpers:
+      select:
+        prompt: "Must select"
+      submit:
+        create: "Create one %{model}"
+        submit: "Submit this %{model}"
+        update: "Update this %{model}"
+
+  number:
+      currency:
+        format:
+          delimiter: " "
+          format: "%n %u"
+          precision: 2
+          separator: ","
+          significant: false
+          strip_insignificant_zeros: false
+          unit: "€"
+      format:
+        delimiter: " "
+        precision: 3
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+      human:
+        decimal_units:
+          format: "%n %u"
+          units:
+            billion: "billion"
+            million: "million"
+            quadrillion: "quadrillion"
+            thousand: "thousand"
+            trillion: "trillion"
+            unit: ""
+        format:
+          delimiter: ""
+          precision: 2
+          significant: true
+          strip_insignificant_zeros: true
+        storage_units:
+          format: "%n %u"
+          units:
+            byte:
+              one:   "byte"
+              other: "bytes"
+            gb: "Gb"
+            kb: "kb"
+            mb: "Mb"
+            tb: "Tb"
+      percentage:
+        format:
+          delimiter: ""
+          format: "%n%"
+      precision:
+        format:
+          delimiter: ""
+
+  support:
+      array:
+        last_word_connector: " and "
+        two_words_connector: " and "
+        words_connector: ", "
+
+  time:
+      am: 'am'
+      formats:
+        default: "%d %B %Y %Hh %Mmin %Ss"
+        long: "%A %d %B %Y %Hh%M"
+        short: "%d %b %Hh%M"
+      pm: 'pm'

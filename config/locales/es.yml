@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 es:
+  find: "Buscar!"
   error: "Error"
   sign_in: "Conexión"
   sign_in_with: "Conecte con"

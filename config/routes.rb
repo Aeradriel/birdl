@@ -11,10 +11,13 @@ Rails.application.routes.draw do
   end
 
   namespace :events do
-    get '/groupevents/' => 'group_event#show'
-    get '/onlinechat/' => 'online_chat#index'
     get '/' => 'events#search'
     post '/' => 'events#search_events', as: :search
+    get '/groupevents' => 'group_event#index', as: :group_events
+    get '/groupevents/:event_id' => 'group_event#show', as: :group_event
+    get '/onlinechat/' => 'online_chat#index', as: :online_chat
+    get '/facestofaces' => 'face_to_face#index', as: :faces_to_faces
+    get '/facestofaces/:event_id' => 'face_to_face#show', as: :face_to_face
   end
 
   namespace :admin do
@@ -48,6 +51,10 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/users/:user_id/rate' => 'users/users#rate', as: :user_rating
+  get '/check_birthdate' => 'information_checker#validate_birthdate',
+      as: :birthdate_validation_path
+  post '/check_birthdate' => 'information_checker#check_birthdate'
   get '/change_locale/:key' => 'application#change_locale'
   post '/api/check_email/:email' => 'api#check_email',
        constraints: { email: /[0-z\.]+/ }

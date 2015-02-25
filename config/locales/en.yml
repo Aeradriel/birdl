@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  find: "Find!"
   error: "Error"
   sign_in: "Sign in"
   sign_in_with: "Sign in with"
@@ -45,6 +46,8 @@ en:
   unknown: "Unknown"
   male: "Male"
   female: "Female"
+  personal_infos: "Personal informations"
+  security_infos: "Security informations"
   leave_blank_for_unchanged: "(leave blank if you don't want to change it)"
   need_current_password_for_changes: "(we need your actual password to confirm changes)"
   update: "Update"
@@ -102,7 +105,8 @@ en:
 
   events: "Event"
   event: "Event"
-  search_event: "Event searching"
+  search_event: "Search for an event"
+  quick_search_event: "Search Quick event search"
   past_events: "Past events"
   future_events: "Future events"
   event_type: "Event type"

@@ -6,6 +6,7 @@ module Events
 
     def index
       @events = Event.all
+      render :search
     end
 
     def show

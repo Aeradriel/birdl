@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 fr:
+  find: "Go!"
   error: "Erreur"
   sign_in: "Connexion"
   sign_in_with: "Se connecter avec"
@@ -45,6 +46,8 @@ fr:
   unknown: "Non renseigné"
   male: "Homme"
   female: "Femme"
+  personal_infos: "Informations personnelles"
+  security_infos: "Informations de sécurité"
   leave_blank_for_unchanged: "(laissez blanc si vous ne souhaitez pas le modifier)"
   need_current_password_for_changes: "(nous avons besoin de votre mot de passe actuel pour confirmer les changements)"
   update: "Mettre à jour"
@@ -53,6 +56,7 @@ fr:
   account_setup: "Création de compte"
   currently_waiting_confirmation_for: "En attente de la confirmation de l'email : %{email}"
   cancel: "Annuler"
+  lang: "Langue"
 
   join_us: "Rejoignez-nous !"
   first_step: "La première étape"
@@ -102,7 +106,12 @@ fr:
 
   events: "Événements"
   event: "Événement"
+  event_title: "Titre de l'événement"
   search_event: "Rechercher un événement"
+  quick_search_event: "Recherche rapide"
+  past_events: "Événements passés"
+  search: "Rechercher"
+  create_event: "Créer un événement"
   past_events: "Événement passés"
   future_events: "Événements futurs"
   event_type: "Type d'événement"
@@ -114,6 +123,7 @@ fr:
   no: "Non"
   whatever: "Peu importe"
   search: "Rechercher"
+  place: "Lieu"
 
   type: "Type"
   new_event: "Nouvel Événement"
@@ -124,7 +134,19 @@ fr:
   max_slots: "Nombre de places maximum"
   date_begin: "Date de début"
   date_end: "Date de fin"
+  date_t: "Date"
   event_deletion_warning: "Êtes vous sûr de vouloir supprimer cet événement ?"
+  subscribe: "S'inscrire"
+  sort_by: "Trier par"
+  invite: "Inviter"
+  invite_user: "Inviter un utilisateur"
+
+  birthdate_check: "Vérification de l'âge"
+  validate: "Valider"
+  to_young: "L'utilisation de la plateforme requiert un âge de 18 ans minimum."
+  birthdate_validation_success: "Votre date de naissance a été validée avec succès"
+  birthdate_validation_fail: "Une erreur est survenue pendant la validation de votre date de naissance"
+  birthdate_need_validation: "Votre date de naissance doit être validée avant de pouvoir continuer"
 
   activerecord:
       models:

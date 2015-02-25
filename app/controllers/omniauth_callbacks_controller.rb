@@ -4,8 +4,8 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = User.from_omniauth(request.env['omniauth.auth'])
     @user.confirm! if @user.confirmed? == false
     sign_in @user
-    flash[:notice] = I18n.t 'devise.omniauth_callbacks.success',
-                            kind: 'Facebook'
+    flash[:notice] = I18n.t('devise.omniauth_callbacks.success',
+                            kind: 'Facebook')
     redirect_to root_path
   end
 
@@ -14,7 +14,8 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user.confirm! if @user.confirmed? == false
     puts @user.inspect
     sign_in @user
-    flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: 'Google'
+    flash[:notice] = I18n.t('devise.omniauth_callbacks.success',
+                            kind: 'Google')
     redirect_to root_path
   end
 end

@@ -69,10 +69,10 @@ describe 'The account edition page' do
   end
 
   it 'should contain submit button' do
-    expect(page).to have_css('#edit_submit')
+    expect(page).to have_css('#userEdit_submit')
   end
 
   it 'should contain delete button' do
-    expect(page).to have_css('#delete_submit')
+    expect(page).to have_css('.userEdit_del_button')
   end
 end

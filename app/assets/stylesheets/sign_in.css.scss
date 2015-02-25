@@ -98,11 +98,13 @@
 }
 
 #email_confirmation_link {
+  font-weight: bold;
   color: #FFFFFF;
 }
 
 #email_confirmation_link:visited {
-  color: #CFCFCF;
+  font-weight: bold;
+  color: #3792E2;
 }
 
 .link_login{

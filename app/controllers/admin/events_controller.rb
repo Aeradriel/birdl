@@ -12,6 +12,7 @@ module Admin
       @event_types =
           [
             [t(:face_to_face), 'FaceToFace'],
+            [t(:group_event), 'FaceToFace'],
             [t(:online_chat), 'OnlineChat'],
             [t(:tourism_tour), 'TourismTour']
           ]
@@ -33,6 +34,7 @@ module Admin
       @event_types =
           [
             [t(:face_to_face), 'FaceToFace'],
+            [t(:group_event), 'FaceToFace'],
             [t(:online_chat), 'OnlineChat'],
             [t(:tourism_tour), 'TourismTour']
           ]

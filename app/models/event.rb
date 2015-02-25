@@ -10,6 +10,7 @@ class Event < ActiveRecord::Base
                 Time.now + 3.days)
         }
 
+  belongs_to :owner, class_name: 'User'
   has_many :participations
   has_many :users, through: :participations
 
@@ -20,6 +21,6 @@ class Event < ActiveRecord::Base
   validates :date, presence: true
 
   def self.type
-    %w(FaceToFace OnlineChat TourismTour)
+    %w(FaceToFace GroupEvent OnlineChat TourismTour)
   end
 end

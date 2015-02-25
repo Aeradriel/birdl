@@ -60,6 +60,8 @@ es:
   perso_details: "Datos personales"
   personal_details: "Sus datos personales"
   trust_us: "Confiar en nosotros. No conpartiremos!"
+  personal_infos: "Sus datos personales"
+  security_infos: "Información de seguridad"
   country_residence: "Su país de residencia"
   where_you_from: "Dónde vive?"
   empty_country: "Desconocido"

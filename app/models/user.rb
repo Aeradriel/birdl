@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
            class_name: 'UserRating'
   has_many :badges, through: :achievements
   has_many :events, through: :participations
+  has_many :addresses
 
   scope :admins, -> { where(admin: true) }
   scope :normals, -> { where(admin: false) }

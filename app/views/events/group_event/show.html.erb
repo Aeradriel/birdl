@@ -8,7 +8,7 @@
   </header>
   <div class="gEventDesc">
     <div id="eDescription">
-      <h3 style="padding-left: 15px"><%= @event.name %></h3>
+      <h3 id="subtitleEvent2"><%= @event.name %></h3>
       <div><%= image_tag('eventSearch_background.jpg', :class => 'imgEvent') %></div> <!-- Ici ajouter la bannière, si possible set une taille limite de 300x200 ! -->
       <div id="eDescriptionDetails">
         <ul>
@@ -19,7 +19,7 @@
           </li>
           <li><h4><%= t(:event_adress) %></h4>
             <ul>
-              <li>251 Rue René-Lévesque, Montréal Québec</li>
+              <li>31 rue de l'Example, 75001 PARIS</li>
             </ul>
           </li>
           <li><h4><%= t(:description_event) %></h4>
@@ -33,7 +33,7 @@
       </div>
     </div>
     <div id="uEvents">
-      <div style="text-align: center; padding: 15px; overflow: auto"><h3>Events that you're participating</h3></div>
+      <div id="subtitleEvent"><h3>Events that you're participating</h3></div>
       <ul>
         <% current_user.events.each do |event| %>
             <%= link_to event.name, "/events/groupevents/#{event.id}" %>
@@ -41,7 +41,7 @@
       </ul>
     </div>
     <div class="uList">
-      <h3 style="text-align: center; padding: 15px; overflow: auto"><%= t(:participants) %></h3>
+      <h3 id="subtitleEvent"><%= t(:participants) %></h3>
       <ul>
         <% @event.users.each do |u| %>
             <li><%= u.name %></li>

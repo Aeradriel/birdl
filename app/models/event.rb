@@ -11,7 +11,7 @@ class Event < ActiveRecord::Base
         }
 
   belongs_to :owner, class_name: 'User'
-  has_one :address
+  belongs_to :address
   has_many :participations
   has_many :users, through: :participations
 

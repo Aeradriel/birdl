@@ -3,17 +3,18 @@
 }
 
 .chat_body {
-  margin-left: 312px;
-  border: 4px;
+  margin-left: 280px;
+  border: 2px;
   font-family: "Varela Round", Arial, Helvetica, sans-serif;
-  width: 31%;
+  width: 655px;
+  weight: 1200px;
   background-color: #fff;
   border-radius: 0 0 0px 10px;
   border-style: solid;
   border-color: #2ab4f8;
   padding: 3px;
   color: #777;
-  margin-top: 13px;
+  margin-top: 8px;
   font-size: 18px;
   display:inline-block;
   float:left;
@@ -41,7 +42,7 @@
 }
 
 .chat_input {
-  width:80%;
+  width:516px;
   display:inline-block;
   float:left;
   margin-top: 31px;
@@ -49,18 +50,18 @@
 }
 
 .usrlist_body {
-  border: 4px;
+  border: 2px;
   font-family: "Varela Round", Arial, Helvetica, sans-serif;
-  width: 11%;
-  height: 674px;
+  width: 245px;
+  height: 668px;
   background-color: #fff;
   border-radius: 0 10px 10px 0px;
   border-style: solid;
   border-color: #2ab4f8;
   padding: 3px;
-  margin-left: 46%;
+  margin-left: 938px;
   color: #777;
-  margin-top: 9px;
+  margin-top: 6px;
   font-size: 18px;
   display:inline-block;
   float:left;
@@ -75,12 +76,9 @@
 }
 
 .chat_title {
-  width: 100px;
-  height:30px;
-  margin-left: 312px;
+  margin-left: 280px;
   background-color: #2ab4f8;
   text-align: center;
-  font-weight: bold;
   border-radius: 10px 10px 0 0;
   color: #fff;
   font-size: 15px;
@@ -94,9 +92,9 @@
 }
 
 #send_button {
-  width: 18%;
+  width: 120px;
   height:74px;
-  margin-left: 2px;
+  margin-left: 4px;
   margin-top: 32px;
   background: #2ab4f8;
   font-weight: bold;
@@ -106,8 +104,4 @@
   cursor: pointer;
   display:inline-block;
   float:left;
-}
-
-#send_button:hover {
-  background-color: #2ab4e1;
 }

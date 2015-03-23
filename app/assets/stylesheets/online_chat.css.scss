@@ -1,3 +1,113 @@
-// Place all the styles related to the online_chat controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.body_gen {
+  display:block;
+}
+
+.chat_body {
+  margin-left: 312px;
+  border: 4px;
+  font-family: "Varela Round", Arial, Helvetica, sans-serif;
+  width: 31%;
+  background-color: #fff;
+  border-radius: 0 0 0px 10px;
+  border-style: solid;
+  border-color: #2ab4f8;
+  padding: 3px;
+  color: #777;
+  margin-top: 13px;
+  font-size: 18px;
+  display:inline-block;
+  float:left;
+  position: fixed;
+}
+
+.chat_output {
+  height: 500px;
+  border: 2px;
+  border-style: solid;
+}
+
+.smiley {
+  display:inline-block;
+  float:left;
+  margin-left: 100px;
+  margin-top: 10px;
+}
+
+.configuration {
+  display:inline-block;
+  float:left;
+  margin-left: 250px;
+  margin-top: 10px;
+}
+
+.chat_input {
+  width:80%;
+  display:inline-block;
+  float:left;
+  margin-top: 31px;
+  resize: none;
+}
+
+.usrlist_body {
+  border: 4px;
+  font-family: "Varela Round", Arial, Helvetica, sans-serif;
+  width: 11%;
+  height: 674px;
+  background-color: #fff;
+  border-radius: 0 10px 10px 0px;
+  border-style: solid;
+  border-color: #2ab4f8;
+  padding: 3px;
+  margin-left: 46%;
+  color: #777;
+  margin-top: 9px;
+  font-size: 18px;
+  display:inline-block;
+  float:left;
+  position: fixed;
+}
+
+.usrlist_output {
+  height: 659px;
+  border: 2px;
+  border-style: solid;
+  border-radius: 0 10px 10px 0px;
+}
+
+.chat_title {
+  width: 100px;
+  height:30px;
+  margin-left: 312px;
+  background-color: #2ab4f8;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px 10px 0 0;
+  color: #fff;
+  font-size: 15px;
+  padding: 3px;
+  cursor:pointer;
+  position: fixed;
+}
+
+.chat_title:hover {
+  background-color: #2ab4e1;
+}
+
+#send_button {
+  width: 18%;
+  height:74px;
+  margin-left: 2px;
+  margin-top: 32px;
+  background: #2ab4f8;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 1px;
+  cursor: pointer;
+  display:inline-block;
+  float:left;
+}
+
+#send_button:hover {
+  background-color: #2ab4e1;
+}

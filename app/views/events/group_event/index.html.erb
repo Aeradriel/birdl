@@ -5,11 +5,7 @@
     <table>
       <tr>
         <td id="pEventlist">Macaroni Party !</td>
-        <td id="pEventlist"><button style="margin: auto "  type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Notez !</button></td>
-      </tr>
-      <tr>
-        <td id="pEventlist">Abdelildi ROI HENNOK</td>
-        <td id="pEventlist"><button style="margin: auto "  type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Notez !</button></td>
+        <td id="pEventlist"><button id="optButEvent" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Notez !</button></td>
       </tr>
     </table>
   </div>
@@ -25,15 +21,15 @@
       </div>
       <div id="modalEvent" class="row">
         <%= image_tag('groupevents/engine/macar.jpg', :class => "imgEventModal") %>
-        <ul style="list-style-type: none">
+        <ul id="optEvent">
           <li><%= t(:rating_organizer) %></li>
-          <ul style="list-style-type: none" class="ratingEvent">
+          <ul class="ratingEvent">
             <% (1..5).each do |i| %>
                 <li class="ratingEventstar"  data-stars="<%= i %>" data-user-id="<%= 1 %>" id=<%="#{1}_#{i}"%>></li>
             <% end %>
           </ul><br>
           <li><%= t(:overall_rating) %></li>
-          <ul style="list-style-type: none" class="ratingEvent">
+          <ul class="ratingEvent">
             <li>
               <% (1..5).each do |i| %>
                 <li class="ratingEventstar"  data-stars="<%= i %>" data-event-id="<%= 1 %>" id=<%="#{1}_#{i}"%>></li>

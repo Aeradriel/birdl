@@ -7,36 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav class="navbar navbar-default navbar-static-top" role="navigation">
+<nav class="mainNavbar" role="navigation">
   <div class="container">
-    <div class="navbar-header">
-      <a href="#" class="navbar-brand">Bird'L</a>
-        <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
     <div class="collapse navbar-collapse navHeaderCollapse">
       <ul class="nav navbar-nav navbar-left">
         <li class="dropdown">
           <% if user_signed_in? %>
-                <li><%= link_to t(:home), '/', :class => 'navbar-link',
+                <li><%= link_to t(:home), '/', :class => 'navbar-link linkNavbar',
                                 :id => 'home_link' %></li>
-                <li><%= link_to t(:my_account), edit_user_registration_path, :class => 'navbar-link',
+                <li><%= link_to t(:my_account), edit_user_registration_path, :class => 'navbar-link linkNavbar',
                                 :id => 'profile_link' %></li>
-                <li><%= link_to t(:events), events_path, :class => 'navbar-link',
+                <li><%= link_to t(:events), events_path, :class => 'navbar-link linkNavbar',
                                 :id => 'events_link' %></li>
                 <% if current_user.admin %>
-                    <li><%= link_to t(:admin), '/admin', :class => 'navbar-link',
+                    <li><%= link_to t(:admin), '/admin', :class => 'navbar-link linkNavbar',
                                     :id => 'admin_link' %></li>
                 <% end %>
                 <li><%= link_to t(:disconnect), destroy_user_session_path, method: :delete,
-                                :class => 'navbar-link logout', :id => 'logout_link' %></li>
+                                :class => 'navbar-link logout linkNavbar', :id => 'logout_link' %></li>
             <% else %>
-                <li><%= link_to t(:sign_up), new_user_registration_path, :class => 'navbar-link',
+                <li><%= link_to t(:sign_up_caps), new_user_registration_path, :class => 'navbar-link linkNavbar',
                                 :id => 'signup_link' %></li>
-                <li><%= link_to t(:sign_in), new_user_session_path, :class => 'navbar-link',
+                <li><%= link_to t(:sign_in_caps), new_user_session_path, :class => 'navbar-link linkNavbar',
                                 :id => 'signin_link' %></li>
           <% end %>
         </li>

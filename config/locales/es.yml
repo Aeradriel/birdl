@@ -22,8 +22,10 @@
 es:
   find: "Buscar!"
   error: "Error"
+  Sign_in_caps: "CONEXIÓN"
   sign_in: "Conexión"
   sign_in_with: "Conecte con"
+  sign_up_caps: "INSCRIBIRSE"
   sign_up: "Inscribirse"
   account_infos: "Información de la cuenta"
   disconnect: "Desconectarse"

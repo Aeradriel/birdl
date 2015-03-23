@@ -16,6 +16,7 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 /* Alerts */
 
@@ -26,6 +27,18 @@
 /* CSS used here will be applied after bootstrap.css */
 .caret-container {
   float: right;
+}
+
+.mainNavbar {
+  margin-bottom: 20px;
+}
+
+.linkNavbar, .linkNavbar:visited {
+  text-align: center;
+  color: #F57B6C;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+
+  font-size: 15px;
 }
 
 .nav-container {

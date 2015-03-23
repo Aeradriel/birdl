@@ -22,8 +22,10 @@
 fr:
   find: "Go!"
   error: "Erreur"
+  sign_in_caps: "CONNEXION"
   sign_in: "Connexion"
   sign_in_with: "Se connecter avec"
+  sign_up_caps: "INSCRIPTION"
   sign_up: "S'inscrire"
   account_infos: "Informations du compte"
   disconnect: "Se déconnecter"

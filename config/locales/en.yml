@@ -22,8 +22,10 @@
 en:
   find: "Find!"
   error: "Error"
+  sign_in_caps: "SIGN IN"
   sign_in: "Sign in"
   sign_in_with: "Sign in with"
+  sign_up_caps: "SIGN UP"
   sign_up: "Sign up"
   account_infos: "Account informations"
   disconnect: "Disconnect"

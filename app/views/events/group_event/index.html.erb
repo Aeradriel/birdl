@@ -3,17 +3,15 @@
   <header><h1><%= t(:list_past_events) %></h1></header>
   <div class="pEvent"><h3><%= t(:event) %></h3><br>
     <table>
-      <tr>
-        <td id="pEventlist">Macaroni Party !</td>
-        <td id="pEventlist"><button style="margin: auto "  type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Notez !</button></td>
-      </tr>
-      <tr>
-        <td id="pEventlist">Abdelildi ROI HENNOK</td>
-        <td id="pEventlist"><button style="margin: auto "  type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Notez !</button></td>
-      </tr>
+      <% @events.each do |event| %>
+          <tr>
+            <td id="pEventlist"><%= event.name %></td>
+            <td id="pEventlist"><button style="margin: auto" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Notez !</button></td>
+          </tr>
+      <% end %>
     </table>
   </div>
- </div>
+</div>
 
 <!-- POPIN CODE -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

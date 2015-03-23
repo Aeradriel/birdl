@@ -11,7 +11,7 @@ background-color: #F2EFEA;
   text-align: center;
   text-shadow: -1px 1px #417cb8;
   color: #E6F2EF;
-  font-family: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 
   padding: 20px;
   margin-top: -20px;
@@ -30,7 +30,7 @@ background-color: #F2EFEA;
 .eventSearch_field>input[type=text],
 .eventSearch_field>button {
   display:block;
-  font:1.2em 'Montserrat Alternates';
+  font:1.2em 'Open Sans';
 }
 
 .eventSearch_field>input[type=text] {
@@ -74,7 +74,7 @@ input#past_events_true:empty, input#past_events_false:empty {
 /* style label */
 input#past_events_true:empty ~ .eventSearch_label,
 input#past_events_false:empty ~ .eventSearch_label {
-  font-family: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   position: relative;
   float: left;
   line-height: 2.5em;
@@ -138,7 +138,7 @@ input#past_events_false:focus ~ .eventSearch_label:before {
 *************************/
 
 .eventSearch_eType, .eventSearch_eSlot {
-  font-family: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -219,7 +219,7 @@ select#event_type > span::after {
 
 select#event_type {
   background-color: #FFFFFF;
-  font-family: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-size: 1.5em;
   font-weight: 700;
   color: #5b8583;
@@ -266,7 +266,7 @@ select#event_type > span::after {
 }
 
 .eventSearch_eFriends {
-  font-family: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
 
 /************************
@@ -279,7 +279,7 @@ select#event_type > span::after {
 
 .eventSearch_button {
   background-color: #1ABC9C;
-  font-family: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   background-position: center;
   border: solid 1px #1ABC9C;
   max-width: 100%;

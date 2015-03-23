@@ -12,7 +12,7 @@
     padding:10px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
     font-weight:500;
     color:#333333;
     font-size:30px;
@@ -32,7 +32,7 @@
     -webkit-box-shadow: 0 4px 4px -2px #21263C;
     -moz-box-shadow: 0 4px 4px -2px #21263C;
     box-shadow: 0 4px 4px -2px #21263C;
-    font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
     color:#333333;
 
 }
@@ -55,13 +55,13 @@
 
 .hof_module_selector p {
     margin-top:6px;
-    font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
 
 #hof_module_tab {
 
     width:100%;
-    font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
     font-size: 14px;
     color:white;
 

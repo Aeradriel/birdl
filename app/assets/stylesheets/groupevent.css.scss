@@ -199,6 +199,7 @@
 
 .ratingEvent{
   margin: 0;
+  list-style-type: none
 }
 
 .ratingEventstar {
@@ -260,5 +261,20 @@
   padding: 15px;
 }
 
+#optEvent{
+  list-style-type: none
+}
 
+#optButEvent {
+  margin: auto;
+}
 
+#subtitleEvent {
+  text-align: center;
+  padding: 15px;
+  overflow: auto;
+}
+
+#subtitleEvent2 {
+  padding-left: 15px;
+}

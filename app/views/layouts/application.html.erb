@@ -13,7 +13,6 @@
       <ul class="nav navbar-nav navbar-left">
         <li class="dropdown">
           <% if user_signed_in? %>
-                <li class="linkNavbar">|</li>
                 <li><%= link_to t(:home), '/', :class => 'navbar-link linkNavbar',
                                 :id => 'home_link' %></li>
                 <li class="linkNavbar">|</li>
@@ -30,15 +29,12 @@
                 <% end %>
                 <li><%= link_to t(:disconnect), destroy_user_session_path, method: :delete,
                                 :class => 'navbar-link logout linkNavbar', :id => 'logout_link' %></li>
-                <li class="linkNavbar">|</li>
             <% else %>
-                <li class="linkNavbar">|</li>
                 <li><%= link_to t(:sign_up_caps), new_user_registration_path, :class => 'navbar-link linkNavbar',
                                 :id => 'signup_link' %></li>
                 <li class="linkNavbar">|</li>
                 <li><%= link_to t(:sign_in_caps), new_user_session_path, :class => 'navbar-link linkNavbar',
                                 :id => 'signin_link' %></li>
-                <li class="linkNavbar">|</li>
           <% end %>
         </li>
       </ul>

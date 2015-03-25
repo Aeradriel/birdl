@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 es:
+  find: "Buscar!"
   error: "Error"
   sign_in: "Conexión"
   sign_in_with: "Conecte con"
@@ -28,18 +29,15 @@ es:
   disconnect: "Desconectarse"
   email: "Correo electrónico"
   password: "Contraseña"
-  orgotten_password: "¿Olvidaste tu contraseña?"
-
-
-  confirmation_instructions: "Vous n'avez pas reçu les instructions de confirmation ?"
-  unlock_instructions: "Vous n'avez pas reçu les instructions de déblocage ?"
-
-
+  forgotten_password: "¿Olvidaste tu contraseña?"
+  confirmation_instructions: "¿No recibiste las instrucciones de confirmacion ?"
+  unlock_instructions: "¿No recibiste las instrucciones de desbloqueo ?"
   sign_up_form: "Formulario de inscripción"
   my_account: "Mi cuenta"
   admin: "Administración"
   home: "Recepción"
   country: "País"
+  countries: "País"
   user: "Usuario"
   unit_test: "Pruebas unitarias"
   execution_report: "Informe de ejecución"
@@ -48,19 +46,11 @@ es:
   unknown: "Desconocido"
   male: "Hombre"
   female: "mujer"
-
-
-  leave_blank_for_unchanged: "(laissez blanc si vous ne souhaitez pas le modifier)"
-  need_current_password_for_changes: "(nous avons besoin de votre mot de passe actuel pour confirmer les changements)"
-
-
+  leave_blank_for_unchanged: "Si no quiere modificar, debe dejarse en blanco"
+  need_current_password_for_changes: "Necesitamos tu contrasena para confirmar los cambios"
   update: "Actualización"
   cancel_account: "Suprimir cuenta"
-
-
-  account_deletion_warning: "Êtes-vous certain de vouloir supprimer votre compte ?"
-
-
+  account_deletion_warning: "¿Seguro que quieres suprimir tu cuenta?"
   account_setup: "Crear una cuenta"
   currently_waiting_confirmation_for: "En espera de la confirmación por correo electrónico : %{email}"
   cancel: "Anular"
@@ -69,7 +59,9 @@ es:
   first_step: "La primera etapa"
   perso_details: "Datos personales"
   personal_details: "Sus datos personales"
-  trust_us: "Faites-nous confiance, nous ne les partagerons pas !"
+  trust_us: "Confiar en nosotros. No conpartiremos!"
+  personal_infos: "Sus datos personales"
+  security_infos: "Información de seguridad"
   country_residence: "Su país de residencia"
   where_you_from: "Dónde vive?"
   empty_country: "Desconocido"
@@ -88,19 +80,15 @@ es:
   edit: "Editar"
   edition_of: "Edición"
   delete: "Suprimir"
+  country_deletion_warning: "¿Seguro quiere ... supprimir el país ?"
 
-
-  country_deletion_warning: "Êtes-vous sûr de vouloir supprimer ce pays ?"
-
-
-  admins: "Administradores"
-  normal_users: "Usuario"
+  users: "Usuarios"
+  admins: "Administrados"
+  normal_users: "Usuarios normales"
   name: "Nombre"
   birthdate: "Cumpleaños"
   gender: "Sexo"
-
-
-  user_deletion_warning: "Êtes vous sûr de vouloir supprimer cet utilisateur ?"
+  user_deletion_warning: "¿Seguro quiere ... supprimir el usuario ?"
 
 
   users_by_language: "Distribución de usuarios por lengua"
@@ -110,10 +98,66 @@ es:
   new_country: "Nuevo país"
   new_user: "Nuevo usuario"
   not_logged_error_title: "Derechos insuficientes"
+  not_logged_error: "Usted no tiene permiso para ver esta pagina"
 
+  received_messages: "Mensajes recibidos"
+  sent_messages: "Mensajes enviados"
+  from: "Desde: "
+  general_chat: "Debate general"
 
-  not_logged_error: "Vous n'avez pas les droits necessaires pour afficher cette page"
+  events: "Eventos"
+  event: "Evento"
+  event_title: "Tito del evento"
+  search_event: "Busqueda de un evento"
+  quick_search_event: "Busqueda rapida"
+  past_events: "Eventos pasado"
+  future_events: "Futuro eventos"
+  search: "Buscar"
+  create_event: "Crear un evento"
+  edit_event: "Editar un evento"
+  event_type: "Tipo de evento"
+  face_to_face: "Cara a Cara"
+  tourism_tour: "Salidas turisticas"
+  online_chat: "Conversar en linea"
+  group_event: "Evento grupo"
+  remaining_slots: "Lugar disponible"
+  yes_event: "Si"
+  no_event: "No"
+  whatever: "No importa"
+  place: "Localidad"
+  list_past_events: "Lista sus enventos pasados"
+  rating_organizer: "Nota para el organizador"
+  rating_user: "Nota para el usario"
+  overall_rating: "Nota global"
+  organizer: "Organizador"
+  event_adress: "Direccion del evento"
+  description_event: "Descrition del evento"
+  registered_event: "Sus eventos"
+  participating_event: "Eventos que uste esta participante"
+  participants: "Participante"
 
+  type: "Typo"
+  new_event: "Nuevo envento"
+  slots: "Asientos"
+  slot: "Asiento"
+  filled_slots: "Asientos ocupados"
+  min_slots: "Numero minimo de asientos"
+  max_slots: "Numero maximo de asientos"
+  date_begin: "Fecha de inicio"
+  date_end: "Fecha de final"
+  date_t: "Fecha"
+  event_deletion_warning: "Estaba seguro de que desea supprimir este evento ?"
+  subscribe: "Inscribirse"
+  sort_by: "Ordenar por"
+  invite: "Invitar"
+  invite_user: "Invita de usario"
+
+  birthdate_check: "Vereficacion de la edad"
+  validate: "Validar"
+  to_young: "Usted debe tener 18 anos como minimo"
+  birthdate_validation_success: "Validacion de fecha de nacimiento"
+  birthdate_validation_fail: "Error en la fecha de nacimiento"
+  birthdate_need_validation: "Validar la fecha de nacimiento"
 
   activerecord:
       models:
@@ -189,6 +233,7 @@ es:
       - :day
       - :month
       - :year
+
   datetime:
     distance_in_words:
       about_x_hours:
@@ -234,34 +279,27 @@ es:
       month:  "Mes"
       second: "Segundo"
       year:   "Año"
+
   errors:
     format: "%{attribute} %{message}"
     messages: &errors_messages
-      accepted: "doit être accepté(e)"
-      blank: "doit être rempli(e)"
-      present: "doit être vide"
+      accepted: "debe ser aceptado"
+      blank: "debe ser completado"
+      present: "debe ser en blanco"
       confirmation: "no coincide con la confirmación"
-      empty: "doit être rempli(e)"
-      equal_to: "doit être égal à %{count}"
-      even: "doit être pair"
+      empty: "debe ser completado"
+      equal_to: "sera de %{count}"
+      even: "debe tener los numeros par"
       exclusion: "no disponible"
-      greater_than: "doit être supérieur à %{count}"
-      greater_than_or_equal_to: "doit être supérieur ou égal à %{count}"
-
-
+      greater_than: "debe ser superior al %{count}"
+      greater_than_or_equal_to: "debe ser superior o igaul al %{count}"
       inclusion: "no es incluido en la lista"
       invalid: "no es válido"
-
-
-      less_than: "doit être inférieur à %{count}"
-      less_than_or_equal_to: "doit être inférieur ou égal à %{count}"
-
-
+      less_than: "debe ser inferior %{count}"
+      less_than_or_equal_to: "debe ser inferior o igaul al %{count}"
       not_a_number: "no es un número"
-
-
-      not_an_integer: "doit être un nombre entier"
-      odd: "doit être impair"
+      not_an_integer: "debe ser numero entero"
+      odd: "debe tener los numeros impar"
 
 
       record_invalid: "Error de validación : %{errors}"
@@ -288,13 +326,15 @@ es:
       header:
         one:   "No se puede guardar este %{model} : 1 error"
         other: "No se puede guardar este %{model} : %{count} errores"
+
   helpers:
     select:
       prompt: "Por favor seleccione"
     submit:
       create: "Crear %{model}"
       submit: "Guardar %{model}"
-      update: "modificar %{model}"
+      update: "Modificar %{model}"
+
   number:
     currency:
       format:
@@ -302,15 +342,15 @@ es:
         format: "%n %u"
         precision: 2
         separator: ","
-        significant: false
-        strip_insignificant_zeros: false
+        significant: falso
+        strip_insignificant_zeros: falso
         unit: "€"
     format:
       delimiter: " "
       precision: 3
       separator: ","
-      significant: false
-      strip_insignificant_zeros: false
+      significant: falso
+      strip_insignificant_zeros: falso
     human:
       decimal_units:
         format: "%n %u"
@@ -324,8 +364,8 @@ es:
       format:
         delimiter: ""
         precision: 2
-        significant: true
-        strip_insignificant_zeros: true
+        significant: verdadero
+        strip_insignificant_zeros: verdadero
       storage_units:
         format: "%n %u"
         units:
@@ -343,11 +383,13 @@ es:
     precision:
       format:
         delimiter: ""
+
   support:
     array:
       last_word_connector: " y "
       two_words_connector: " y "
       words_connector: ", "
+
   time:
     am: 'am'
     formats:

@@ -1,69 +1,70 @@
 <body class="userEdit_body">
-		<div class="userEdit_panel">
-        	<h2><%= t(:my_account) %></h2>
-        	<span id="required_notification"><%= t(:denotes_required_filed) %></span>
-		
+
+  <h1 class="userEdit_title"><%= t(:my_account) %></h1>
+        	<!-- <span id="required_notification"><%= t(:denotes_required_filed) %></span> -->
+
       	 	<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, :id => 'edit_user'}) do |f| %>
   	      	<%= devise_error_messages! %>
-			<table class="table_paneladmin">
+			<table class="userEdit_table_perso">
 	          	<tr>
-    	          	<td><%= f.label :email, :class => 'userForm_label' %></td>
-    	          	<td><span class="userEdit_input"><%= f.email_field :email, autofocus: true %></span></td>
-    	       	</tr>
-	
-	            <tr>
-	              	<td><%= f.label :first_name, :class => 'userForm_label' %></td>
-	              	<td><span class="userEdit_input"><%= f.text_field :first_name %></span></td>
-	            </tr>
-	
-	            <tr>
-	              	<td><%= f.label :last_name, :class => 'userForm_label'  %></td>
-	              	<td><span class="userEdit_input"><%= f.text_field :last_name %></span></td>
-	            </tr>
-	
-	        	<tr>
-	              	<td><%= f.label :birthdate, :class => 'userForm_label'  %></td>
-	              	<td><span class="userEdit_input"><%= f.date_select :birthdate, :start_year => Time.now.year - 100, :end_year => (Time.now.year - 18), :include_blank => true %></span></td>
-   	       		</tr>
+    	          	<td>
+                      <div class="userEdit_div_perso">
+                        <h2 class="userEdit_div_title"><%= t(:personal_infos) %></h2>
+                        <%= f.label :email, :class => 'userForm_label' %>
+                        <span class="userEdit_input"><%= f.email_field :email, autofocus: true %></span><br /><br />
 
-   		        <tr>
-        			<td><%= f.label :gender, :class => 'userForm_label'  %></td>
-              		<td><span class="userEdit_input"><%= f.select :gender, {t(:male) => 1, t(:female) => 0} %></span></td>
-           		</tr>
+                        <%= f.label :first_name, :class => 'userForm_label' %>
+                        <span class="userEdit_input"><%= f.text_field :first_name %></span><br /><br />
 
-           		<tr>
-              		<td><%= f.label :country_id, :class => 'userForm_label'  %></td>
-                	<% c = Country.all.collect { |c| [c.name, c.id] } %>
-                	<% c.insert(0, [t(:unknown), nil]) %>
-              		<td><span class="userEdit_input"><%= f.select :country_id, c %></span></td>
-           		</tr>
+                        <%= f.label :last_name, :class => 'userForm_label'  %>
+                        <span class="userEdit_input"><%= f.text_field :last_name %></span><br /><br />
+
+                        <%= f.label :birthdate, :class => 'userForm_label'  %>
+                        <span class="userEdit_input"><%= f.date_select :birthdate, :start_year => Time.now.year - 100, :end_year => (Time.now.year - 18), :include_blank => true %></span><br /><br />
+
+                        <%= f.label :gender, :class => 'userForm_label'  %>
+                        <span class="userEdit_input"><%= f.select :gender, {t(:male) => 1, t(:female) => 0} %></span><br /><br />
+
+                        <%= f.label :country_id, :class => 'userForm_label'  %>
+                        <% c = Country.all.collect { |c| [c.name, c.id] } %>
+                        <% c.insert(0, [t(:unknown), nil]) %>
+                        <span class="userEdit_input"><%= f.select :country_id, c %></span>
+                      </div>
+                    </td>
 
               	<% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                 <div><%= t(:currently_waiting_confirmation_for, :email => resource.unconfirmed_email) %></div>
               	<% end %>
 
-           		<tr>
-              		<td><%= f.label :password, :class => 'userForm_label'  %> <i class="info" title="<%= t(:leave_blank_for_unchanged) %>"><span class="help_button">?</span></i></td>
-              		<td><span class="userEdit_input"><%= f.password_field :password, autocomplete: "off" %></span></td>
-           		</tr>
+              		<td>
+                      <div class="userEdit_div_pwd">
+                        <h2 class="userEdit_div_title"><%= t(:security_infos) %></h2>
+                        <%= f.label :password, :class => 'userForm_label'  %> <i class="info" title="<%= t(:leave_blank_for_unchanged) %>"><span class="help_button">?</span></i>
+                        <span class="userEdit_input"><%= f.password_field :password, autocomplete: "off" %></span><br /><br />
 
-           		<tr>
-              		<td><%= f.label :password_confirmation, :class => 'userForm_label'  %></td>
-              		<td><span class="userEdit_input"><%= f.password_field :password_confirmation, autocomplete: "off" %></span></td>
-           		</tr>
+                        <%= f.label :password_confirmation, :class => 'userForm_label'  %>
+                        <span class="userEdit_input"><%= f.password_field :password_confirmation, autocomplete: "off" %></span><br /><br />
 
-           		<tr>
-              		<td><%= f.label :current_password, :class => 'userForm_label'  %> <i class="info" title="<%= t(:need_current_password_for_changes) %>"><span class="help_button">?</span></i></td>
-             		<td><span class="userEdit_input"><%= f.password_field :current_password, autocomplete: "off" %></span></td>
+                        <%= f.label :current_password, :class => 'userForm_label'  %> <i class="info" title="<%= t(:need_current_password_for_changes) %>"><span class="help_button">?</span></i>
+                        <span class="userEdit_input"><%= f.password_field :current_password, autocomplete: "off" %></span><br /><br />
+                      </div>
+                    </td>
            		</tr>
-			</table>
-        <p><%= f.submit t(:update), :id => 'edit_submit' , :class => 'btn btn-success btn-mini icon-white icon-remove edit_button' %></p>
+                <tr>
+                    <td><br /><br />
+                      <div class="userEdit_delete">
+                        <h2 class="userEdit_div_title"><%= t(:cancel_account) %></h2>
+                        <p><%= link_to t(:cancel_account), registration_path(resource_name),
+                                         data: { confirm: t(:account_deletion_warning) }, method: :delete, :class => 'userEdit_del_button' %></p>
+                      </div><br /><br />
+                    </td>
+                    <td>
+                      <div class="userEdit_update">
+                        <h2 class="userEdit_div_title"><%= t(:update) %></h2>
+                        <p class="userEdit_submit_pos"><%= f.submit t(:update), :id => 'userEdit_submit', :class => 'userEdit_button' %></p>
+                      </div>
+                    </td>
+                </tr>
+            </table>
         <% end %>
-		</div>
-		<div class="userDelete_panel">
-			<h2><%= t(:cancel_account) %></h2>
-
-        	<p><%= button_to t(:cancel_account), registration_path(resource_name),
-                         data: { confirm: t(:account_deletion_warning) }, method: :delete, :id => 'delete_submit' , :class => 'btn btn-danger btn-mini icon-white icon-remove delete_account_button'%></p>
-		</div>
 </body>

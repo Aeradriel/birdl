@@ -1,8 +1,8 @@
 # Helpers for application module
 module ApplicationHelper
   def admin_controller?
-    admin_controllers = %w(users countries admin)
+    controller = controller_path.split('/').first
 
-    true if admin_controllers.include?(controller_name)
+    true if controller == 'admin'
   end
 end

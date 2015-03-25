@@ -1,0 +1,316 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat+Alternates);
+
+.eventSearch_body {
+background-color: #F2EFEA;
+}
+
+.eventSearch_h1 {
+  background-color: #1abc9c;
+  border: solid 1px #59BDBA;
+
+  text-align: center;
+  text-shadow: -1px 1px #417cb8;
+  color: #E6F2EF;
+  font-family: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
+
+  padding: 20px;
+  margin-top: -20px;
+}
+
+.eventSearch_field {
+  display:flex;
+  position:realtive;
+  margin:5em auto;
+  width:70%;
+  flex-direction:row;
+  box-shadow:
+  1px 1px 0 rgb(22, 160, 133)
+}
+
+.eventSearch_field>input[type=text],
+.eventSearch_field>button {
+  display:block;
+  font:1.2em 'Montserrat Alternates';
+}
+
+.eventSearch_field>input[type=text] {
+  outline: none;
+  flex:1;
+  padding:0.6em;
+  border:0.2em solid rgb(26, 188, 156);
+}
+
+.eventSearch_field>button {
+  padding:0.6em 0.8em;
+  background-color:rgb(26, 188, 156);
+  color:white;
+  border:none;
+}
+
+/**********************
+*  Radio buttons CSS  *
+**********************/
+
+.eventSearch_table_radio {
+  margin: auto;
+  width: 45%;
+}
+
+.eventSearch_div {
+  clear: both;
+  margin: 0 50px;
+}
+
+.eventSearch_label {
+  width: 200px;
+  border-radius: 3px;
+  border: 1px solid #D1D3D4
+}
+
+/* hide input */
+input#past_events_true:empty, input#past_events_false:empty {
+  margin-left: -999px;
+}
+
+/* style label */
+input#past_events_true:empty ~ .eventSearch_label,
+input#past_events_false:empty ~ .eventSearch_label {
+  font-family: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
+  position: relative;
+  float: left;
+  line-height: 2.5em;
+  text-indent: 3.25em;
+  margin-top: 2em;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input#past_events_true:empty ~ .eventSearch_label:before,
+input#past_events_false:empty ~ .eventSearch_label:before {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 2.5em;
+  background: #D1D3D4;
+  border-radius: 3px 0 0 3px;
+}
+
+/* toggle hover */
+input#past_events_true:hover:not(:checked) ~ .eventSearch_label:before,
+input#past_events_false:hover:not(:checked) ~ .eventSearch_label:before {
+  content:'\2714';
+  text-indent: .9em;
+  color: #C2C2C2;
+}
+
+input#past_events_true:hover:not(:checked) ~ .eventSearch_label,
+input#past_events_false:hover:not(:checked) ~ .eventSearch_label {
+  color: #888;
+}
+
+/* toggle on */
+input#past_events_true:checked ~ .eventSearch_label:before,
+input#past_events_false:checked ~ .eventSearch_label:before {
+  content:'\2714';
+  text-indent: .9em;
+  color: #9CE2AE;
+  background-color: #4DCB6D;
+}
+
+input#past_events_true:checked ~ .eventSearch_label,
+input#past_events_false:checked ~ .eventSearch_label {
+  color: #777;
+}
+
+/* radio focus */
+input#past_events_true:focus ~ .eventSearch_label:before,
+input#past_events_false:focus ~ .eventSearch_label:before {
+  box-shadow: 0 0 0 3px #999;
+}
+
+/************************
+*  Event: Type & Place  *
+*************************/
+
+.eventSearch_eType, .eventSearch_eSlot {
+  font-family: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.eventSearch_table_event {
+  margin: auto;
+  width: 60%;
+}
+
+select#event_type
+
+select#event_type {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  text-align: left;
+  background: #fff;
+  z-index: 100;
+  width: 100%;
+  max-width: 500px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+select#event_type:focus {
+  outline: none; /* For better accessibility add a style for this in your skin */
+}
+
+select#event_type select {
+  display: none;
+}
+
+select#event_type span {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  padding: 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Placeholder and selected option */
+select#event_type > span {
+  padding-right: 3em;
+}
+
+select#event_type > span::after {
+  speak: none;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+select#event_type > span::after {
+  content: '\25BE';
+  right: 1em;
+}
+
+select#event_type span::after {
+  content: '\2713';
+  margin-left: 1em;
+}
+
+select#event_type > span::after {
+  -webkit-transform: translateY(-50%) rotate(180deg);
+  transform: translateY(-50%) rotate(180deg);
+}
+
+select#event_type {
+  background-color: #FFFFFF;
+  font-family: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #5b8583;
+}
+
+@media screen and (max-width: 30em) {
+  div.cs-skin-elastic { font-size: 1em; }
+}
+
+select#event_type > span {
+  background-color: #fff;
+  z-index: 100;
+}
+
+select#event_type > span::after {
+  font-family: 'icomoon';
+  content: '\e005';
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+@-webkit-keyframes expand {
+  0% { -webkit-transform: scale3d(1,0,1); }
+  25% { -webkit-transform: scale3d(1,1.2,1); }
+  50% { -webkit-transform: scale3d(1,0.85,1); }
+  75% { -webkit-transform: scale3d(1,1.05,1) }
+  100% { -webkit-transform: scale3d(1,1,1); }
+}
+
+@keyframes expand {
+  0% { -webkit-transform: scale3d(1,0,1); transform: scale3d(1,0,1); }
+  25% { -webkit-transform: scale3d(1,1.2,1); transform: scale3d(1,1.2,1); }
+  50% { -webkit-transform: scale3d(1,0.85,1); transform: scale3d(1,0.85,1); }
+  75% { -webkit-transform: scale3d(1,1.05,1); transform: scale3d(1,1.05,1); }
+  100% { -webkit-transform: scale3d(1,1,1); transform: scale3d(1,1,1); }
+}
+
+/************************
+*  Event: Friends or ?  *
+*************************/
+
+.event_search_table_friends {
+  margin: auto;
+}
+
+.eventSearch_eFriends {
+  font-family: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
+}
+
+/************************
+*     Submit button     *
+*************************/
+
+.eventSearch_table_submit {
+  margin: auto;
+}
+
+.eventSearch_button {
+  background-color: #1ABC9C;
+  font-family: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
+  background-position: center;
+  border: solid 1px #1ABC9C;
+  max-width: 100%;
+  height: 40px;
+  padding: 10px;
+  display: inline;
+  font-size: 15px;
+  line-height: 0px;
+  text-align: center;
+  color: rgba(250,255,253,1);
+  font-weight: initial;
+  float: right;
+}
+
+.eventSearch_button:hover {
+  background-color: #4DCB6D;
+  background-position: center;
+  height: 40px;
+  border: solid 1px #4DCB6D;
+}
+
+.eventSearch_submit {
+  background-color: #1ABC9C;
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+  padding: 4px 0;
+  width: 100px;
+}
+
+.eventSearch_submit:hover {
+  background-color: #4DCB6D;
+}

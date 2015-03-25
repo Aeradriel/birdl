@@ -56,7 +56,7 @@
 .file_button
 {
 	width:200px;
-	background-color:#C0C0FF !important;
+	background-color:#C0C0FF;
 }
 
 .transparent
@@ -68,22 +68,22 @@
 
 .userEdit_panel
 {
-	margin-left: 12% !important;
+	margin-left: 12%;
 	display:inline-block;
 	float:left;
 }
 
 .userDelete_panel
 {
-	float:left;
-	display:inline-block;
-	margin-left: 20px;
-	background-color:#F5F5F5;
-	padding:20px;
-	padding-top:0px;
-	border:1px solid #E1E1E1;
-	border-radius:5px;
-	margin-top:50px;
+  float:left;
+  display:inline-block;
+  margin-left: 20px;
+  background-color:#F5F5F5;
+  padding:20px;
+  padding-top:0px;
+  border:1px solid #E1E1E1;
+  border-radius:5px;
+  margin-top:50px;
 }
 
 .delete_account_button

@@ -1,16 +1,28 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  resources :events
+  devise_for :users, skip: [:sessions],
+             controllers: { omniauth_callbacks: 'omniauth_callbacks' }
 
-  devise_for :users, skip: [:sessions]
   as :user do
     get '/login' => 'devise/sessions#new', as: :new_user_session
     post '/login' => 'devise/sessions#create', as: :user_session
     delete '/logout' => 'devise/sessions#destroy', as: :destroy_user_session
   end
+
+  namespace :events do
+    get '/' => 'events#search'
+    post '/' => 'events#search_events', as: :search
+    get '/groupevents' => 'group_event#index', as: :group_events
+    get '/groupevents/:event_id' => 'group_event#show', as: :group_event
+    get '/onlinechat/' => 'online_chat#index', as: :online_chat
+    get '/facestofaces' => 'face_to_face#index', as: :faces_to_faces
+    get '/facestofaces/:event_id' => 'face_to_face#show', as: :face_to_face
+  end
+
   namespace :admin do
     get '/' => 'admin#index'
+
     resource :users do
       get '/' => 'users#users'
       get '/new' => 'users#new'
@@ -19,6 +31,7 @@ Rails.application.routes.draw do
       post '/:user_id/edit' => 'users#update'
       delete '/:user_id/delete' => 'users#delete'
     end
+
     resource :countries do
       get '/' => 'countries#countries'
       get '/new' => 'countries#new'
@@ -27,8 +40,21 @@ Rails.application.routes.draw do
       post '/:country_id/edit' => 'countries#update'
       delete '/:country_id/delete' => 'countries#delete'
     end
+
+    resource :events do
+      get '/' => 'events#index'
+      get '/new' => 'events#new'
+      post '/new' => 'events#create'
+      get '/:event_id/edit' => 'events#edit'
+      patch '/:event_id' => 'events#update'
+      delete '/:event_id' => 'events#destroy'
+    end
   end
 
+  get '/users/:user_id/rate' => 'users/users#rate', as: :user_rating
+  get '/check_birthdate' => 'information_checker#validate_birthdate',
+      as: :birthdate_validation_path
+  post '/check_birthdate' => 'information_checker#check_birthdate'
   get '/change_locale/:key' => 'application#change_locale'
   post '/api/check_email/:email' => 'api#check_email',
        constraints: { email: /[0-z\.]+/ }

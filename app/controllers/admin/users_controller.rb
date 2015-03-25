@@ -1,15 +1,9 @@
 module Admin
   # Controller for users admin panel
-  class UsersController < ApplicationController
+  class UsersController < AdminController
     include UserHelper
 
-    before_action :check_auth, :actual_user
-
-    def check_auth
-      return if user_signed_in? && current_user.admin
-      flash[:alert] = t('devise.failure.unauthenticated')
-      redirect_to new_user_session_path
-    end
+    before_action :actual_user
 
     def users
       @users = User.normals.page(params[:users_page])

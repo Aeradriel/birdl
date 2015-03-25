@@ -2,30 +2,27 @@
 
 <body id="LoginBody">
 
-    <div id="login">
-        <h2><span class="fontawesome-lock"></span><%= t(:sign_in) %></h2>
+  <div id="login">
+    <h2><%= image_tag('logo_birdl.png', :class =>'logo') %><%= image_tag('text_logo.png', :class => 'text_logo') %></h2>
+    
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    
+    <fieldset>
+      
+      <p><span class="input"><%= f.email_field :email, :id => 'user_email', :class => 'user_email',
+          :placeholder => t(:email), autofocus: true %></span></p>
+      
+      <p><span class="input"><%= f.password_field :password, :id => 'user_password', :class => 'user_password',
+          :placeholder => t(:password) %></span></p>
 
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
-          <fieldset>
-
-              <p><%= f.label :email %></p>
-              <p><span class="input"><%= f.email_field :email, :id => 'user_email', :class => 'user_email',
-                                                       :placeholder => t(:email), autofocus: true %></span></p>
-
-              <p><%= f.label :password %></p>
-              <p><span class="input"><%= f.password_field :password, :id => 'user_password', :class => 'user_password',
-                                                          :placeholder => t(:password) %></span></p>
-
-              <p style="margin-right: 19px"><%= f.submit t(:sign_in), :id => 'login_submit', :class => 'login_button' %></p>
-              <input class="pwd_button" type="button" onclick="location.href='users/password/new'"
-                     value="<%= t(:'activerecord.attributes.user.forgotten_password') %>"/>
-
-
-          </fieldset>
-        <% end %>
-    </div>
-
+      <p style="margin-right: 19px"><%= f.submit t(:sign_in), :id => 'login_submit', :class => 'login_button' %></p>
+      <input class="pwd_button" type="button" onclick="location.href='users/password/new'"
+             value="<%= t(:'activerecord.attributes.user.forgotten_password') %>"/>
+      
+    </fieldset>
+    <% end %>
+  </div>
+  
 </body>
 
 <div class="link_login"><%= render 'devise/shared/links' %></div>

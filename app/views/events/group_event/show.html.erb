@@ -1,0 +1,54 @@
+<html>
+<head>
+</head>
+<body>
+<div class="gEvent">
+  <header>
+    <h1><%= t(:registered_event) %>, <%= current_user.name %> !</h1> <!-- Rendre les titres multilingue -->
+  </header>
+  <div class="gEventDesc">
+    <div id="eDescription">
+      <h3 style="padding-left: 15px"><%= @event.name %></h3>
+      <div><%= image_tag('eventSearch_background.jpg', :class => 'imgEvent') %></div> <!-- Ici ajouter la bannière, si possible set une taille limite de 300x200 ! -->
+      <div id="eDescriptionDetails">
+        <ul>
+          <li><h4><%= t(:organizer) %></h4>
+            <ul>
+              <li><%= @event.owner.name %></li>
+            </ul>
+          </li>
+          <li><h4><%= t(:event_adress) %></h4>
+            <ul>
+              <li>251 Rue René-Lévesque, Montréal Québec</li>
+            </ul>
+          </li>
+          <li><h4><%= t(:description_event) %></h4>
+            <ul>
+              <li>
+                <%= @event.desc %>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="uEvents">
+      <div style="text-align: center; padding: 15px; overflow: auto"><h3>Events that you're participating</h3></div>
+      <ul>
+        <% current_user.events.each do |event| %>
+            <%= link_to event.name, "/events/groupevents/#{event.id}" %>
+        <% end %>
+      </ul>
+    </div>
+    <div class="uList">
+      <h3 style="text-align: center; padding: 15px; overflow: auto"><%= t(:participants) %></h3>
+      <ul>
+        <% @event.users.each do |u| %>
+            <li><%= u.name %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

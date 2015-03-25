@@ -1,7 +1,8 @@
 <body class ="newUser_body">
 
     <!-- multistep form -->
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {:class => 'newUser_form'}) do |f| %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name),
+                 html: {:class => 'newUser_form'}) do |f| %>
       <%= devise_error_messages! %>
 
       <!-- progressbar -->
@@ -15,18 +16,26 @@
       <fieldset class="newUser_fieldset">
         <h2 class="newUser_title"><%= t(:join_us) %></h2>
         <h3 class="newUser_subtitle"><%= t(:first_step) %></h3>
-        <p><%= f.email_field :email, :placeholder => t(:email), :class => 'newUser_input', autofocus: true %></p>
-        <p><%= f.password_field :password, :placeholder => t(:password), :class => 'newUser_input', autocomplete: "off" %> <% if @validatable %><i>(<%= @minimum_password_length %> <%= t(:chars) %> minimum)</i><% end %></p>
-        <p><%= f.password_field :password_confirmation, :placeholder => t(:'activerecord.attributes.user.password_confirmation'), :class => 'newUser_input', autocomplete: "off" %></p>
+        <p><%= f.email_field :email, :placeholder => t(:email),
+                             :class => 'newUser_input', autofocus: true %></p>
+        <p><%= f.password_field :password, :placeholder => t(:password),
+                                :class => 'newUser_input', autocomplete: "off" %> <% if @validatable %><i>(<%= @minimum_password_length %> <%= t(:chars) %> minimum)</i><% end %></p>
+        <p><%= f.password_field :password_confirmation,
+                                :placeholder => t(:'activerecord.attributes.user.password_confirmation'),
+                                :class => 'newUser_input', autocomplete: "off" %></p>
         <input type="button" name="next" class="newUser_next newUser_action-button" value="<%= t(:next) %>" />
       </fieldset>
       <fieldset class="newUser_fieldset">
         <h2 class="newUser_title"><%= t(:personal_details) %></h2>
         <h3 class="newUser_subtitle"><%= t(:trust_us) %></h3>
-        <p><%= f.text_field :first_name, :placeholder => t(:'activerecord.attributes.user.first_name'), :class => 'newUser_input' %></p>
-        <p><%= f.text_field :last_name, :placeholder => t(:'activerecord.attributes.user.last_name'), :class => 'newUser_input' %></p>
+        <p><%= f.text_field :first_name, :placeholder => t(:'activerecord.attributes.user.first_name'),
+                            :class => 'newUser_input' %></p>
+        <p><%= f.text_field :last_name, :placeholder => t(:'activerecord.attributes.user.last_name'),
+                            :class => 'newUser_input' %></p>
         <p><%= f.label :birthdate %></p>
-        <p><%= f.date_select :birthdate, :start_year => Time.now.year - 100, :end_year => (Time.now.year - 18), :include_blank => true %></p>
+        <p><%= f.date_select :birthdate, :start_year => Time.now.year - 100,
+                             :end_year => (Time.now.year - 18),
+                             :include_blank => true %></p>
         <p><%= f.label :gender %></p>
         <p><%= f.select :gender, {t(:male) => 1, t(:female) => 0} %></p>
         <input type="button" name="previous" class="newUser_previous newUser_action-button" value="<%= t(:previous) %>" />
@@ -45,7 +54,7 @@
       </fieldset>
     <% end %>
 
-    <br><div class="user_form" ><%= render 'devise/shared/links' %></div>
+    <br><div class="newUser_link" ><%= render 'devise/shared/links' %></div>
 
 </body>
 <% @emails = [] %>

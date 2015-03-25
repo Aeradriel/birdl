@@ -10,9 +10,6 @@ describe 'The account deletion button' do
     click_button 'login_submit'
   end
 
-  def user_exists?
-  end
-
   before :each do
     @user = FactoryGirl.create(:user)
 

@@ -16,15 +16,15 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
-    address: ENV['BIRDL_SMTP_ADDRESS'],
+    address: 'smtp.gmail.com',
     port: 587,
-    user_name: ENV['BIRDL_EMAIL_ADDR'],
-    password: ENV['BIRDL_EMAIL_PASSWD'],
+    user_name: 'contact.birdl@gmail.com',
+    password: 'birdlrimouski42',
     authentication: 'plain',
     enable_starttls_auto: true
   }
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.default_url_options = { host: ENV['BIRDL_HOST'] }
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
   config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger.

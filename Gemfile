@@ -18,6 +18,10 @@ gem 'chartkick'
 gem 'i18n'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-oauth2'
+gem 'omniauth-google-oauth2'
 
 group :development, :test do
   gem 'factory_girl_rails'

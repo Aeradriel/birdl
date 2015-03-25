@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 fr:
+  find: "Go!"
   error: "Erreur"
   sign_in: "Connexion"
   sign_in_with: "Se connecter avec"
@@ -36,6 +37,7 @@ fr:
   admin: "Administration"
   home: "Accueil"
   country: "Pays"
+  countries: "Pays"
   user: "Utilisateur"
   unit_test: "Tests unitaires"
   execution_report: "Rapport d'execution"
@@ -44,6 +46,8 @@ fr:
   unknown: "Non renseigné"
   male: "Homme"
   female: "Femme"
+  personal_infos: "Informations personnelles"
+  security_infos: "Informations de sécurité"
   leave_blank_for_unchanged: "(laissez blanc si vous ne souhaitez pas le modifier)"
   need_current_password_for_changes: "(nous avons besoin de votre mot de passe actuel pour confirmer les changements)"
   update: "Mettre à jour"
@@ -52,6 +56,7 @@ fr:
   account_setup: "Création de compte"
   currently_waiting_confirmation_for: "En attente de la confirmation de l'email : %{email}"
   cancel: "Annuler"
+  lang: "Langue"
 
   join_us: "Rejoignez-nous !"
   first_step: "La première étape"
@@ -78,6 +83,7 @@ fr:
   delete: "Supprimer"
   country_deletion_warning: "Êtes-vous sûr de vouloir supprimer ce pays ?"
 
+  users: "Utilisateurs"
   admins: "Administrateurs"
   normal_users: "Utilisateurs normaux"
   name: "Nom"
@@ -97,6 +103,64 @@ fr:
   received_messages:  "Messages reçus"
   sent_messages: "Messages envoyés"
   from: "De : "
+  general_chat: "Discussion générale"
+
+  events: "Événements"
+  event: "Événement"
+  event_title: "Titre de l'événement"
+  search_event: "Rechercher un événement"
+  quick_search_event: "Recherche rapide"
+  past_events: "Événements passés"
+  future_events: "Événements futurs"
+  search: "Rechercher"
+  create_event: "Créer un événement"
+  edit_event: ""
+  event_type: "Type d'événement"
+  face_to_face: "Face à Face"
+  tourism_tour: "Sortie touristique"
+  online_chat: "Chat en ligne"
+  group_event: "Evènement de groupe"
+  remaining_slots: "Places restantes"
+  yes_event: "Oui"
+  no_event: "Non"
+  whatever: "Peu importe"
+  place: "Lieu"
+  list_past_events: "Liste de tes évènements passées"
+  rating_organizer: "Note de l'organisateur"
+  rating_user: "Note de l'utilisateur"
+  overall_rating: "Note globale"
+  organizer: "Organisateur"
+  event_adress: "Adresse de l'évènement"
+  description_event: "Description de l'évènement"
+  registered_event: "Vos évènements"
+  participating_event: "Evènements aux quelles vous participer"
+  participants: "Participants"
+
+
+
+
+  type: "Type"
+  new_event: "Nouvel Événement"
+  slots: "Places"
+  slot: "Place"
+  filled_slots: "Places occupées"
+  min_slots: "Nombre de places minimum"
+  max_slots: "Nombre de places maximum"
+  date_begin: "Date de début"
+  date_end: "Date de fin"
+  date_t: "Date"
+  event_deletion_warning: "Êtes vous sûr de vouloir supprimer cet événement ?"
+  subscribe: "S'inscrire"
+  sort_by: "Trier par"
+  invite: "Inviter"
+  invite_user: "Inviter un utilisateur"
+
+  birthdate_check: "Vérification de l'âge"
+  validate: "Valider"
+  to_young: "L'utilisation de la plateforme requiert un âge de 18 ans minimum."
+  birthdate_validation_success: "Votre date de naissance a été validée avec succès"
+  birthdate_validation_fail: "Une erreur est survenue pendant la validation de votre date de naissance"
+  birthdate_need_validation: "Votre date de naissance doit être validée avant de pouvoir continuer"
 
   activerecord:
       models:
@@ -172,6 +236,7 @@ fr:
       - :day
       - :month
       - :year
+
   datetime:
     distance_in_words:
       about_x_hours:
@@ -217,6 +282,7 @@ fr:
       month:  "Mois"
       second: "Seconde"
       year:   "Année"
+
   errors:
     format: "%{attribute} %{message}"
     messages: &errors_messages
@@ -257,6 +323,7 @@ fr:
       header:
         one:   "Impossible d'enregistrer ce(tte) %{model} : 1 erreur"
         other: "Impossible d'enregistrer ce(tte) %{model} : %{count} erreurs"
+
   helpers:
     select:
       prompt: "Veuillez sélectionner"
@@ -264,6 +331,7 @@ fr:
       create: "Créer un(e) %{model}"
       submit: "Enregistrer ce(tte) %{model}"
       update: "Modifier ce(tte) %{model}"
+
   number:
     currency:
       format:
@@ -312,11 +380,13 @@ fr:
     precision:
       format:
         delimiter: ""
+
   support:
     array:
       last_word_connector: " et "
       two_words_connector: " et "
       words_connector: ", "
+
   time:
     am: 'am'
     formats:

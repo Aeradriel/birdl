@@ -1,3 +1,25 @@
+@media(max-width: 1024px) {
+  #wrap {
+    margin: 0%;
+    width: auto;
+  }
+}
+
+#wrap {
+  margin: 0% 10% 0%;
+  width: auto;
+}
+
+#pastEvents{
+  float: left;
+  width: 49.5%;
+}
+
+#nextEvents {
+  float: right;
+  width: 49.5%;
+}
+
 .gEvent
 {
 }
@@ -5,7 +27,6 @@
 .gEvent header
 {
   margin: 5% 15% 0%;
-  margin-top: 0px;
   padding: 25px;
   background-color:#ECB88B;
   border-top-left-radius: 5px;
@@ -14,6 +35,7 @@
   font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
   font-weight:500;
   font-size:30px;
+  word-wrap: break-word;
 }
 .gEventDesc
 {
@@ -39,6 +61,7 @@
   font-size:30px;
   padding-top: 0px;
   color: #ffffff;
+  word-wrap: break-word;
 }
 
 #eDescription ul
@@ -76,6 +99,7 @@
   font-size:30px;
   border-left:1px solid #21263C;
   color: #ffffff;
+  word-wrap: break-word;
 }
 
 #uEvents ul
@@ -165,28 +189,12 @@
   font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
 }
 
-.pEvent{
-  margin: 0% 30% 0%;
-  margin-top: 0px;
-  padding: 25px;
-  background-color:#373B44;
-  text-align: center;
-  width: 40%;
-  font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
-  font-weight:500;
-  float: left;
-  color: #ffffff;
-  overflow: auto;
-}
-
 .tEvent
 {
 }
 
 .tEvent header
 {
-  margin: 0% 30% 0%;
-  margin-top: 0px;
   padding: 25px;
   background-color:#ECB88B;
   border-top-left-radius: 5px;
@@ -195,6 +203,20 @@
   font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
   font-weight:500;
   font-size:30px;
+  word-wrap: break-word;
+}
+
+.pEvent{
+  width: 100%;
+  padding: 25px;
+  background-color:#373B44;
+  text-align: center;
+  font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
+  font-weight:500;
+  float: left;
+  color: #ffffff;
+  overflow: auto;
+  word-wrap: break-word;
 }
 
 .ratingEvent{
@@ -238,13 +260,13 @@
   margin: 0% 25% 0% !important;
   padding: 25px;
   background-color:#373B44;
-  max-width: 100%;
   width: 100%;
   color: #ffffff;
   font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
   font-size: 25px;
   text-align: left;
   border-top: 1px solid #ffffff;
+  word-wrap: break-word;
 }
 
 #modalEvent{

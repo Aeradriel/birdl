@@ -8,3 +8,4 @@ AllCops:
   Exclude:
     - 'db/**/*'
     - 'bin/*'
+    - 'install/*'

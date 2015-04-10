@@ -37,7 +37,7 @@ end
 group :development do
   gem 'spring'
   gem 'lolcat'
-  gem 'rubocop'
+  gem 'rubocop', '~> 0.30.0'
 end
 
 group :production do

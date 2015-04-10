@@ -11,9 +11,7 @@ module I18nHelper
   end
 
   def current_user_locale
-    if current_user && current_user.locale
-      return current_user.locale
-    end
+    return current_user.locale if current_user && current_user.locale
     nil
   end
 end

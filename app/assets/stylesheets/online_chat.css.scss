@@ -22,6 +22,7 @@
 .chat_body {
   margin-left: 5%;
   margin-top: 2px;
+  margin-bottom: 35px;
   border: 4px;
   font-family: "Varela Round", Arial, Helvetica, sans-serif;
   width: 60%;
@@ -37,13 +38,13 @@
 }
 
 .chat_output {
-  height: 460px;
+  height: 445px;
   border: 2px;
   border-style: solid;
 }
 
 .smiley {
-  font-size: 1vw;
+  font-size: 15px;
   display:inline-block;
   float:left;
   margin-left: 13%;
@@ -51,11 +52,12 @@
 }
 
 .configuration {
-  font-size: 1vw;
+  font-size: 15px;
   display:inline-block;
   float:left;
   margin-left: 30%;
   margin-top: 10px;
+  margin-bottom: 15px;
 }
 
 textarea {
@@ -63,6 +65,7 @@ textarea {
   display:inline-block;
   float:left;
   resize: none;
+  height: 3em;
 }
 
 ::-webkit-input-placeholder {
@@ -83,6 +86,7 @@ input[type=text]:focus,textarea:focus {
   border-color: #2ab4f8;
   padding: 3px;
   margin-left: 1%;
+  margin-top: 2px;
   color: #777;
   font-size: 18px;
   display:inline-block;
@@ -90,7 +94,7 @@ input[type=text]:focus,textarea:focus {
 }
 
 .usrlist_output {
-  height: 555px;
+  height: 550px;
   border: 2px;
   border-style: solid;
   border-radius: 0 10px 10px 0px;

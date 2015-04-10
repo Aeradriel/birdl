@@ -4,6 +4,8 @@ class Event < ActiveRecord::Base
   scope :group_event, -> { where(type: 'GroupEvent') }
   scope :online_chat, -> { where(type: 'OnlineChat') }
   scope :tourism_tour, -> { where(type: 'TourismTour') }
+  scope :past, -> { where 'date < ?', Time.now }
+  scope :future, -> { where 'date >= ?', Time.now }
   scope :soon,
         lambda {
           where('date > ? AND date <= ?', Time.now,

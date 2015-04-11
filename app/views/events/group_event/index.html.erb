@@ -6,13 +6,15 @@
 <div id="wrap">
   <div id="pastEvents">
     <div class="tEvent">
-      <header><h1><%= t(:list_past_events) %></h1></header>
-      <div class="pEvent"><h3><%= t(:event) %></h3><br>
+      <header><%= t(:list_past_events) %></header>
+      <div class="pEvent"><%= t(:event) %><br>
         <table>
-          <tr>
-            <td id="pEventlist">Macaroni Party !</td>
-            <td id="pEventlist"><button id="optButEvent" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Notez !</button></td>
-          </tr>
+          <% @past_events.each do |e| %>
+              <tr>
+                <td id="pEventlist"><%= e.name %></td>  <!-- Mettre une taille limite de caractères au titre genre 20 caractères -->
+                <td id="pEventlist"><button id="optButEvent" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Notez !</button></td>
+              </tr>
+          <% end %>
         </table>
       </div>
     </div>
@@ -20,19 +22,20 @@
 
   <div id="nextEvents">
     <div class="tEvent">
-    <header><h1>Liste de tes événements à venir</h1></header>
-    <div class="pEvent"><h3><%= t(:event) %></h3><br>
-      <table>
-        <tr>
-          <td id="pEventlist">Event A venir </td>
-          <td id="pEventlist"><button id="optButEvent" type="button" class="btn btn-primary btn-lg">Détails</button></td>
-        </tr>
-      </table>
+      <header>Liste de tes événements à venir</header>
+      <div class="pEvent"><%= t(:event) %><br>
+        <table>
+          <% @future_events.each do |e| %>
+              <tr>
+                <td id="pEventlist">e.name</td>
+                <td id="pEventlist"><button id="optButEvent" type="button" class="btn btn-primary btn-lg">Détails</button></td>
+              </tr>
+          <% end %>
+        </table>
+      </div>
     </div>
   </div>
-  </div>
 </div>
-
 
 <!-- POPIN CODE -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -68,7 +71,5 @@
     </div>
   </div>
 </div>
-
-
-
 </body>
+

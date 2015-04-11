@@ -1,7 +1,33 @@
-@media(max-width: 1024px) {
-  #wrap {
-    margin: 0%;
-    width: auto;
+@media all and (min-width: 0px) and (max-width: 1024px) {
+  #pastEvents, #nextEvents {
+    float: left;
+    width: 100%;
+    clear: both;
+  }
+  #nextEvents {
+    margin-top: 5%;
+    float: left !important;
+  }
+  .tEvent header{
+    margin: 0% -100% 0% 0%;
+    color: #ffffff;
+    word-wrap: break-word;
+  }
+  .pEvent{
+    margin: 0% -100% 0% 0%;
+    padding: 15px !important;
+    clear: all;
+    width: auto !important;
+    float: none !important;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+    max-height: 500px;
+  }
+  #pEventlist {
+    margin: 0% 100% 0% 0% !important;
+    width: 100%;
+    clear: all;
+    padding: 10px !important;
   }
 }
 
@@ -193,23 +219,25 @@
 .tEvent header
 {
   padding: 25px;
-  background-color:#ECB88B;
+  background-color: skyblue;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   text-align: center;
   font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
   font-weight:500;
-  font-size:30px;
+  font-size:24px;
+  color: #ffffff;
   word-wrap: break-word;
 }
 
 .pEvent{
   width: 100%;
-  padding: 25px;
+  padding: 20px;
   background-color:#373B44;
   text-align: center;
   font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
   font-weight:500;
+  font-size: 20px;
   float: left;
   color: #ffffff;
   overflow: auto;
@@ -255,12 +283,12 @@
 
 #pEventlist {
   margin: 0% 25% 0% !important;
-  padding: 25px;
+  padding: 15px;
   background-color:#373B44;
   width: 100%;
   color: #ffffff;
   font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
-  font-size: 25px;
+  font-size: 16px;
   text-align: left;
   border-top: 1px solid #ffffff;
   word-wrap: break-word;

@@ -4,7 +4,7 @@
 <body>
 <div class="gEvent">
   <header>
-    <h1><%= t(:registered_event) %>, <%= current_user.name %> !</h1> <!-- Rendre les titres multilingue -->
+    <h1><%= t(:registered_event) %>, <%= current_user.name %> !</h1>
   </header>
   <div class="gEventDesc">
     <div id="eDescription">
@@ -19,7 +19,7 @@
           </li>
           <li><h4><%= t(:event_adress) %></h4>
             <ul>
-              <li>31 rue de l'Example, 75001 PARIS</li>
+              <li><%= @event.address.to_s %></li>
             </ul>
           </li>
           <li><h4><%= t(:description_event) %></h4>

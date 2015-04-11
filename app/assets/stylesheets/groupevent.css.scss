@@ -29,6 +29,42 @@
     clear: all;
     padding: 10px !important;
   }
+
+  #eDescription
+  {
+    float: left;
+    width: 40%;
+    margin-left: 15%;
+    font-size: 16px;
+  }
+  #uEvents
+  {
+    float: left;
+    width: 15%;
+    margin-right: -1px;
+    background-color: #373B44;
+    padding-bottom: 100em;
+    margin-bottom: -100em;
+    padding-top: 0px;
+    font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
+    font-weight:500;
+    font-size:30px;
+    border-left:1px solid #21263C;
+    color: #ffffff;
+    word-wrap: break-word;
+  }
+
+  #uEvents ul
+  {
+    padding: 30px;
+    overflow: scroll;
+    overflow-y: auto;
+    overflow-x: auto;
+    margin-left: 15px;
+    height: 400px;
+    list-style-type: none;
+    font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
+  }
 }
 
 #wrap {

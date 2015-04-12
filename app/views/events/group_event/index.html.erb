@@ -11,7 +11,7 @@
         <table>
           <% @past_events.each do |e| %>
               <tr>
-                <td id="pEventlist"><%= e.name %></td>  <!-- Mettre une taille limite de caractères au titre genre 20 caractères -->
+                <td id="pEventlist"><%= e.name %></td>  <!-- Mettre une taille limite de caractÃ¨res au titre genre 20 caractÃ¨res -->
                 <td id="pEventlist"><button id="optButEvent" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Notez !</button></td>
               </tr>
           <% end %>
@@ -28,7 +28,7 @@
           <% @future_events.each do |e| %>
               <tr>
                 <td id="pEventlist"><%= e.name %></td>
-                <td id="pEventlist"><button id="optButEvent" type="button" class="btn btn-primary btn-lg">Détails</button></td>
+                <td id="pEventlist"><button id="optButEvent" type="button" class="btn btn-primary btn-lg">DÃ©tails</button></td>
               </tr>
           <% end %>
         </table>
@@ -72,4 +72,3 @@
   </div>
 </div>
 </body>
-

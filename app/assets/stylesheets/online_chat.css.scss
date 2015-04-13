@@ -5,15 +5,26 @@
 }
 
 .body_gen {
-  display:block;
+  background-color: #F2EFEA;
+}
+
+.headband_title {
+  background-color: #2ab4f8;
+  text-align: center;
+  text-shadow: -1px 1px #417cb8;
+  color: #E6F2EF;
+  font-family: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  padding: 15px;
+  margin-top: -20px;
 }
 
 .chat_body {
-  margin-left: 18%;
-  margin-top: 12px;
+  margin-left: 5%;
+  margin-top: 2px;
   border: 4px;
   font-family: "Varela Round", Arial, Helvetica, sans-serif;
-  width: 31%;
+  width: 60%;
   background-color: #fff;
   border-radius: 0 0 0px 10px;
   border-style: solid;
@@ -23,7 +34,6 @@
   font-size: 18px;
   display:inline-block;
   float:left;
-  position: fixed;
 }
 
 .chat_output {
@@ -33,7 +43,7 @@
 }
 
 .smiley {
-  font-size: 16px;
+  font-size: 1vw;
   display:inline-block;
   float:left;
   margin-left: 13%;
@@ -41,7 +51,7 @@
 }
 
 .configuration {
-  font-size: 16px;
+  font-size: 1vw;
   display:inline-block;
   float:left;
   margin-left: 30%;
@@ -55,6 +65,10 @@ textarea {
   resize: none;
 }
 
+::-webkit-input-placeholder {
+  font-size: 1.2vw;
+}
+
 input[type=text]:focus,textarea:focus {
   border-color: #EE6163;
 }
@@ -62,41 +76,42 @@ input[type=text]:focus,textarea:focus {
 .usrlist_body {
   border: 4px;
   font-family: "Varela Round", Arial, Helvetica, sans-serif;
-  width: 11%;
+  width: 20%;
   background-color: #fff;
   border-radius: 0 10px 10px 0px;
   border-style: solid;
   border-color: #2ab4f8;
   padding: 3px;
-  margin-left: 50%;
+  margin-left: 1%;
   color: #777;
-  margin-top: 9px;
   font-size: 18px;
   display:inline-block;
   float:left;
-  position: fixed;
 }
 
 .usrlist_output {
-  height: 558px;
+  height: 555px;
   border: 2px;
   border-style: solid;
   border-radius: 0 10px 10px 0px;
 }
 
 .chat_title {
-  width: 100px;
-  height:30px;
-  margin-left: 18%;
+  width: 8%;
+  margin-left: 5%;
+  margin-top: 20px;
   background-color: #2ab4f8;
+  text-shadow: -1px 1px #417cb8;
+  color: #E6F2EF;
+  font-family: 'Montserrat Alternates', Arial, Helvetica, sans-serif;
   text-align: center;
   font-weight: bold;
   border-radius: 10px 10px 0 0;
   color: #fff;
-  font-size: 15px;
+  font-size: 1vw;
   padding: 3px;
   cursor:pointer;
-  position: fixed;
+  position: relative;
 }
 
 .chat_title:hover {
@@ -109,6 +124,7 @@ input[type=text]:focus,textarea:focus {
   margin-left: 1%;
   background: #2ab4f8;
   font-weight: bold;
+  font-size: 1.3vw;
   color: white;
   border: 0 none;
   border-radius: 1px;

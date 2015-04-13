@@ -5,7 +5,8 @@ module Events
                                      :destroy]
 
     def index
-      @events = Event.all
+      @past_events = current_user.events.past
+      @future_events = current_user.events.future
     end
 
     def show

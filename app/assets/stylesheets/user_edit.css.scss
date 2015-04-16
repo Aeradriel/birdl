@@ -252,7 +252,7 @@ button.edit_submit:active {
 }
 
 .form_hint::before {
-  content: "\25C0"; /* left point triangle in escaped unicode */
+  content: "\25C0";
   color:#d45252;
   position: absolute;
   top:1px;

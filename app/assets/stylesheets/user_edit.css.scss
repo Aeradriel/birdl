@@ -37,14 +37,17 @@
   padding-top: 0px;
   border:1px solid #EE6163;
   border-radius:5px;
+  width: 70%;
+  max-width: 75%;
+  height: 105%;
+  max-height: 105%;
 }
 
-.userEdit_delete {
-  margin-left: 18px;
-}
-
-.userEdit_update {
-  margin-left: 75px;
+.userEdit_delete, .userEdit_update {
+  width: 70%;
+  max-width: 75%;
+  height: 80%;
+  max-height: 95%;
 }
 
 .userEdit_delete, .userEdit_update {
@@ -58,12 +61,16 @@
   border-radius:5px;
 }
 
+.userEdit_div_title {
+  text-align: center;
+}
+
 /************************
 *     Submit button     *
 *************************/
 
 .userEdit_submit_pos {
-  float: right;
+  text-align: center;
 }
 
 .userEdit_button {

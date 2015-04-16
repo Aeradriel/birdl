@@ -28,6 +28,7 @@ en:
 
 
   error: "Error"
+  save: "Save"
   char: "character"
   chars: "characters"
   previous: "Previous"
@@ -144,6 +145,18 @@ en:
 
 
 #/////////////////////////////////////////////////////////#
+# Mot clé correspondant à la partie Hof #           #
+#/////////////////////////////////////////////////////////#
+
+
+  hof: "Hall Of Fame"
+  all_members: "All members"
+  this_year: "This years"
+  this_month: "This month"
+  star: "Star"
+
+
+#/////////////////////////////////////////////////////////#
 # Mot clé correspondant à la partie Evènement #           #
 #/////////////////////////////////////////////////////////#
 
@@ -173,7 +186,8 @@ en:
   rating_organizer: "Rating for the organizer"
   rating_user: "Rating for the user"
   overall_rating: "Overall rating"
-  rate_it: "Rate it !"
+  rate_it: "Rate it"
+  details: "Details"
   organizer: "Organiser"
   event_adress: "Event address"
   description_event: "Description of event"

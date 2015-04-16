@@ -1,10 +1,15 @@
 <div id="hof_module">
-  <h2 id="hof_module_title">Hall of Fame</h2>
+  <h2 id="hof_module_title"><%= t(:hof) %></h2>
   <div id="hof_module_content">
     <div id="hof_module_selectors_wrapper">
-      <div class="hof_module_selector" id="hof_module_select_members"><p>All members</p></div>
-      <div class="hof_module_selector" id="hof_module_select_time"><p>This year</p></div>
-      <div class="hof_module_selector" id="hof_module_select_ascend"><p>Ascend</p></div>
+      <div class="hof_module_selector" id="hof_module_select_members"><p><%= t(:all_members) %></p></div>
+      <div class="hof_module_selector" id="hof_module_select_years"><p><%= t(:this_year) %></p></div>
+      <div class="hof_module_selector" id="hof_module_select_month"><p><%= t(:this_month) %></p></div>
+    </div>
+    <div id="hof_module_selectors_wrapper">
+      <div class="hof_module_selector" id="hof_module_select_name"><b><%= t(:name) %></b></div>
+      <div class="hof_module_selector" id="hof_module_select_star"><b></b></div>
+      <div class="hof_module_selector" id="hof_module_select_star"><b><%= t(:star) %></b></div>
     </div>
     <div id="hof_module_tab_wrapper">
       <table id="hof_module_tab">

@@ -28,6 +28,7 @@ es:
 
 
   error: "Error"
+  save: "Guardar"
   char: "carácter"
   chars: "Caracteres"
   previous: "Precedente"
@@ -144,6 +145,18 @@ es:
 
 
 #/////////////////////////////////////////////////////////#
+# Mot clé correspondant à la partie Hof #           #
+#/////////////////////////////////////////////////////////#
+
+
+  hof: "Salón de la fama"
+  all_members: "Todos los miembros"
+  this_year: "Este año"
+  this_month: "Este mes"
+  star: "Estrella"
+
+
+#/////////////////////////////////////////////////////////#
 # Mot clé correspondant à la partie Evènement #           #
 #/////////////////////////////////////////////////////////#
 
@@ -173,7 +186,8 @@ es:
   rating_organizer: "Nota para el organizador"
   rating_user: "Nota para el usario"
   overall_rating: "Nota global"
-  rate_it: "Nota !"
+  rate_it: "Nota"
+  details: "Detalles"
   organizer: "Organizador"
   event_adress: "Direccion del evento"
   description_event: "Descrition del evento"

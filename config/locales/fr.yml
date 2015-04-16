@@ -28,6 +28,7 @@ fr:
 
 
   error: "Erreur"
+  save: "Sauvegarder"
   char: "caractère"
   chars: "caractères"
   previous: "Précédent"
@@ -137,10 +138,22 @@ fr:
 #/////////////////////////////////////////////////////////#
 
 
-  received_messages:  "Messages reçus"
+  received_messages: "Messages reçus"
   sent_messages: "Messages envoyés"
   from: "De : "
   general_chat: "Discussion générale"
+
+
+#/////////////////////////////////////////////////////////#
+# Mot clé correspondant à la partie HoF #           #
+#/////////////////////////////////////////////////////////#
+
+
+  hof: "Temple de la renommée"
+  all_members: "Tous les membres"
+  this_year: "Cette année"
+  this_month: "Ce mois"
+  star: "Etoile"
 
 
 #/////////////////////////////////////////////////////////#
@@ -157,7 +170,7 @@ fr:
   future_events: "Événements futurs"
   search: "Rechercher"
   create_event: "Créer un événement"
-  edit_event: ""
+  edit_event: "Editer évènement"
   event_type: "Type d'événement"
   face_to_face: "Face à Face"
   tourism_tour: "Sortie touristique"
@@ -173,7 +186,8 @@ fr:
   rating_organizer: "Note de l'organisateur"
   rating_user: "Note de l'utilisateur"
   overall_rating: "Note globale"
-  rate_it: "Notez !"
+  rate_it: "Notez"
+  details: "Détails"
   organizer: "Organisateur"
   event_adress: "Adresse de l'évènement"
   description_event: "Description de l'évènement"

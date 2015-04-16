@@ -10,3 +10,4 @@ Rails.application.config.assets.version = '1.0'
 
 Rails.application.config.assets.precompile += %w( jquery-1.9.1.min.js )
 Rails.application.config.assets.precompile += %w( jquery-easing.min.js )
+Rails.application.config.assets.precompile += %w( event_search.js )

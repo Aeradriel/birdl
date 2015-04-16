@@ -57,8 +57,10 @@ fr:
 #/////////////////////////////////////////////////////////#
 
 
+  sign_in_caps: "CONNEXION"
   sign_in: "Connexion"
   sign_in_with: "Se connecter avec"
+  sign_up_caps: "INSCRIPTION"
   sign_up: "S'inscrire"
   account_infos: "Informations du compte"
   email: "Email"
@@ -164,6 +166,7 @@ fr:
   event: "Événement"
   event_title: "Titre de l'événement"
   search_event: "Rechercher un événement"
+  advanced_search: "Recherche avancée ▼"
   quick_search_event: "Recherche rapide"
   find: "Go!"
   past_events: "Événements passés"
@@ -229,6 +232,10 @@ fr:
 # AUTRES                                                  #
 #/////////////////////////////////////////////////////////#
 
+  yes: "Oui"
+  no: "Non"
+  whatever: "Indifférent"
+  search: "Rechercher"
 
   activerecord:
       models:

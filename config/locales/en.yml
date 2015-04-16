@@ -57,8 +57,10 @@ en:
 #/////////////////////////////////////////////////////////#
 
 
+  sign_in_caps: "SIGN IN"
   sign_in: "Sign in"
   sign_in_with: "Sign in with"
+  sign_up_caps: "SIGN UP"
   sign_up: "Sign up"
   account_infos: "Account information"
   email: "Email"
@@ -164,6 +166,7 @@ en:
   event: "Event"
   event_title: "title of the event"
   search_event: "Search for an event"
+  advanced_search: "Advanced Search ▼"
   quick_search_event: "Search Quick event search"
   find: "Find!"
   past_events: "Past events"

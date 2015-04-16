@@ -20,34 +20,75 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  find: "Find!"
+
+
+#/////////////////////////////////////////////////////////#
+# Mot clé correspondant à la partie ......                #
+#/////////////////////////////////////////////////////////#
+
+
   error: "Error"
+  char: "character"
+  chars: "characters"
+  previous: "Previous"
+  next: "Next"
+
+
+#/////////////////////////////////////////////////////////#
+# Mot clé correspondant à la partie Inscription           #
+#/////////////////////////////////////////////////////////#
+
+
+  join_us: "Sign up and join us !"
+  first_step: "This is the first step"
+  perso_details: "Personal details"
+  personal_details: "Your personal details"
+  trust_us: "Trust us, we will never share them !"
+  personal_infos: "Personal Information"
+  security_infos: "Security Information"
+  country_residence: "Your country of residence"
+  where_you_from: "Tell us where you're from !"
+  empty_country: "Empty"
+
+
+#/////////////////////////////////////////////////////////#
+# Mot clé correspondant à la Page de connection           #
+#/////////////////////////////////////////////////////////#
+
+
   sign_in: "Sign in"
   sign_in_with: "Sign in with"
   sign_up: "Sign up"
-  account_infos: "Account informations"
-  disconnect: "Disconnect"
+  account_infos: "Account information"
   email: "Email"
   password: "Password"
   forgotten_password: "Forgotten password?"
   confirmation_instructions: "Didn't receive confirmation instruction?"
   unlock_instructions: "Didn't receive unlock instruction?"
   sign_up_form: "Sign up form"
-  my_account: "My account"
-  admin: "Administration"
+
+
+#/////////////////////////////////////////////////////////#
+# Mot clé correspondant au MENU                           #
+#/////////////////////////////////////////////////////////#
+
+
   home: "Home"
-  country: "Country"
-  countries: "Countries"
-  user: "User"
-  unit_test: "Unit tests"
-  execution_report: "Execution report"
-  coverage: "Coverage"
+  my_account: "My account"
+  events: "Event"
+  admin: "Administration"
+  disconnect: "Disconnect"
+
+
+#/////////////////////////////////////////////////////////#
+# Mot clé correspondant à la partie Mon compte            #
+#/////////////////////////////////////////////////////////#
+
+
   denotes_required_filed: "* Required field"
   unknown: "Unknown"
   male: "Male"
   female: "Female"
-  personal_infos: "Personal informations"
-  security_infos: "Security informations"
   leave_blank_for_unchanged: "(leave blank if you don't want to change it)"
   need_current_password_for_changes: "(we need your actual password to confirm changes)"
   update: "Update"
@@ -57,31 +98,24 @@ en:
   currently_waiting_confirmation_for: "Currently waiting for email confirmation: %{email}"
   cancel: "Cancel"
 
-  join_us: "Sign up and join us !"
-  first_step: "This is the first step"
-  perso_details: "Personal details"
-  personal_details: "Your personal details"
-  trust_us: "Trust us, we will never share them !"
-  country_residence: "Your country of residence"
-  where_you_from: "Tell us where you're from !"
-  empty_country: "Choose from the list"
 
-  char: "character"
-  chars: "characters"
+#/////////////////////////////////////////////////////////#
+# Mot clé correspondant à la partie Admin                 #
+#/////////////////////////////////////////////////////////#
 
-  previous: "Previous"
-  next: "Next"
 
   new: "New"
   language: "Language"
   flag: "Flag"
+  country: "Country"
+  countries: "Countries"
+  user: "User"
   total_user: "Total users"
   actions: "Actions"
   edit: "Edit"
   edition_of: "Edition of"
   delete: "Delete"
   country_deletion_warning: "Are you sure you want to delete this country?"
-
   users: "Users"
   admins: "Administrators"
   normal_users: "Regular users"
@@ -89,26 +123,36 @@ en:
   birthdate: "Birth date"
   gender: "Gender"
   user_deletion_warning: "Are you sure you want to delete this user ?"
-
   users_by_language: "Users by language"
   users_by_gender: "Users by gender"
-
   create: "Create"
   new_country: "New country"
   new_user: "New user"
   not_logged_error_title: "Insufficient permission"
   not_logged_error: "You do not have the permission to display this page"
 
+
+#/////////////////////////////////////////////////////////#
+# Mot clé correspondant à la partie Chat en ligne         #
+#/////////////////////////////////////////////////////////#
+
+
   received_messages: "Received messages"
   sent_messages: "Sent messages"
   from: "From: "
   general_chat: "General chat"
 
-  events: "Event"
+
+#/////////////////////////////////////////////////////////#
+# Mot clé correspondant à la partie Evènement #           #
+#/////////////////////////////////////////////////////////#
+
+
   event: "Event"
   event_title: "title of the event"
   search_event: "Search for an event"
   quick_search_event: "Search Quick event search"
+  find: "Find!"
   past_events: "Past events"
   future_events: "Future events"
   search: "Search"
@@ -128,18 +172,19 @@ en:
   rating_organizer: "Rating for the organizer"
   rating_user: "Rating for the user"
   overall_rating: "Overall rating"
+  rate_it: "Rate it !"
   organizer: "Organiser"
   event_adress: "Event address"
   description_event: "Description of event"
   registered_event: "Your registered events"
   participating_event: "Events that you're participating"
   participants: "Participant"
-
   type: "Type"
   new_event: "New Event"
   slots: "Slots"
   slot: "Slot"
   filled_slots: "Slot occupied"
+  free_slots: "Free slot"
   min_slots: "Minimum number of slot"
   max_slots: "Maximum number of slot"
   date_begin: "Start date"
@@ -151,12 +196,24 @@ en:
   invite: "Invite"
   invite_user: "Invite a user"
 
+
+#/////////////////////////////////////////////////////////#
+# Mot clé pour la validation de l'age                     #
+#/////////////////////////////////////////////////////////#
+
+
   birthdate_check: "Age verification"
   validate: "Validate"
   to_young: "The use of the platform requieres 18 years"
   birthdate_validation_success: "Birthdate is validate"
   birthdate_validation_fail: "Birthdate isn't validate"
   birthdate_need_validation: "Please confirm your birthdate before continuing"
+
+
+#/////////////////////////////////////////////////////////#
+# AUTRES                                                  #
+#/////////////////////////////////////////////////////////#
+
 
   activerecord:
       models:

@@ -12,7 +12,7 @@
           <% @past_events.each do |e| %>
               <tr>
                 <td id="pEventlist"><%= e.name %></td>
-                <td id="pEventlist"><button id="optButEvent" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Notez !</button></td>
+                <td id="pEventlist"><button id="optButEvent" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"><%= t(:rate_it) %> !</button></td>
               </tr>
           <% end %>
         </table>

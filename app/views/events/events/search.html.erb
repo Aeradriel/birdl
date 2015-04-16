@@ -4,49 +4,54 @@
 
 
     <%= form_tag action: :search_events do %>
-    <table class="eventSearch_table_radio">
-      <tr>
-        <td><div class="eventSearch_div"><%= radio_button_tag :past_events, false, checked: true %>
-          <%= label_tag :past_events_false, t(:future_events), :class => 'eventSearch_label' %></div></td>
-        <td><div class="eventSearch_div"><%= radio_button_tag :past_events, true %>
-          <%= label_tag :past_events_true, t(:past_events), :class => 'eventSearch_label' %></div></td>
-      </tr>
-    </table>
     <div class="eventSearch_field" id="searchform">
       <input type="text" id="searchterm" placeholder= <%= t(:quick_search_event) %> />
       <button type="button" id="search"><%= t(:find) %></button>
     </div>
 
     <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <button type="button" id="adv-search-btn"><%= t(:advanced_search) %></button>
 
-        <table class="eventSearch_table_event">
-          <tr>
-            <td><%= label_tag :past_events_false, t(:event_type), :class => 'eventSearch_eType' %>
-                <%= select_tag :event_type, options_for_select(@event_types) %></td>
-            <td><%= label_tag :remaining_slots, t(:remaining_slots), :class => 'eventSearch_eSlot' %>
-                <%= number_field_tag :remaining_slots %></td>
-            <td>
-              <table class="eventSearch_table_friends">
-                <tr>
-                    <td><%= label_tag :friends_in_yes, t(:yes), :class => 'eventSearch_eFriends' %>
-                    <%= radio_button_tag :friends_in, 'yes' %></td>
-                  <td><%= label_tag :friends_in_no, t(:no), :class => 'eventSearch_eFriends' %>
-                    <%= radio_button_tag :friends_in, 'no' %></td>
-                  <td> <%= label_tag :friends_in_whatever, t(:whatever), :class => 'eventSearch_eFriends' %>
-                    <%= radio_button_tag :friends_in, 'whatever', checked: true %></td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-        </table><br /><br /><br />
-        <table class="eventSearch_table_submit">
-          <tr>
-            <td>
-            <%= submit_tag t(:search), :id => 'eventSearch_submit', :class => 'eventSearch_button' %>
-            </td>
-          </tr>
-        </table>
+        <div class="adv-search-div">
+          <table class="eventSearch_table_radio">
+            <tr>
+              <td><div class="eventSearch_div"><%= radio_button_tag :past_events, false, checked: true %>
+                <%= label_tag :past_events_false, t(:future_events), :class => 'eventSearch_label' %></div></td>
+              <td><div class="eventSearch_div"><%= radio_button_tag :past_events, true %>
+                <%= label_tag :past_events_true, t(:past_events), :class => 'eventSearch_label' %></div></td>
+            </tr>
+          </table><br />
+            <table class="eventSearch_table_event">
+              <tr>
+                <td class="event_type_td"><%= label_tag :past_events_false, t(:event_type), :class => 'eventSearch_eType' %>
+                    <%= select_tag :event_type, options_for_select(@event_types) %></td>
+                <td class="event_slot_td"><%= label_tag :remaining_slots, t(:remaining_slots), :class => 'eventSearch_eSlot' %>
+                    <%= number_field_tag :remaining_slots %></td>
+                <td class="event_q_td">
+                  <table class="eventSearch_table_friends">
+                    <tr>
+                        <td class="event_q1_td"><%= label_tag :friends_in_yes, t(:yes), :class => 'eventSearch_eFriends' %>
+                        <%= radio_button_tag :friends_in, 'yes' %></td>
+                      <td class="event_q2_td"><%= label_tag :friends_in_no, t(:no), :class => 'eventSearch_eFriends' %>
+                        <%= radio_button_tag :friends_in, 'no' %></td>
+                      <td class="event_q3_td"> <%= label_tag :friends_in_whatever, t(:whatever), :class => 'eventSearch_eFriends' %>
+                        <%= radio_button_tag :friends_in, 'whatever', checked: true %></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table><br /><br /><br />
+            <table class="eventSearch_table_submit">
+              <tr>
+                <td>
+                <%= submit_tag t(:search), :id => 'eventSearch_submit', :class => 'eventSearch_button' %>
+                </td>
+              </tr>
+            </table>
+        </div>
 
     <% end %>
 
+
 </body>
+<%= javascript_include_tag 'application.js', 'jquery-1.9.1.min.js', 'jquery-easing.min.js', 'event_search.js' %>

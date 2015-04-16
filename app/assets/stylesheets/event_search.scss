@@ -46,6 +46,18 @@ background-color: #F2EFEA;
   border:none;
 }
 
+.event_type_td {
+  padding-right: 100px;
+}
+
+.event_slot_td {
+  padding-right: 130px;
+}
+
+.event_q2_td {
+  padding-right: 10px;
+  padding-left: 10px;
+}
 /**********************
 *  Radio buttons CSS  *
 **********************/
@@ -301,15 +313,37 @@ select#event_type > span::after {
   border: solid 1px #4DCB6D;
 }
 
-.eventSearch_submit {
-  background-color: #1ABC9C;
+#adv-search-btn {
+  margin: auto;
   color: #fff;
   display: block;
-  margin: 0 auto;
-  padding: 4px 0;
-  width: 100px;
+  width: 63%;
+  max-width: 65%;
+  background-color: #1ABC9C;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  background-position: center;
+  border: solid 1px #1ABC9C;
+  height: 40px;
+  padding: 10px;
+  font-size: 15px;
+  line-height: 0px;
+  text-align: center;
+  color: rgba(250,255,253,1);
+  font-weight: initial;
 }
 
-.eventSearch_submit:hover {
+#adv-search-btn:hover {
   background-color: #4DCB6D;
+  background-position: center;
+  height: 40px;
+  border: solid 1px #4DCB6D;
+}
+
+.adv-search-div {
+  margin: auto;
+  width: 63%;
+  max-width: 65%;
+  padding: 5px;
+  display: none;
+  border:1px solid #1ABC9C;
 }

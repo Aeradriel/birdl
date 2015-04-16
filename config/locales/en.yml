@@ -106,6 +106,7 @@ en:
   events: "Event"
   event: "Event"
   search_event: "Search for an event"
+  advanced_search: "Advanced Search ▼"
   quick_search_event: "Search Quick event search"
   past_events: "Past events"
   future_events: "Future events"

@@ -106,6 +106,7 @@ fr:
   events: "Événements"
   event: "Événement"
   search_event: "Rechercher un événement"
+  advanced_search: "Recherche avancée ▼"
   quick_search_event: "Recherche rapide"
   past_events: "Événements passés"
   future_events: "Événements futurs"
@@ -116,7 +117,7 @@ fr:
   remaining_slots: "Places restantes"
   yes: "Oui"
   no: "Non"
-  whatever: "Peu importe"
+  whatever: "Indifférent"
   search: "Rechercher"
 
   activerecord:

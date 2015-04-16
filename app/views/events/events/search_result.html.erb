@@ -1,0 +1,23 @@
+<div class="content">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      Événements
+    </div>
+    <div class="panel-body">
+      <table class="table">
+        <tr>
+          <th>Nom de l'événement</th>
+          <th>Date de l'événement</th>
+          <th>Places libres</th>
+        </tr>
+        <% @events.each do |e| %>
+            <tr>
+              <td><%= link_to e.name, event_route(e) %></td>
+              <td><%= e.date %></td>
+              <td><%= e.max_slots - e.users.count %></td>
+            </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,14 +1,14 @@
 <div class="content">
   <div class="panel panel-info">
     <div class="panel-heading">
-      Événements
+      <%= t(:events) %>
     </div>
     <div class="panel-body">
       <table class="table">
         <tr>
-          <th>Nom de l'événement</th>
-          <th>Date de l'événement</th>
-          <th>Places libres</th>
+          <th><%= t(:event_title) %></th>
+          <th><%= t(:date_begin) %></th>
+          <th><%= t(:free_slots) %></th>
         </tr>
         <% @events.each do |e| %>
             <tr>

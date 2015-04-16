@@ -20,34 +20,75 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 fr:
-  find: "Go!"
+
+
+#/////////////////////////////////////////////////////////#
+# Mot clé correspondant à la partie ......                #
+#/////////////////////////////////////////////////////////#
+
+
   error: "Erreur"
+  char: "caractère"
+  chars: "caractères"
+  previous: "Précédent"
+  next: "Suivant"
+
+
+#/////////////////////////////////////////////////////////#
+# Mot clé correspondant à la partie Inscription           #
+#/////////////////////////////////////////////////////////#
+
+
+  join_us: "Rejoignez-nous !"
+  first_step: "La première étape"
+  perso_details: "Détails personnels"
+  personal_details: "Vos détails personnels"
+  trust_us: "Faites-nous confiance, nous ne les partagerons pas !"
+  personal_infos: "Informations personnelles"
+  security_infos: "Informations de sécurités"
+  country_residence: "Votre pays de résidence"
+  where_you_from: "Dites-nous d'où vous venez !"
+  empty_country: "Non renseigné"
+
+
+#/////////////////////////////////////////////////////////#
+# Mot clé correspondant à la Page de connection           #
+#/////////////////////////////////////////////////////////#
+
+
   sign_in: "Connexion"
   sign_in_with: "Se connecter avec"
   sign_up: "S'inscrire"
   account_infos: "Informations du compte"
-  disconnect: "Se déconnecter"
   email: "Email"
   password: "Mot de passe"
   forgotten_password: "Mot de passe oublié ?"
   confirmation_instructions: "Vous n'avez pas reçu les instructions de confirmation ?"
   unlock_instructions: "Vous n'avez pas reçu les instructions de déblocage ?"
   sign_up_form: "Formulaire d'inscription"
-  my_account: "Mon compte"
-  admin: "Administration"
+
+
+#/////////////////////////////////////////////////////////#
+# Mot clé correspondant au MENU                           #
+#/////////////////////////////////////////////////////////#
+
+
   home: "Accueil"
-  country: "Pays"
-  countries: "Pays"
-  user: "Utilisateur"
-  unit_test: "Tests unitaires"
-  execution_report: "Rapport d'execution"
-  coverage: "Couverture"
+  my_account: "Mon compte"
+  events: "Événements"
+  admin: "Administration"
+  disconnect: "Se déconnecter"
+
+
+#/////////////////////////////////////////////////////////#
+# Mot clé correspondant à la partie Mon compte            #
+#/////////////////////////////////////////////////////////#
+
+
   denotes_required_filed: "* Champ obligatoire"
   unknown: "Non renseigné"
   male: "Homme"
   female: "Femme"
-  personal_infos: "Informations personnelles"
-  security_infos: "Informations de sécurité"
   leave_blank_for_unchanged: "(laissez blanc si vous ne souhaitez pas le modifier)"
   need_current_password_for_changes: "(nous avons besoin de votre mot de passe actuel pour confirmer les changements)"
   update: "Mettre à jour"
@@ -56,33 +97,25 @@ fr:
   account_setup: "Création de compte"
   currently_waiting_confirmation_for: "En attente de la confirmation de l'email : %{email}"
   cancel: "Annuler"
-  lang: "Langue"
 
-  join_us: "Rejoignez-nous !"
-  first_step: "La première étape"
-  perso_details: "Détails personnels"
-  personal_details: "Vos détails personnels"
-  trust_us: "Faites-nous confiance, nous ne les partagerons pas !"
-  country_residence: "Votre pays de résidence"
-  where_you_from: "Dites-nous d'où vous venez !"
-  empty_country: "Non renseigné"
 
-  char: "caractère"
-  chars: "caractères"
+#/////////////////////////////////////////////////////////#
+# Mot clé correspondant à la partie Admin                 #
+#/////////////////////////////////////////////////////////#
 
-  previous: "Précédent"
-  next: "Suivant"
 
   new: "Nouveau"
   language: "Langue"
   flag: "Drapeau"
+  country: "Pays"
+  countries: "Pays"
+  user: "Utilisateur"
   total_user: "Nombre total d'utilisateurs"
   actions: "Actions"
   edit: "Éditer"
   edition_of: "Édition de"
   delete: "Supprimer"
   country_deletion_warning: "Êtes-vous sûr de vouloir supprimer ce pays ?"
-
   users: "Utilisateurs"
   admins: "Administrateurs"
   normal_users: "Utilisateurs normaux"
@@ -90,26 +123,36 @@ fr:
   birthdate: "Date de naissance"
   gender: "Sexe"
   user_deletion_warning: "Êtes vous sûr de vouloir supprimer cet utilisateur ?"
-
   users_by_language: "Répartition des utilisateurs par langue"
   users_by_gender: "Répartition des utilisateurs par sexe"
-
   create: "Créer"
   new_country: "Nouveau pays"
   new_user: "Nouvel utilisateur"
   not_logged_error_title: "Droits insuffisants"
   not_logged_error: "Vous n'avez pas les droits necessaires pour afficher cette page"
 
+
+#/////////////////////////////////////////////////////////#
+# Mot clé correspondant à la partie Chat en ligne         #
+#/////////////////////////////////////////////////////////#
+
+
   received_messages:  "Messages reçus"
   sent_messages: "Messages envoyés"
   from: "De : "
   general_chat: "Discussion générale"
 
-  events: "Événements"
+
+#/////////////////////////////////////////////////////////#
+# Mot clé correspondant à la partie Evènement #           #
+#/////////////////////////////////////////////////////////#
+
+
   event: "Événement"
   event_title: "Titre de l'événement"
   search_event: "Rechercher un événement"
   quick_search_event: "Recherche rapide"
+  find: "Go!"
   past_events: "Événements passés"
   future_events: "Événements futurs"
   search: "Rechercher"
@@ -129,21 +172,19 @@ fr:
   rating_organizer: "Note de l'organisateur"
   rating_user: "Note de l'utilisateur"
   overall_rating: "Note globale"
+  rate_it: "Notez !"
   organizer: "Organisateur"
   event_adress: "Adresse de l'évènement"
   description_event: "Description de l'évènement"
   registered_event: "Vos évènements"
   participating_event: "Evènements aux quelles vous participer"
   participants: "Participants"
-
-
-
-
   type: "Type"
   new_event: "Nouvel Événement"
   slots: "Places"
   slot: "Place"
   filled_slots: "Places occupées"
+  free_slots: "Places libres"
   min_slots: "Nombre de places minimum"
   max_slots: "Nombre de places maximum"
   date_begin: "Date de début"
@@ -155,12 +196,24 @@ fr:
   invite: "Inviter"
   invite_user: "Inviter un utilisateur"
 
+
+#/////////////////////////////////////////////////////////#
+# Mot clé pour la validation de l'age                     #
+#/////////////////////////////////////////////////////////#
+
+
   birthdate_check: "Vérification de l'âge"
   validate: "Valider"
   to_young: "L'utilisation de la plateforme requiert un âge de 18 ans minimum."
   birthdate_validation_success: "Votre date de naissance a été validée avec succès"
   birthdate_validation_fail: "Une erreur est survenue pendant la validation de votre date de naissance"
   birthdate_need_validation: "Votre date de naissance doit être validée avant de pouvoir continuer"
+
+
+#/////////////////////////////////////////////////////////#
+# AUTRES                                                  #
+#/////////////////////////////////////////////////////////#
+
 
   activerecord:
       models:

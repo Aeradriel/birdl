@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   namespace :events do
     get '/' => 'events#search'
-    post '/' => 'events#search_events', as: :search
+    post '/' => 'events#search_result', as: :search
     get '/groupevents' => 'group_event#index', as: :group_events
     get '/groupevents/:event_id' => 'group_event#show', as: :group_event
     get '/onlinechat/' => 'online_chat#index', as: :online_chat

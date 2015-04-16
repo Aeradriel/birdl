@@ -1,6 +1,8 @@
 module Events
   # Controller for Events
   class EventsController < ApplicationController
+    include EventsHelper
+
     before_action :set_event, only: [:show, :edit, :update, :destroy]
 
     # GET /events
@@ -14,7 +16,8 @@ module Events
           ]
     end
 
-    def search_events
+    def search_result
+      @events = Event.where("name LIKE '%#{params[:searchterm]}%'")
     end
 
     # GET /events/1

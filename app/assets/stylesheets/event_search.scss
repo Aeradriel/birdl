@@ -19,7 +19,7 @@ background-color: #F2EFEA;
 
 .eventSearch_field {
   display:flex;
-  position:realtive;
+  position:relative;
   margin:5em auto;
   width:70%;
   flex-direction:row;
@@ -28,7 +28,7 @@ background-color: #F2EFEA;
 }
 
 .eventSearch_field>input[type=text],
-.eventSearch_field>button {
+.eventSearch_field>input[type=submit] {
   display:block;
   font:1.2em 'Montserrat Alternates';
 }
@@ -40,7 +40,7 @@ background-color: #F2EFEA;
   border:0.2em solid rgb(26, 188, 156);
 }
 
-.eventSearch_field>button {
+.eventSearch_field>input[type=submit] {
   padding:0.6em 0.8em;
   background-color:rgb(26, 188, 156);
   color:white;

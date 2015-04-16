@@ -33,7 +33,7 @@
       </div>
     </div>
     <div id="uEvents">
-      <h3>Tes événements</h3>
+      <h3><%= t(:registered_event) %></h3>
       <ul>
         <% current_user.events.each do |event| %>
             <%= link_to event.name, "/events/groupevents/#{event.id}" %>

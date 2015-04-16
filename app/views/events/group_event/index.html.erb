@@ -22,13 +22,13 @@
 
   <div id="nextEvents">
     <div class="tEvent">
-      <header><h1>Liste de tes événements à venir</h1></header>
+      <header><h1><%= t(:list_futur_events) %></h1></header>
       <div class="pEvent"><h3><%= t(:event) %></h3><br>
         <table>
           <% @future_events.each do |e| %>
               <tr>
                 <td id="pEventlist"><%= e.name %></td>
-                <td id="pEventlist"><button id="optButEvent" type="button" class="btn btn-primary btn-lg">Détails</button></td>
+                <td id="pEventlist"><button id="optButEvent" type="button" class="btn btn-primary btn-lg"><%= t(:details) %></button></td>
               </tr>
           <% end %>
         </table>
@@ -65,8 +65,8 @@
         </ul>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><%= t(:cancel) %></button>
+        <button type="button" class="btn btn-primary"><%= t(:save) %></button>
       </div>
     </div>
   </div>

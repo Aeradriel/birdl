@@ -22,7 +22,7 @@
 
   <div id="nextEvents">
     <div class="tEvent">
-      <header><h1>Liste de tes événements à venir</h1></header>
+      <header><h1><%= t(:list_futur_events) %></h1></header>
       <div class="pEvent"><h3><%= t(:event) %></h3><br>
         <table>
           <% @future_events.each do |e| %>

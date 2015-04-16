@@ -169,6 +169,7 @@ en:
   whatever: "Whatever"
   place: "Place"
   list_past_events: "List of your past event"
+  list_futur_events: "List of your future event"
   rating_organizer: "Rating for the organizer"
   rating_user: "Rating for the user"
   overall_rating: "Overall rating"

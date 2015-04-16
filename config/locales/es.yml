@@ -169,6 +169,7 @@ es:
   whatever: "No importa"
   place: "Localidad"
   list_past_events: "Lista sus enventos pasados"
+  list_futur_events: "Lista de los próximos eventos"
   rating_organizer: "Nota para el organizador"
   rating_user: "Nota para el usario"
   overall_rating: "Nota global"

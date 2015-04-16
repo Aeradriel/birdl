@@ -169,6 +169,7 @@ fr:
   whatever: "Peu importe"
   place: "Lieu"
   list_past_events: "Liste de tes évènements passées"
+  list_futur_events: "Liste de tes évènements futures"
   rating_organizer: "Note de l'organisateur"
   rating_user: "Note de l'utilisateur"
   overall_rating: "Note globale"

@@ -24,7 +24,7 @@
           <td class="event_type_td"><%= label_tag :past_events_false, t(:event_type), :class => 'eventSearch_eType' %>
             <%= select_tag :event_type, options_for_select(@event_types) %></td>
           <td class="event_slot_td"><%= label_tag :remaining_slots, t(:remaining_slots), :class => 'eventSearch_eSlot' %>
-            <%= number_field_tag :remaining_slots %></td>
+            <%= number_field_tag :remaining_slots, 1 %></td>
           <td class="event_q_td">
             <table class="eventSearch_table_friends">
               <tr>
@@ -38,14 +38,7 @@
             </table>
           </td>
         </tr>
-      </table><br /><br /><br />
-      <table class="eventSearch_table_submit">
-        <tr>
-          <td>
-            <%= submit_tag t(:search), :id => 'eventSearch_submit', :class => 'eventSearch_button' %>
-          </td>
-        </tr>
-      </table>
+      </table><br />
     </div>
 
 <% end %>

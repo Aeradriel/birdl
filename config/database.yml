@@ -34,10 +34,6 @@ development:
   username: birdl
   password: e0d46d62e618083ee645833739c2267d
 
-development_sec:
-  <<: *sec
-  database: Birdl_development
-
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -98,7 +94,3 @@ production:
   database: Birdl_production
   username: birdl
   password: <%= ENV['BIRDL_DATABASE_PASSWORD'] %>
-
-production_sec:
-  <<: *sec
-  database: Birdl_production

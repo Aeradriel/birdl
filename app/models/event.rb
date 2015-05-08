@@ -26,4 +26,8 @@ class Event < ActiveRecord::Base
   def self.type
     %w(FaceToFace GroupEvent OnlineChat TourismTour)
   end
+
+  def remaining_slots
+    max_slots - users.count
+  end
 end

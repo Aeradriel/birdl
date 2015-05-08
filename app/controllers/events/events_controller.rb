@@ -10,14 +10,23 @@ module Events
     def search
       @event_types =
           [
-            [t(:face_to_face), 'facetoface'],
-            [t(:online_chat), 'onlinechat'],
-            [t(:tourism_tour), 'tourismtour']
+            ['Non renseigné', 'none'],
+            [t(:face_to_face), 'FaceToFace'],
+            [t(:online_chat), 'OnlineChat'],
+            [t(:tourism_tour), 'TourismTour'],
+            [t(:group_event), 'GroupEvent']
           ]
     end
 
     def search_result
-      @events = Event.where("name LIKE '%#{params[:searchterm]}%'")
+      @events = Event.all
+
+      @events.each do |e|
+        @events.delete(e) if e.remaining_slots < params[:remaining_slots].to_i
+      end
+      @events = params[:past_events] == 'true' ? @events.past : @events.future
+      @events = @events.where(type: params[:event_type]) if
+          params[:event_type] != 'none'
     end
 
     # GET /events/1

@@ -34,6 +34,7 @@ module Admin
       parameters = country_params
       flag_path = params[:country][:flag_path]
       save_flag(parameters, flag_path) if flag_path
+      @country.available = params[:country][:available] == '0' ? false : true
 
       if @country.update(parameters) && @country.valid?
         flash[:notice] = "Le pays #{@country.name} a bien été modifié"
@@ -58,7 +59,7 @@ module Admin
 
     def country_params
       params[:country].delete(:flag_path) if params[:country][:flag_path].nil?
-      params.require(:country).permit(:name, :language, :flag_path)
+      params.require(:country).permit(:name, :language, :flag_path, :i18n_key)
     end
 
     def actual_country

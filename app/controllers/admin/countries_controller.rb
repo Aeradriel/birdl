@@ -16,6 +16,7 @@ module Admin
       parameters = country_params
       flag_path = params[:country][:flag_path]
       save_flag(parameters, flag_path) if flag_path
+      @country.available = params[:country][:available] == '0' ? false : true
       c = Country.create(parameters)
 
       if c && c.valid?

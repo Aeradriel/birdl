@@ -16,10 +16,10 @@ module Admin
       parameters = country_params
       flag_path = params[:country][:flag_path]
       save_flag(parameters, flag_path) if flag_path
-      @country.available = params[:country][:available] == '0' ? false : true
       c = Country.create(parameters)
+      c.available = params[:country][:available] == '0' ? false : true
 
-      if c && c.valid?
+      if c.save
         flash[:notice] = "Le pays #{c.name} a bien été creé"
       else
         flash[:alert] = "Le pays #{c.name} n'a pas pu être créé"

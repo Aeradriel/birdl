@@ -20,9 +20,10 @@ module Admin
       c.available = params[:country][:available] == '0' ? false : true
 
       if c.save
-        flash[:notice] = "Le pays #{c.name} a bien été creé"
+        flash[:notice] = 'Le pays a bien été creé.'
       else
-        flash[:alert] = "Le pays #{c.name} n'a pas pu être créé"
+        flash[:alert] = "Le pays n'a pas pu être créé." \
+        " #{c.errors.messages}"
       end
       redirect_to action: :countries
     end
@@ -37,10 +38,11 @@ module Admin
       save_flag(parameters, flag_path) if flag_path
       @country.available = params[:country][:available] == '0' ? false : true
 
-      if @country.update(parameters) && @country.valid?
-        flash[:notice] = "Le pays #{@country.name} a bien été modifié"
+      if @country.update(parameters)
+        flash[:notice] = 'Le pays a bien été modifié.'
       else
-        flash[:alert] = "Le pays #{@country.name} n'a pas pu être modifié"
+        flash[:alert] = "Le pays n'a pas pu être modifié" \
+        "#{@country.errors.messages}"
       end
       redirect_to action: :countries
     end
@@ -49,9 +51,10 @@ module Admin
       name = @country.language
 
       if @country.destroy
-        flash[:notice] = "Le pays #{name} a bien été supprimé"
+        flash[:notice] = "Le pays #{name} a bien été supprimé."
       else
-        flash[:alert] = "Le pays #{name} n'a pas pu être supprimé"
+        flash[:alert] = "Le pays #{name} n'a pas pu être supprimé." \
+        "#{@country.errors.messages}"
       end
       redirect_to action: :countries
     end

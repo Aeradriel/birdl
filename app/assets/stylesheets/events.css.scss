@@ -1,3 +1,71 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.newEvent_h1 {
+  background-color: #1abc9c;
+  border: solid 1px #59BDBA;
+
+  text-align: center;
+  text-shadow: -1px 1px #417cb8;
+  color: #E6F2EF;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+
+  padding: 20px;
+  margin-top: -20px;
+}
+
+.newEvent_table {
+  width: 100%;
+  margin-left: 50%;
+}
+
+.newEvent_title {
+  text-align: center;
+  margin-top: -20px;
+  margin-left: 23%;
+  background-color: #F2EFEA;
+  width: 50%;
+}
+
+.newEvent_div {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  color: #1ABC9C;
+  display:inline-block;
+  background-color:#F2EFEA;
+  padding:20px;
+  padding-top: 0px;
+  border:1px solid #1ABC9C;
+  border-radius:5px;
+  width: 70%;
+  max-width: 75%;
+  height: 105%;
+  max-height: 105%;
+  margin-left: 15%;
+}
+
+.newEvent_button {
+  margin-right: 45%;
+  text-align: center;
+  background-color: #1ABC9C;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  background-position: center;
+  border: solid 1px #1ABC9C;
+  max-width: 100%;
+  height: 40px;
+  padding: 10px;
+  display: inline;
+  font-size: 15px;
+  line-height: 0px;
+  text-align: center;
+  color: rgba(250,255,253,1);
+  font-weight: initial;
+  float: right;
+}
+
+.newEvent_button:hover {
+  background-color: #4DCB6D;
+  background-position: center;
+  height: 40px;
+  border: solid 1px #4DCB6D;
+}

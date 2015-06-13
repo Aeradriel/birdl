@@ -1,5 +1,43 @@
-<h1>New event</h1>
+<body class="eventSearch_body">
 
-<%= render 'form' %>
+<h1 class="newEvent_h1"><%= t(:create_event) %></h1><br />
 
-<%= link_to 'Back', events_path %>
+<table class="newEvent_table">
+  <tr>
+    <div class="newEvent_div">
+      <h2 class="newEvent_title">Nom d'événement</h2>
+      <input type="text" id="searchterm" placeholder= <%= "Nom" %> />
+    </div>
+  </tr><br /><br /><br />
+  <tr>
+    <div class="newEvent_div">
+      <h2 class="newEvent_title">Type d'événement</h2>
+      <%= form_tag do %>
+
+          <%= select_tag :event_type, options_for_select(@event_types) %>
+
+      <% end %>
+    </div>
+  </tr><br /><br /><br />
+  <tr>
+    <div class="newEvent_div">
+      <h2 class="newEvent_title">Paramètres de l'événement</h2>
+      <%= label_tag :remaining_slots, t(:remaining_slots), :class => 'eventSearch_eSlot' %>
+      <%= number_field_tag :remaining_slots %><br />
+
+      <input type="text" id="searchterm" placeholder= <%= "Date" %> /><br />
+
+      <input type="text" id="searchterm" placeholder= <%= "Place" %> /><br />
+
+      <%= submit_tag "Invite friends", :class => 'newEvent_button' %>
+
+    </div>
+  </tr><br /><br />
+  <tr>
+    <%= submit_tag "Create", :class => 'newEvent_button' %>
+  </tr>
+
+  <%= link_to 'Back', events_path %>
+
+
+</body>

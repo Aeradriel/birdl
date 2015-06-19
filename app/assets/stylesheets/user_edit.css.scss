@@ -25,10 +25,10 @@
 
 .userEdit_table_perso {
   width: 100%;
-  margin-left: 7%;
 }
 
 .userEdit_div_perso, .userEdit_div_pwd {
+  margin-left: 13%;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   color: #EE6163;
   display:inline-block;
@@ -44,6 +44,7 @@
 }
 
 .userEdit_delete, .userEdit_update {
+  margin-left: 13%;
   width: 70%;
   max-width: 75%;
   height: 80%;

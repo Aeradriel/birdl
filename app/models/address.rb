@@ -5,8 +5,9 @@ class Address < ActiveRecord::Base
   has_many :events
 
   def to_s
-    "#{num} #{street}\n" \
-    "#{zipcode} #{city}\n" \
-    "#{country.name}"
+    addr = "#{num} #{street}\n" \
+    "#{zipcode} #{city}\n"
+    addr += country.name if country
+    addr
   end
 end

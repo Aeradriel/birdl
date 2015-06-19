@@ -23,6 +23,8 @@ class Event < ActiveRecord::Base
   validates :max_slots, presence: true
   validates :date, presence: true
 
+  accepts_nested_attributes_for :address
+
   def self.type
     %w(FaceToFace GroupEvent OnlineChat TourismTour)
   end

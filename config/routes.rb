@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   namespace :events do
     get '/' => 'events#search'
     post '/' => 'events#search_result', as: :search
+    get '/new' => 'events#new', as: :new_event
+    post '/new' => 'events#create'
     get '/groupevents' => 'group_event#index', as: :group_events
     get '/groupevents/:event_id' => 'group_event#show', as: :group_event
     get '/onlinechat/' => 'online_chat#index', as: :online_chat
@@ -42,15 +44,6 @@ Rails.application.routes.draw do
       get '/:country_id/edit' => 'countries#edit'
       post '/:country_id/edit' => 'countries#update'
       delete '/:country_id/delete' => 'countries#delete'
-    end
-
-    resource :events do
-      get '/' => 'events#index'
-      get '/new' => 'events#new'
-      post '/new' => 'events#create'
-      get '/:event_id/edit' => 'events#edit'
-      patch '/:event_id' => 'events#update'
-      delete '/:event_id' => 'events#destroy'
     end
   end
 

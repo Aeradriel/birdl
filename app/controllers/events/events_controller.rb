@@ -37,6 +37,13 @@ module Events
     # GET /events/new
     def new
       @event = Event.new
+      @event_types =
+          [
+            [t(:face_to_face), 'FaceToFace'],
+            [t(:online_chat), 'OnlineChat'],
+            [t(:tourism_tour), 'TourismTour'],
+            [t(:group_event), 'GroupEvent']
+          ]
     end
 
     # GET /events/1/edit
@@ -47,12 +54,15 @@ module Events
     # POST /events.json
     def create
       @event = Event.new(event_params)
+      @address = Address.new(event_address_params)
+      @event.owner_id = current_user.id
+      @event.address = @address
 
-      if @event.save
-        redirect_to event_path(@event)
+      if @address.save && @event.save
+        redirect_to event_route(@event)
         flash[:notice] = 'Event was successfully created.'
       else
-        redirect_to events_path, danger: 'Event error'
+        redirect_to events_path, alert: @event.errors.messages
       end
     end
 
@@ -82,7 +92,14 @@ module Events
 
     def event_params
       params.require(:event).permit(:name, :type, :min_slots,
-                                    :max_slots, :date, :end)
+                                    :max_slots, :date, :end,
+                                    :address, :language)
+    end
+
+    def event_address_params
+      params.require(:event).require(:address_attributes)
+        .permit(:num, :street, :zipcode,
+                :city, :country_id)
     end
   end
 end

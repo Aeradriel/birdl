@@ -19,7 +19,7 @@ module Events
     end
 
     def search_result
-      @events = Event.all
+      @events = Event.where('name LIKE ?', "%#{params[:searchterm]}%")
 
       @events.each do |e|
         @events.delete(e) if e.remaining_slots < params[:remaining_slots].to_i

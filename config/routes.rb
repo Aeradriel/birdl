@@ -45,6 +45,15 @@ Rails.application.routes.draw do
       post '/:country_id/edit' => 'countries#update'
       delete '/:country_id/delete' => 'countries#delete'
     end
+
+    resource :events do
+      get '/' => 'events#index'
+      get '/new' => 'events#new'
+      post '/new' => 'events#create'
+      get '/:event_id/edit' => 'events#edit'
+      patch '/:event_id' => 'events#update'
+      delete '/:event_id' => 'events#destroy'
+    end
   end
 
   get '/users/:user_id/rate' => 'users/users#rate', as: :user_rating

@@ -46,7 +46,7 @@ fr:
   personal_details: "Vos détails personnels"
   trust_us: "Faites-nous confiance, nous ne les partagerons pas !"
   personal_infos: "Informations personnelles"
-  security_infos: "Informations de sécurités"
+  security_infos: "Informations de sécurité"
   country_residence: "Votre pays de résidence"
   where_you_from: "Dites-nous d'où vous venez !"
   empty_country: "Non renseigné"
@@ -151,7 +151,7 @@ fr:
 #/////////////////////////////////////////////////////////#
 
 
-  hof: "Temple de la renommée"
+  hof: "Panthéon"
   all_members: "Tous les membres"
   this_year: "Cette année"
   this_month: "Ce mois"

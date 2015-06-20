@@ -68,3 +68,26 @@
   height: 40px;
   border: solid 1px #4DCB6D;
 }
+
+.createEvent_field {
+  text-align: center;
+}
+
+#newEvent_paramLeft {
+  float: left;
+}
+
+#newEvent_paramRight {
+  margin-left: 60%;
+}
+
+.newEvent_h3 {
+  text-decoration: underline;
+  text-align: center;
+  color: #1ABC9C;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+
+  padding: 20px;
+  margin-top: -20px;
+  margin-bottom: -5px;
+}

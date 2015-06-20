@@ -1,23 +1,26 @@
-<div class="content">
-  <div class="panel panel-info">
-    <div class="panel-heading">
-      <%= t(:events) %>
-    </div>
-    <div class="panel-body">
-      <table class="table">
-        <tr>
-          <th><%= t(:event_title) %></th>
-          <th><%= t(:date_begin) %></th>
-          <th><%= t(:free_slots) %></th>
-        </tr>
-        <% @events.each do |e| %>
+<body class="eventSearch_body">
+    <h1 class="eventResult_h1"><%= 'Résultats' %></h1><br />
+    <div class="content">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <%= t(:events) %>
+        </div>
+        <div class="panel-body">
+          <table class="table">
             <tr>
-              <td><%= link_to e.name, event_route(e) %></td>
-              <td><%= e.date %></td>
-              <td><%= e.max_slots - e.users.count %></td>
+              <th><%= t(:event_title) %></th>
+              <th><%= t(:date_begin) %></th>
+              <th><%= t(:free_slots) %></th>
             </tr>
-        <% end %>
-      </table>
+            <% @events.each do |e| %>
+                <tr>
+                  <td><%= link_to e.name, event_route(e) %></td>
+                  <td><%= e.date %></td>
+                  <td><%= e.max_slots - e.users.count %></td>
+                </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+</body>

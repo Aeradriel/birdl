@@ -19,14 +19,13 @@ module Events
     end
 
     def search_result
-      @events = Event.where('name LIKE ?', "%#{params[:searchterm]}%")
-
-      if params[:remaining_slots]
-        @events = @events.reject { |e| e.remaining_slots < params[:remaining_slots].to_i }
-      end
+      @events = Event.where('lower(name) LIKE ?', "%#{params[:searchterm].downcase}%")
       @events = params[:past_events] == 'true' ? @events.past : @events.future
       @events = @events.where(type: params[:event_type]) if
           params[:event_type] != 'none'
+      @events = @events.reject do |e|
+        e.remaining_slots < params[:remaining_slots].to_i
+      end if params[:remaining_slots]
     end
 
     # GET /events/1

@@ -21,8 +21,8 @@ module Events
     def search_result
       @events = Event.where('name LIKE ?', "%#{params[:searchterm]}%")
 
-      @events.each do |e|
-        @events.delete(e) if e.remaining_slots < params[:remaining_slots].to_i
+      if params[:remaining_slots]
+        @events = @events.reject { |e| e.remaining_slots < params[:remaining_slots].to_i }
       end
       @events = params[:past_events] == 'true' ? @events.past : @events.future
       @events = @events.where(type: params[:event_type]) if

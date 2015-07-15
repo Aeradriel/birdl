@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable,
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
+  ratyrate_rateable 'global'
+  ratyrate_rater
+
   belongs_to :country
   has_many :received_messages, -> { where sent: true },
            foreign_key: :receiver_id, class_name: 'Message'

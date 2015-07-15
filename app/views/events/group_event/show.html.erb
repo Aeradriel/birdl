@@ -1,7 +1,3 @@
-<head>
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />
-</head>
-<body>
 <div class="gEvent">
   <header>
     <h1><%= t(:registered_event) %>, <%= current_user.name %> !</h1>
@@ -29,6 +25,13 @@
               </li>
             </ul>
           </li>
+          <li>
+            <% if can_register?(@event, current_user) %>
+                <%= button_to 'S\'inscrire', { action: 'register' }, { class: '.btn' } %>
+            <% else %>
+                <%= button_to 'S\'inscrire', { action: 'register' }, { class: '.btn .disabled' } %>
+            <% end %>
+          </li>
         </ul>
       </div>
     </div>
@@ -50,4 +53,3 @@
     </div>
   </div>
 </div>
-</body>

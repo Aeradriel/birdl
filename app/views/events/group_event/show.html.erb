@@ -28,8 +28,6 @@
           <li>
             <% if can_register?(@event, current_user) %>
                 <%= button_to 'S\'inscrire', { action: 'register' }, { class: '.btn' } %>
-            <% else %>
-                <%= button_to 'S\'inscrire', { action: 'register' }, { class: '.btn .disabled' } %>
             <% end %>
           </li>
         </ul>

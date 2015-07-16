@@ -1,1 +1,17 @@
-<h1>Rate this user</h1>
+<h1>Notation de <%= @user.name %></h1>
+
+<!--
+    TODO: Faire un récapitulatif des événements par type (F2F, Group...)
+-->
+<p>
+  Vous avez <%= @common_events.count %> événement en commun avec cet utilisateur :
+</p>
+<ul>
+  <% @common_events.each do |e| %>
+      <li><%= e.name %></li>
+  <% end %>
+</ul>
+
+<p>Veillez notez cet utilisateur selon l'expérience que vous avez eu avec lui pendant ces événements</p>
+
+<%= rating_for @user, 'global', disable_after_rate: true %>

@@ -26,8 +26,18 @@
             </ul>
           </li>
           <li>
-            <% if can_register?(@event, current_user) %>
-                <%= button_to 'S\'inscrire', { action: 'register' }, { class: '.btn' } %>
+            <br/><br/>
+            <% if @event.date > Time.now %>
+                <% if can_register?(@event, current_user) %>
+                    <%= button_to 'S\'inscrire', { action: 'register' }, { class: '.btn' } %>
+                <% end %>
+            <% else %>
+                <% if @event.users.include?(current_user) %>
+                    <p>
+                      Cet événement est maintenant terminé ! Nous espérons qu'il vous a plû.
+                      <%= link_to 'Notez l\'organisateur', user_rating_path(@event.owner) %>
+                    </p>
+                <% end %>
             <% end %>
           </li>
         </ul>

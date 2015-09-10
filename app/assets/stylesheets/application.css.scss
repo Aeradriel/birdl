@@ -36,7 +36,7 @@
 .linkNavbar, .linkNavbar:visited {
   padding-top: 15px;
   text-align: center;
-  color: #F57B6C;
+  color: #EA6720;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 
   font-size: 15px;
@@ -78,7 +78,7 @@ ul.nav-stacked ul.nav-stacked > li > a {
 }
 
 .mail_message h2 {
-  background-color: #2ab4f8;
+  background-color: #EA6720;
   -webkit-border-radius: 20px 20px 0 0;
   -moz-border-radius: 20px 20px 0 0;
   border-radius: 20px 20px 0 0;
@@ -346,9 +346,9 @@ ul.nav-stacked ul.nav-stacked > li > a {
 
 .selector_button {
   background-color: transparent;
-  color: #F57B6C;
+  color: #EA6720;
   background-position: center;
-  border: solid 0px rgba(248,248,248,0.4);
+  border: solid 0px #EA6720;
   max-width: 100%;
   height: 40px;
   width: 70px;
@@ -361,7 +361,8 @@ ul.nav-stacked ul.nav-stacked > li > a {
 
 .selector_button:hover {
   background-color: transparent;
+  color: #e67e22;
   background-position: center;
+  border: solid 0px #e67e22;
   height: 40px;
-  border: solid 3px rgba(248,248,248,0.4);
 }

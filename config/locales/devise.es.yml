@@ -55,7 +55,7 @@ es:
       already_confirmed: "était déja confirmé. veuillez essayer de vous connecter."
       confirmation_period_expired: "a besoin d'être confirmer sous %{period}, veuillez en demander une nouvelle"
       expired: "a expiré, veuillez en demander une nouvelle"
-      not_found: "non trouvée"
+      not_found: "non trouvé"
       not_locked: "n'était pas bloqué"
       not_saved:
         one: "1 erreur a empêché ce %{resource} d'être sauvegardé:"

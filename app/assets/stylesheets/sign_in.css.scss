@@ -12,9 +12,10 @@
 /* ---------- GENERAL ---------- */
 
 .logo {
-  width: 37%;
-  height: 37%;
-  margin-left: 10px;
+  width: 100%;
+  height: 100%;
+  margin-left: -15px;
+  margin-top: -20px;
 }
 
 .text_logo {
@@ -84,7 +85,7 @@
 }
 
 #login fieldset input[type="submit"] {
-  background-color: #6FCCC9;
+  background-color: #EA6720;
   color: #fff;
   display: block;
   margin: 0 auto;
@@ -93,7 +94,7 @@
 }
 
 #login fieldset input[type="submit"]:hover {
-  background-color: #59BDBA;
+  background-color: #e67e22;
 }
 
 .login_links {
@@ -113,9 +114,9 @@
 /* --- CSS for buttons --- */
 
 .login_button {
-  background-color: #6FCCC9;
+  background-color: #EA6720;
   background-position: center;
-  border: solid 1px #6FCCC9;
+  border: solid 1px #EA6720;
   max-width: 100%;
   height: 40px;
   padding: 10px;
@@ -130,15 +131,15 @@
 }
 
 .login_button:hover {
-  background-color: #59BDBA !important;
+  background-color: #e67e22;
   background-position: center;
   height: 40px;
-  border: solid 1px #59BDBA;
+  border: solid 1px #e67e22;
 }
 
 .pwd_button {
-  background-color: #EE6163;
-  border: solid 1px #EE6163;
+  background-color: #95a5a6;
+  border: solid 1px #95a5a6;
   max-width: 100%;
   height: 40px;
   padding: 10px;
@@ -152,8 +153,8 @@
 }
 
 .pwd_button:hover{
-  background-color: #EE5255;
+  background-color: #bdc3c7;
   background-position: center;
   height: 40px;
-  border: solid 1px #EE5255;
+  border: solid 1px #bdc3c7;
 }

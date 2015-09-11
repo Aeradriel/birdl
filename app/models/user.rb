@@ -10,8 +10,7 @@ class User < ActiveRecord::Base
   ratyrate_rater
 
   belongs_to :country
-  has_many :received_messages, -> { where sent: true },
-           foreign_key: :receiver_id, class_name: 'Message'
+  has_many :received_messages, foreign_key: :receiver_id, class_name: 'Message'
   has_many :sent_messages, foreign_key: :sender_id, class_name: 'Message'
   has_many :achievements
   has_many :participations

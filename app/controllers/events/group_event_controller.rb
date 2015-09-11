@@ -27,6 +27,13 @@ module Events
     end
 
     def show
+      @user_events = []
+      Event.all.each do |e|
+        if e.date > Time.now && (e.owner.id == current_user.id || current_user.events.include?(e))
+          @user_events << e
+        end
+      end
+      @user_events.sort! { |a, b| a.date <=> b.date }
     end
 
     def edit

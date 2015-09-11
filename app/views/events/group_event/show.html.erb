@@ -46,8 +46,8 @@
     <div id="uEvents">
       <h3><%= t(:registered_event) %></h3>
       <ul>
-        <% current_user.events.each do |event| %>
-            <%= link_to event.name, "/events/groupevents/#{event.id}" %>
+        <% @user_events.each do |event| %>
+            <%= link_to event.name, "/events/groupevents/#{event.id}" %><br/>
         <% end %>
       </ul>
     </div>

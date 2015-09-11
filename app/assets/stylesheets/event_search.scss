@@ -350,6 +350,7 @@ select#event_type > span::after {
 
 //New event button
 .new_event_button, .new_event_button:visited {
+  margin-left: 25px;
   text-decoration: none;
   display:block;
   font:1.2em 'Open Sans';

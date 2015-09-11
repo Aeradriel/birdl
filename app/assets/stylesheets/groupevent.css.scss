@@ -1,5 +1,6 @@
 .groupevent_html {
-   background-color: #F2EFEA;
+  background-color: #F2EFEA;
+  color: #000000;
  }
 
 @media all and (min-width: 0px) and (max-width: 1024px) {
@@ -14,7 +15,6 @@
   }
   .tEvent header{
     margin: 0% -100% 0% 0%;
-    color: #ffffff;
     word-wrap: break-word;
   }
   .pEvent{
@@ -62,7 +62,8 @@
     max-height: 400px !important;
   }
 
-  .uList {
+  .uList, .uList:visited {
+    background-color: transparent;
     display: block;
     border-top: 1px solid #8e44ad;
     margin: 0% 0% 0% 15% !important;
@@ -92,12 +93,13 @@
 
 .gEvent header
 {
+  color: #ffffff;
+
   background-color: #27ae60;
   border: solid 1px #27ae60;
 
   text-align: center;
   text-shadow: -1px 1px #417cb8;
-  color: #E6F2EF;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 
   padding: 20px;
@@ -122,7 +124,6 @@
   font-size: 24px;
   height: 700px;
   max-height: 1024px;
-  color: #ffffff;
   word-wrap: break-word;
 }
 
@@ -147,7 +148,6 @@
   font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
   font-size: 24px;
   border-left:1px solid #27ae60;
-  color: #ffffff;
   height: 700px;
   overflow-y: scroll;
   max-height: 1024px;
@@ -176,10 +176,9 @@
 
 }
 
-#uEvents ul li:hover
+#uEvents ul li:hover, #uEvents a:hover
 {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: transparent;
   -webkit-transform:scale(1.10); /* Safari and Chrome */
   -moz-transform:scale(1.10); /* Firefox */
   -ms-transform:scale(1.10); /* IE 9 */
@@ -226,7 +225,6 @@
   overflow-y: scroll;
   max-height: 1024px;
   border-left:1px solid #27ae60;
-  color: #ffffff;
 }
 
 .uList h3 {
@@ -254,7 +252,6 @@
   font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
   font-weight:500;
   font-size:24px;
-  color: #ffffff;
   word-wrap: break-word;
 }
 
@@ -267,7 +264,6 @@
   font-weight:500;
   font-size: 20px;
   float: left;
-  color: #ffffff;
   overflow: auto;
   word-wrap: break-word;
 }
@@ -314,7 +310,6 @@
   padding: 15px;
   background-color: #F2EFEA;
   width: 100%;
-  color: #ffffff;
   font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
   font-size: 16px;
   text-align: left;
@@ -324,14 +319,12 @@
 
 #modalEvent{
   font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
-  color: #000000;
   text-align: center;
   padding: 15px;
 }
 
 #modalEvent div {
   font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
-  color: #000000;
   font-size: 30px;
   padding: 15px;
 }

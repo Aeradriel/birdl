@@ -25,7 +25,7 @@
           <%= f.number_field :max_slots %><br />
 
           <%= f.label :date, t(:event_date), :class => 'eventSearch_eSlot' %>
-          <%= f.date_select :date %><br />
+          <%= f.date_select :date, default: 1.day.from_now %><br />
 
           <%= f.label :language, t(:event_language), :class => 'eventSearch_eSlot' %>
           <%= f.text_field :language, placeholder: t(:event_language) %>

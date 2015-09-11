@@ -3,9 +3,9 @@
 
 <%= form_tag action: :search_result do %>
     <div class="eventSearch_field" id="searchform">
-      <%= link_to '+', { action: :new }, class: 'new_event_button' %>
       <%= text_field_tag :searchterm, '', placeholder: t(:quick_search_event) %>
       <%= submit_tag t(:find), id: 'search' %>
+      <%= link_to '+', { action: :new }, class: 'new_event_button' %>
     </div>
 
     <button type="button" id="adv-search-btn"><%= t(:advanced_search) %></button>

@@ -23,6 +23,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-oauth2'
 gem 'omniauth-google-oauth2'
 gem 'ratyrate'
+gem 'countries'
 
 group :development, :test do
   gem 'factory_girl_rails'

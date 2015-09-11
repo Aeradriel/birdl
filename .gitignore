@@ -1,7 +1,6 @@
 *.rbc
 .DS_Store
 .idea/
-Gemfile.lock
 capybara-*.html
 /log
 /tmp

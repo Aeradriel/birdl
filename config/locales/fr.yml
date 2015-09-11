@@ -151,7 +151,7 @@ fr:
 #/////////////////////////////////////////////////////////#
 
 
-  hof: "Temple de la renommée"
+  hof: "Panthéon"
   all_members: "Tous les membres"
   this_year: "Cette année"
   this_month: "Ce mois"
@@ -213,6 +213,16 @@ fr:
   sort_by: "Trier par"
   invite: "Inviter"
   invite_user: "Inviter un utilisateur"
+  all: "Non renseigné"
+
+  event_param: "Paramètres de l'événement"
+  event_date: "Date"
+  event_language: "Langue"
+  event_numbers: "Numéro"
+  event_street: "Rue"
+  event_code: "Code Postal"
+  event_city: "Ville"
+  event_country: "Pays"
 
 
 #/////////////////////////////////////////////////////////#

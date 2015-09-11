@@ -4,19 +4,19 @@
     <table class="newEvent_table">
       <tr>
         <div class="newEvent_div">
-          <h2 class="newEvent_title">Nom d'événement</h2>
-          <%= f.text_field :name, placeholder: 'Nom' %>
+          <h2 class="newEvent_title"><%= t(:event_title) %></h2>
+          <%= f.text_field :name, placeholder: t(:event_title) %>
         </div>
       </tr><br /><br /><br />
       <tr>
         <div class="newEvent_div">
-          <h2 class="newEvent_title">Type d'événement</h2>
+          <h2 class="newEvent_title"><%= t(:event_type) %></h2>
           <%= f.select :type, options_for_select(@event_types) %>
         </div>
       </tr><br /><br /><br />
       <tr>
         <div class="newEvent_div">
-          <h2 class="newEvent_title">Paramètres de l'événement</h2>
+          <h2 class="newEvent_title"><%= t(:event_param) %></h2>
 
           <%= f.label :min_slot, t(:min_slots), :class => 'eventSearch_eSlot' %>
           <%= f.number_field :min_slots %><br />
@@ -24,29 +24,29 @@
           <%= f.label :max_slots, t(:max_slots), :class => 'eventSearch_eSlot' %>
           <%= f.number_field :max_slots %><br />
 
-          <%= f.label :date, 'Date', :class => 'eventSearch_eSlot' %>
+          <%= f.label :date, t(:event_date), :class => 'eventSearch_eSlot' %>
           <%= f.date_select :date %><br />
 
-          <%= f.label :language, 'Langue', :class => 'eventSearch_eSlot' %>
-          <%= f.text_field :language, placeholder: 'Language' %>
+          <%= f.label :language, t(:event_language), :class => 'eventSearch_eSlot' %>
+          <%= f.text_field :language, placeholder: t(:event_language) %>
 
           <%= f.fields_for :address, Address.new do |af| %>
-              <%= f.label :num, 'Num', :class => 'eventSearch_eSlot' %>
+              <%= f.label :num, t(:event_numbers), :class => 'eventSearch_eSlot' %>
               <%= af.number_field :num %>
-              <%= f.label :street, 'Rue', :class => 'eventSearch_eSlot' %>
-              <%= af.text_field :street, placeholder: 'Rue' %>
-              <%= f.label :zipcode, 'Code postal', :class => 'eventSearch_eSlot' %>
-              <%= af.text_field :zipcode, placeholder: 'Code postal' %>
-              <%= f.label :city, 'Ville', :class => 'eventSearch_eSlot' %>
-              <%= af.text_field :city, placeholder: 'Ville' %>
-              <%= f.label :country_id, 'Pays', :class => 'eventSearch_eSlot' %>
+              <%= f.label :street, t(:event_street), :class => 'eventSearch_eSlot' %>
+              <%= af.text_field :street, placeholder: t(:event_street) %>
+              <%= f.label :zipcode, t(:event_code), :class => 'eventSearch_eSlot' %>
+              <%= af.text_field :zipcode, placeholder: t(:event_code) %>
+              <%= f.label :city, t(:event_city), :class => 'eventSearch_eSlot' %>
+              <%= af.text_field :city, placeholder: t(:event_city) %>
+              <%= f.label :country_id, t(:event_country), :class => 'eventSearch_eSlot' %>
               <%= af.select :country_id, Country.all.collect { |c| [c.name, c.id] } %></div>
           <% end %>
 
         </div>
       </tr><br /><br/>
       <tr>
-        <%= submit_tag 'Create', :class => 'newEvent_button' %>
+        <%= submit_tag t(:create), :class => 'newEvent_button' %>
       </tr>
     </table>
 <% end %>

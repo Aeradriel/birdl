@@ -1,20 +1,18 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat+Alternates);
 
 #hof_module {
-    background-color:#394264;
+    background-color: #394264;
     width: 95%;
     border-radius:5px;
     margin-bottom: 25px;
 }
 
 #hof_module_title {
-    background-color:#ECB88B;
+    background-color: #EC6704;
     padding:10px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
     font-weight:500;
-    color:#333333;
+    color: #333333;
     font-size:30px;
     text-align:center;
     margin-bottom:0px;
@@ -27,7 +25,7 @@
 
 #hof_module_selectors_wrapper {
 
-    background-color:#ECB88B;
+    background-color: #EC6704;
     height:30px;
     -webkit-box-shadow: 0 4px 4px -2px #21263C;
     -moz-box-shadow: 0 4px 4px -2px #21263C;
@@ -39,7 +37,7 @@
 
 .hof_module_selector {
     float:left;
-    background-color:#ECB88B;
+    background-color: #EC6704;
     height:30px;
     width: 33.33%;
     border-left:1px solid  #ECB88B;
@@ -63,7 +61,7 @@
     width:100%;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
     font-size: 14px;
-    color:white;
+    color: #EC6704;
 
 }
 

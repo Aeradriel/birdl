@@ -99,10 +99,11 @@
 
 .login_links {
   margin-top: 7px;
+  margin-left: -16px;
   background-color: #EA6720;
   background-position: center;
   border: solid 1px #EA6720;
-  max-width: 100%;
+  width: 328px;
   height: 40px;
   padding: 10px;
   display: inline;
@@ -116,10 +117,6 @@
 
 .login_links:hover {
   background-color: #e67e22;
-}
-
-.login_links:visited {
-  color: #95a5a6;
 }
 
 .link_login{

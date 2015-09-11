@@ -1,74 +1,76 @@
-<head>
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />
-</head>
+<html class="groupevent_html">
+    <head>
+      <meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />
+    </head>
 
-<body>
-<div id="wrap">
-  <div id="pastEvents">
-    <div class="tEvent">
-      <header><h1><%= t(:list_past_events) %></h1></header>
-      <div class="pEvent"><h3><%= t(:event) %></h3><br>
-        <table>
-          <% @past_events.each do |e| %>
-              <tr>
-                <td id="pEventlist"><%= e.name %></td>
-                <td id="pEventlist"><button id="optButEvent" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"><%= t(:rate_it) %> !</button></td>
-              </tr>
-          <% end %>
-        </table>
-      </div>
-    </div>
-  </div>
+    <body class="groupevent_body">
+        <div id="wrap">
+          <div id="pastEvents">
+            <div class="tEvent">
+              <header><h1><%= t(:list_past_events) %></h1></header>
+              <div class="pEvent"><h3><%= t(:event) %></h3><br>
+                <table>
+                  <% @past_events.each do |e| %>
+                      <tr>
+                        <td id="pEventlist"><%= e.name %></td>
+                        <td id="pEventlist"><button id="optButEvent" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal"><%= t(:rate_it) %> !</button></td>
+                      </tr>
+                  <% end %>
+                </table>
+              </div>
+            </div>
+          </div>
 
-  <div id="nextEvents">
-    <div class="tEvent">
-      <header><h1><%= t(:list_futur_events) %></h1></header>
-      <div class="pEvent"><h3><%= t(:event) %></h3><br>
-        <table>
-          <% @future_events.each do |e| %>
-              <tr>
-                <td id="pEventlist"><%= e.name %></td>
-                <td id="pEventlist"><button id="optButEvent" type="button" class="btn btn-primary btn-lg"><%= t(:details) %></button></td>
-              </tr>
-          <% end %>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
+          <div id="nextEvents">
+            <div class="tEvent">
+              <header><h1><%= t(:list_futur_events) %></h1></header>
+              <div class="pEvent"><h3><%= t(:event) %></h3><br>
+                <table>
+                  <% @future_events.each do |e| %>
+                      <tr>
+                        <td id="pEventlist"><%= e.name %></td>
+                        <td id="pEventlist"><button id="optButEvent" type="button" class="btn btn-primary btn-lg"><%= t(:details) %></button></td>
+                      </tr>
+                  <% end %>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<!-- POPIN CODE -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 id="modalEvent" id="myModalLabel">Macaroni Party !</h4>
-      </div>
-      <div id="modalEvent" class="row">
-        <%= image_tag('groupevents/engine/macar.jpg', :class => "imgEventModal") %>
-        <ul id="optEvent">
-          <li><%= t(:rating_organizer) %></li>
-          <ul class="ratingEvent">
-            <% (1..5).each do |i| %>
-                <li class="ratingEventstar"  data-stars="<%= i %>" data-user-id="<%= 1 %>" id=<%="#{1}_#{i}"%>></li>
-            <% end %>
-          </ul><br>
-          <li><%= t(:overall_rating) %></li>
-          <ul class="ratingEvent">
-            <li>
-              <% (1..5).each do |i| %>
-                <li class="ratingEventstar"  data-stars="<%= i %>" data-event-id="<%= 1 %>" id=<%="#{1}_#{i}"%>></li>
-            <% end %>
-            </li>
-          </ul>
-        </ul>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal"><%= t(:cancel) %></button>
-        <button type="button" class="btn btn-primary"><%= t(:save) %></button>
-      </div>
-    </div>
-  </div>
-</div>
-</body>
+        <!-- POPIN CODE -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 id="modalEvent" id="myModalLabel">Macaroni Party !</h4>
+              </div>
+              <div id="modalEvent" class="row">
+                <%= image_tag('groupevents/engine/macar.jpg', :class => "imgEventModal") %>
+                <ul id="optEvent">
+                  <li><%= t(:rating_organizer) %></li>
+                  <ul class="ratingEvent">
+                    <% (1..5).each do |i| %>
+                        <li class="ratingEventstar"  data-stars="<%= i %>" data-user-id="<%= 1 %>" id=<%="#{1}_#{i}"%>></li>
+                    <% end %>
+                  </ul><br>
+                  <li><%= t(:overall_rating) %></li>
+                  <ul class="ratingEvent">
+                    <li>
+                      <% (1..5).each do |i| %>
+                        <li class="ratingEventstar"  data-stars="<%= i %>" data-event-id="<%= 1 %>" id=<%="#{1}_#{i}"%>></li>
+                    <% end %>
+                    </li>
+                  </ul>
+                </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><%= t(:cancel) %></button>
+                <button type="button" class="btn btn-primary"><%= t(:save) %></button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </body>
+</html>

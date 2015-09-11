@@ -17,3 +17,7 @@
     width: 75%;
     overflow: auto;
 }
+
+li.list-group-item.message {
+    border: 1px solid #EC6704;
+}

@@ -3,12 +3,11 @@
 #hof_module {
     background-color: #394264;
     width: 95%;
-    border-radius:5px;
     margin-bottom: 25px;
 }
 
 #hof_module_title {
-    background-color: #EC6704;
+    background-color: #ffffff;
     padding:10px;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
     font-weight:500;
@@ -25,7 +24,7 @@
 
 #hof_module_selectors_wrapper {
 
-    background-color: #EC6704;
+    background-color: #ffffff;
     height:30px;
     -webkit-box-shadow: 0 4px 4px -2px #21263C;
     -moz-box-shadow: 0 4px 4px -2px #21263C;
@@ -37,18 +36,18 @@
 
 .hof_module_selector {
     float:left;
-    background-color: #EC6704;
+    background-color: #ffffff;
     height:30px;
     width: 33.33%;
-    border-left:1px solid  #ECB88B;
+    border-left:1px solid  #ffffff;
     text-align:center;
-    border-top:1px solid #ECB88B;
+    border-top:1px solid #EC6704;
     cursor:pointer;
 
 }
 
 .hof_module_selector:hover {
-    background-color:#DEA879;
+    background-color:#EC6704;
 }
 
 .hof_module_selector p {

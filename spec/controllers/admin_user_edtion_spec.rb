@@ -3,7 +3,7 @@ require 'rails_helper'
 
 describe 'The admin account edition page' do
   def sign_in(user)
-    user.confirm!
+    user.confirm
     visit '/login'
     fill_in 'user_email', with: user.email
     fill_in 'user_password', with: user.password

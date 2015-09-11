@@ -31,7 +31,7 @@ module Admin
     end
 
     def update
-      if @user.update(user_params) && @user.confirm!
+      if @user.update(user_params) && @user.confirm
         flash[:notice] = "L'utilisateur #{@user.name} a bien été mis à jour"
       else
         flash[:alert] = "L'utilisateur #{@user.name} n'a pas pu être mis à jour"

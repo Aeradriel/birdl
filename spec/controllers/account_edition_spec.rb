@@ -3,7 +3,7 @@ require 'rails_helper'
 
 describe 'The account edition page' do
   def sign_in(user)
-    user.confirm!
+    user.confirm
     visit '/login'
     fill_in 'user_email', with: user.email
     fill_in 'user_password', with: user.password
@@ -47,7 +47,7 @@ describe 'The account edition page' do
     fill_in 'user_email', with: 'bonjour@lol.com'
     fill_in 'user_current_password', with: @user.password
     click_button 'userEdit_submit'
-    User.find(@user.id).confirm!
+    User.find(@user.id).confirm
     expect(User.find(@user.id).email).to eq 'bonjour@lol.com'
   end
 

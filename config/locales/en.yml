@@ -164,7 +164,7 @@ en:
 
 
   event: "Event"
-  event_title: "title of the event"
+  event_title: "Title of the event"
   search_event: "Search for an event"
   advanced_search: "Advanced Search ▼"
   quick_search_event: "Search Quick event search"
@@ -213,6 +213,16 @@ en:
   sort_by: "Sort by"
   invite: "Invite"
   invite_user: "Invite a user"
+  all: "Not specified"
+
+  event_param: "Event parameters"
+  event_date: "Date"
+  event_language: "Language"
+  event_numbers: "Numbers"
+  event_street: "Street"
+  event_code: "Zip Code"
+  event_city: "City"
+  event_country: "Country"
 
 
 #/////////////////////////////////////////////////////////#

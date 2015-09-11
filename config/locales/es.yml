@@ -212,6 +212,16 @@ es:
   sort_by: "Ordenar por"
   invite: "Invitar"
   invite_user: "Invita de usario"
+  all: "No informado"
+
+  event_param: "Configuración de Eventos"
+  event_date: "Fecha"
+  event_language: "Idioma"
+  event_numbers: "Número"
+  event_street: "Calle"
+  event_code: "Código Postal"
+  event_city: "Ciudad"
+  event_country: "País"
 
 
 #/////////////////////////////////////////////////////////#

@@ -10,7 +10,7 @@ module Events
     def search
       @event_types =
           [
-            ['Non renseigné', 'none'],
+            [t(:all), 'none'],
             [t(:face_to_face), 'FaceToFace'],
             [t(:online_chat), 'OnlineChat'],
             [t(:tourism_tour), 'TourismTour'],

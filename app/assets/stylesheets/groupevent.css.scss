@@ -1,3 +1,7 @@
+.groupevent_html {
+   background-color: #F2EFEA;
+ }
+
 @media all and (min-width: 0px) and (max-width: 1024px) {
   #pastEvents, #nextEvents {
     float: left;
@@ -51,7 +55,7 @@
   }
 
   #uEvents {
-    border-top: 1px solid skyblue;
+    border-top: 1px solid #8e44ad;
     display: block;
     margin: 0% 0% 0% 15% !important;
     width: 70% !important;
@@ -60,7 +64,7 @@
 
   .uList {
     display: block;
-    border-top: 1px solid skyblue;
+    border-top: 1px solid #8e44ad;
     margin: 0% 0% 0% 15% !important;
     width: 70% !important;
     max-height: 400px !important;
@@ -88,21 +92,20 @@
 
 .gEvent header
 {
-  margin: 0% 15% 0%;
-  padding: 25px;
-  background-color: skyblue;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  background-color: #27ae60;
+  border: solid 1px #27ae60;
+
   text-align: center;
-  font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
-  font-size: 24px;
-  color: white;
-  word-wrap: break-word;
+  text-shadow: -1px 1px #417cb8;
+  color: #E6F2EF;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+
+  padding: 20px;
+  margin-top: -20px;
 }
 .gEventDesc
 {
-  overflow: hidden;
-  background: light;
+  background-color: #F2EFEA;
 }
 
 .gEventDesc div
@@ -113,9 +116,8 @@
 #eDescription
 {
   float: left;
-  width: 40%;
-  margin-left: 15%;
-  background-color: #373B44;
+  width: 70%;
+  background-color: #F2EFEA;
   font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
   font-size: 24px;
   height: 700px;
@@ -141,10 +143,10 @@
   float: left;
   width: 15%;
   margin-right: -1px;
-  background-color: #373B44;
+  background-color: #F2EFEA;
   font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
   font-size: 24px;
-  border-left:1px solid #21263C;
+  border-left:1px solid #27ae60;
   color: #ffffff;
   height: 700px;
   overflow-y: scroll;
@@ -217,13 +219,13 @@
   float: left;
   width: 15%;
   margin-right: -1px;
-  background-color: #373B44;
+  background-color: #F2EFEA;
   font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
   font-size: 24px;
   height: 700px;
   overflow-y: scroll;
   max-height: 1024px;
-  border-left:1px solid #21263C;
+  border-left:1px solid #27ae60;
   color: #ffffff;
 }
 
@@ -246,7 +248,6 @@
 .tEvent header
 {
   padding: 25px;
-  background-color: skyblue;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   text-align: center;
@@ -260,7 +261,7 @@
 .pEvent{
   width: 100%;
   padding: 20px;
-  background-color:#373B44;
+  background-color: #F2EFEA;
   text-align: center;
   font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;
   font-weight:500;
@@ -311,7 +312,7 @@
 #pEventlist {
   margin: 0% 25% 0% !important;
   padding: 15px;
-  background-color:#373B44;
+  background-color: #F2EFEA;
   width: 100%;
   color: #ffffff;
   font-family: "Montserrat Alternates", Arial, Helvetica, sans-serif;

@@ -34,6 +34,9 @@ module Events
         end
       end
       @user_events.sort! { |a, b| a.date <=> b.date }
+
+      @event_users = @event.users + [@event.owner]
+      puts "DEBUG: #{@event_users}"
     end
 
     def edit

@@ -54,7 +54,7 @@
     <div class="uList">
       <h3><%= t(:participants) %></h3>
       <ul>
-        <% @event.users.each do |u| %>
+        <% @event_users.each do |u| %>
             <li><%= u.name %></li>
         <% end %>
       </ul>

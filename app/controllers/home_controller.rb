@@ -3,8 +3,8 @@ class HomeController < ApplicationController
   def index
     @modules_to_display = modules_to_display
     @achievements = current_user.achievements
-    @sent_messages = current_user.sent_messages[0..1]
-    @received_messages = current_user.received_messages[0..1]
+    @sent_messages = current_user.sent_messages.order(created_at: :desc)[0..1]
+    @received_messages = current_user.received_messages.order(created_at: :desc)[0..1]
     @event = current_user.events.order(:date).first
   end
 

@@ -39,3 +39,37 @@
   width: 35%;
   float: right;
 }
+
+#right_bot_module2 {
+  width: 35%;
+  float: right;
+}
+
+.home_quicksearch_field {
+  display:flex;
+  position:relative;
+  margin:5em auto;
+  width:70%;
+  flex-direction:row;
+  box-shadow: #EA6720;
+}
+
+.home_quicksearch_field>input[type=text],
+.home_quicksearch_field>input[type=submit] {
+  display:block;
+  font:1.2em 'Open Sans';
+}
+
+.home_quicksearch_field>input[type=text] {
+  outline: none;
+  flex:1;
+  padding:0.6em;
+  border: #EA6720;
+}
+
+.home_quicksearch_field>input[type=submit] {
+  padding:0.6em 0.8em;
+  background-color: #EA6720;
+  color:white;
+  border:none;
+}

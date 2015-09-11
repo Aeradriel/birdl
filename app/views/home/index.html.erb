@@ -19,4 +19,11 @@
     <div id="right_bot_module" class="module">
       <%= render 'home/modules/hof' %>
     </div>
+    <div id="right_bot_module2" class="module">
+          <div class="home_quicksearch_field">
+            <%= text_field_tag :searchterm, '', placeholder: t(:quick_search_event) %>
+            <%= submit_tag t(:find), id: 'search' %>
+          </div>
+    </div>
+
 </body>

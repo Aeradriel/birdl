@@ -347,3 +347,14 @@ select#event_type > span::after {
   display: none;
   border:1px solid #27ae60;
 }
+
+//New event button
+.new_event_button, .new_event_button:visited {
+  text-decoration: none;
+  display:block;
+  font:1.2em 'Open Sans';
+  padding:0.6em 0.8em;
+  background-color: #27ae60;
+  color:white;
+  border:none;
+}

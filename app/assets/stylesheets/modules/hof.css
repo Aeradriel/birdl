@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat+Alternates);
 
 #hof_module {
-    background-color: #394264;
+    background-color: #ffffff;
     width: 95%;
     margin-bottom: 25px;
 }
@@ -26,9 +26,9 @@
 
     background-color: #ffffff;
     height:30px;
-    -webkit-box-shadow: 0 4px 4px -2px #21263C;
-    -moz-box-shadow: 0 4px 4px -2px #21263C;
-    box-shadow: 0 4px 4px -2px #21263C;
+    -webkit-box-shadow: 0 4px 4px -2px #EC6704;
+    -moz-box-shadow: 0 4px 4px -2px #EC6704;
+    box-shadow: 0 4px 4px -2px #EC6704;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
     color:#333333;
 
@@ -39,7 +39,7 @@
     background-color: #ffffff;
     height:30px;
     width: 33.33%;
-    border-left:1px solid  #ffffff;
+    border-left:1px solid #ffffff;
     text-align:center;
     border-top:1px solid #EC6704;
     cursor:pointer;
@@ -47,7 +47,7 @@
 }
 
 .hof_module_selector:hover {
-    background-color:#EC6704;
+    background-color: #EC6704;
 }
 
 .hof_module_selector p {
@@ -65,20 +65,20 @@
 }
 
 .hof_module_row {
-    border-top:1px solid #21263C;
-    background-color: #373B44;
+    border-top:1px solid #ffffff;
+    background-color: #ffffff;
 }
 
 .hof_module_rank {
     padding:5px;
     width:10%;
-    border-right:1px solid #21263C;
+    border-right:1px solid #ffffff;
 }
 
 .hof_module_name {
     width:60%;
     padding:5px;
-    border-right:1px solid #21263C;
+    border-right:1px solid #ffffff;
 }
 .hof_module_stars {
     width:30%;

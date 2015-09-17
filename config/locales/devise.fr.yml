@@ -43,7 +43,7 @@ fr:
       signed_out: "Vous êtes déconnecté avec succès."
       already_signed_out: "Vous êtes déconnecté avec succès."
     unlocks:
-      send_instructions: "Vous recevrez un email avec des instructions pour déblocquer votre compte dans quelques minutes."
+      send_instructions: "Vous recevrez un email avec des instructions pour débloquer votre compte dans quelques minutes."
       send_paranoid_instructions: "Si votre compte existe, vous recevrez un email avec les instructions pour débloquer votre compte dans quelques minutes."
       unlocked: "Votre compte a été débloqué avec succès. Veuillez vous connecter pour continuer."
   errors:
@@ -55,4 +55,4 @@ fr:
       not_locked: "n'était pas bloqué"
       not_saved:
         one: "1 erreur a empêché ce %{resource} d'être sauvegardé:"
-        other: "%{count} errors on empêché ce %{resource} d'être sauvegardé:"
+        other: "%{count} erreurs on empêché ce %{resource} d'être sauvegardé:"

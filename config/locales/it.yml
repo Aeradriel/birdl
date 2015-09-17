@@ -1,0 +1,481 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+it:
+
+
+#/////////////////////////////////////////////////////////#
+# Mot clé correspondant à la partie ......                #
+#/////////////////////////////////////////////////////////#
+
+
+  error: "Errore"
+  save: "Salva"
+  char: "carattere"
+  chars: "stampa"
+  previous: "Precedente"
+  next: "Prossimo"
+
+
+#/////////////////////////////////////////////////////////#
+# Mot clé correspondant à la partie Inscription           #
+#/////////////////////////////////////////////////////////#
+
+
+  join_us: "Unisciti a noi !"
+  first_step: "Il primo passo"
+  perso_details: "Dati personali"
+  personal_details: "I tuoi dati personali"
+  trust_us: "Fidatevi di noi, non condivideremo loro!"
+  personal_infos: "Informazioni Personali"
+  security_infos: "Informazioni sulla protezione"
+  country_residence: "Il vostro paese di residenza"
+  where_you_from: "Diteci dove vieni !"
+  empty_country: "Sconosciuto"
+
+
+#/////////////////////////////////////////////////////////#
+# Mot clé correspondant à la Page de connection           #
+#/////////////////////////////////////////////////////////#
+
+
+  sign_in_caps: "ACCESSO"
+  sign_in: "accesso"
+  sign_in_with: "Connettiti con"
+  sign_up_caps: "REGISTRAZIONE"
+  sign_up: "registrazione"
+  account_infos: "Informazioni account"
+  email: "e-mail"
+  password: "Password"
+  forgotten_password: "Hai dimenticato la tua password?"
+  confirmation_instructions: "Non ha ricevuto istruzioni di conferma ?"
+  unlock_instructions: "Non si ricevono le istruzioni di sblocco ?"
+  sign_up_form: "Modulo di registrazione"
+
+
+#/////////////////////////////////////////////////////////#
+# Mot clé correspondant au MENU                           #
+#/////////////////////////////////////////////////////////#
+
+
+  home: "Benvenuto"
+  my_account: "Il mio conto"
+  events: "eventi"
+  admin: "amministrazione"
+  disconnect: "Logout"
+
+
+#/////////////////////////////////////////////////////////#
+# Mot clé correspondant à la partie Mon compte            #
+#/////////////////////////////////////////////////////////#
+
+
+  denotes_required_filed: "* Richiesto"
+  unknown: "Sconosciuto"
+  male: "Uomo"
+  female: "Donna"
+  leave_blank_for_unchanged: "(lasciare in bianco se non si desidera cambiare)"
+  need_current_password_for_changes: "(abbiamo bisogno della vostra password attuale per confermare le modifiche)"
+  update: "Aggiornamento"
+  cancel_account: "Eliminare il mio conto"
+  account_deletion_warning: "Sei sicuro di voler eliminare il tuo account ?"
+  account_setup: "Creazione di account"
+  currently_waiting_confirmation_for: "In attesa di conferma della mail : %{email}"
+  cancel: "Annullare"
+
+
+#/////////////////////////////////////////////////////////#
+# Mot clé correspondant à la partie Admin                 #
+#/////////////////////////////////////////////////////////#
+
+
+  new: "Nuovo"
+  language: "Lingua"
+  flag: "Dandiera"
+  country: "Paese"
+  countries: "Paesi"
+  user: "Utente"
+  total_user: "Totale Utenti"
+  actions: "Azioni"
+  edit: "Modifica"
+  edition_of: "Edizione"
+  delete: "Rimuovere"
+  country_deletion_warning: "Sei sicuro di voler eliminare questo paese?"
+  users: "Utenti"
+  admins: "Amministratori"
+  normal_users: "Gli utenti normali"
+  name: "Nome"
+  birthdate: "Data di nascita"
+  gender: "Sesso"
+  user_deletion_warning: "Sei sicuro di voler eliminare questo utente ?"
+  users_by_language: "Distribuzione degli utenti per lingua"
+  users_by_gender: "Distribuzione degli utenti per sesso"
+  create: "Creare"
+  new_country: "Nuovo paesi"
+  new_user: "Nuovo utente"
+  not_logged_error_title: "Diritti insufficienti"
+  not_logged_error: "Non si dispone dei diritti necessari per visualizzare questa pagina"
+
+
+#/////////////////////////////////////////////////////////#
+# Mot clé correspondant à la partie Chat en ligne         #
+#/////////////////////////////////////////////////////////#
+
+
+  received_messages: "Messaggi ricevuti"
+  sent_messages: "Messaggi inviati"
+  from: "A : "
+  general_chat: "Discussione generale"
+
+
+#/////////////////////////////////////////////////////////#
+# Mot clé correspondant à la partie HoF #           #
+#/////////////////////////////////////////////////////////#
+
+
+  hof: "Pantheon"
+  all_members: "Tutti i membri"
+  this_year: "questo anno"
+  this_month: "questo mese"
+  star: "Stella"
+
+
+#/////////////////////////////////////////////////////////#
+# Mot clé correspondant à la partie Evènement #           #
+#/////////////////////////////////////////////////////////#
+
+
+  event: "Evento"
+  event_title: "Titolo dell'evento"
+  search_event: "Cerca un evento"
+  advanced_search: "Ricerca avanzata ▼"
+  quick_search_event: "Ricerca rapida"
+  find: "Go!"
+  past_events: "Eventi passati"
+  future_events: "Eventi futuri"
+  search: "Ricerca"
+  create_event: "Crea evento"
+  edit_event: "Modifica evento"
+  event_type: "Tipo di evento"
+  face_to_face: "Testa a Testa"
+  tourism_tour: "Uscita turistiche"
+  online_chat: "Chat on-line"
+  group_event: "Evento Gruppo"
+  remaining_slots: "Posti rimasti"
+  yes_event: "Sì"
+  no_event: "No"
+  whatever: "Senza riguardo"
+  place: "Posto"
+  list_past_events: "Inserisci il tuo eventi passati"
+  list_futur_events: "Inserisci il tuo eventi futuri"
+  rating_organizer: "Nota l'organizzatore"
+  rating_user: "Voto utenti"
+  overall_rating: "Valutazione generale"
+  rate_it: "Nota"
+  details: "Dettagli"
+  organizer: "Organizzatore"
+  event_adress: "Indirizzo evento"
+  description_event: "Descrizione evento"
+  registered_event: "Vostri eventi"
+  participating_event: "Eventi in cui si partecipa"
+  participants: "Partecipanti"
+  type: "Tipo"
+  new_event: "Nuovo evento"
+  slots: "Posto"
+  slot: "Posti"
+  filled_slots: "Posti occupati"
+  free_slots: "Posti disponibili"
+  min_slots: "Numero minimo di seggi"
+  max_slots: "Numero massimo di slot"
+  date_begin: "Data inizio"
+  date_end: "Data di fine"
+  date_t: "Data"
+  event_deletion_warning: "Sei sicuro di voler cancellare questo evento ?"
+  subscribe: "Registrazione"
+  sort_by: "Ordina per"
+  invite: "Invitare"
+  invite_user: "Invita un utente"
+  all: "Sconosciuto"
+
+  event_param: "Impostazioni evento"
+  event_date: "Data"
+  event_language: "Lingua"
+  event_numbers: "Problema"
+  event_street: "Strada"
+  event_code: "CAP"
+  event_city: "Città"
+  event_country: "Paesi"
+
+
+#/////////////////////////////////////////////////////////#
+# Mot clé pour la validation de l'age                     #
+#/////////////////////////////////////////////////////////#
+
+
+  birthdate_check: "Verifica di età"
+  validate: "Convalidare"
+  to_young: "L' utilizzo della piattaforma richiede un'età minima di 18 anni."
+  birthdate_validation_success: "La tua data di nascita è stato convalidato con successo"
+  birthdate_validation_fail: "Si è verificato un errore durante la convalida tua data di nascita"
+  birthdate_need_validation: "La tua data di nascita deve essere convalidato prima di procedere"
+
+
+#/////////////////////////////////////////////////////////#
+# AUTRES                                                  #
+#/////////////////////////////////////////////////////////#
+
+  yes: "Sì"
+  no: "No"
+  whatever: "Indifferente"
+  search: "Ricerca"
+
+  activerecord:
+      models:
+        user: "Utilizzatore"
+        country: "Paesi"
+      attributes:
+        user:
+          first_name: "Nome"
+          last_name: "Cognome"
+          birthdate: "Data di nascita"
+          gender: "Sesso"
+          admin: "Amministratore"
+          country_id: "Paesi"
+          password: "Password"
+          password_confirmation: "Verifica delle password"
+          current_password: "Password corrente"
+          forgotten_password: "Hai dimenticato la tua password?"
+        country:
+          name: "Nome"
+          language: "Lingua"
+          flag_path: "Bandiera"
+
+  date:
+    abbr_day_names:
+      - dom
+      - lun
+      - mar
+      - mer
+      - gio
+      - ven
+      - sab
+    abbr_month_names:
+      - ~
+      - gen.
+      - feb.
+      - mar.
+      - apr.
+      - mag
+      - giu
+      - lug.
+      - ago
+      - set.
+      - ott.
+      - nov.
+      - dic.
+    day_names:
+      - domenica
+      - lunedì
+      - martedì
+      - mercoledì
+      - giovedì
+      - venerdì
+      - sabato
+    formats:
+      default: "%d/%m/%Y"
+      short: "%e %b"
+      long: "%e %B %Y"
+    month_names:
+      - ~
+      - gennaio
+      - febbraio
+      - marzo
+      - aprile
+      - maggio
+      - giugno
+      - luglio
+      - agosto
+      - settembre
+      - ottobre
+      - novembre
+      - dicembre
+    order:
+      - :day
+      - :month
+      - :year
+
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one:   "environ une heure"
+        other: "environ %{count} heures"
+      about_x_months:
+        one:   "environ un mois"
+        other: "environ %{count} mois"
+      about_x_years:
+        one:   "environ un an"
+        other: "environ %{count} ans"
+      almost_x_years:
+        one:   "presqu'un an"
+        other: "presque %{count} ans"
+      half_a_minute: "une demi-minute"
+      less_than_x_minutes:
+        zero:  "zéro minute"
+        one:   "moins d'une minute"
+        other: "moins de %{count} minutes"
+      less_than_x_seconds:
+        zero:  "zéro seconde"
+        one:   "moins d'une seconde"
+        other: "moins de %{count} secondes"
+      over_x_years:
+        one:   "plus d'un an"
+        other: "plus de %{count} ans"
+      x_days:
+        one:   "1 jour"
+        other: "%{count} jours"
+      x_minutes:
+        one:   "1 minute"
+        other: "%{count} minutes"
+      x_months:
+        one:   "1 mois"
+        other: "%{count} mois"
+      x_seconds:
+        one:   "1 seconde"
+        other: "%{count} secondes"
+    prompts:
+      day:    "Jour"
+      hour:   "Heure"
+      minute: "Minute"
+      month:  "Mois"
+      second: "Seconde"
+      year:   "Année"
+
+  errors:
+    format: "%{attribute} %{message}"
+    messages: &errors_messages
+      accepted: "doit être accepté(e)"
+      blank: "doit être rempli(e)"
+      present: "doit être vide"
+      confirmation: "ne concorde pas avec la confirmation"
+      empty: "doit être rempli(e)"
+      equal_to: "doit être égal à %{count}"
+      even: "doit être pair"
+      exclusion: "n'est pas disponible"
+      greater_than: "doit être supérieur à %{count}"
+      greater_than_or_equal_to: "doit être supérieur ou égal à %{count}"
+      inclusion: "n'est pas inclus(e) dans la liste"
+      invalid: "n'est pas valide"
+      less_than: "doit être inférieur à %{count}"
+      less_than_or_equal_to: "doit être inférieur ou égal à %{count}"
+      not_a_number: "n'est pas un nombre"
+      not_an_integer: "doit être un nombre entier"
+      odd: "doit être impair"
+      record_invalid: "La validation a échoué : %{errors}"
+      restrict_dependent_destroy:
+        one: "Suppression impossible: un autre enregistrement est lié"
+        many: "Suppression impossible: d'autres enregistrements sont liés"
+      taken: "n'est pas disponible"
+      too_long:
+        one: "est trop long (pas plus d'un caractère)"
+        other: "est trop long (pas plus de %{count} caractères)"
+      too_short:
+        one: "est trop court (au moins un caractère)"
+        other: "est trop court (au moins %{count} caractères)"
+      wrong_length:
+        one: "ne fait pas la bonne longueur (doit comporter un seul caractère)"
+        other: "ne fait pas la bonne longueur (doit comporter %{count} caractères)"
+      other_than: "doit être différent de %{count}"
+    template: &errors_template
+      body: "Veuillez vérifier les champs suivants : "
+      header:
+        one:   "Impossible d'enregistrer ce(tte) %{model} : 1 erreur"
+        other: "Impossible d'enregistrer ce(tte) %{model} : %{count} erreurs"
+
+  helpers:
+    select:
+      prompt: "Veuillez sélectionner"
+    submit:
+      create: "Créer un(e) %{model}"
+      submit: "Enregistrer ce(tte) %{model}"
+      update: "Modifier ce(tte) %{model}"
+
+  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "€"
+    format:
+      delimiter: " "
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: "milliard"
+          million: "million"
+          quadrillion: "million de milliards"
+          thousand: "millier"
+          trillion: "billion"
+          unit: ""
+      format:
+        delimiter: ""
+        precision: 2
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one:   "octet"
+            other: "octets"
+          gb: "Go"
+          kb: "ko"
+          mb: "Mo"
+          tb: "To"
+    percentage:
+      format:
+        delimiter: ""
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ""
+
+  support:
+    array:
+      last_word_connector: " et "
+      two_words_connector: " et "
+      words_connector: ", "
+
+  time:
+    am: 'am'
+    formats:
+      default: "%d %B %Y %Hh %Mmin %Ss"
+      long: "%A %d %B %Y %Hh%M"
+      short: "%d %b %Hh%M"
+    pm: 'pm'

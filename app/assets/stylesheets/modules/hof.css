@@ -4,7 +4,6 @@
     background-color: #ffffff;
     width: 95%;
     margin-bottom: 25px;
-    border: 1px solid #EC6704;
 }
 
 #hof_module_title {
@@ -27,9 +26,9 @@
 
     background-color: #ffffff;
     height:30px;
-    -webkit-box-shadow: 0 4px 4px -2px #EC6704;
-    -moz-box-shadow: 0 4px 4px -2px #EC6704;
-    box-shadow: 0 4px 4px -2px #EC6704;
+    -webkit-box-shadow: 0 4px 4px -2px#ecf0f1;
+    -moz-box-shadow: 0 4px 4px -2px #ecf0f1;
+    box-shadow: 0 4px 4px -2px #ecf0f1;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
     color:#333333;
 
@@ -42,7 +41,7 @@
     width: 33.33%;
     border-left:1px solid #ffffff;
     text-align:center;
-    border-top:1px solid #EC6704;
+    border-top:1px solid #ecf0f1;
     cursor:pointer;
 
 }
@@ -66,7 +65,7 @@
 }
 
 .hof_module_row {
-    border-top:1px solid #EC6704;
+    border-top:1px solid #ecf0f1;
     background-color: #ffffff;
 }
 
@@ -79,7 +78,7 @@
 .hof_module_name {
     width:60%;
     padding:5px;
-    border-right:1px solid #EC6704;
+    border-right:1px solid #ecf0f1;
 }
 .hof_module_stars {
     width:30%;

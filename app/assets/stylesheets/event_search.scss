@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat+Alternates);
 
 .eventSearch_body {
-background-color: #F2EFEA;
+  background: #EA6720 image_url('event_search_background.png') no-repeat center center fixed;
 }
 
 .eventSearch_h1 {
@@ -9,7 +9,7 @@ background-color: #F2EFEA;
   border: solid 1px #27ae60;
 
   text-align: center;
-  text-shadow: -1px 1px #417cb8;
+  text-shadow: -1px 1px #27ae60;
   color: #E6F2EF;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 

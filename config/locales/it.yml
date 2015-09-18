@@ -76,6 +76,7 @@ it:
 #/////////////////////////////////////////////////////////#
 
 
+  dashboard: "Dashboard"
   home: "Benvenuto"
   my_account: "Il mio conto"
   events: "eventi"

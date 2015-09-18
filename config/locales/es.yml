@@ -76,6 +76,7 @@ es:
 #/////////////////////////////////////////////////////////#
 
 
+  dashboard: "Dashboard"
   home: "Recepción"
   my_account: "Mi cuenta"
   events: "Eventos"

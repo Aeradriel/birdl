@@ -6,9 +6,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable,
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
-  ratyrate_rateable 'global'
-  ratyrate_rater
-
   belongs_to :country
   has_many :received_messages, foreign_key: :receiver_id, class_name: 'Message'
   has_many :sent_messages, foreign_key: :sender_id, class_name: 'Message'
@@ -39,12 +36,12 @@ class User < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
 
-  def rating
-    sum = 0
-    ratings.each do |r|
-      sum += r.value
+  def organized_events
+    events = []
+    self.events.each do |e|
+      arr << e if e.owner == self
     end
-    sum / ratings.count
+    events
   end
 
   def fill(email, password, first_name, last_name)

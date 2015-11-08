@@ -11,12 +11,12 @@ class User < ActiveRecord::Base
   has_many :sent_messages, foreign_key: :sender_id, class_name: 'Message'
   has_many :achievements
   has_many :participations
-  has_many :ratings, foreign_key: :user_id,
-           class_name: 'UserRating'
-  has_many :given_ratings, foreign_key: :giver_id,
-           class_name: 'UserRating'
   has_many :badges, through: :achievements
   has_many :events, through: :participations
+  has_many :ratings
+  has_many :given_ratings, foreign_key: :giver_id, class_name: 'Rating'
+  # has_many :org_events, -> { where(events: { owner_id: 27 }) },
+  # through: :participations, :class_name => "Event", :source => :event
   has_many :addresses
 
   scope :admins, -> { where(admin: true) }
@@ -36,10 +36,14 @@ class User < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
 
+  def average_rating
+    ratings.inject(0) { |a, e| a + e.value } / ratings.size
+  end
+
   def organized_events
     events = []
     self.events.each do |e|
-      arr << e if e.owner == self
+      events << e if e.owner == self
     end
     events
   end

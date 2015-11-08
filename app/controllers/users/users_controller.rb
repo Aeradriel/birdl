@@ -4,9 +4,9 @@ module Users
     before_action :set_user
 
     def rate
-      @common_events = Event.all.to_a
-      @common_events.each do |e|
-        @common_events.delete(e) unless e.users.include?(@user) && e.users.include?(current_user)
+      @common_events = Event.all
+      @common_events.reject do |e|
+        e.users.include(current_user) && e.users.include(@user)
       end
     end
 

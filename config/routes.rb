@@ -58,7 +58,8 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/users/:user_id/rate' => 'users/users#rate', as: :user_rating
+  get '/users/:user_id' => 'users/users#show'
+  post '/users/:user_id/rate' => 'users/users#rate', as: :user_rating
   get '/check_birthdate' => 'information_checker#validate_birthdate',
       as: :birthdate_validation_path
   post '/check_birthdate' => 'information_checker#check_birthdate'

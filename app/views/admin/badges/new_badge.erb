@@ -1,0 +1,24 @@
+<h2><%= t(:new_badge) %></h2>
+
+<%= form_for @badge, :url => {action: 'create'}, :html => {:method => 'post', :multipart => true} do |f| %>
+    <table class="table_paneladmin">
+      <tr>
+        <td><%= f.label :name %></td>
+        <td><%= f.text_field :name %><br/></td>
+      </tr>
+      <tr>
+        <td><%= f.label :identifier %></td>
+        <td><%= f.text_field :identifier %><br/></td>
+      </tr>
+      <tr>
+        <td><%= f.label :icon_path %></td>
+        <td><%= f.file_field :icon_path %><br/></td>
+      </tr>
+      <tr>
+        <td><%= f.label :description %></td>
+        <td><%= f.text_area :description %><br/></td>
+      </tr>
+    </table>
+    <a class="btn btn-warning btn-mini icon-white icon-remove edit_button" href="/admin/badges"><%= t(:cancel) %></a>
+    <%= f.submit t(:create), :id => 'new_submit', :class => 'btn btn-success btn-mini icon-white icon-remove edit_button'%>
+<% end %>

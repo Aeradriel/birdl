@@ -1,18 +1,15 @@
+<div class="col-md-12 title-ftf-page">Face-to-Face</div>
+
+<div class="col-md-2"></div>
 <div class="col-md-8 left-column search-event-block search-event-container">
   <div class="col-md-12 search-event">
     <h4 class="search-event-title search-event-title-one"><%= @event.name %></h4>
   </div>
 
   <!-- Photo de couverture de l'event en background de ce div-->
-  <div class="col-md-12 event-cover-picture">
-  </div>
 
 
   <div class="col-md-12 display-events">
-    <div class="event-image-container col-md-3">
-      <!-- La background image du div ci dessous correspond à l'image de l'évenement-->
-      <div class="event-image col-md-12" background-image="url(http://assets3.parliament.uk/iv/main-large//ImageVault/Images/id_7382/scope_0/ImageVaultHandler.aspx.jpg)"></div>
-    </div>
     <div class="event-infos-container col-md-4">
       <div class="col-md-12"><%= @event.date %></div>
       <div class="col-md-12"><%= @event.location %></div>
@@ -24,6 +21,7 @@
       <div class="col-md-6"></div>
       <a class="col-md-6 event-page-button invite-user-button"><%= t(:subscribe) %></a>
     </div>
+    <div class="col-md-3"></div>
     <div class="col-md-5 event-container">
       <h5 class="col-md-12 search-event-title search-event-title-one event-owner-title">
         <%= t(:event_owner) %> :<br/><strong><%= @event.owner.name %></strong>

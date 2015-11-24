@@ -2,6 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+html {
+	background-color: rgb(242, 239, 234);
+}
+
+.title-ftf-page {
+	text-align:center;
+	color:white;
+	background-color:#2ecc71;
+	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+	font-size: 36px;
+	font-weight: 500;
+	padding:15px;
+	margin-top:-20px;
+	margin-bottom:10px;
+	text-shadow: rgb(65, 124, 184) -1px 1px 0px;
+}
+
+
 .search-event-block
 {
 	border-radius: 5px;
@@ -9,22 +27,26 @@
  	-moz-border-radius: 5px;
   	-ms-border-radius: 5px;
   	-o-border-radius: 5px;
+  	border:1px solid #2ecc71;
+  	background-color:#F5F5F5;
+  	color:#2ecc71;
 }
 
 .search-event
 {
-	background-color: #cc324b;
-	#padding: 10px;
+	padding: 10px;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	-webkit-border-top-left-radius: 5px;
 	-webkit-border-top-right-radius: 5px;
 	-moz-border-top-left-radius: 5px;
 	-moz-border-top-right-radius: 5px;
-	color: #333333;
+	color: #2ecc71;;
 	#margin-bottom: 0px;
 	text-align: center;
 	padding-bottom:0px;
+	border-bottom:#2ecc71;
+
 }
 
 .search-event-input
@@ -39,11 +61,7 @@
 	margin-bottom:0px;
 	padding-bottom:5px;
 	text-align:left;
-}
-
-.search-event-title-one
-{
-	border-bottom: 1px solid #ae324b;
+	border-bottom:1px solid #2ecc71;
 }
 
 .search-event-param
@@ -139,16 +157,12 @@
 
 .display-events
 {
-	background-color: #394264;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
 	-webkit-border-bottom-left-radius: 5px;
 	-webkit-border-bottom-right-radius: 5px;
 	-moz-border-bottom-left-radius: 5px;
 	-moz-border-bottom-right-radius: 5px;
-	webkit-box-shadow: 0 4px 4px -2px #21263C inset;
-	-moz-box-shadow: 0 4px 4px -2px #21263C inset;
-	box-shadow: 0 4px 4px -2px #21263C inset;
 	padding-top:10px;
 }
 
@@ -159,14 +173,11 @@
 
 .event-container
 {
-	background-color: #cc324b;
+	border:1px solid #2ecc71;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
-	color: #333333;
-	webkit-box-shadow: 0 4px 4px -2px #21263C;
-	-moz-box-shadow: 0 4px 4px -2px #21263C;
-	box-shadow: 0 4px 4px -2px #21263C;
+	color: #2ecc71;
 	padding-bottom:10px;
 	padding-top:10px;
 	margin-bottom:10px;
@@ -235,19 +246,21 @@
 
 .invite-user-button
 {
-	background-color: #cc324b;
+	background-color: #2ecc71;;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
-	color: #333333;
-	webkit-box-shadow: 0 4px 4px -2px #21263C;
-	-moz-box-shadow: 0 4px 4px -2px #21263C;
-	box-shadow: 0 4px 4px -2px #21263C;
+	color: white;
 	padding:5px;
 	text-align:center;
 	margin-left:10px;
 	height:30px;
 }
+
+.invite-user-button:hover {
+	cursor:pointer;
+}
+
 
 .event-page-button :hover
 {
@@ -287,16 +300,10 @@
 .event-owner-title
 {
 	margin-bottom:10px;
-	border-bottom:1px solid #343C5B;
+	border-bottom:1px solid #2ecc71;
 }
 
 .event-page-image
 {
 	margin-bottom:10px;
-}
-
-.user-rating-comment
-{
-	background-color:#394264;
-	border: 1px solid #343C5B;
 }

@@ -25,4 +25,13 @@ module AdminHelper
     return prms if File.open(path, 'wb') { |f| f.write(flag_path.read) }.nil?
     false
   end
+
+  def save_badge_icon(prms, icon_path)
+    name = icon_path.original_filename
+    directory = 'public/images/badges'
+    path = File.join(directory, name)
+    prms[:icon_path] = path
+    return prms if File.open(path, 'wb') { |f| f.write(icon_path.read) }.nil?
+    false
+  end
 end

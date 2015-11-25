@@ -20,7 +20,7 @@
           <td class="country_name"><span><%= badge.name %></span></td>
           <td class="country_language"><%= badge.identifier %></td>
           <td class="country_language"><%= badge.description %></td>
-          <td class="country_flag_path"><%= image_tag "/#{badge.icon_path}" %> <%= badge.icon_path %></td>
+          <td class="country_flag_path"><%= image_tag "/#{badge.icon_path}" if badge.icon_path %> <%= badge.icon_path %></td>
           <td class="country_action">
             <%= link_to t(:edit), "/admin/badges/#{badge.id}/edit",
                         :class => 'btn btn-warning btn-mini icon-white icon-remove admin_edit_button' %>

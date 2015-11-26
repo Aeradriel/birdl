@@ -8,63 +8,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav class="mainNavbar" role="navigation">
-  <div class="container">
-    <div class="collapse navbar-collapse navHeaderCollapse">
-      <ul class="nav navbar-nav navbar-left">
-        <li class="dropdown">
-          <% if user_signed_in? %>
-                <li><%= link_to t(:home), '/', :class => 'navbar-link linkNavbar',
-                                :id => 'home_link' %></li>
-                <li class="linkNavbar">|</li>
-                <li><%= link_to t(:my_account), edit_user_registration_path, :class => 'navbar-link linkNavbar',
-                                :id => 'profile_link' %></li>
-                <li class="linkNavbar">|</li>
-                <li><%= link_to t(:events), events_path, :class => 'navbar-link linkNavbar',
-                                :id => 'events_link' %></li>
-                <li class="linkNavbar">|</li>
-                <% if current_user.admin %>
-                    <li><%= link_to t(:admin), '/admin', :class => 'navbar-link linkNavbar',
-                                    :id => 'admin_link' %></li>
-                    <li class="linkNavbar">|</li>
-                <% end %>
-                <li><%= link_to t(:disconnect), destroy_user_session_path, method: :delete,
-                                :class => 'navbar-link logout linkNavbar', :id => 'logout_link' %></li>
-            <% else %>
-                <li><%= link_to t(:sign_up_caps), new_user_registration_path, :class => 'navbar-link linkNavbar',
-                                :id => 'signup_link' %></li>
-                <li class="linkNavbar">|</li>
-                <li><%= link_to t(:sign_in_caps), new_user_session_path, :class => 'navbar-link linkNavbar',
-                                :id => 'signin_link' %></li>
-          <% end %>
-        </li>
-      </ul>
-    
-      <ul class="nav navbar-nav navbar-right">
-
-          <div class="dropdown">
-            <button class="selector_button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-              <div class="selector_icon"><img src="/images/flags/<%= flag(I18n.locale) %>"/></div>
-              <div class="selector_text"><%= I18n.locale %></div>
-            </button>
-
-            <ul style="width: 50px !important;"  class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-              <% Country.where(available: true).each do |country| %>
-                  <li role="presentation" onclick="location.href = '/change_locale/<%= country.i18n_key %>'">
-                    <div class="selector_line">
-                      <div class="selector_nicon"><img src="/images/flags/<%= country.name %>.ico"/></div>
-                      <div class="selector_ntext"><%= country.i18n_key %></div>
-                      <div style="clear: both;"></div>
-                    </div>
-                  </li>
-              <% end %>
-            </ul>
-          </div>
-
-      </ul>
-    </div>
-  </div>
-</nav>
 
 <% if flash[:alert] %>
     <div class="alert alert-danger alert-dismissible" role="alert">
@@ -80,6 +23,52 @@
 <% end %>
 
 <% if admin_controller? %>
+    <nav class="navbar navbar-new" role="navigation">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse navbar-right" id="navbar1">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <li><%= link_to t(:home), '/', :class => 'navbar-link linkNavbar',
+                                :id => 'home_link' %></li>
+                <li><%= link_to t(:my_account), edit_user_registration_path, :class => 'navbar-link linkNavbar',
+                                :id => 'profile_link' %></li>
+                <li><%= link_to t(:events), events_path, :class => 'navbar-link linkNavbar',
+                                :id => 'events_link' %></li>
+                <% if current_user.admin %>
+                    <li class="active"><%= link_to t(:admin), '/admin', :class => 'navbar-link linkNavbar',
+                                    :id => 'admin_link' %></li>
+                <% end %>
+                <li><%= link_to t(:disconnect), destroy_user_session_path, method: :delete,
+                                :class => 'navbar-link logout linkNavbar', :id => 'logout_link' %></li>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+
+            <div class="dropdown">
+              <button class="selector_button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                <div class="selector_icon"><img src="/images/flags/<%= flag(I18n.locale) %>"/></div>
+                <div class="selector_text"><%= I18n.locale %></div>
+              </button>
+
+              <ul style="width: 50px !important;"  class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <% Country.where(available: true).each do |country| %>
+                    <li role="presentation" onclick="location.href = '/change_locale/<%= country.i18n_key %>'">
+                      <div class="selector_line">
+                        <div class="selector_nicon"><img src="/images/flags/<%= country.name %>.ico"/></div>
+                        <div class="selector_ntext"><%= country.i18n_key %></div>
+                        <div style="clear: both;"></div>
+                      </div>
+                    </li>
+                <% end %>
+              </ul>
+            </div>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <div class="row clearfix" id="admin_container">
       <div class="col-md-12 column">
         <div class="row clearfix">

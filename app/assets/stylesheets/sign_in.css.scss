@@ -25,7 +25,8 @@
 }
 
 #LoginBody {
-  background: white image_url('signin_background.jpg') no-repeat center center fixed;
+  width: 100%;
+  background: image_url('signin_background.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -120,6 +121,7 @@
 }
 
 .link_login{
+  width: 100%;
   text-align: center;
 }
 

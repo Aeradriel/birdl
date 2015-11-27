@@ -98,9 +98,9 @@
   background-color: #e67e22;
 }
 
-.login_links {
-  margin-top: 7px;
-  margin-left: -16px;
+.login-link-div
+{
+  margin: auto;
   background-color: #E54022;
   background-position: center;
   border: solid 1px #E54022;
@@ -114,6 +114,11 @@
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
   color: rgba(250,255,253,1);
   font-weight: initial;
+}
+
+.login_links
+{
+  vertical-align: middle;
 }
 
 .login_links:visited {

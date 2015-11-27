@@ -4,12 +4,16 @@
 
 <%- if devise_mapping.omniauthable? %>
     <%- resource_class.omniauth_providers.each do |provider| %>
-        <%= link_to "#{t(:sign_in_with)} #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider),
-                    class: 'login_links fa fa-arrow-right fa-1x' %><br />
+        <div class="login-link-div">
+          <%= link_to "#{t(:sign_in_with)} #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider),
+                      class: 'login_links fa fa-arrow-right fa-1x' %>
+        </div>
     <% end -%>
 <% end -%>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-    <%= link_to t(:confirmation_instructions), new_confirmation_path(resource_name),
-                class: 'login_link', id: 'email_confirmation_link' %><br />
+    <div>
+      <%= link_to t(:confirmation_instructions), new_confirmation_path(resource_name),
+                  class: 'login_link', id: 'email_confirmation_link' %><br />
+    </div>
 <% end -%>

@@ -1,5 +1,50 @@
 <body class="eventSearch_body">
-<h1 class="eventSearch_h1"><%= t(:search_event) %></h1>
+
+<nav class="navbar navbar-new" role="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse navbar-right" id="navbar1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+            <li><%= link_to t(:home), '/', :class => 'navbar-link linkNavbar',
+                            :id => 'home_link' %></li>
+            <li><%= link_to t(:my_account), edit_user_registration_path, :class => 'navbar-link linkNavbar',
+                            :id => 'profile_link' %></li>
+            <li class="active"><%= link_to t(:events), events_path, :class => 'navbar-link linkNavbar',
+                            :id => 'events_link' %></li>
+            <% if current_user.admin %>
+                <li><%= link_to t(:admin), '/admin', :class => 'navbar-link linkNavbar',
+                                :id => 'admin_link' %></li>
+            <% end %>
+            <li><%= link_to t(:disconnect), destroy_user_session_path, method: :delete,
+                            :class => 'navbar-link logout linkNavbar', :id => 'logout_link' %></li>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <div class="dropdown">
+          <button class="selector_button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+            <div class="selector_icon"><img src="/images/flags/<%= flag(I18n.locale) %>"/></div>
+            <div class="selector_text"><%= I18n.locale %></div>
+          </button>
+
+          <ul style="width: 50px !important;"  class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <% Country.where(available: true).each do |country| %>
+                <li role="presentation" onclick="location.href = '/change_locale/<%= country.i18n_key %>'">
+                  <div class="selector_line">
+                    <div class="selector_nicon"><img src="/images/flags/<%= country.name %>.ico"/></div>
+                    <div class="selector_ntext"><%= country.i18n_key %></div>
+                    <div style="clear: both;"></div>
+                  </div>
+                </li>
+            <% end %>
+          </ul>
+        </div>
+
+      </ul>
+    </div>
+  </div>
+</nav>
 
 <%= form_tag action: :search_result do %>
     <div class="eventSearch_field" id="searchform">
@@ -13,10 +58,10 @@
     <div class="adv-search-div">
       <table class="eventSearch_table_radio">
         <tr>
-          <td><div class="eventSearch_div"><%= radio_button_tag :past_events, false, checked: true %>
-            <%= label_tag :past_events_false, t(:future_events), :class => 'eventSearch_label' %></div></td>
           <td><div class="eventSearch_div"><%= radio_button_tag :past_events, true %>
             <%= label_tag :past_events_true, t(:past_events), :class => 'eventSearch_label' %></div></td>
+          <td><div class="eventSearch_div"><%= radio_button_tag :past_events, false, checked: true %>
+            <%= label_tag :past_events_false, t(:future_events), :class => 'eventSearch_label' %></div></td>
         </tr>
       </table><br />
       <table class="eventSearch_table_event">

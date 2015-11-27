@@ -5,7 +5,7 @@
         TODO: Faire un récapitulatif des événements par type (F2F, Group...)
     -->
     <p>
-      Vous avez <%= @common_events.count %> événement en commun avec cet utilisateur :
+      Vous avez <%= @common_events.count %> événements en commun avec ce membre :
     </p>
     <ul>
       <% @common_events.each do |e| %>
@@ -13,5 +13,5 @@
       <% end %>
     </ul>
 
-    <p>Veillez notez cet utilisateur selon l'expérience que vous avez eu avec lui pendant ces événements</p>
+    <p>Notez ce membre en fonction de vos expériences</p>
 </body>

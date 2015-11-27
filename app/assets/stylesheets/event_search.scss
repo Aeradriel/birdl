@@ -4,18 +4,6 @@
   background: #EA6720 image_url('event_search_background.png') no-repeat center center fixed;
 }
 
-.eventSearch_h1 {
-  background-color: #27ae60;
-  border: solid 1px #27ae60;
-
-  text-align: center;
-  text-shadow: -1px 1px #27ae60;
-  color: #E6F2EF;
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-
-  padding: 20px;
-  margin-top: -20px;
-}
 
 .eventSearch_field {
   display:flex;
@@ -340,6 +328,7 @@ select#event_type > span::after {
 }
 
 .adv-search-div {
+  background-color: #E6F2EF;
   margin: auto;
   width: 63%;
   max-width: 65%;

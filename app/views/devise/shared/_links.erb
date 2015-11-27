@@ -12,7 +12,7 @@
 <% end -%>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-    <div class="login-link-div">
+    <div>
       <%= link_to t(:confirmation_instructions), new_confirmation_path(resource_name),
                   class: 'login_link', id: 'email_confirmation_link' %><br />
     </div>

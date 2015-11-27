@@ -31,31 +31,58 @@
   float: right;
 }
 
-.mainNavbar {
-  margin-bottom: 20px;
+/*
+*****************
+* NAVBAR CSS
+*****************
+*/
+
+.navbar {
+  border-radius: 0;
 }
 
-.linkNavbar, .linkNavbar:visited {
-  padding-top: 15px;
-  text-align: center;
-  color: #EA6720;
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-
-  font-size: 15px;
+.navbar-new {
+  background-color: rgba(236,95,25, .8);
+  border-color: rgba(243,133,32, .8);
 }
 
-.nav-container {
-  background-color: #f5f5f5;
+.navbar-new .navbar-brand,
+.navbar-new .navbar-brand:hover,
+.navbar-new .navbar-brand:focus {
+  color: #FFF;
 }
 
-.nav-sub-container {
-  background-color: #f8f8f8;
-  font-weight: bold;
-  cursor: pointer;
+.navbar-new .navbar-nav > li > a {
+  color: #FFF;
 }
 
-ul.nav-stacked ul.nav-stacked > li > a {
-  padding-left: 30px;
+.navbar-new .navbar-nav > li > a:hover,
+.navbar-new .navbar-nav > li > a:focus {
+  background-color: rgba(243,133,32, .8);
+}
+
+.navbar-new .navbar-nav > .active > a,
+.navbar-new .navbar-nav > .active > a:hover,
+.navbar-new .navbar-nav > .active > a:focus {
+  color: #FFF;
+  background-color: rgba(243,133,32, .8);
+}
+
+.navbar-new .navbar-text {
+  color: #FFF;
+}
+
+.navbar-new .navbar-toggle {
+  border-color: rgba(243,133,32, .8);
+}
+
+.navbar-new .navbar-toggle:hover,
+.navbar-new .navbar-toggle:focus {
+  background-color: rgba(243,133,32, .8);
+}
+
+.navbar-new .navbar-toggle .icon-bar {
+  background-color: #FFF;
 }
 
 .content {
@@ -348,9 +375,9 @@ ul.nav-stacked ul.nav-stacked > li > a {
 
 .selector_button {
   background-color: transparent;
-  color: #EA6720;
+  color: #ffffff;
   background-position: center;
-  border: solid 0px #EA6720;
+  border: solid 0px #ffffff;
   max-width: 100%;
   height: 40px;
   width: 70px;
@@ -359,12 +386,13 @@ ul.nav-stacked ul.nav-stacked > li > a {
   line-height: 12px;
   font-size: 15px;
   margin-top: 5px;
+  margin-left: 5px;
 }
 
 .selector_button:hover {
   background-color: transparent;
-  color: #e67e22;
+  color: #ffffff;
   background-position: center;
-  border: solid 0px #e67e22;
+  border: solid 0px #ffffff;
   height: 40px;
 }

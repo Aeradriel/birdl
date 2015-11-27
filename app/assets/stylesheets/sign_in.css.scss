@@ -48,28 +48,27 @@
 /* ---------- LOGIN ---------- */
 
 #login {
-  margin: 0px auto;
-  width: 400px;
+  margin: auto;
+  width: 328px;
 }
 
-#login h2 {
+#login img {
   color: #fff;
   font-size: 28px;
-  padding: 20px 26px;
+  padding: 20px 0 20px 0;
   margin: 0;
 }
 
-#login h2 span[class*="fontawesome-"] {
+#login img span[class*="fontawesome-"] {
   margin-right: 14px;
 }
 
 #login fieldset {
-  padding: 20px 26px;
+  padding: 20px 0 0 0;
 }
 
 #login fieldset p {
   color: #777;
-  margin-bottom: 14px;
 }
 
 #login fieldset p:last-child {
@@ -80,7 +79,7 @@
   background-color: #eee;
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
   color: #777;
-  padding: 4px 10px;
+  padding: 4px 0 0 0;
   width: 328px;
   height: 43px;
 }
@@ -89,8 +88,8 @@
   background-color: #EA6720;
   color: #fff;
   display: block;
-  margin: 0 auto;
-  padding: 4px 0;
+  float: right;
+  padding: 4px;
   width: 100px;
 }
 
@@ -107,7 +106,6 @@
   height: 40px;
   padding: 10px;
   font-size: 15px;
-  line-height: 0px;
   text-align: center;
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
   color: rgba(250,255,253,1);
@@ -116,7 +114,7 @@
 
 .login_links
 {
-  vertical-align: middle;
+  vertical-align: text-top;
   color: white;
 }
 
@@ -127,6 +125,7 @@
 
 .login_links:hover {
   background-color: #e67e22;
+  color: white;
 }
 
 .link_login{
@@ -146,7 +145,6 @@
   padding: 10px;
   display: inline;
   font-size: 15px;
-  line-height: 0px;
   text-align: center;
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
   color: rgba(250,255,253,1);

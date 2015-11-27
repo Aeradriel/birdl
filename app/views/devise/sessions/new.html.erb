@@ -41,7 +41,7 @@
 </nav>
 
   <div id="login">
-    <h2><%= image_tag('logo_birdl_HD.png', :class =>'logo') %></h2>
+    <%= image_tag('logo_birdl_HD.png', :class =>'logo') %>
     
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     
@@ -53,7 +53,7 @@
       <p><span class="input"><%= f.password_field :password, :id => 'user_password', :class => 'user_password',
           :placeholder => t(:password) %></span></p>
 
-      <p style="margin-right: 19px"><%= f.submit t(:sign_in), :id => 'login_submit', :class => 'login_button' %></p>
+      <%= f.submit t(:sign_in), :id => 'login_submit', :class => 'login_button' %>
       <input class="pwd_button" type="button" onclick="location.href='users/password/new'"
              value="<%= t(:'activerecord.attributes.user.forgotten_password') %>"/>
       

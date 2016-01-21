@@ -15,6 +15,7 @@ module Events
       if can_register?(@event, current_user)
         @event.users << current_user
         if @event.save
+          Notification.create(user_id: event.owner.id, text: "#{@current_user.name} has joined your event \"#{event.name}\"")
           redirect_to action: 'show', notice: 'Vous êtes maintenant inscrit à cet événement'
         else
           redirect_to action: 'show', alert: 'Une erreur est survenue lors de votre inscription.'\

@@ -63,7 +63,7 @@ Rails.application.routes.draw do
       post '/new' => 'badges#create'
       get '/:badge_id/edit' => 'badges#edit'
       patch '/:badge_id' => 'badges#update'
-      delete '/:badge_id' => 'badges#destroy'
+      delete '/:badge_id' => 'badges#delete'
     end
   end
 

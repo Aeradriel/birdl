@@ -1,0 +1,58 @@
+de:
+  devise:
+    confirmations:
+      confirmed: "Ihre E-Mail wurde erfolgreich bestätigt."
+      send_instructions: "Sie erhalten eine E-Mail mit anweisungen erhalten, um ihre E-Mail adresse innerhalb von minuten zu bestätigen."
+      send_paranoid_instructions: "Wenn Ihre E-Mail adresse in unserer datenbank vorhanden ist , werden Sie eine E-Mail mit anweisungen erhalten, um ihre E-Mail adresse innerhalb von minuten zu bestätigen."
+    failure:
+      already_authenticated: "Sie sind bereits angemeldet."
+      inactive: "Ihr Konto ist noch nicht aktiviert."
+      invalid: "Ungültige E-Mail oder Passwort."
+      locked: "Ihr Konto wird gesperrt."
+      last_attempt: "Sie haben einen letzten Versuch , bevor Ihr Konto gesperrt."
+      not_found_in_database: "Ungültige E-Mail oder Passwort."
+      timeout: "Ihre Sitzung ist abgelaufen.Bitte melden Sie sich erneut, um fortzufahren."
+      unauthenticated: "Sie müssen sich an oder registrieren, bevor Sie fortfahren."
+      unconfirmed: "Sie müssen Ihre E-Mail zu bestätigen, bevor Sie fortfahren."
+    mailer:
+      confirmation_instructions:
+        subject: "Anleitung Bestätigung"
+      reset_password_instructions:
+        subject: "Passwort Reset Anweisungen"
+      unlock_instructions:
+        subject: "Anleitung Release"
+    omniauth_callbacks:
+      failure: "Nicht in der Lage , um von zu authentifizieren %{kind} wegen \"%{reason}\"."
+      success: "Erfolgreicher authentifizierung von einem konto %{kind}."
+    passwords:
+      no_token: "Sie können diese Seite nicht zugreifen, von einer excpté E-Mail- Passwort-Reset . Wenn Sie von einer E-Mail- Passwort-Reset kommt, sicherzustellen, dass Sie die URL in voller zu verwenden."
+      send_instructions: "Sie erhalten eine E-Mail mit anweisungen, wie Sie Ihr passwort in wenigen Minuten erhalten zurückgesetzt."
+      send_paranoid_instructions: "Wenn Ihre E-Mail adresse in unserer datenbank vorhanden ist , werden Sie einen Passwort Reset Link zu Ihrer E-Mail -Adresse innerhalb weniger Minuten erhalten."
+      updated: "Ihr Passwort wurde erfolgreich geändert. Sie sind jetzt verbunden."
+      updated_not_active: "Ihr Passwort wurde erfolgreich geändert."
+    registrations:
+      destroyed: "Auf wiedersehen! Ihr konto wurde erfolgreich gelöscht. wir hoffen, Sie bald zu sehen."
+      signed_up: "Herzlich Willkommen! Sie sind erfolgreich registriert."
+      signed_up_but_inactive: "Sie sind erfolgreich registriert . Cepenedant , können Sie sich nicht anmelden, da Ihr Konto noch nicht aktiviert."
+      signed_up_but_locked: "Sie sind erfolgreich registriert . Allerdings können Sie sich nicht anmelden , weil Ihr Konto gesperrt."
+      signed_up_but_unconfirmed: "Eine Nachricht mit einem Bestätigungslink wurde an Ihre E-Mail- Adresse gesendet. Bitte folgen Sie dem Link, um Ihr Konto zu aktivieren."
+      update_needs_confirmation: "Ihr Konto wurde erfolgreich aktualisiert , aber wir brauchen, um Ihre neue Emailadresse. Bitte überprüfen Sie ihre E-Mail und folgen Sie den bestätigungs-Link zu Ihrer neuen E-Mail adresse zu bestätigen."
+      updated: "Dein Konto wurde erfolgreich aktualisiert"
+    sessions:
+      signed_in: "Sie sind erfolgreich angeschlossen."
+      signed_out: "Sie sind erfolgreich getrennt."
+      already_signed_out: "Sie sind erfolgreich getrennt."
+    unlocks:
+      send_instructions: "Sie erhalten eine E-Mail mit Anweisungen zu erhalten , um Ihr Konto in wenigen Minuten entsperren."
+      send_paranoid_instructions: "Wenn Ihr konto vorhanden ist, eine E-Mail erhalten Sie den anweisungen , um Ihr konto in wenigen Minuten entsperren."
+      unlocked: "Ihr Konto wurde erfolgreich freigeschaltet. Bitte einloggen, um fortzufahren."
+  errors:
+    messages:
+      already_confirmed: "wurde bereits bestätigt. Bitte versuchen Sie sich anzumelden."
+      confirmation_period_expired: "muss in bestätigt werden %{period}, fordern Sie bitte eine neue"
+      expired: "abgelaufen ist, fordern Sie bitte eine neue"
+      not_found: "Not Found"
+      not_locked: "nicht blockiert"
+      not_saved:
+        one: "1 Fehler dies verhindert %{resource} gespeichert werden sollen :"
+        other: "%{count} Fehler, die verhindert, %{resource} gespeichert werden sollen :"

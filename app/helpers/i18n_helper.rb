@@ -1,7 +1,7 @@
 # Helpers for traductions
 module I18nHelper
   def flag(locale)
-    flags = { fr: 'France.ico', en: 'United-States.ico', es: 'Spain.ico' }
+    flags = { fr: 'France.ico', en: 'United-States.ico', es: 'Spain.ico', de: 'Germany.ico', it: 'Italy.ico' }
     flags[locale]
   end
 

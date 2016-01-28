@@ -24,7 +24,7 @@
           <td class="country_action">
             <%= link_to t(:edit), "/admin/badges/#{badge.id}/edit",
                         :class => 'btn btn-warning btn-mini icon-white icon-remove admin_edit_button' %>
-            <%= link_to t(:delete), "/admin/badges/#{badge.id}/delete", :method => :delete,
+            <%= link_to t(:delete), "/admin/badges/#{badge.id}", :method => :delete,
                         :class => 'btn btn-danger btn-mini icon-white icon-remove admin_delete_button',
                         :data => { :confirm => 'Delete' } %>
           </td>

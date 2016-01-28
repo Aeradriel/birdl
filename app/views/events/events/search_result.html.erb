@@ -1,69 +1,71 @@
-<nav class="navbar navbar-new" role="navigation">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse navbar-right" id="navbar1">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-            <li><%= link_to t(:home), '/', :class => 'navbar-link linkNavbar',
-                            :id => 'home_link' %></li>
-            <li><%= link_to t(:my_account), edit_user_registration_path, :class => 'navbar-link linkNavbar',
-                            :id => 'profile_link' %></li>
-            <li class="active"><%= link_to t(:events), events_path, :class => 'navbar-link linkNavbar',
-                            :id => 'events_link' %></li>
-            <% if current_user.admin %>
-                <li><%= link_to t(:admin), '/admin', :class => 'navbar-link linkNavbar',
-                                :id => 'admin_link' %></li>
-            <% end %>
-            <li><%= link_to t(:disconnect), destroy_user_session_path, method: :delete,
-                            :class => 'navbar-link logout linkNavbar', :id => 'logout_link' %></li>
-        </li>
-      </ul>
+<body class="eventSearchResult_body">
+  <nav class="navbar navbar-new" role="navigation">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse navbar-right" id="navbar1">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+              <li><%= link_to t(:home), '/', :class => 'navbar-link linkNavbar',
+                              :id => 'home_link' %></li>
+              <li><%= link_to t(:my_account), edit_user_registration_path, :class => 'navbar-link linkNavbar',
+                              :id => 'profile_link' %></li>
+              <li class="active"><%= link_to t(:events), events_path, :class => 'navbar-link linkNavbar',
+                              :id => 'events_link' %></li>
+              <% if current_user.admin %>
+                  <li><%= link_to t(:admin), '/admin', :class => 'navbar-link linkNavbar',
+                                  :id => 'admin_link' %></li>
+              <% end %>
+              <li><%= link_to t(:disconnect), destroy_user_session_path, method: :delete,
+                              :class => 'navbar-link logout linkNavbar', :id => 'logout_link' %></li>
+          </li>
+        </ul>
 
-      <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right">
 
-        <div class="dropdown">
-          <button class="selector_button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-            <div class="selector_icon"><img src="/images/flags/<%= flag(I18n.locale) %>"/></div>
-            <div class="selector_text"><%= I18n.locale %></div>
-          </button>
+          <div class="dropdown">
+            <button class="selector_button" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+              <div class="selector_icon"><img src="/images/flags/<%= flag(I18n.locale) %>"/></div>
+              <div class="selector_text"><%= I18n.locale %></div>
+            </button>
 
-          <ul style="width: 50px !important;"  class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-            <% Country.where(available: true).each do |country| %>
-                <li role="presentation" onclick="location.href = '/change_locale/<%= country.i18n_key %>'">
-                  <div class="selector_line">
-                    <div class="selector_nicon"><img src="/images/flags/<%= country.name %>.ico"/></div>
-                    <div class="selector_ntext"><%= country.i18n_key %></div>
-                    <div style="clear: both;"></div>
-                  </div>
-                </li>
-            <% end %>
-          </ul>
-        </div>
+            <ul style="width: 50px !important;"  class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+              <% Country.where(available: true).each do |country| %>
+                  <li role="presentation" onclick="location.href = '/change_locale/<%= country.i18n_key %>'">
+                    <div class="selector_line">
+                      <div class="selector_nicon"><img src="/images/flags/<%= country.name %>.ico"/></div>
+                      <div class="selector_ntext"><%= country.i18n_key %></div>
+                      <div style="clear: both;"></div>
+                    </div>
+                  </li>
+              <% end %>
+            </ul>
+          </div>
 
-      </ul>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="content">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <%= t(:events) %>
+      </div>
+      <div class="panel-body">
+        <table class="table">
+          <tr>
+            <th><%= t(:event_title) %></th>
+            <th><%= t(:date_begin) %></th>
+            <th><%= t(:free_slots) %></th>
+          </tr>
+          <% @events.each do |e| %>
+              <tr>
+                <td><%= link_to e.name, event_route(e) %></td>
+                <td><%= e.date %></td>
+                <td><%= e.max_slots - e.users.count %></td>
+              </tr>
+          <% end %>
+        </table>
+      </div>
     </div>
   </div>
-</nav>
-
-<div class="content">
-  <div class="panel panel-info">
-    <div class="panel-heading">
-      <%= t(:events) %>
-    </div>
-    <div class="panel-body">
-      <table class="table">
-        <tr>
-          <th><%= t(:event_title) %></th>
-          <th><%= t(:date_begin) %></th>
-          <th><%= t(:free_slots) %></th>
-        </tr>
-        <% @events.each do |e| %>
-            <tr>
-              <td><%= link_to e.name, event_route(e) %></td>
-              <td><%= e.date %></td>
-              <td><%= e.max_slots - e.users.count %></td>
-            </tr>
-        <% end %>
-      </table>
-    </div>
-  </div>
-</div>
+</body>

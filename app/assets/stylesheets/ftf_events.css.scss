@@ -2,6 +2,28 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.go-back-btn {
+  margin: auto;
+  color: #fff;
+  display: block;
+  width: 100%;
+  background-color: #27ae60;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  background-position: center;
+  border: solid 1px #27ae60;
+  height: 40px;
+  padding: 10px;
+  font-size: 17px;
+  line-height: 0px;
+  text-align: center;
+  color: rgba(250,255,253,1);
+  font-weight: initial;
+}
+
+.eventFTF_body {
+  background: #EA6720 image_url('event_search_background.png') no-repeat center center fixed;
+}
+
 .title-ftf-page {
 	text-align:center;
 	color:white;
@@ -24,7 +46,7 @@
   	-ms-border-radius: 5px;
   	-o-border-radius: 5px;
   	border:1px solid #2ecc71;
-  	background-color:#F5F5F5;
+  	background-color: rgba(245,245,245,0.7);
   	color:#2ecc71;
 }
 

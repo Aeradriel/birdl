@@ -26,7 +26,7 @@
                         :class => 'btn btn-warning btn-mini icon-white icon-remove admin_edit_button' %>
             <%= link_to t(:delete), "/admin/badges/#{badge.id}/delete", :method => :delete,
                         :class => 'btn btn-danger btn-mini icon-white icon-remove admin_delete_button',
-                        :data => { :confirm => t(:badge_deletion_warning) } %>
+                        :data => { :confirm => 'Delete' } %>
           </td>
         </tr>
     <% end %>

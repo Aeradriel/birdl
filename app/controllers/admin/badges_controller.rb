@@ -46,7 +46,7 @@ module Admin
     end
 
     def delete
-      name = @badge.language
+      name = @badge.name
 
       if @badge.destroy
         flash[:notice] = "Le pays #{name} a bien été supprimé."

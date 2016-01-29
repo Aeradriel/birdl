@@ -22,6 +22,7 @@ class Event < ActiveRecord::Base
   validates :min_slots, presence: true
   validates :max_slots, presence: true
   validates :date, presence: true
+  validates :end, presence: true
 
   accepts_nested_attributes_for :address
 

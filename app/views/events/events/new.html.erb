@@ -73,7 +73,7 @@
           <%= f.datetime_select :date, default: 1.day.from_now %><br />
 
           <%= f.label :end, t(:event_date_ending), :class => 'eventSearch_eSlot' %>
-          <%= f.datetime_select :end, default: 1.day.from_now %><br />
+          <%= f.datetime_select :end, default: 1.day.from_now + 1.minutes %><br />
 
           <%= f.label :language, t(:event_language), :class => 'eventSearch_eSlot' %>
           <%= f.text_field :language, placeholder: t(:event_language) %>

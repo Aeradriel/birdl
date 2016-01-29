@@ -217,6 +217,8 @@ es:
 
   event_param: "Configuración de Eventos"
   event_date: "Fecha"
+  event_date_starting: "Fecha de inicio"
+  event_date_ending: "Fecha de finalización"
   event_language: "Idioma"
   event_numbers: "Número"
   event_street: "Calle"

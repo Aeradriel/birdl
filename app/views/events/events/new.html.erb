@@ -69,7 +69,10 @@
           <%= f.label :max_slots, t(:max_slots), :class => 'eventSearch_eSlot' %>
           <%= f.number_field :max_slots %><br />
 
-          <%= f.label :date, t(:event_date), :class => 'eventSearch_eSlot' %>
+          <%= f.label :date, t(:event_date_starting), :class => 'eventSearch_eSlot' %>
+          <%= f.date_select :date, default: 1.day.from_now %><br />
+
+          <%= f.label :date, t(:event_date_ending), :class => 'eventSearch_eSlot' %>
           <%= f.date_select :date, default: 1.day.from_now %><br />
 
           <%= f.label :language, t(:event_language), :class => 'eventSearch_eSlot' %>

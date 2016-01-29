@@ -218,6 +218,8 @@ en:
 
   event_param: "Event parameters"
   event_date: "Date"
+  event_date_starting: "Starting date"
+  event_date_ending: "Ending date"
   event_language: "Language"
   event_numbers: "Numbers"
   event_street: "Street"

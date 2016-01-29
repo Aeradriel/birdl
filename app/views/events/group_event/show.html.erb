@@ -101,7 +101,7 @@
       <h3><%= t(:participants) %></h3>
       <ul>
         <% @event_users.each do |u| %>
-            <li><%= u.name %></li>
+            <li><%= u.name %><%= button_to 'Noter' %></li>
         <% end %>
       </ul>
     </div>

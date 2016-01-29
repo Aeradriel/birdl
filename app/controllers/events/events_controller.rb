@@ -64,7 +64,7 @@ module Events
       if @address.save && @event.save
 
         badge = Badge.where(identifier: 'badge_welcome_name').first
-        if badge && @current_user.organized_events == 1
+        if badge && @current_user.organized_events.count == 1
           Achievement.create(badge_id: badge.id, user_id: @current_user.id, progression: 100)
           Notification.create(user_id: @event.owner.id, subject:'Nouveau badge !', text: "Vous avez reçu le badge \"#{badge.name}\"")
         end

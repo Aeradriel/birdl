@@ -54,12 +54,22 @@ module Events
     def create
       @event = Event.new(event_params)
       @address = Address.new(event_address_params)
-      @event.owner_id = current_user.id
+      @event.owner_id = @current_user.id
       @event.address = @address
+      if @event.location == nil
+        @event.location = @address.to_s
+      end
+      @event.users << @current_user
 
       if @address.save && @event.save
-        redirect_to event_route(@event)
+
+        badge = Badge.where(identifier: 'badge_welcome_name').first
+        if badge && @current_user.organized_events == 1
+          Achievement.create(badge_id: badge.id, user_id: @current_user.id, progression: 100)
+          Notification.create(user_id: @event.owner.id, subject:'Nouveau badge !', text: "Vous avez reçu le badge \"#{badge.name}\"")
+        end
         flash[:notice] = 'Event was successfully created.'
+        redirect_to event_route(@event)
       else
         redirect_to events_path, alert: @event.errors.messages
       end

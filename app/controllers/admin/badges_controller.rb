@@ -4,7 +4,7 @@ module Admin
     before_action :actual_badge
 
     def badges
-      @badges = Badge.order(:name).page(params[:page])
+      @badges = Badge.order(:id).page(params[:page])
     end
 
     def new

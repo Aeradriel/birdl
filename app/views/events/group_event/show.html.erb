@@ -101,7 +101,9 @@
       <h3><%= t(:participants) %></h3>
       <ul>
         <% @event_users.each do |u| %>
-            <li><%= u.name %><div><form class="rating2" method="post">
+            <li><%= u.name %>
+              <div>
+              <form class="rating2" method="post">
         <input type="radio" class="rating-input"
                id="rating-input-1-5" name="rating-input-1" value="1"/>
         <label for="rating-input-1-5" class="rating-star"></label>
@@ -117,7 +119,11 @@
         <input type="radio" class="rating-input"
                id="rating-input-1-1" name="rating-input-1" value="5"/>
         <label for="rating-input-1-1" class="rating-star"></label>
-</form></div><button class="addFriend" type="submit">Ajoutez en ami</button></li>
+              <div><input class="addFriend" type="submit" value="Noter"/></div>
+            </form>
+            </div>
+              <button class="addFriend" type="submit">Ajoutez en ami</button>
+            </li>
         <% end %>
       </ul>
     </div>

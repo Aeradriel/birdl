@@ -80,7 +80,7 @@ module Admin
     end
 
     def actual_event
-      @event = Event.find(params[:event_id]) if params[:event_id]
+      @event = Event.find(params[:event_id].to_i) if params[:event_id]
     end
   end
 end

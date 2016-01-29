@@ -4,7 +4,7 @@ module Events
     include EventsHelper
 
     before_action :set_event, only: [:show, :edit, :update,
-                                     :destroy, :register]
+                                     :destroy, :register, :add_relation]
 
     def index
       @past_events = current_user.events.past
@@ -45,13 +45,26 @@ module Events
     def show
       @user_events = []
       Event.all.each do |e|
-        if e.date > Time.now && (e.owner.id == current_user.id || current_user.events.include?(e))
+        if e.date > Time.now && (e.owner.id == @current_user.id || @current_user.events.include?(e))
           @user_events << e
         end
       end
       @user_events.sort! { |a, b| a.date <=> b.date }
 
       @event_users = @event.users
+    end
+
+    def add_relation
+      user = User.where(id: params[:user_id].to_i).first
+      if @current_user.friends.include?(user)
+        redirect_to "/events/groupevents/#{@event.id}", notice: "#{user.name} fait déjà parti de vos connaissances"
+      else
+        @current_user.friends << user
+        if @current_user.save
+          Notification.create(user_id: user.id, subject: 'Nouvelle connaissance !', text: "#{@current_user.name} vous a ajouté en temps que connaissance")
+          redirect_to "/events/groupevents/#{@event.id}", notice: "Vous avez bien ajouté #{user.name} à vos connaissances"
+        end
+      end
     end
 
     def edit

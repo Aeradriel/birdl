@@ -117,7 +117,7 @@
         <input type="radio" class="rating-input"
                id="rating-input-1-1" name="rating-input-1" value="5"/>
         <label for="rating-input-1-1" class="rating-star"></label>
-</form></div><button class="addFriend" type="submit">Ajoutez en ami</button></li>
+</form></div><%= button_to "Ajouter une relation", action: :add_relation, user_id: u.id if !@current_guser.friends.include?(u)%></li>
         <% end %>
       </ul>
     </div>

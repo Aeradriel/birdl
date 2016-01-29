@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     get '/groupevents' => 'group_event#index', as: :group_events
     get '/groupevents/:event_id' => 'group_event#show', as: :group_event
     post '/groupevents/:event_id/register' => 'group_event#register', as: :group_event_register
+    post '/groupevents/:event_id/add_relation/:user_id' => 'group_event#add_relation'
     get '/onlinechat/' => 'online_chat#index', as: :online_chat
     get '/facestofaces' => 'face_to_face#index', as: :faces_to_faces
     get '/facestofaces/:event_id' => 'face_to_face#show', as: :face_to_face

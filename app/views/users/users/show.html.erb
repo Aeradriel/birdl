@@ -44,18 +44,27 @@
     </div>
   </div>
 </nav>
-    <h1 class="profile_h1">Notation de <%= @user.name %></h1>
+
+<div class="gEvent">
+    <header><h1>Événements en commun</h1></header>
     <!--
         TODO: Faire un récapitulatif des événements par type (F2F, Group...)
     -->
-    <p>
-      Vous avez <%= @common_events.count %> événements en commun avec ce membre :
-    </p>
+ <div class="gEventdesc" style="text-align: center">
+   <div id="eDescription">
+     <p>Vous avez <%= @common_events.count %> événements en commun avec <%= @user.name %> :</p>
+  <div id="eDescriptionDetails">
     <ul>
-      <% @common_events.each do |e| %>
-          <li><%= e.name %></li>
-      <% end %>
-    </ul>
-
-    <p>Notez ce membre en fonction de vos expériences</p>
+    <% @common_events.each do |e| %>
+        <li><%= e.name %></li>
+    <% end %>
+  </ul>
+  </div>
+   </div>
+ </div>
+  <div id="uEvents"><p>Notez ce membre en fonction de vos expériences <%= button_to 'Noter' %></p></div>
+  <div class="uList">
+  <p></p>
+  </div>
+</div>
 </body>

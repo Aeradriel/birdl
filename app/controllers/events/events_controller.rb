@@ -62,21 +62,15 @@ module Events
       @event.users << @current_user
 
       if @address.save && @event.save
-
-        badge1 = Badge.where(identifier: 'badge_welcome_name').first
-        badge2 = Badge.where(identifier: 'badge_marathon_name').first
-        badge3 = Badge.where(identifier: 'badge_ironman_name').first
+        badge1 = Badge.where(identifier: 'badge_maçon_name').first
+        badge2 = Badge.where(identifier: 'badge_batisseur_name').first
         if badge1 && @current_user.organized_events.count == 1
           Achievement.create(badge_id: badge1.id, user_id: @current_user.id, progression: 100)
           Notification.create(user_id: @event.owner.id, subject:'Nouveau badge !', text: "Vous avez reçu le badge \"#{badge1.name}\"")
         end
-        if badge1 && @current_user.organized_events.count == 1
+        if badge2 && @current_user.organized_events.count == 2
           Achievement.create(badge_id: badge2.id, user_id: @current_user.id, progression: 100)
           Notification.create(user_id: @event.owner.id, subject:'Nouveau badge !', text: "Vous avez reçu le badge \"#{badge2.name}\"")
-        end
-        if badge1 && @current_user.organized_events.count == 1
-          Achievement.create(badge_id: badge3.id, user_id: @current_user.id, progression: 100)
-          Notification.create(user_id: @event.owner.id, subject:'Nouveau badge !', text: "Vous avez reçu le badge \"#{badge3.name}\"")
         end
         flash[:notice] = 'Event was successfully created.'
         redirect_to event_route(@event)

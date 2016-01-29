@@ -15,6 +15,21 @@ module Events
       if can_register?(@event, current_user)
         @event.users << current_user
         if @event.save
+          badge1 = Badge.where(identifier: 'badge_course_name').first
+          badge2 = Badge.where(identifier: 'badge_marathon_name').first
+          badge3 = Badge.where(identifier: 'badge_ironman_name').first
+          if badge1 && @current_user.events.count == 1
+            Achievement.create(badge_id: badge1.id, user_id: @current_user.id, progression: 100)
+            Notification.create(user_id: @event.owner.id, subject:'Nouveau badge !', text: "Vous avez reçu le badge \"#{badge1.name}\"")
+          end
+          if badge2 && @current_user.events.count == 20
+            Achievement.create(badge_id: badge2.id, user_id: @current_user.id, progression: 100)
+            Notification.create(user_id: @event.owner.id, subject:'Nouveau badge !', text: "Vous avez reçu le badge \"#{badge2.name}\"")
+          end
+          if badge3 && @current_user.events.count == 75
+            Achievement.create(badge_id: badge3.id, user_id: @current_user.id, progression: 100)
+            Notification.create(user_id: @event.owner.id, subject:'Nouveau badge !', text: "Vous avez reçu le badge \"#{badge3.name}\"")
+          end
           Notification.create(user_id: @event.owner.id, subject:'Nouveau participant !', text: "#{@current_user.name} a rejoint votre événement \"#{@event.name}\"")
           redirect_to action: 'show', notice: 'Vous êtes maintenant inscrit à cet événement'
         else

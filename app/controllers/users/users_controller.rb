@@ -11,6 +11,10 @@ module Users
       end
     end
 
+    def get_rate
+      @event = User.where(id: params[:event_id].to_i).first
+    end
+
     def rate
       u = User.where(id: params[:user_id].to_i).first
       e = User.where(id: params[:event_id].to_i).first

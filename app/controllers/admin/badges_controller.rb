@@ -4,7 +4,7 @@ module Admin
     before_action :actual_badge
 
     def badges
-      @badges = Badge.order(:name).page(params[:page])
+      @badges = Badge.order(:id).page(params[:page])
     end
 
     def new
@@ -46,7 +46,7 @@ module Admin
     end
 
     def delete
-      name = @badge.language
+      name = @badge.name
 
       if @badge.destroy
         flash[:notice] = "Le pays #{name} a bien été supprimé."

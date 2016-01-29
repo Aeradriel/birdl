@@ -2,8 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
 .newEvent_table {
   width: 100%;
   margin-left: 50%;
@@ -13,15 +11,17 @@
   text-align: center;
   margin-top: -20px;
   margin-left: 23%;
-  background-color: #F2EFEA;
+  background-color: #F5F5F5;
   width: 50%;
+  border:1px solid #27ae60;
+  border-radius: 25px;
 }
 
 .newEvent_div {
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   color: #27ae60;
   display:inline-block;
-  background-color:#F2EFEA;
+  background-color: rgba(245,245,245,0.7);
   padding:20px;
   padding-top: 0px;
   border:1px solid #27ae60;

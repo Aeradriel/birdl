@@ -1,4 +1,5 @@
-<div align="center"><h2>Resend confirmation instructions</h2></div>
+<body class="confirmations_body">
+<div align="center"><h1>Resend confirmation instructions</h1></div>
 
 <div class="table_paneladmin" align="center">
     <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
@@ -17,3 +18,4 @@
 </div>
 
 <br><div align="center"><%= render "devise/shared/links" %></div>
+</body>

@@ -53,12 +53,14 @@
       <div class="panel-body content-eventSearchResult">
         <table class="table">
           <tr>
+            <th><%= t(:event_type) %></th>
             <th><%= t(:event_title) %></th>
             <th><%= t(:date_begin) %></th>
             <th><%= t(:free_slots) %></th>
           </tr>
           <% @events.each do |e| %>
               <tr>
+                <td><div class="container_icon"><%= image_tag("icon_ftf.png", :alt => "event_type_icon") %></div></td>
                 <td><%= link_to e.name, event_route(e) %></td>
                 <td><%= e.date %></td>
                 <td><%= e.max_slots - e.users.count %></td>

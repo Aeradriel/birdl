@@ -4,7 +4,7 @@ module Admin
     before_action :actual_event, only: [:new, :edit, :update, :destroy]
 
     def index
-      @events = Event.order(:name).page(params[:page])
+      @events = Event.order(date: :desc).page(params[:page])
     end
 
     def new
@@ -74,6 +74,8 @@ module Admin
         sym = :online_chat
       elsif actual_event.class == TourismTour
         sym = :tourism_tour
+      elsif actual_event.class == GroupEvent
+        sym = :group_event
       end
       params.require(sym).permit(:name, :type, :min_slots,
                                  :max_slots, :date, :end)

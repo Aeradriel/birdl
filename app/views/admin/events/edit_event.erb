@@ -8,7 +8,7 @@
       </tr>
       <tr>
         <td><%= f.label :type, t(:event_type) %></td>
-        <td><%= f.select :type, options_for_select(@event_types) %><br/></td>
+        <td><%= f.select :type, options_for_select(@event_types), {}, { disabled: true } %><br/></td>
       </tr>
       <tr>
         <td><%= f.label :min_slots, t(:min_slots) %></td>
@@ -20,11 +20,11 @@
       </tr>
       <tr>
         <td><%= f.label :date, t(:date_begin) %></td>
-        <td><%= f.date_field :date %><br/></td>
+        <td><%= f.datetime_select :date, default: 1.day.from_now %><br/></td>
       </tr>
       <tr>
         <td><%= f.label :end, t(:date_end) %></td>
-        <td><%= f.date_field :end %><br/></td>
+        <td><%= f.datetime_select :end, default: 1.day.from_now + 1.minutes %><br/></td>
       </tr>
     </table>
     <a class="btn btn-warning btn-mini icon-white icon-remove edit_button" href="/admin/countries"><%= t(:cancel) %></a>

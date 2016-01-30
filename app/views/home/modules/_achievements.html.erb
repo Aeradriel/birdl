@@ -14,7 +14,7 @@
                 </div>
                 <div class="inset">
                     <div>
-                      <%= image_tag "/#{achievement.badge.icon_path}" %></div>
+                      <%= image_tag "/#{achievement.badge.icon_path.slice!('public/')}" %></div>
                     </div>
                 </div>
             </div>

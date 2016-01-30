@@ -102,7 +102,7 @@
       <ul>
         <% @event_users.each do |u| %>
             <li><% name = "#{u.name}" %>
-              <% name += " (#{u.average_rating}/5 surg #{u.user_ratings.count} notes)" if u.user_ratings.count > 0 %>
+              <% name += " (#{u.average_rating}/5 sur #{u.user_ratings.count} notes)" if u.user_ratings.count > 0 %>
               <%= name %>
               <% if can_rate_user_for_event(u, @event) %>
                   <div>

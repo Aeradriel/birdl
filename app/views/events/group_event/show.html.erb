@@ -81,7 +81,6 @@
                 <% if @event.users.include?(current_user) %>
                     <p>
                       Cet événement est maintenant terminé ! Nous espérons qu'il vous a plû.
-                      <%= link_to 'Notez l\'organisateur', user_rating_path(@event.owner) %>
                     </p>
                 <% end %>
             <% end %>
@@ -102,7 +101,7 @@
       <ul>
         <% @event_users.each do |u| %>
             <li><% name = "#{u.name}" %>
-              <% name += " (#{u.average_rating}/5 sur #{u.user_ratings.count} notes)" if u.user_ratings.count > 0 %>
+              <% name += " (#{number_with_precision(u.average_rating, :precision => 2, :significant => true)}/5 sur #{u.user_ratings.count} notes)" if u.user_ratings.count > 0 %>
               <%= name %>
               <% if can_rate_user_for_event(u, @event) %>
                   <div>

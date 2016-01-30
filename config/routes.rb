@@ -24,8 +24,10 @@ Rails.application.routes.draw do
     post '/groupevents/:event_id/register' => 'group_event#register', as: :group_event_register
     post '/groupevents/:event_id/add_relation/:user_id' => 'group_event#add_relation'
     get '/onlinechat/' => 'online_chat#index', as: :online_chat
-    get '/facestofaces' => 'face_to_face#index', as: :faces_to_faces
-    get '/facestofaces/:event_id' => 'face_to_face#show', as: :face_to_face
+    get '/facestofaces' => 'group_event#index', as: :face_to_faces
+    get '/facestofaces/:event_id' => 'group_event#show', as: :face_to_face
+    post '/facestofaces/:event_id/register' => 'group_event#register', as: :face_to_face_register
+    post '/facestofaces/:event_id/add_relation/:user_id' => 'group_event#add_relation'
   end
 
   namespace :admin do

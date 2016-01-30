@@ -11,6 +11,7 @@ module UserHelper
   def can_rate_user_for_event(user, event)
     return false unless event.users.include?(user) && event.users.include?(current_user)
     return false unless user_is_event_owner(user, event)
+    return false if Time.now < event.end
     current_user.given_ratings.each do |g_r|
       return false if !g_r.event || !g_r.user || (g_r.user.id == user.id && g_r.event.id == event.id)
     end

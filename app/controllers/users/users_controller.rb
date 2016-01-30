@@ -17,21 +17,21 @@ module Users
 
     def rate
       u = User.where(id: params[:user_id].to_i).first
-      e = User.where(id: params[:event_id].to_i).first
-      v = params[:value]
+      e = Event.where(id: params[:event_id].to_i).first
+      val = { 1 => 5, 2 => 4, 3 => 3, 4 => 2, 5 => 1}
+      v = val[params['rating-input-1'].to_i]
       if u && e && v
         if can_rate_user_for_event(u, e)
-          r = Rating.new(user_id: u.id, giver_id: current_user.id, value: v,
-                         comment: params[:comment])
+          r = UserRating.new(user_id: u.id, giver_id: current_user.id, value: v, event_id: e.id)
           if r.save
             flash[:notice] = 'Votre vote a été bien été pris en compte.'
           else
             flash[:alert] = 'Une erreur est survenue. Veuillez ressayer dans quelques instants.'
           end
-          redirect_to :show
+          redirect_to "/events/groupevents/#{params[:event_id]}", notice: "Vous avez bien noté #{u.name}"
         end
       else
-        redirect_to :root
+        redirecft_to "/events/groupevents/#{params[:event_id]}", notice: "Un erreur est survenue lors de la notation"
       end
     end
 

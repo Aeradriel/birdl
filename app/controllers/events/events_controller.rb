@@ -12,7 +12,6 @@ module Events
           [
             [t(:all), 'none'],
             [t(:face_to_face), 'FaceToFace'],
-            [t(:online_chat), 'OnlineChat'],
             [t(:tourism_tour), 'TourismTour'],
             [t(:group_event), 'GroupEvent']
           ]
@@ -39,7 +38,6 @@ module Events
       @event_types =
           [
             [t(:face_to_face), 'FaceToFace'],
-            [t(:online_chat), 'OnlineChat'],
             [t(:tourism_tour), 'TourismTour'],
             [t(:group_event), 'GroupEvent']
           ]
@@ -56,6 +54,9 @@ module Events
       @address = Address.new(event_address_params)
       @event.owner_id = @current_user.id
       @event.address = @address
+      if @event.type != 'FaceToFace' && @event.type != 'GroupEvent'
+        @event.type = 'GroupEvent'
+      end
       if @event.location == nil
         @event.location = @address.to_s
       end

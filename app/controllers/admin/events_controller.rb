@@ -12,8 +12,7 @@ module Admin
       @event_types =
           [
             [t(:face_to_face), 'FaceToFace'],
-            [t(:group_event), 'FaceToFace'],
-            [t(:online_chat), 'OnlineChat'],
+            [t(:group_event), 'GroupEvent'],
             [t(:tourism_tour), 'TourismTour']
           ]
       render :new_event
@@ -22,6 +21,9 @@ module Admin
     def create
       e = Event.new(event_params)
 
+      if e.type != 'FaceToFace' && e.type != 'GroupEvent'
+        e.type = 'GroupEvent'
+      end
       if e.save
         flash[:notice] = "L'événement #{e.name} a bien été creé."
       else
@@ -35,8 +37,7 @@ module Admin
       @event_types =
           [
             [t(:face_to_face), 'FaceToFace'],
-            [t(:group_event), 'FaceToFace'],
-            [t(:online_chat), 'OnlineChat'],
+            [t(:group_event), 'GroupEvent'],
             [t(:tourism_tour), 'TourismTour']
           ]
       render :edit_event

@@ -15,9 +15,9 @@
                 <div class="inset">
                     <div>
                       <% if achievement.badge.icon_path %>
-                          <% achievement.badge.icon_path.slice('public/') %>
+                          <% achievement.badge.icon_path.slice!('public/') %>
                       <% end %>
-                      <%= image_tag "/#{}" %></div>
+                      <%= image_tag "/#{achievement.badge.icon_path}", alt: achievement.badge.description %></div>
                     </div>
                 </div>
             </div>

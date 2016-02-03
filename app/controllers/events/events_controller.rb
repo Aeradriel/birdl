@@ -112,7 +112,7 @@ module Events
     def event_params
       params.require(:event).permit(:name, :type, :min_slots,
                                     :max_slots, :date, :end,
-                                    :address, :language)
+                                    :address, :language, :desc)
     end
 
     def event_address_params

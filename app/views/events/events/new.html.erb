@@ -50,7 +50,10 @@
       <tr>
         <div class="newEvent_div">
           <h2 class="newEvent_title"><%= t(:event_title) %></h2>
-          <%= f.text_field :name, placeholder: t(:event_title) %>
+          <%= f.label :name, t(:name), :class => 'eventSearch_eSlot' %><br/>
+          <%= f.text_field :name, placeholder: t(:event_title) %><br/>
+          <%= f.label :desc, t(:description_event), :class => 'eventSearch_eSlot' %>
+          <%= f.text_area :desc %>
         </div>
       </tr><br /><br /><br />
       <tr>

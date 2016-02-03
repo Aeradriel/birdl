@@ -128,7 +128,7 @@
                   </div>
               <% end %>
 
-              <%= button_to "Ajouter une relation", { action: :add_relation, user_id: u.id  }, class: 'addFriend' if !@current_user.friends.include?(u) && @current_user.id != u.id %></li>
+              <%= button_to "Ajouter une relation", { action: :add_relation, user_id: u.id  }, class: 'addFriend' if !@current_user.friends.include?(u) && @current_user.id != u.id && @event.date < Time.now %></li>
             </li>
         <% end %>
       </ul>
